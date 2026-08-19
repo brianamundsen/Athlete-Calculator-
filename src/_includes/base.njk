@@ -70,6 +70,10 @@
   }
   footer a { color: var(--text-muted); text-decoration: none; }
   footer a:hover { color: var(--accent); }
+
+  /* Fix: CSS Grid items don't shrink below their content's natural width by default,
+     which can cause horizontal overflow on narrow screens with long uppercase labels. */
+  [class*="stat"] { min-width: 0; overflow-wrap: break-word; }
 </style>
 {% if pageStyle %}{{ pageStyle | safe }}{% endif %}
 {% if jsonld %}
