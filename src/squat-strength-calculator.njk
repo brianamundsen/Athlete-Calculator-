@@ -652,10 +652,10 @@ permalink: "squat-strength-calculator/index.html"
 <p class="subtitle">Enter your squat max and bodyweight to predict your vertical jump and sprint speed — and see exactly what strength gains will do for your athleticism.</p>
 </header><div class="container">
 <div class="links-row">
-<a class="site-link" href="https://athletecalculator.com">
+<a class="site-link" href="/">
       ↑ <strong>Vertical Jump</strong> Percentile Calculator
     </a>
-<a class="site-link" href="https://athletecalculator.com/sprint-speed-calculator">
+<a class="site-link" href="/sprint-speed-calculator">
       ↑ <strong>Sprint Speed</strong> Percentile Calculator
     </a>
 </div>
@@ -1016,18 +1016,18 @@ function calculate() {
     ? [
         { title: 'Build your squat', body: `Your primary goal is getting to <strong>1.5× bodyweight</strong>. This single milestone will produce the biggest jump in your vertical and 40 time. Squat heavy 2–3x per week.` },
         { title: 'Add basic plyometrics', body: `Even while building strength, doing <strong>3 sets of box jumps</strong> twice per week teaches your nervous system to express force explosively. Keep it simple at this stage.` },
-        { title: 'Check your vertical now', body: `Use our <strong><a href="https://athletecalculator.com" style="color:var(--accent)">Vertical Jump Calculator</a></strong> to get your baseline, then retest every 8 weeks to track your progress.` },
+        { title: 'Check your vertical now', body: `Use our <strong><a href="/" style="color:var(--accent)">Vertical Jump Calculator</a></strong> to get your baseline, then retest every 8 weeks to track your progress.` },
       ]
     : ratio < 2.0
     ? [
         { title: 'Combine strength + plyos', body: `At your level, <strong>contrast training</strong> is highly effective — pair a heavy squat set immediately with a max-effort box jump. Your nervous system learns to apply force faster.` },
         { title: 'Sprint work twice a week', body: `<strong>Resisted sprint training</strong> (sled pushes, band-resisted sprints) at 10–20% bodyweight resistance 2x per week will translate your squat strength directly into 40 time.` },
-        { title: 'Track your speed', body: `Use our <strong><a href="https://athletecalculator.com/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed Calculator</a></strong> to see your current percentile and benchmark your progress.` },
+        { title: 'Track your speed', body: `Use our <strong><a href="/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed Calculator</a></strong> to see your current percentile and benchmark your progress.` },
       ]
     : [
         { title: 'Optimize rate of force development', body: `At elite strength, <strong>how fast</strong> you produce force matters more than how much. Olympic lift variations and reactive plyometrics are your primary tools.` },
         { title: 'Maintain, don\'t always build', body: `Heavy squatting at this level requires significant recovery. <strong>Strength maintenance</strong> at 2–3 sessions per week lets you prioritize speed and power work without overreaching.` },
-        { title: 'Compare yourself to the best', body: `At your strength level, test yourself against elite benchmarks using our <strong><a href="https://athletecalculator.com" style="color:var(--accent)">Vertical Jump</a></strong> and <strong><a href="https://athletecalculator.com/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed</a></strong> calculators.` },
+        { title: 'Compare yourself to the best', body: `At your strength level, test yourself against elite benchmarks using our <strong><a href="/" style="color:var(--accent)">Vertical Jump</a></strong> and <strong><a href="/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed</a></strong> calculators.` },
       ];
 
   nextSteps.innerHTML = steps.map((s, i) => `

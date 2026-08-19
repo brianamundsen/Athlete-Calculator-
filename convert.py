@@ -19,6 +19,11 @@ def fix_links(html):
     html = re.sub(r'(athletecalculator\.com/[a-zA-Z0-9_\-]*)\.html', r'\1', html)
     return html
 
+def make_relative(html):
+    # convert absolute internal links to relative paths (handles both domain.com/path and bare domain.com)
+    html = re.sub(r'https://athletecalculator\.com/?', '/', html)
+    return html
+
 def slug_for(fname):
     if fname == "index.html":
         return "/"
@@ -84,6 +89,7 @@ for f in sorted(files):
     style_tag = soup.find("style")
     style_html = str(style_tag) if style_tag else ""
     style_html = fix_links(style_html)
+    style_html = make_relative(style_html)
 
     footer = soup.find("footer")
     disclaimer_lines = []
@@ -110,6 +116,7 @@ for f in sorted(files):
             collecting.append(str(child))
         main_content = "".join(collecting)
     main_content = fix_links(main_content)
+    main_content = make_relative(main_content)
 
     is_calculator = out_name in CALCULATOR_FILES
     mailerlite = is_calculator
@@ -130,7 +137,7 @@ for f in sorted(files):
     if nav_active:
         fm.append(f"navActive: {yaml_escape(nav_active)}")
     if nav_context_url:
-        fm.append(f"navContextUrl: {yaml_escape(fix_links(nav_context_url))}")
+        fm.append(f"navContextUrl: {yaml_escape(fix_links(make_relative(nav_context_url)))}")
         fm.append(f"navContextLabel: {yaml_escape(nav_context_label)}")
     if disclaimer_lines:
         fm.append("disclaimer:")

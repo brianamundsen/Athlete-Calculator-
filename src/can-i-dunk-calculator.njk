@@ -570,7 +570,7 @@ pageStyle: |-
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
   </style>
-navContextUrl: "https://athletecalculator.com"
+navContextUrl: "/"
 navContextLabel: "AthleteCalc"
 disclaimer:
   - "Calculator based on average human proportions. Standing reach estimates assume typical wingspan-to-height ratios."
@@ -686,10 +686,10 @@ permalink: "can-i-dunk-calculator/index.html"
 <p class="hero-sub">Enter your height and vertical jump to find out instantly — and if not, exactly how close you are and what it will take.</p>
 </header><div class="container">
 <div class="links-row">
-<a class="site-link" href="https://athletecalculator.com/vertical-jump-percentile">
+<a class="site-link" href="/vertical-jump-percentile">
       ↑ <strong>Vertical Jump</strong> Percentile Calculator
     </a>
-<a class="site-link" href="https://athletecalculator.com/squat-strength-calculator">
+<a class="site-link" href="/squat-strength-calculator">
       ↑ <strong>Squat Strength</strong> Predictor
     </a>
 </div>
@@ -1068,11 +1068,11 @@ function calculate() {
 
   // ── TIP ──
   const tips = [
-    { cond: canDunk,       text: `<strong>You're already dunking</strong> — now build consistency and try your first in-game dunk. Use our <a href="https://athletecalculator.com/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Calculator</a> to see how your jump ranks against other athletes.` },
-    { cond: !hasVert,      text: `<strong>Measure your vertical jump</strong> and come back to get your full dunk analysis. Our <a href="https://athletecalculator.com/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Percentile Calculator</a> also shows where you rank against athletes at every level.` },
+    { cond: canDunk,       text: `<strong>You're already dunking</strong> — now build consistency and try your first in-game dunk. Use our <a href="/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Calculator</a> to see how your jump ranks against other athletes.` },
+    { cond: !hasVert,      text: `<strong>Measure your vertical jump</strong> and come back to get your full dunk analysis. Our <a href="/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Percentile Calculator</a> also shows where you rank against athletes at every level.` },
     { cond: gap <= 4,      text: `<strong>You're this close</strong> — the fastest gains right now come from approach mechanics, not fitness. Practice your run-up at the rim every single day. Many athletes dunk for the first time within days of figuring out their approach.` },
-    { cond: gap <= 10,     text: `<strong>Your squat strength</strong> is the most direct lever. Use our <a href="https://athletecalculator.com/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to see exactly what squat target will get your vertical to dunk height.` },
-    { cond: true,          text: `<strong>Start with your squat.</strong> Use our <a href="https://athletecalculator.com/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to find your squat target for dunking, and our <a href="https://athletecalculator.com/how-much-to-squat-to-dunk" style="color:var(--accent)">full dunking guide</a> for the complete training plan.` },
+    { cond: gap <= 10,     text: `<strong>Your squat strength</strong> is the most direct lever. Use our <a href="/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to see exactly what squat target will get your vertical to dunk height.` },
+    { cond: true,          text: `<strong>Start with your squat.</strong> Use our <a href="/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to find your squat target for dunking, and our <a href="/how-much-to-squat-to-dunk" style="color:var(--accent)">full dunking guide</a> for the complete training plan.` },
   ];
 
   const tip = tips.find(t => t.cond);
