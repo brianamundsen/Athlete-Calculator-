@@ -1,0 +1,1050 @@
+---
+layout: base.njk
+title: "NFL Combine Scores Explained — What Each Test Really Means | Athlete Calculator"
+description: "A complete breakdown of every NFL combine test — 40-yard dash, vertical jump, broad jump, bench press, and more. What the scores mean and how you compare."
+canonicalPath: "/nfl-combine-scores-explained"
+mailerlite: false
+navContextUrl: "https://athletecalculator.com"
+navContextLabel: "AthleteCalc"
+disclaimer:
+  - "Data based on publicly available NFL combine records and published sports science research."
+  - "Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NFL Combine Scores Explained — What Each Test Really Means",
+    "description": "A complete breakdown of every NFL combine test — what scouts look for, what the averages are by position, and what the scores actually tell you about an athlete.",
+    "url": "https://athletecalculator.com/nfl-combine-scores-explained",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/nfl-combine-scores-explained"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good NFL combine score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good NFL combine score depends on the test and position. For the 40-yard dash, under 4.5 seconds is excellent for skill positions. For the vertical jump, over 36 inches is excellent for most positions. For the broad jump, over 10 feet is considered very good. For bench press, 20 or more reps at 225 pounds is considered strong. Scouts weigh each test differently depending on the position being evaluated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the NFL combine vertical jump test measure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NFL combine vertical jump measures lower body explosive power and athleticism. It is performed as a standing vertical jump with no approach steps. Scouts use it to evaluate a player's explosiveness relative to their size and position. The average vertical jump at the NFL combine is approximately 33 to 35 inches, with elite jumpers reaching 40 inches or more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many reps of 225 do NFL players bench press?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average number of 225-pound bench press reps at the NFL combine varies significantly by position. Offensive and defensive linemen average 25 to 35 reps, linebackers average 20 to 25 reps, and skill position players like wide receivers and defensive backs average 10 to 18 reps. The all-time combine record is 49 reps, set by Justin Ernest in 1999."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the NFL combine broad jump record?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NFL combine broad jump record is 11 feet 5 inches, set by Byron Jones in 2015. The average broad jump at the combine is approximately 9 feet 6 inches to 10 feet 2 inches depending on position. Skill positions like wide receivers and defensive backs typically jump the farthest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the NFL combine matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the NFL combine matters significantly for draft positioning, though it is not the only factor. Strong combine performances can raise a player's draft stock by one to two rounds. Poor performances can drop a player similarly. However, college game tape remains the most important factor. The combine is most impactful for borderline prospects where measurables can confirm or cast doubt on what scouts saw on film."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the hardest NFL combine test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most players and scouts consider the 40-yard dash to be the most scrutinized combine test because it is the most heavily weighted in draft evaluations and the results are widely publicized. The three-cone drill is considered the most technically demanding test as it requires change of direction, coordination, and football-specific movement patterns that are difficult to peak for in a short preparation window."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "NFL Combine Scores Explained",
+        "item": "https://athletecalculator.com/nfl-combine-scores-explained"
+      }
+    ]
+  }
+  </script>
+permalink: "nfl-combine-scores-explained/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 em { color: var(--accent); font-style: normal; }
+
+  .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+
+  .hero-meta-item {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 640px;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .article-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .article-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  .content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  .content p {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .content p strong { color: var(--text); }
+  .content ul, .content ol { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+
+  .content li {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+
+  .content li strong { color: var(--text); }
+
+  /* ── TEST CARD ── */
+  .test-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 1.75rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .test-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .test-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .test-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    background: var(--surface2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .test-card-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .test-card-sub {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .test-what {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .test-what strong { color: var(--text); }
+
+  .test-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 500px) { .test-stats { grid-template-columns: 1fr 1fr; } }
+
+  .test-stat {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 0.85rem;
+    text-align: center;
+  }
+
+  .test-stat-val {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .test-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead { background: var(--surface2); }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+  .data-table .highlight td { background: rgba(170,255,0,0.07); }
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+  .callout-text strong { color: var(--accent); }
+
+  /* ── RECORD BOX ── */
+  .record-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .record-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .record-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+  .record-text strong { color: var(--text); }
+
+  /* ── CALC CTA ── */
+  .calc-cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .calc-cta-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .calc-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+
+  .calc-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+  }
+
+  .calc-cta-btn:hover { opacity: 0.85; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 5rem; }
+
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+  .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+
+  .toc-link {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<div class="hero">
+<div class="breadcrumb">
+<a href="https://athletecalculator.com">Home</a>
+<span>→</span>
+<a href="https://athletecalculator.com/articles">Articles</a>
+<span>→</span>
+    NFL Combine Scores Explained
+  </div>
+<h1>NFL Combine <em>Scores Explained</em></h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 10 min read</span>
+<span class="hero-meta-item">🏈 Football</span>
+<span class="hero-meta-item">📊 Combine &amp; Recruiting</span>
+</div>
+<p class="hero-intro">
+    Every year millions of people watch NFL combine numbers scroll across a screen without fully understanding what they mean. Here's a complete breakdown of every test — what it actually measures, what the averages are by position, the all-time records, and how you stack up.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<!-- SECTION 1 -->
+<h2>What Is the NFL Combine?</h2>
+<p>The NFL Scouting Combine is an annual event held in Indianapolis where college football's top prospects are evaluated by all 32 NFL teams before the draft. It's part physical testing, part medical evaluation, and part interview process — but the athletic testing numbers are what get the most attention.</p>
+<p>Every prospect runs the same tests under identical conditions. The results are measured, recorded, and distributed to all teams simultaneously. A strong combine performance can raise a player's draft stock by one to two rounds. A poor one can cost millions of dollars in contract value.</p>
+<p>There are six primary athletic tests: the 40-yard dash, vertical jump, broad jump, bench press, three-cone drill, and 20-yard shuttle. Each measures something distinct. Here's exactly what each one tells scouts — and what good, great, and record-breaking looks like at every position.</p>
+<!-- TEST 1: 40 YARD DASH -->
+<h2>Test 1: The 40-Yard Dash</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">⚡</div>
+<div>
+<div class="test-card-title">40-Yard Dash</div>
+<div class="test-card-sub">Straight-line speed &amp; acceleration</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Linear speed and acceleration over 40 yards — the approximate distance of a deep route, a breakaway run, or a full-speed pursuit. It's the most publicized combine number and carries enormous weight in draft evaluations for skill positions. The first 10 yards measure pure acceleration; the final 20 measure top-end speed.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">4.77s</div>
+<div class="test-stat-label">Combine avg (all positions)</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">4.47s</div>
+<div class="test-stat-label">CB / WR avg</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">4.22s</div>
+<div class="test-stat-label">All-time record (John Ross, 2017)</div>
+</div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Average</th>
+<th>Good</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Cornerback</td><td>4.47s</td><td>4.38s</td><td>Under 4.32s</td></tr>
+<tr class="highlight"><td>Wide Receiver</td><td>4.48s</td><td>4.38s</td><td>Under 4.33s</td></tr>
+<tr class="highlight"><td>Running Back</td><td>4.49s</td><td>4.40s</td><td>Under 4.35s</td></tr>
+<tr><td>Safety</td><td>4.53s</td><td>4.44s</td><td>Under 4.38s</td></tr>
+<tr><td>Linebacker</td><td>4.68s</td><td>4.56s</td><td>Under 4.50s</td></tr>
+<tr><td>Tight End</td><td>4.70s</td><td>4.58s</td><td>Under 4.52s</td></tr>
+<tr><td>Defensive End</td><td>4.74s</td><td>4.62s</td><td>Under 4.55s</td></tr>
+<tr><td>Quarterback</td><td>4.83s</td><td>4.65s</td><td>Under 4.55s</td></tr>
+<tr><td>Defensive Tackle</td><td>4.99s</td><td>4.82s</td><td>Under 4.72s</td></tr>
+<tr><td>Offensive Lineman</td><td>5.10s</td><td>4.95s</td><td>Under 4.82s</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="callout-icon">💡</div>
+<div class="callout-text"><strong>Context:</strong> Hand-timed 40s at high school combines are typically 0.2–0.3 seconds faster than electronically timed results. If you ran a 4.6 at your high school combine, your electronic equivalent is closer to 4.8. Always clarify which timing method was used when comparing your time to NFL numbers.</div>
+</div>
+<!-- CALC CTA 1 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>How Does Your 40 Time Rank?</h3>
+<p>Enter your 40-yard dash, 100m time, or top speed in mph and see your exact percentile ranking against athletes at every level.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+<!-- TEST 2: VERTICAL JUMP -->
+<h2>Test 2: The Vertical Jump</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">🏀</div>
+<div>
+<div class="test-card-title">Vertical Jump</div>
+<div class="test-card-sub">Lower body explosiveness</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Standing vertical jump — no approach, no steps. Pure lower body explosive power. Scouts use it as a proxy for athleticism and the ability to win jump balls, make explosive cuts, and accelerate out of breaks. A high vertical relative to bodyweight signals exceptional fast-twitch muscle fiber dominance.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">33.5"</div>
+<div class="test-stat-label">Combine avg (all positions)</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">38–40"</div>
+<div class="test-stat-label">Elite range</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">46"</div>
+<div class="test-stat-label">All-time record (Gerald Sensabaugh, 2005)</div>
+</div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Average</th>
+<th>Good</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Wide Receiver</td><td>36.5"</td><td>39"</td><td>42"+</td></tr>
+<tr class="highlight"><td>Cornerback</td><td>36"</td><td>39"</td><td>42"+</td></tr>
+<tr class="highlight"><td>Running Back</td><td>35"</td><td>38"</td><td>41"+</td></tr>
+<tr><td>Safety</td><td>35"</td><td>37"</td><td>40"+</td></tr>
+<tr><td>Linebacker</td><td>33"</td><td>36"</td><td>39"+</td></tr>
+<tr><td>Tight End</td><td>32"</td><td>35"</td><td>38"+</td></tr>
+<tr><td>Quarterback</td><td>31"</td><td>34"</td><td>37"+</td></tr>
+<tr><td>Defensive End</td><td>31"</td><td>34"</td><td>37"+</td></tr>
+<tr><td>Defensive Tackle</td><td>28"</td><td>31"</td><td>34"+</td></tr>
+<tr><td>Offensive Lineman</td><td>27"</td><td>30"</td><td>33"+</td></tr>
+</tbody>
+</table>
+<div class="record-box">
+<div class="record-label">All-Time Record</div>
+<div class="record-text"><strong>Gerald Sensabaugh — 46 inches (2005).</strong> A safety from North Carolina, Sensabaugh's vertical remains the highest ever recorded at the combine. For reference, the average NBA player — a population selected almost entirely for athleticism — has a standing vertical of 28 inches. Sensabaugh's 46-inch standing vertical is extraordinary by any measure.</div>
+</div>
+<!-- CALC CTA 2 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Where Does Your Vertical Rank?</h3>
+<p>See how your vertical jump compares to the general population, high school athletes, college players, and NFL combine averages by position.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/vertical-jump-percentile">Calculate My Vertical Jump →</a>
+</div>
+<!-- TEST 3: BROAD JUMP -->
+<h2>Test 3: The Broad Jump</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">📏</div>
+<div>
+<div class="test-card-title">Broad Jump</div>
+<div class="test-card-sub">Horizontal explosive power</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Standing horizontal jump — both feet together, jump as far forward as possible and stick the landing. Where the vertical jump measures upward explosiveness, the broad jump measures forward explosiveness — more directly related to acceleration and first-step burst in a straight line. It's one of the best predictors of acceleration mechanics. Use our <a href="https://athletecalculator.com/broad-jump-sprint-speed-calculator" style="color:var(--accent)">Broad Jump Speed Predictor</a> to see what your broad jump distance predicts for your 40-yard dash time.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">9'8"</div>
+<div class="test-stat-label">Combine avg (all positions)</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">10'4"+</div>
+<div class="test-stat-label">Elite range</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">11'5"</div>
+<div class="test-stat-label">All-time record (Byron Jones, 2015)</div>
+</div>
+</div>
+</div>
+<record-box>
+</record-box>
+<div class="record-box">
+<div class="record-label">All-Time Record</div>
+<div class="record-text"><strong>Byron Jones — 11 feet 5 inches (2015).</strong> The cornerback from Connecticut shattered the previous record by nearly a foot. Jones's jump was so extraordinary it was initially thought to be a measurement error. It remains one of the most jaw-dropping athletic feats in combine history — the equivalent of jumping over a compact car from a standing start.</div>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Average</th>
+<th>Good</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Wide Receiver</td><td>10'2"</td><td>10'6"</td><td>10'10"+</td></tr>
+<tr class="highlight"><td>Cornerback</td><td>10'2"</td><td>10'6"</td><td>10'10"+</td></tr>
+<tr class="highlight"><td>Running Back</td><td>10'1"</td><td>10'5"</td><td>10'9"+</td></tr>
+<tr><td>Safety</td><td>9'11"</td><td>10'3"</td><td>10'7"+</td></tr>
+<tr><td>Linebacker</td><td>9'8"</td><td>10'0"</td><td>10'4"+</td></tr>
+<tr><td>Tight End</td><td>9'7"</td><td>9'11"</td><td>10'3"+</td></tr>
+<tr><td>Defensive End</td><td>9'5"</td><td>9'9"</td><td>10'1"+</td></tr>
+<tr><td>Defensive Tackle</td><td>8'11"</td><td>9'4"</td><td>9'9"+</td></tr>
+<tr><td>Offensive Lineman</td><td>8'8"</td><td>9'1"</td><td>9'6"+</td></tr>
+</tbody>
+</table>
+<!-- TEST 4: BENCH PRESS -->
+<h2>Test 4: The 225-Pound Bench Press</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">🏋️</div>
+<div>
+<div class="test-card-title">225 lb Bench Press</div>
+<div class="test-card-sub">Upper body strength endurance</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Maximum repetitions at 225 pounds. Unlike most combine tests this is a muscular endurance test rather than a pure strength test — it measures how many times you can press a fixed weight, not your maximum. Scouts use it primarily for linemen and linebackers where upper body strength and the ability to disengage blocks is critical. It's largely irrelevant for skill positions.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">~22</div>
+<div class="test-stat-label">OL / DL avg reps</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">~14</div>
+<div class="test-stat-label">LB / TE avg reps</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">49</div>
+<div class="test-stat-label">All-time record (Justin Ernest, 1999)</div>
+</div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Average Reps</th>
+<th>Good</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Offensive Lineman</td><td>25–30</td><td>32+</td><td>38+</td></tr>
+<tr class="highlight"><td>Defensive Tackle</td><td>25–32</td><td>34+</td><td>40+</td></tr>
+<tr><td>Defensive End</td><td>20–26</td><td>28+</td><td>34+</td></tr>
+<tr><td>Linebacker</td><td>20–25</td><td>27+</td><td>32+</td></tr>
+<tr><td>Tight End</td><td>16–22</td><td>24+</td><td>28+</td></tr>
+<tr><td>Running Back</td><td>14–20</td><td>22+</td><td>26+</td></tr>
+<tr><td>Safety</td><td>12–18</td><td>20+</td><td>24+</td></tr>
+<tr><td>Quarterback</td><td>10–16</td><td>18+</td><td>22+</td></tr>
+<tr><td>Wide Receiver / CB</td><td>10–16</td><td>18+</td><td>22+</td></tr>
+</tbody>
+</table>
+<!-- TEST 5: THREE CONE DRILL -->
+<h2>Test 5: The Three-Cone Drill (L Drill)</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">🔺</div>
+<div>
+<div class="test-card-title">Three-Cone Drill (L Drill)</div>
+<div class="test-card-sub">Change of direction &amp; agility</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Agility, change of direction, and body control. Also called the L drill because of the path the athlete runs. Three cones are placed in an L-shape — one at the start, one 5 yards ahead, and one 5 yards to the right. The athlete runs to the first cone and back, then weaves around all three cones in a figure-eight pattern. It's the most technically demanding combine test and the one that most closely mimics football movement — sharp cuts, redirecting at full speed, and accelerating out of breaks.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">~7.0s</div>
+<div class="test-stat-label">Combine avg (skill positions)</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">Under 6.7s</div>
+<div class="test-stat-label">Elite range</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">6.28s</div>
+<div class="test-stat-label">All-time record (Chris Johnson, 2008)</div>
+</div>
+</div>
+</div>
+<h3>How the L Drill Works — Step by Step</h3>
+<p>The three-cone drill route is specific and must be run correctly to be timed. Here's the exact path:</p>
+<ol style="padding-left:1.25rem;margin-bottom:1.25rem">
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Start</strong> at cone A in a three-point stance</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Sprint 5 yards</strong> to cone B, touch the ground</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Return 5 yards</strong> back to cone A, touch the ground</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Sprint 5 yards</strong> to cone B again</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Turn right</strong> and run around the outside of cone B</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Sprint 5 yards</strong> to cone C, weave around its outside</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Return 5 yards</strong> back to cone B, weave around its inside</li>
+<li style="font-size:0.97rem;color:var(--text-mid);margin-bottom:0.5rem"><strong style="color:var(--text)">Finish</strong> by sprinting back 5 yards through the start line</li>
+</ol>
+<p>The weaving pattern around the cones is what makes this drill technically demanding — athletes who round corners or take poor angles lose significant time. Tight, controlled turns are the key to a fast L drill time.</p>
+<h3>L Drill Averages by Position</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Average</th>
+<th>Good</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Cornerback</td><td>6.68s</td><td>6.55s</td><td>Under 6.45s</td></tr>
+<tr class="highlight"><td>Wide Receiver</td><td>6.76s</td><td>6.62s</td><td>Under 6.50s</td></tr>
+<tr class="highlight"><td>Running Back</td><td>6.91s</td><td>6.75s</td><td>Under 6.60s</td></tr>
+<tr><td>Safety</td><td>6.89s</td><td>6.74s</td><td>Under 6.60s</td></tr>
+<tr><td>Linebacker</td><td>7.10s</td><td>6.92s</td><td>Under 6.78s</td></tr>
+<tr><td>Tight End</td><td>7.10s</td><td>6.95s</td><td>Under 6.80s</td></tr>
+<tr><td>Quarterback</td><td>7.15s</td><td>6.98s</td><td>Under 6.85s</td></tr>
+<tr><td>Defensive End</td><td>7.22s</td><td>7.05s</td><td>Under 6.90s</td></tr>
+<tr><td>Defensive Tackle</td><td>7.72s</td><td>7.50s</td><td>Under 7.30s</td></tr>
+<tr><td>Offensive Lineman</td><td>7.90s</td><td>7.65s</td><td>Under 7.45s</td></tr>
+</tbody>
+</table>
+<h3>Why Scouts Value the L Drill</h3>
+<p>The L drill is highly predictive for <strong>cornerbacks, linebackers, and tight ends</strong> — positions that require rapid change of direction in space. A CB who runs a 6.45 L drill can mirror receivers through breaks far more effectively than one who runs a 6.85. For pass rushers, a fast L drill suggests the hip flexibility and quickness to turn the corner on pass rushing moves.</p>
+<p>The drill is <strong>less predictive for offensive linemen and pure speed positions</strong> like wide receiver — a WR's route-running ability in games correlates more with catching ability and release technique than with L drill times.</p>
+<p>One important note: the L drill requires significant technique to run correctly. Athletes who practice the pattern before the combine often run significantly faster times than those who run it cold. Unlike the 40-yard dash where technique matters less, the L drill rewards preparation specifically.</p>
+<!-- TEST 6: SHUTTLE RUN -->
+<h2>Test 6: The 20-Yard Shuttle</h2>
+<div class="test-card">
+<div class="test-card-header">
+<div class="test-icon">🔄</div>
+<div>
+<div class="test-card-title">20-Yard Shuttle</div>
+<div class="test-card-sub">Short-area quickness &amp; lateral speed</div>
+</div>
+</div>
+<div class="test-what">
+<strong>What it measures:</strong> Short-area quickness and lateral agility. Starting from the middle, the athlete runs 5 yards to one side, touches the line, sprints 10 yards to the opposite side, touches that line, then sprints back 5 yards to finish. It measures first-step quickness, lateral speed, and the ability to change direction under full speed — critical for defensive backs, linebackers, and receivers running underneath routes.
+      </div>
+<div class="test-stats">
+<div class="test-stat">
+<div class="test-stat-val">~4.30s</div>
+<div class="test-stat-label">Avg for skill positions</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">Under 4.10s</div>
+<div class="test-stat-label">Elite range</div>
+</div>
+<div class="test-stat">
+<div class="test-stat-val">3.73s</div>
+<div class="test-stat-label">All-time record (Deion Sanders, 1989)</div>
+</div>
+</div>
+</div>
+<!-- SECTION: HOW SCOUTS USE THE DATA -->
+<h2>How Scouts Actually Use Combine Scores</h2>
+<p>No single test determines a player's draft position. Scouts look at the full profile — how each test score relates to the others and whether the numbers match what they saw on film.</p>
+<h3>The Most Important Tests by Position</h3>
+<ul>
+<li><strong>Wide Receiver / Cornerback:</strong> 40-yard dash and vertical jump carry the most weight. These positions require elite straight-line speed and the ability to win jump balls. A sub-4.4 forty and a 38-inch vertical will get a scout's attention immediately.</li>
+<li><strong>Running Back:</strong> The 40-yard dash, broad jump, and three-cone drill. Running backs need a combination of straight-line speed and change-of-direction ability. A fast 40 with a poor three-cone suggests a speed back who struggles in space.</li>
+<li><strong>Linebacker:</strong> The three-cone drill, 20-yard shuttle, and bench press. Linebackers need to close in space, change direction, and shed blocks. The agility tests reveal these qualities more than pure straight-line speed.</li>
+<li><strong>Offensive Lineman:</strong> Bench press, broad jump, and three-cone drill. Scouts want to see strength, explosion off the line, and the footwork to redirect in pass protection.</li>
+<li><strong>Quarterback:</strong> The 40-yard dash is less important for QBs than for any other position. Arm talent, accuracy, and football intelligence dominate evaluations. However, mobility QBs who run a sub-4.6 create a new dimension that scouts factor in heavily.</li>
+</ul>
+<div class="callout">
+<div class="callout-icon">🏈</div>
+<div class="callout-text"><strong>The tape still wins:</strong> Combine numbers open doors and confirm suspicions — they rarely change a scout's fundamental evaluation of a player. A receiver who runs a 4.3 but drops passes in college will still be seen as a liability. A linebacker who runs a 4.9 but diagnoses plays instantly and tackles cleanly will still get drafted. The combine is context, not conclusion.</div>
+</div>
+<!-- SECTION: HOW DO YOU COMPARE -->
+<h2>How Do You Compare to NFL Combine Athletes?</h2>
+<p>Most people significantly overestimate how close they are to combine-level athleticism. Here's a reality check by test:</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Test</th>
+<th>Average Person</th>
+<th>Good Athlete</th>
+<th>NFL Combine Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>40-Yard Dash</td><td>5.5–6.5s</td><td>4.8–5.2s</td><td>4.77s</td></tr>
+<tr><td>Vertical Jump</td><td>16–20"</td><td>24–28"</td><td>33.5"</td></tr>
+<tr><td>Broad Jump</td><td>6'6"–7'6"</td><td>8'0"–9'0"</td><td>9'8"</td></tr>
+<tr><td>225 Bench Reps</td><td>0–8</td><td>10–16</td><td>~20</td></tr>
+</tbody>
+</table>
+<p>The gap between a good recreational athlete and an NFL combine athlete is enormous. It represents years of elite-level training, genetic gifts in muscle fiber composition and body proportions, and a lifetime of sport-specific development. This isn't discouraging — it's context that makes combine performances genuinely awe-inspiring.</p>
+<!-- FAQ -->
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good NFL combine score?</div>
+<div class="faq-a">It depends entirely on the test and position. For skill positions, a good combine is a sub-4.5 forty, a vertical over 36 inches, and a broad jump over 10 feet. For linemen, a good combine is 25+ reps on bench, a sub-5.0 forty, and agility times under 7.5 seconds on the three-cone. The word "good" always has to be defined relative to what scouts expect at each position.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does the combine matter for undrafted players?</div>
+<div class="faq-a">Yes — possibly even more for undrafted prospects than top picks. A standout combine performance from a player who was projected to go undrafted can generate enough interest to get them drafted in the later rounds, or at minimum result in multiple teams competing for their undrafted free agent rights. The combine is where unknown players get found.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many reps of 225 do NFL players bench press?</div>
+<div class="faq-a">It varies enormously by position. Offensive and defensive linemen average 25–32 reps. Linebackers average 20–25. Skill positions like wide receivers and defensive backs average 10–18. The all-time record is 49 reps by Justin Ernest in 1999. Most untrained adult males can do 0–8 reps, giving you a sense of how far above average combine athletes are.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Can you improve your combine scores significantly?</div>
+<div class="faq-a">Yes — particularly the 40-yard dash, vertical jump, and broad jump. Research shows that targeted training in the 8–16 weeks before a combine can improve the 40-yard dash by 0.1–0.3 seconds, the vertical jump by 3–6 inches, and the broad jump by 6–12 inches. The bench press is more dependent on long-term strength building. The agility tests improve most from sport-specific drills and technique work.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the hardest NFL combine test?</div>
+<div class="faq-a">Most players and coaches consider the three-cone drill the most technically demanding because it requires precise footwork, body control, and change-of-direction skill that is difficult to peak for quickly. The 40-yard dash is the most high-pressure because it's the most publicized and the results are broadcast instantly to every team and media outlet simultaneously.</div>
+</div>
+<!-- FINAL CTA -->
+<div class="calc-cta">
+<div class="calc-cta-label">See How You Compare</div>
+<h3>Test Yourself Against the Combine</h3>
+<p>Use our free calculators to see how your vertical jump, sprint speed, and broad jump rank against NFL combine averages at your position.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com">Try the Free Calculators →</a>
+</div>
+</div><!-- end .content -->
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="https://athletecalculator.com/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        Compare your 40 to combine averages
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/broad-jump-sprint-speed-calculator">
+<strong>Broad Jump Speed Predictor</strong>
+        Predict your 40 from your broad jump
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Compare your vertical to combine averages
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        Predict your combine numbers from your squat
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">What Is the NFL Combine?</a>
+<a class="toc-link" href="#">40-Yard Dash</a>
+<a class="toc-link" href="#">Vertical Jump</a>
+<a class="toc-link" href="#">Broad Jump</a>
+<a class="toc-link" href="#">225 lb Bench Press</a>
+<a class="toc-link" href="#">Three-Cone Drill</a>
+<a class="toc-link" href="#">20-Yard Shuttle</a>
+<a class="toc-link" href="#">How Scouts Use the Data</a>
+<a class="toc-link" href="#">How You Compare</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="https://athletecalculator.com/average-40-yard-dash-times">
+<strong>Average 40-Yard Dash Times</strong>
+        By sport, position, and level
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/good-vertical-jump-by-age">
+<strong>Good Vertical Jump by Age</strong>
+        Norms for every age group
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-sprint-speed">
+<strong>Squat Strength and Sprint Speed</strong>
+        The science explained
+      </a>
+</div>
+</aside>
+</div>

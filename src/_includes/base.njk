@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-408J0PJSPS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-408J0PJSPS');
+</script>
+<meta name="google-site-verification" content="zLEPcZ1h5RikmgNrRd_o_GJD1D0hdgRh1hL1sR9rHNM">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="https://athletecalculator.com{{ canonicalPath }}">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1673639828321526"
+     crossorigin="anonymous"></script>
+{% if jsonld %}
+{{ jsonld | safe }}
+{% endif %}
+{% if mailerlite %}
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2501751'); 
+</script>
+<!-- End MailerLite Universal -->
+{% endif %}
+</head>
+<body>
+{% include "nav.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+</body>
+</html>

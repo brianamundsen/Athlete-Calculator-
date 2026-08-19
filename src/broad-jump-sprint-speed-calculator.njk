@@ -1,0 +1,1116 @@
+---
+layout: base.njk
+title: "Broad Jump to Sprint Speed Calculator | Predict Your 40-Yard Dash | Athlete Calculator"
+description: "Enter your broad jump distance to predict your 40-yard dash time and sprint speed percentile. Based on NFL combine correlations and sports science research. Free instant calculator."
+canonicalPath: "/broad-jump-sprint-speed-calculator"
+mailerlite: true
+disclaimer:
+  - "Predictions based on published sports science research and NFL combine correlation data. Individual results vary."
+  - "Not affiliated with NFL, NCAA, or any athletic organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Broad Jump to Sprint Speed Calculator",
+    "description": "Free calculator that predicts your 40-yard dash time and sprint speed from your broad jump distance. Based on NFL combine data and sports science research.",
+    "url": "https://athletecalculator.com/broad-jump-sprint-speed-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does broad jump predict sprint speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The broad jump is one of the strongest predictors of short sprint acceleration because both movements require the same horizontal force production from the lower body. Research shows a correlation of approximately 0.7 to 0.8 between broad jump distance and 40-yard dash performance. At the NFL combine, broad jump is consistently one of the best predictors of 40 time among the explosion tests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good broad jump for an athlete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For adult males, a broad jump of 8 feet 6 inches or more is above average. 9 feet or more is considered athletic. 10 feet or more is elite. At the NFL combine, skill position athletes average around 10 feet 2 inches, with elite performers reaching 10 feet 8 inches or more. For females, 7 feet or more is above average and 8 feet or more is considered athletic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the NFL combine broad jump record?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NFL combine broad jump record is 11 feet 5 inches, set by Byron Jones in 2015. The cornerback from Connecticut shattered the previous record by nearly a foot. Among active players, several have posted jumps above 11 feet at their combine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I measure my broad jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To measure your broad jump, stand with your toes at a starting line with feet shoulder-width apart. Bend your knees, swing your arms back, then explosively jump forward as far as possible, landing on both feet. Measure the distance from the starting line to the back of your heels at landing. Take your best of three attempts. The key is a simultaneous two-foot takeoff and a controlled landing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does broad jump correlate with sprint speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Broad jump and sprint acceleration use the same fundamental physical quality — horizontal force production. In both movements, your legs must drive your bodyweight forward explosively by pushing into the ground at an angle. Athletes with high horizontal power output perform well in both. This is why NFL scouts use the broad jump as a proxy for acceleration potential, especially at positions where short burst speed is critical."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://athletecalculator.com/calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Broad Jump to Sprint Speed Calculator",
+        "item": "https://athletecalculator.com/broad-jump-sprint-speed-calculator"
+      }
+    ]
+  }
+  </script>
+permalink: "broad-jump-sprint-speed-calculator/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --accent-glow: rgba(170,255,0,0.35);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --red: #ff4d4d;
+    --orange: #ff9000;
+    --yellow: #ffd600;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 2rem 1.5rem 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  h1 span { color: var(--accent); display: block; }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-top: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  /* ── LINKS ROW ── */
+  .links-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+
+  .site-link {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .site-link:hover { border-color: var(--accent); color: var(--accent); }
+  .site-link strong { color: var(--accent); }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .field select,
+  .field input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field select:focus,
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  .full { grid-column: 1 / -1; }
+
+  /* unit toggle */
+  .unit-toggle {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 48px;
+  }
+
+  .unit-btn {
+    flex: 1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    font-family: var(--font-mono);
+  }
+
+  .unit-btn.active { background: var(--accent); color: #000; }
+
+  /* feet/inches row */
+  .ft-in-row { display: flex; gap: 0.5rem; }
+  .ft-in-row .field { flex: 1; }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .calc-btn:hover { opacity: 0.88; }
+  .calc-btn:active { transform: scale(0.98); }
+
+  /* ── RESULTS ── */
+  #results { display: none; }
+  #results.visible { display: block; }
+
+  /* ── GAUGE ── */
+  .gauge-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gauge-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* conversions row */
+  .conversions-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .conv-item { text-align: center; }
+
+  .conv-val {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    transition: color 0.5s;
+  }
+
+  .conv-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  .gauge-svg { width: 100%; height: auto; overflow: visible; }
+  .gauge-track { fill: none; stroke: var(--surface2); stroke-width: 18; stroke-linecap: round; }
+  .gauge-fill {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.16,1,0.3,1), stroke 0.6s ease;
+  }
+
+  .verdict {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+
+  /* ── COMPARE CARDS ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+
+  .compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .compare-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .compare-text { flex: 1; min-width: 0; }
+  .compare-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+  .compare-val { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.1; }
+  .compare-avg { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.15rem; }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+  .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+  .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+
+  /* ── BAR CHART ── */
+  .bar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bar-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .scale-strip {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-strip div { flex: 1; }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .bar-label { font-size: 0.75rem; color: var(--text-mid); width: 115px; flex-shrink: 0; }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .bar-you-marker {
+    position: absolute;
+    top: -3px;
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: left 1s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .bar-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 52px; text-align: right; flex-shrink: 0; }
+
+  /* ── INFO CARD ── */
+  .info-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+  .info-text strong { color: var(--accent); }
+  .info-text a { color: var(--accent); text-decoration: none; }
+
+  /* ── ARTICLE SECTION ── */
+  .article-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .article-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  .article-section p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .article-section p strong { color: var(--text); }
+  .article-section a { color: var(--accent); text-decoration: none; }
+  .article-section a:hover { text-decoration: underline; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 1.75rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead { background: var(--surface2); }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+  .data-table .highlight td { background: rgba(170,255,0,0.07); }
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  .faq-a a { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .anim-d1 { animation-delay: 0.05s; }
+  .anim-d2 { animation-delay: 0.15s; }
+  .anim-d3 { animation-delay: 0.25s; }
+  .anim-d4 { animation-delay: 0.35s; }
+
+  .you-row .bar-fill { background: var(--accent); }
+  .you-row .bar-label { color: var(--accent); font-weight: 600; }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<header>
+<p class="eyebrow">Free Athletic Performance Tool</p>
+<h1>Broad Jump<span>Speed Predictor</span></h1>
+<p class="subtitle">Enter your broad jump distance to predict your 40-yard dash time, sprint speed, and see exactly where you rank against athletes at every level.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="https://athletecalculator.com/sprint-speed-calculator">
+      ↑ <strong>Sprint Speed</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="https://athletecalculator.com/vertical-jump-percentile">
+      ↑ <strong>Vertical Jump</strong> Percentile Calculator
+    </a>
+</div>
+<!-- INPUT CARD -->
+<div class="card">
+<p class="card-label">Your Broad Jump</p>
+<div class="form-grid">
+<div class="field">
+<label for="gender">Gender</label>
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="field">
+<label for="age">Age Group</label>
+<select id="age">
+<option value="teen">Teen (13–17)</option>
+<option selected="" value="adult">Adult (18–34)</option>
+<option value="master">Master (35–50)</option>
+</select>
+</div>
+<!-- Imperial input -->
+<div class="full" id="input-imperial">
+<div class="ft-in-row">
+<div class="field">
+<label>Broad Jump — Feet</label>
+<input id="bj-ft" max="12" min="3" placeholder="e.g. 9" step="1" type="number"/>
+</div>
+<div class="field">
+<label>Inches</label>
+<input id="bj-in" max="11" min="0" placeholder="e.g. 6" step="1" type="number"/>
+</div>
+</div>
+</div>
+<!-- Metric input -->
+<div class="full" id="input-metric" style="display:none">
+<div class="field">
+<label for="bj-cm">Broad Jump (cm)</label>
+<input id="bj-cm" max="365" min="90" placeholder="e.g. 290" step="1" type="number"/>
+</div>
+</div>
+<div class="field">
+<label>Unit</label>
+<div class="unit-toggle">
+<button class="unit-btn active" onclick="setUnit('imperial', this)">FT / IN</button>
+<button class="unit-btn" onclick="setUnit('metric', this)">CM</button>
+</div>
+</div>
+<div class="field">
+<label for="position">Sport / Position (optional)</label>
+<select id="position">
+<option value="general">General / Not sure</option>
+<option value="skill">Football — Skill Position</option>
+<option value="lineman">Football — Lineman</option>
+<option value="basketball">Basketball</option>
+<option value="soccer">Soccer / Track</option>
+</select>
+</div>
+</div>
+<button class="calc-btn" onclick="calculate()">Predict My Sprint Speed →</button>
+</div>
+<!-- RESULTS -->
+<div id="results">
+<!-- GAUGE + CONVERSIONS -->
+<div class="gauge-card anim anim-d1">
+<div class="conversions-row" id="conversions-row"></div>
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="62" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="108">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2" text-anchor="middle" x="130" y="128">PERCENTILE</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<!-- EMAIL OPT-IN -->
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        Horizontal power builds vertical power. The exact strength, plyometric, and recovery sequence to start jumping higher — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<!-- COMPARE CARDS -->
+<div class="compare-grid anim anim-d2" id="compare-grid"></div>
+<!-- BAR CHART -->
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">How You Compare</div>
+<div class="scale-strip">
+<div style="background:#ff4d4d"></div>
+<div style="background:#ff7a00"></div>
+<div style="background:#ffd600"></div>
+<div style="background:#7fff00"></div>
+<div style="background:#aaff00"></div>
+</div>
+<div class="scale-labels">
+<span>Beginner</span><span>Below Avg</span><span>Average</span><span>Athletic</span><span>Elite</span>
+</div>
+<div id="bars-wrap"></div>
+</div>
+<!-- TIP -->
+<div class="info-card anim anim-d4">
+<div class="info-icon">⚡</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<!-- ARTICLE SECTION -->
+<div class="article-section">
+<h2>Why Broad Jump Predicts Sprint Speed</h2>
+<p>The broad jump and sprint acceleration share the same fundamental physical demand: <strong>horizontal force production</strong>. In both movements, your legs must drive your bodyweight forward by pushing explosively into the ground at an angle. Athletes with superior horizontal power output consistently perform well at both.</p>
+<p>At the NFL combine, the broad jump is one of the most reliable predictors of 40-yard dash time — particularly for the <strong>first 10 yards</strong> of the sprint where acceleration mechanics dominate. Research shows correlations of approximately 0.7 to 0.8 between broad jump distance and 40-yard dash performance across large samples of combine athletes.</p>
+<p>This is why scouts use the broad jump as a proxy for acceleration potential. A receiver who jumps 10'6" almost certainly accelerates out of breaks faster than one who jumps 9'0" — even before they run a step.</p>
+<h2>Broad Jump Averages by Level and Position</h2>
+<table class="data-table">
+<thead>
+<tr>
+<th>Level</th>
+<th>Male Avg</th>
+<th>Female Avg</th>
+<th>Elite at That Level</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Recreational</td><td>6'6"–7'6"</td><td>5'6"–6'6"</td><td>8'0"+</td></tr>
+<tr><td>High School Athlete</td><td>7'6"–8'6"</td><td>6'0"–7'0"</td><td>9'0"+</td></tr>
+<tr><td>College Athlete</td><td>8'6"–9'6"</td><td>7'0"–8'0"</td><td>10'0"+</td></tr>
+<tr class="highlight"><td>NFL Skill Position Avg</td><td>10'2"</td><td>—</td><td>10'10"+</td></tr>
+<tr class="highlight"><td>NFL All-Position Avg</td><td>9'8"</td><td>—</td><td>10'6"+</td></tr>
+<tr><td>NFL Combine Record</td><td>11'5" (Byron Jones)</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+<h2>How to Improve Your Broad Jump</h2>
+<p>Since the broad jump measures horizontal power, the most effective training emphasizes <strong>forward force production</strong> rather than vertical explosion. The three best exercises are:</p>
+<p><strong>Sled sprints</strong> — pushing a sled at 10–20% bodyweight directly trains the horizontal drive angle that produces broad jump distance. 6 × 20 yards twice per week produces rapid improvements.</p>
+<p><strong>Heavy squats</strong> — the same strength foundation that drives sprint speed also drives broad jump. Athletes who squat 1.5× bodyweight or more consistently broad jump significantly farther than those below 1.0×. See our <a href="https://athletecalculator.com/squat-strength-calculator">Squat Strength Predictor</a> to find your strength target.</p>
+<p><strong>Standing broad jump practice</strong> — the technique of the jump itself matters. Arm swing timing, hip hinge depth, and landing mechanics all affect distance. Practice the movement specifically — 3 sets of 5 max-effort jumps twice per week with full rest between jumps.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Does broad jump predict sprint speed?</div>
+<div class="faq-a">Yes — the broad jump is one of the strongest single predictors of short sprint acceleration because both movements require horizontal force production. At the NFL combine, broad jump consistently correlates strongly with 40-yard dash performance. Use our <a href="https://athletecalculator.com/sprint-speed-calculator">Sprint Speed Calculator</a> to test your actual 40 time and compare it to your predicted time from this calculator.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is a good broad jump?</div>
+<div class="faq-a">For adult males, 8'6" or more is above average. 9'0"+ is athletic. 10'0"+ is elite. NFL skill position athletes average around 10'2". For females, 7'0"+ is above average and 8'0"+ is considered athletic. See our <a href="https://athletecalculator.com/nfl-combine-scores-explained">NFL Combine Scores guide</a> for full position-by-position benchmarks.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How do I measure my broad jump?</div>
+<div class="faq-a">Stand with toes at a starting line, feet shoulder-width apart. Bend your knees, swing your arms back, then jump forward as far as possible landing on both feet. Measure from the start line to the back of your heels. Take your best of three attempts. For accurate results, use a consistent surface — hardwood or track surface gives the most consistent measurements.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is broad jump or vertical jump better for predicting speed?</div>
+<div class="faq-a">For sprint acceleration specifically, the broad jump is a better predictor because it measures horizontal power — the same quality that drives the first 10 yards of a sprint. The vertical jump predicts overall explosiveness and correlates better with cutting ability and jump height in sport. Both are useful; they measure different aspects of lower body power. Try our <a href="https://athletecalculator.com/vertical-jump-percentile">Vertical Jump Calculator</a> to compare both of your scores.</div>
+</div>
+</div>
+</div><script>
+var currentUnit = 'imperial';
+
+function setUnit(u, btn) {
+  var i, btns = document.querySelectorAll('.unit-btn');
+  currentUnit = u;
+  for (i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
+  btn.classList.add('active');
+  document.getElementById('input-imperial').style.display = (u === 'imperial') ? 'block' : 'none';
+  document.getElementById('input-metric').style.display   = (u === 'metric')   ? 'block' : 'none';
+}
+
+function getInches() {
+  var ft, inc, cm;
+  if (currentUnit === 'imperial') {
+    ft  = parseFloat(document.getElementById('bj-ft').value) || 0;
+    inc = parseFloat(document.getElementById('bj-in').value) || 0;
+    return (ft * 12) + inc;
+  }
+  cm = parseFloat(document.getElementById('bj-cm').value) || 0;
+  return cm / 2.54;
+}
+
+function fmtFtIn(inches) {
+  var ft  = Math.floor(inches / 12);
+  var inc = Math.round(inches % 12);
+  return ft + 'ft ' + inc + 'in';
+}
+
+function fmtCm(inches) {
+  return (inches * 2.54).toFixed(0) + ' cm';
+}
+
+function predictForty(bjIn, gender, age) {
+  var p;
+  if (gender === 'male') { p = 7.198 - (bjIn * 0.0229); }
+  else                   { p = 8.1   - (bjIn * 0.028);  }
+  if (age === 'teen')   { p = p + 0.15; }
+  if (age === 'master') { p = p + 0.25; }
+  var mn = (gender === 'male') ? 4.2 : 4.6;
+  var mx = (gender === 'male') ? 7.0 : 8.0;
+  return Math.max(mn, Math.min(mx, p));
+}
+
+var pctBreaks = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
+var bjNorms = {
+  male: {
+    teen:   [60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120],
+    adult:  [63, 69, 75, 81, 87, 93, 99, 105, 111, 117, 123],
+    master: [54, 60, 66, 72, 78, 84, 90,  96, 102, 108, 114]
+  },
+  female: {
+    teen:   [42, 48, 54, 60, 65, 70, 75,  81,  87,  93,  99],
+    adult:  [45, 51, 57, 63, 68, 73, 78,  84,  90,  96, 102],
+    master: [36, 42, 48, 54, 59, 64, 69,  75,  81,  87,  93]
+  }
+};
+
+function getPct(bjIn, gender, age) {
+  var i, t, brk = bjNorms[gender][age];
+  if (bjIn <= brk[0]) { return Math.max(1, pctBreaks[0] * (bjIn / brk[0]) * 0.8); }
+  if (bjIn >= brk[brk.length - 1]) { return Math.min(99, 95 + (bjIn - brk[brk.length - 1]) * 0.4); }
+  for (i = 0; i < brk.length - 1; i++) {
+    if (bjIn >= brk[i] && bjIn < brk[i + 1]) {
+      t = (bjIn - brk[i]) / (brk[i + 1] - brk[i]);
+      return pctBreaks[i] + t * (pctBreaks[i + 1] - pctBreaks[i]);
+    }
+  }
+  return 50;
+}
+
+function getColor(pct) {
+  if (pct < 10) { return '#ff4d4d'; }
+  if (pct < 25) { return '#ff9000'; }
+  if (pct < 40) { return '#ffd600'; }
+  if (pct < 60) { return '#9dff00'; }
+  if (pct < 85) { return '#aaff00'; }
+  return '#00cfff';
+}
+
+function getMph(t40) { return (36.576 / t40) * 2.23694; }
+
+var bmMale   = [
+  { name: 'General Pop.',    avg: 93  },
+  { name: 'HS Athlete',      avg: 102 },
+  { name: 'College Athlete', avg: 110 },
+  { name: 'NFL Avg',         avg: 116 },
+  { name: 'NFL Elite',       avg: 126 }
+];
+var bmFemale = [
+  { name: 'General Pop.',    avg: 73  },
+  { name: 'HS Athlete',      avg: 81  },
+  { name: 'College Athlete', avg: 88  },
+  { name: 'Pro Athlete',     avg: 96  },
+  { name: 'Elite Sprinter',  avg: 108 }
+];
+
+function makeConvEl(val, lbl, c) {
+  var outer  = document.createElement('div');
+  var valDiv = document.createElement('div');
+  var lblDiv = document.createElement('div');
+  outer.className  = 'conv-item';
+  valDiv.className = 'conv-val';
+  valDiv.style.color = c;
+  valDiv.textContent = val;
+  lblDiv.className   = 'conv-label';
+  lblDiv.textContent = lbl;
+  outer.appendChild(valDiv);
+  outer.appendChild(lblDiv);
+  return outer;
+}
+
+function addBar(barsWrap, label, inches, maxIn, isYou, color) {
+  var wpct    = Math.min(100, (inches / maxIn) * 100);
+  var fc      = isYou ? color : '#1e2c3a';
+  var barRow  = document.createElement('div');
+  var labelEl = document.createElement('div');
+  var trackEl = document.createElement('div');
+  var fillEl  = document.createElement('div');
+  var valEl   = document.createElement('div');
+  barRow.className  = isYou ? 'bar-row you-row' : 'bar-row';
+  labelEl.className = 'bar-label';
+  labelEl.textContent = label;
+  trackEl.className = 'bar-track';
+  fillEl.className  = 'bar-fill';
+  fillEl.style.width = '0%';
+  fillEl.style.background = fc;
+  fillEl.setAttribute('data-w', wpct.toFixed(1));
+  if (isYou) {
+    var markerEl = document.createElement('div');
+    markerEl.className = 'bar-you-marker';
+    markerEl.style.left = wpct.toFixed(1) + '%';
+    trackEl.appendChild(markerEl);
+  }
+  trackEl.appendChild(fillEl);
+  valEl.className = 'bar-val';
+  valEl.textContent = fmtFtIn(inches);
+  barRow.appendChild(labelEl);
+  barRow.appendChild(trackEl);
+  barRow.appendChild(valEl);
+  barsWrap.appendChild(barRow);
+}
+
+function animNum(el, target, dur) {
+  var start = performance.now();
+  var from  = parseFloat(el.textContent) || 0;
+  function step(now) {
+    var prog = Math.min((now - start) / dur, 1);
+    var ease = 1 - Math.pow(1 - prog, 4);
+    el.textContent = Math.round(from + (target - from) * ease);
+    if (prog < 1) { requestAnimationFrame(step); }
+  }
+  requestAnimationFrame(step);
+}
+
+function calculate() {
+  var gender = document.getElementById('gender').value;
+  var age    = document.getElementById('age').value;
+  var bjIn   = getInches();
+  var errEl;
+
+  if (!bjIn || bjIn < 24) {
+    errEl = (currentUnit === 'imperial') ? document.getElementById('bj-ft') : document.getElementById('bj-cm');
+    errEl.style.borderColor = '#ff4d4d';
+    errEl.focus();
+    setTimeout(function() { errEl.style.borderColor = ''; }, 1500);
+    return;
+  }
+
+  var t40   = predictForty(bjIn, gender, age);
+  var mph   = getMph(t40);
+  var pct   = Math.round(getPct(bjIn, gender, age));
+  var color = getColor(pct);
+
+  var verdictLabel = 'Exceptional';
+  var verdictSub   = 'Top 3%. This is NFL combine level horizontal power output.';
+  if      (pct < 10) { verdictLabel = 'Just Starting Out';    verdictSub = 'Sled sprints and heavy squats are your fastest levers.'; }
+  else if (pct < 25) { verdictLabel = 'Below Average';         verdictSub = 'Sled training twice per week will move your broad jump fast.'; }
+  else if (pct < 40) { verdictLabel = 'Around Average';        verdictSub = 'Targeted strength and plyometric work will push you into the athletic range.'; }
+  else if (pct < 60) { verdictLabel = 'Above Average';         verdictSub = 'Solid horizontal power. You would hold your own at most high school combine events.'; }
+  else if (pct < 75) { verdictLabel = 'Athletically Powerful'; verdictSub = 'Top third. Your horizontal power translates to real acceleration on the field.'; }
+  else if (pct < 90) { verdictLabel = 'Highly Explosive';      verdictSub = 'Top 25%. This is college combine territory for broad jump performance.'; }
+  else if (pct < 97) { verdictLabel = 'Elite Power';           verdictSub = 'Top 10%. Your broad jump profile matches pro-level athletes.'; }
+
+  var resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  var i, anims = resultsEl.querySelectorAll('.anim');
+  for (i = 0; i < anims.length; i++) {
+    anims[i].style.animation = 'none';
+    anims[i].offsetHeight;
+    anims[i].style.animation = '';
+  }
+
+  var row = document.getElementById('conversions-row');
+  while (row.firstChild) { row.removeChild(row.firstChild); }
+  row.appendChild(makeConvEl(fmtFtIn(bjIn),       'Broad Jump',     color));
+  row.appendChild(makeConvEl(fmtCm(bjIn),          'Centimeters',    color));
+  row.appendChild(makeConvEl(t40.toFixed(2) + 's', 'Predicted 40',   color));
+  row.appendChild(makeConvEl(mph.toFixed(1),        'Predicted mph',  color));
+
+  var gaugePath = document.getElementById('gauge-path');
+  var gaugeNum  = document.getElementById('gauge-num');
+  var totalLen  = 345;
+  var offset    = totalLen - (pct / 100) * totalLen;
+  gaugePath.style.stroke = color;
+  gaugePath.style.strokeDashoffset = totalLen;
+  setTimeout(function() { gaugePath.style.strokeDashoffset = offset; }, 50);
+  animNum(gaugeNum, pct, 1200);
+  gaugeNum.style.fill = color;
+
+  document.getElementById('verdict').textContent = verdictLabel;
+  document.getElementById('verdict').style.color = color;
+  document.getElementById('verdict-sub').textContent = verdictSub;
+
+  var bi, item, diff, badgeText, badgeCls, card, iconEl, textEl, titleEl, valEl, avgEl;
+  var grid = document.getElementById('compare-grid');
+  while (grid.firstChild) { grid.removeChild(grid.firstChild); }
+  var bm = (gender === 'male') ? bmMale : bmFemale;
+  for (bi = 0; bi < bm.length; bi++) {
+    item = bm[bi];
+    diff = bjIn - item.avg;
+    if (diff > 2) {
+      badgeText = '+' + fmtFtIn(diff) + ' above';
+      badgeCls  = 'badge badge-above';
+    } else if (diff < -2) {
+      badgeText = fmtFtIn(Math.abs(diff)) + ' below';
+      badgeCls  = 'badge badge-below';
+    } else {
+      badgeText = 'At average';
+      badgeCls  = 'badge badge-at';
+    }
+    card    = document.createElement('div');
+    iconEl  = document.createElement('div');
+    textEl  = document.createElement('div');
+    titleEl = document.createElement('div');
+    valEl   = document.createElement('div');
+    avgEl   = document.createElement('div');
+    card.className    = 'compare-card';
+    iconEl.className  = 'compare-icon';
+    iconEl.textContent = item.name.charAt(0);
+    textEl.className  = 'compare-text';
+    titleEl.className = 'compare-title';
+    titleEl.textContent = item.name;
+    valEl.className   = 'compare-val';
+    var spanEl = document.createElement('span');
+    spanEl.className  = badgeCls;
+    spanEl.textContent = badgeText;
+    valEl.appendChild(spanEl);
+    avgEl.className   = 'compare-avg';
+    avgEl.textContent = 'Avg: ' + fmtFtIn(item.avg) + ' / ' + fmtCm(item.avg);
+    textEl.appendChild(titleEl);
+    textEl.appendChild(valEl);
+    textEl.appendChild(avgEl);
+    card.appendChild(iconEl);
+    card.appendChild(textEl);
+    grid.appendChild(card);
+  }
+
+  var di, maxIn, maleAvgs, femaleAvgs, barLabels, barAvgs;
+  var barsWrap = document.getElementById('bars-wrap');
+  while (barsWrap.firstChild) { barsWrap.removeChild(barsWrap.firstChild); }
+  maleAvgs   = [102, 110, 116, 126];
+  femaleAvgs = [ 81,  88,  96, 108];
+  barLabels  = ['HS Athlete avg', 'College avg', 'NFL avg', 'NFL elite'];
+  barAvgs    = (gender === 'male') ? maleAvgs : femaleAvgs;
+  maxIn = bjIn;
+  for (di = 0; di < barAvgs.length; di++) {
+    if (barAvgs[di] > maxIn) { maxIn = barAvgs[di]; }
+  }
+  addBar(barsWrap, 'You', bjIn, maxIn, true, color);
+  for (di = 0; di < barAvgs.length; di++) {
+    addBar(barsWrap, barLabels[di], barAvgs[di], maxIn, false, color);
+  }
+  setTimeout(function() {
+    var fills = document.querySelectorAll('.bar-fill');
+    var fi;
+    for (fi = 0; fi < fills.length; fi++) {
+      fills[fi].style.width = fills[fi].getAttribute('data-w') + '%';
+    }
+  }, 100);
+
+  var tipEl = document.getElementById('tip-text');
+  if      (pct < 25) { tipEl.textContent = 'Sled sprints at 15% bodyweight twice per week and heavy squats 3x per week will move your broad jump fast.'; }
+  else if (pct < 55) { tipEl.textContent = 'Standing broad jump practice (3 sets of 5 max-effort jumps with full rest) combined with sled work will sharpen your horizontal drive mechanics.'; }
+  else if (pct < 80) { tipEl.textContent = 'Contrast training - a heavy squat followed immediately by a standing broad jump - trains your nervous system to express power faster.'; }
+  else               { tipEl.textContent = 'Your horizontal power is exceptional. Verify your predicted 40 time with the Sprint Speed Calculator.'; }
+
+  setTimeout(function() {
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { 'calculator_name': 'broad_jump_speed' });
+  }
+}
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Enter') { calculate(); } });
+</script>

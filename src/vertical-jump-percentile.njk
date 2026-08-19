@@ -1,0 +1,987 @@
+---
+layout: base.njk
+title: "Vertical Jump Percentile Calculator | Where Do You Rank?"
+description: "Find out where your vertical jump ranks compared to the general population, high school athletes, college players, and pros. Free instant calculator."
+canonicalPath: "/vertical-jump-percentile"
+mailerlite: true
+disclaimer:
+  - "Percentile data based on published sports science research and combine testing records."
+  - "Not affiliated with NBA, NFL, or any athletic organization. For entertainment and training purposes."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Vertical Jump Percentile Calculator",
+    "description": "Free calculator that shows where your vertical jump ranks compared to the general population, high school athletes, college athletes, and professional players. Supports male and female norms across all age groups.",
+    "url": "https://athletecalculator.com/vertical-jump-percentile-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For adult males, a vertical jump of 19–21 inches is considered average. Above 26 inches is athletic, and above 32 inches is elite. For adult females, 13–15 inches is average, 20 inches is athletic, and 23+ inches is elite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average vertical jump for a 16 year old?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average vertical jump for a 16-year-old male is approximately 18–20 inches. For females of the same age, the average is around 13–15 inches. Athletes who train regularly typically measure 4–6 inches higher than untrained peers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What vertical jump do you need to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To dunk a basketball on a 10-foot rim, most players need a minimum vertical jump of 28–35 inches depending on their height and standing reach. A 6-foot tall player typically needs around a 30-inch vertical, while a 6'4\" player may only need 24 inches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average NBA vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average NBA player has a standing vertical jump of approximately 28 inches and a max vertical of around 32–34 inches. Elite jumpers in the NBA can reach 40+ inches on their max vertical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective methods to increase vertical jump are: heavy squats to build leg strength, plyometric training (depth jumps, box jumps) to develop explosive power, and sprint training to improve fast-twitch muscle fiber recruitment. A dedicated 8–12 week program can realistically add 4–8 inches to your vertical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average vertical jump for a high school basketball player?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average vertical jump for a high school basketball player is approximately 22–26 inches for males and 16–20 inches for females. Players who go on to play college basketball typically average 26–30 inches."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://athletecalculator.com/calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Vertical Jump Percentile Calculator",
+        "item": "https://athletecalculator.com/vertical-jump-percentile-calculator"
+      }
+    ]
+  }
+  </script>
+permalink: "vertical-jump-percentile/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --accent-glow: rgba(170,255,0,0.35);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --red: #ff4d4d;
+    --orange: #ff9000;
+    --yellow: #ffd600;
+    --green: #aaff00;
+    --blue: #00cfff;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    padding: 2rem 1.5rem 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  h1 span {
+    color: var(--accent);
+    display: block;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-top: 1rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  /* ─── INPUT CARD ─── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 520px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .field select,
+  .field input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field select:focus,
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  .field select { cursor: pointer; }
+
+  .jump-input-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .jump-input-wrap .field { flex: 1; }
+
+  .unit-toggle {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 48px;
+    flex-shrink: 0;
+  }
+
+  .unit-btn {
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s;
+  }
+
+  .unit-btn.active {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .calc-btn:hover { opacity: 0.88; }
+  .calc-btn:active { transform: scale(0.98); }
+
+  /* ─── RESULTS ─── */
+  #results { display: none; }
+  #results.visible { display: block; }
+
+  /* ─── GAUGE ─── */
+  .gauge-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gauge-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .gauge-wrap {
+    position: relative;
+    width: 260px;
+    height: 140px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .gauge-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .gauge-track {
+    fill: none;
+    stroke: var(--surface2);
+    stroke-width: 18;
+    stroke-linecap: round;
+  }
+
+  .gauge-fill {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                stroke 0.6s ease;
+  }
+
+  .gauge-center {
+    position: absolute;
+    bottom: -4px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .percentile-num {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+    transition: color 0.6s;
+  }
+
+  .percentile-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+
+  .verdict {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .verdict-sub {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+
+  .compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .compare-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .compare-text { flex: 1; min-width: 0; }
+
+  .compare-title {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .compare-val {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .compare-avg {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-top: 0.15rem;
+  }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+  .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+  .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+
+  /* ─── BAR CHART ─── */
+  .bar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bar-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .bar-label {
+    font-size: 0.75rem;
+    color: var(--text-mid);
+    width: 110px;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bar-val {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-mid);
+    width: 52px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .bar-you-marker {
+    position: absolute;
+    top: -3px;
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ─── INFO CARD ─── */
+  .info-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+  .info-text {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .info-text strong { color: var(--accent); }
+
+  /* ─── SCALE ─── */
+  .scale-strip {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-strip div { flex: 1; }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .anim-d1 { animation-delay: 0.05s; }
+  .anim-d2 { animation-delay: 0.15s; }
+  .anim-d3 { animation-delay: 0.25s; }
+  .anim-d4 { animation-delay: 0.35s; }
+
+  .you-row .bar-fill { background: var(--accent); }
+  .you-row .bar-label { color: var(--accent); font-weight: 600; }
+
+  .site-link {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .site-link:hover { border-color: var(--accent); color: var(--accent); }
+  .site-link strong { color: var(--accent); }
+
+  .links-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+
+</style>
+<header>
+<p class="eyebrow">Free Athletic Performance Tool</p>
+<h1>Vertical Jump<span>Percentile</span></h1>
+<p class="subtitle">Enter your vertical jump and find out exactly where you rank — from the general population to elite athletes.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="https://athletecalculator.com/sprint-speed-calculator">
+      ↑ <strong>Sprint Speed</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="https://athletecalculator.com/squat-strength-calculator">
+      ↑ <strong>Squat Strength</strong> Predictor Calculator
+    </a>
+</div>
+<!-- INPUT CARD -->
+<div class="card">
+<p class="card-label">Your Info</p>
+<div class="form-grid">
+<div class="field">
+<label for="gender">Gender</label>
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="field">
+<label for="age">Age Group</label>
+<select id="age">
+<option value="teen">Teen (13–17)</option>
+<option selected="" value="adult">Adult (18–34)</option>
+<option value="master">Master (35–50)</option>
+<option value="senior">Senior (51+)</option>
+</select>
+</div>
+<div class="jump-input-wrap">
+<div class="field">
+<label for="jump">Vertical Jump Height</label>
+<input id="jump" max="72" min="1" placeholder="e.g. 24" step="0.5" type="number"/>
+</div>
+<div class="unit-toggle">
+<button class="unit-btn active" data-unit="in" onclick="setUnit('in', this)">IN</button>
+<button class="unit-btn" data-unit="cm" onclick="setUnit('cm', this)">CM</button>
+</div>
+</div>
+</div>
+<button class="calc-btn" onclick="calculate()">Calculate My Percentile →</button>
+</div>
+<!-- RESULTS -->
+<div id="results">
+<!-- GAUGE -->
+<div class="gauge-card anim anim-d1">
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<!-- track -->
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<!-- fill -->
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<!-- center label -->
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="62" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="108">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2" text-anchor="middle" x="130" y="128">PERCENTILE</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<!-- EMAIL OPT-IN (moved up for visibility) -->
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        The exact strength, plyometric, and recovery sequence to start jumping higher — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<!-- COMPARISON CARDS -->
+<div class="compare-grid anim anim-d2" id="compare-grid">
+<!-- filled by JS -->
+</div>
+<!-- BAR CHART -->
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">How You Compare</div>
+<div class="scale-strip">
+<div style="background:#ff4d4d"></div>
+<div style="background:#ff7a00"></div>
+<div style="background:#ffd600"></div>
+<div style="background:#7fff00"></div>
+<div style="background:#aaff00"></div>
+</div>
+<div class="scale-labels" style="margin-bottom:1.25rem">
+<span>Beginner</span><span>Below Avg</span><span>Average</span><span>Athletic</span><span>Elite</span>
+</div>
+<div id="bars-wrap"><!-- filled by JS --></div>
+</div>
+<!-- INFO CARD -->
+<div class="info-card anim anim-d4">
+<div class="info-icon">⚡</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+</div><script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+// percentile breakpoints [inches] for adult males (general population)
+// Source: exercise science literature + NSCA norms
+const norms = {
+  male: {
+    teen:   [8,11,13,16,18,20,22,24,27,30,34],
+    adult:  [9,12,14,17,19,21,23,26,29,32,38],
+    master: [7,10,12,14,16,18,20,22,25,28,32],
+    senior: [5, 7, 9,11,13,15,17,19,21,24,28],
+  },
+  female: {
+    teen:   [5, 7, 9,11,13,15,17,19,21,23,27],
+    adult:  [5, 7, 9,11,13,15,17,19,21,23,27],
+    master: [4, 6, 8,10,11,13,15,17,19,21,25],
+    senior: [3, 4, 6, 8, 9,11,12,14,16,18,22],
+  }
+};
+// Corresponding percentile labels
+const pctBreaks = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
+
+// Comparison benchmarks [avg inches, label, icon, bg]
+const benchmarks = {
+  male: {
+    "General Population": [19, "🧍", "#1e2832"],
+    "High School Athlete": [24, "🏫", "#1a2010"],
+    "College Athlete":     [28, "🎓", "#101a20"],
+    "NBA Average":         [32, "🏀", "#1a1020"],
+    "NFL Combine Avg":     [33, "🏈", "#201a10"],
+  },
+  female: {
+    "General Population":   [14, "🧍", "#1e2832"],
+    "High School Athlete":  [18, "🏫", "#1a2010"],
+    "College Athlete":      [21, "🎓", "#101a20"],
+    "WNBA Average":         [23, "🏀", "#1a1020"],
+    "Olympic Sprinter":     [25, "⚡",  "#201a10"],
+  }
+};
+
+const verdicts = [
+  { min: 0,  max: 10, label: "Just Starting Out",  color: "#ff4d4d", sub: "Everyone starts somewhere. The potential for gains is huge." },
+  { min: 10, max: 25, label: "Below Average",       color: "#ff7a00", sub: "A focused training block can move you significantly." },
+  { min: 25, max: 40, label: "Around Average",      color: "#ffd600", sub: "You're in the mix. Small improvements make a big difference." },
+  { min: 40, max: 60, label: "Solid Athletic Base", color: "#9dff00", sub: "You're above most people who walk into a gym." },
+  { min: 60, max: 75, label: "Athletically Gifted", color: "#aaff00", sub: "You're in the top third of active athletes." },
+  { min: 75, max: 90, label: "Highly Explosive",   color: "#aaff00", sub: "Scholarship territory. This is genuinely impressive." },
+  { min: 90, max: 97, label: "Elite Athlete",       color: "#00cfff", sub: "Top 10%. You belong in the conversation with pros." },
+  { min: 97, max: 101,label: "Exceptional — Top 3%",color: "#fff", sub: "Combine-level. You're built different." },
+];
+
+let currentUnit = 'in';
+
+function setUnit(u, btn) {
+  currentUnit = u;
+  document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const input = document.getElementById('jump');
+  const val = parseFloat(input.value);
+  if (!isNaN(val) && val > 0) {
+    if (u === 'cm') input.value = (val * 2.54).toFixed(1);
+    else             input.value = (val / 2.54).toFixed(1);
+  }
+  input.placeholder = u === 'in' ? 'e.g. 24' : 'e.g. 61';
+}
+
+function toInches(val) {
+  return currentUnit === 'cm' ? val / 2.54 : val;
+}
+
+function getPercentile(inches, gender, age) {
+  const breaks = norms[gender][age];
+  if (inches <= breaks[0]) return pctBreaks[0] * (inches / breaks[0]);
+  if (inches >= breaks[breaks.length - 1]) {
+    return Math.min(99.5, 95 + (inches - breaks[breaks.length - 1]) * 0.5);
+  }
+  for (let i = 0; i < breaks.length - 1; i++) {
+    if (inches >= breaks[i] && inches < breaks[i + 1]) {
+      const t = (inches - breaks[i]) / (breaks[i + 1] - breaks[i]);
+      return pctBreaks[i] + t * (pctBreaks[i + 1] - pctBreaks[i]);
+    }
+  }
+  return 50;
+}
+
+function getColor(pct) {
+  if (pct < 10) return '#ff4d4d';
+  if (pct < 25) return '#ff7a00';
+  if (pct < 40) return '#ffd600';
+  if (pct < 60) return '#9dff00';
+  if (pct < 85) return '#aaff00';
+  return '#00cfff';
+}
+
+function badgeHTML(you, avg) {
+  const diff = you - avg;
+  if (diff > 0.5) return `<span class="badge badge-above">+${diff.toFixed(1)}" above avg</span>`;
+  if (diff < -0.5) return `<span class="badge badge-below">${diff.toFixed(1)}" below avg</span>`;
+  return `<span class="badge badge-at">At average</span>`;
+}
+
+function animateNumber(el, target, duration) {
+  const start = performance.now();
+  const from = parseFloat(el.textContent) || 0;
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(from + (target - from) * ease);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function calculate() {
+  const jumpRaw = parseFloat(document.getElementById('jump').value);
+  const gender  = document.getElementById('gender').value;
+  const age     = document.getElementById('age').value;
+
+  if (isNaN(jumpRaw) || jumpRaw <= 0) {
+    document.getElementById('jump').focus();
+    document.getElementById('jump').style.borderColor = 'var(--red)';
+    setTimeout(() => document.getElementById('jump').style.borderColor = '', 1500);
+    return;
+  }
+
+  const inches = toInches(jumpRaw);
+  const pct    = Math.round(getPercentile(inches, gender, age));
+  const color  = getColor(pct);
+  const v      = verdicts.find(v => pct >= v.min && pct < v.max) || verdicts[verdicts.length - 1];
+
+  // Show results
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+
+  // Reset animations
+  resultsEl.querySelectorAll('.anim').forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = '';
+  });
+
+  // ── GAUGE ──
+  const gaugeNum  = document.getElementById('gauge-num');
+  const gaugePath = document.getElementById('gauge-path');
+  const totalLen  = 345;
+  const offset    = totalLen - (pct / 100) * totalLen;
+
+  gaugePath.style.stroke = color;
+  gaugePath.style.strokeDashoffset = totalLen;
+  setTimeout(() => { gaugePath.style.strokeDashoffset = offset; }, 50);
+  animateNumber(gaugeNum, pct, 1200);
+  gaugeNum.style.fill = color;
+
+  // ── VERDICT ──
+  document.getElementById('verdict').textContent  = v.label;
+  document.getElementById('verdict').style.color  = color;
+  document.getElementById('verdict-sub').textContent = v.sub;
+
+  // ── COMPARISON CARDS ──
+  const grid = document.getElementById('compare-grid');
+  const bm   = benchmarks[gender];
+  grid.innerHTML = '';
+  Object.entries(bm).forEach(([name, [avg, icon, bg]]) => {
+    const diff  = inches - avg;
+    const you   = `${jumpRaw}${currentUnit === 'in' ? '"' : 'cm'}`;
+    const avgFmt = currentUnit === 'in'
+      ? `${avg}" avg`
+      : `${(avg * 2.54).toFixed(0)}cm avg`;
+
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    card.innerHTML = `
+      <div class="compare-icon" style="background:${bg}">${icon}</div>
+      <div class="compare-text">
+        <div class="compare-title">${name}</div>
+        <div class="compare-val" style="color:${getColor(Math.max(0,Math.min(100,50 + diff * 4)))}">
+          ${badgeHTML(inches, avg)}
+        </div>
+        <div class="compare-avg">${avgFmt}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  // ── BARS ──
+  const barsWrap = document.getElementById('bars-wrap');
+  barsWrap.innerHTML = '';
+  const barData = [
+    { label: "General Pop.",  pct: pct, isYou: true },
+    { label: "HS Athletes",   pct: Math.max(0, pct - (gender==='male' ? 18 : 16)) },
+    { label: "College",       pct: Math.max(0, pct - (gender==='male' ? 35 : 30)) },
+    { label: "Pro Average",   pct: Math.max(0, pct - (gender==='male' ? 55 : 50)) },
+  ];
+
+  // your pct vs each group
+  const adjustedData = [
+    { label: "You",              val: inches,                  isYou: true  },
+    { label: "HS Athlete avg",   val: gender==='male'?24:18,   isYou: false },
+    { label: "College avg",      val: gender==='male'?28:21,   isYou: false },
+    { label: "Pro avg",          val: gender==='male'?33:24,   isYou: false },
+  ];
+
+  const maxVal = Math.max(...adjustedData.map(d => d.val), 40);
+
+  adjustedData.forEach(d => {
+    const widthPct = Math.min(100, (d.val / maxVal) * 100);
+    const c = d.isYou ? color : '#2a3340';
+    const label = currentUnit === 'in'
+      ? `${d.val.toFixed(1)}"`
+      : `${(d.val * 2.54).toFixed(0)}cm`;
+
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (d.isYou ? ' you-row' : '');
+    row.innerHTML = `
+      <div class="bar-label">${d.label}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:0%;background:${c}" data-w="${widthPct}"></div>
+        ${d.isYou ? `<div class="bar-you-marker" style="left:${widthPct}%"></div>` : ''}
+      </div>
+      <div class="bar-val">${label}</div>`;
+    barsWrap.appendChild(row);
+  });
+
+  // Animate bars after paint
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(b => {
+      b.style.width = b.dataset.w + '%';
+    });
+  }, 100);
+
+  // ── TIP ──
+  const tipEl = document.getElementById('tip-text');
+  const tips = [
+    { max: 20,  text: `<strong>Key gains:</strong> At ${pct < 20 ? 'your level' : 'any level'}, the biggest vertical improvements come from <strong>heavy squats + plyometrics</strong>. A 12-week program combining both can realistically add <strong>4–6 inches</strong> to your vertical.` },
+    { max: 50,  text: `<strong>Next step:</strong> You have a solid foundation. Depth jumps and single-leg strength work are your fastest path forward. Athletes in this range typically add <strong>3–5 inches</strong> with focused training.` },
+    { max: 75,  text: `<strong>Optimization zone:</strong> At your level, gains come from refining technique, improving hip mobility, and <strong>force-velocity profiling</strong> to find your specific weakness — force deficit or velocity deficit.` },
+    { max: 101, text: `<strong>Elite territory:</strong> You're already there. Maintaining explosive power in-season, managing fatigue, and <strong>sprint-specific plyometrics</strong> are what separates the top 10% from the top 1%.` },
+  ];
+  const tip = tips.find(t => pct < t.max) || tips[tips.length - 1];
+  tipEl.innerHTML = tip.text;
+
+  // Scroll to results
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { 'calculator_name': 'vertical_jump_percentile' });
+  }
+}
+
+// Allow Enter key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') calculate();
+});
+</script>

@@ -1,0 +1,1088 @@
+---
+layout: base.njk
+title: "Can I Dunk? Calculator — Find Out Instantly | Athlete Calculator"
+description: "Find out if you can dunk a basketball right now — and if not, exactly how many inches away you are and what it will take to get there. Free instant calculator."
+canonicalPath: "/can-i-dunk-calculator"
+mailerlite: true
+navContextUrl: "https://athletecalculator.com"
+navContextLabel: "AthleteCalc"
+disclaimer:
+  - "Calculator based on average human proportions. Standing reach estimates assume typical wingspan-to-height ratios."
+  - "Individual arm length varies — measure your actual standing reach for the most accurate results."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Can I Dunk Calculator",
+    "description": "Free calculator that tells you if you can dunk a basketball right now — and if not, exactly how many inches away you are and what training it will take to get there.",
+    "url": "https://athletecalculator.com/can-i-dunk-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can a 5'9 person dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but it requires an exceptional vertical jump of approximately 35 to 40 inches. At 5 feet 9 inches with average proportions, your standing reach is around 7 feet 7 inches, meaning you need to get your hand about 5 to 7 inches above the 10-foot rim. This requires years of dedicated training and is rare but documented. Isaiah Thomas, listed at 5 feet 9 inches, has dunked in NBA games."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a 6 foot person dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, a 6-foot person can dunk with a vertical jump of approximately 28 to 32 inches. At 6 feet tall with average proportions, your standing reach is around 7 feet 10 inches, meaning you need to clear the 10-foot rim by about 6 inches with your dunking hand. This is a challenging but very achievable goal for a dedicated athlete."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How high do you have to jump to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "How high you need to jump to dunk depends on your height and standing reach. A 6-foot tall male typically needs a vertical jump of 28 to 32 inches. A 6-foot 2-inch player typically needs 24 to 28 inches. A 6-foot 4-inch player typically needs 20 to 24 inches. Shorter players need significantly higher verticals — a 5-foot 9-inch player needs approximately 35 to 40 inches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the shortest person to ever dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The shortest person documented to have dunked a regulation basketball on a 10-foot rim is commonly cited as Spud Webb at 5 feet 7 inches, who won the 1986 NBA Slam Dunk Contest. More recently, players closer to 5 feet 5 inches have claimed to dunk, though these are less formally verified. Nate Robinson at 5 feet 9 inches won three NBA Dunk Contests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to learn to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "How long it takes to learn to dunk depends on how close you currently are. Athletes who are within 3 to 4 inches of dunking often achieve their first dunk within 2 to 3 months of focused training. Athletes who need 6 to 10 more inches typically need 4 to 8 months. Athletes who need more than 12 inches should expect 9 to 18 months of consistent training combining heavy squats and plyometrics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does arm length affect your ability to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, significantly. Arm length determines your standing reach, which is the starting point for calculating how high you need to jump. Athletes with a long wingspan relative to their height have a much easier time dunking. For example, a 6-foot player with a 6-foot 6-inch wingspan may have a standing reach of 8 feet 1 inch and need only a 22-inch vertical to dunk, while a 6-foot player with shorter arms may need a 30-inch vertical."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://athletecalculator.com/calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Can I Dunk Calculator",
+        "item": "https://athletecalculator.com/can-i-dunk-calculator"
+      }
+    ]
+  }
+  </script>
+permalink: "can-i-dunk-calculator/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --accent-glow: rgba(170,255,0,0.35);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --red: #ff4d4d;
+    --orange: #ff9000;
+    --yellow: #ffd600;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  header {
+    padding: 2.5rem 1.5rem 0;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  h1 span { color: var(--accent); display: block; }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    max-width: 460px;
+    margin: 0 auto 0.5rem;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  /* ── LINKS ROW ── */
+  .links-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+
+  .site-link {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .site-link:hover { border-color: var(--accent); color: var(--accent); }
+  .site-link strong { color: var(--accent); }
+
+  /* ── CALCULATOR CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .field select,
+  .field input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field select:focus,
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  .full { grid-column: 1 / -1; }
+
+  .unit-toggle {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 48px;
+  }
+
+  .unit-btn {
+    flex: 1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    font-family: var(--font-mono);
+  }
+
+  .unit-btn.active { background: var(--accent); color: #000; }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .calc-btn:hover { opacity: 0.88; }
+  .calc-btn:active { transform: scale(0.98); }
+
+  /* ── RESULTS ── */
+  #results { display: none; }
+  #results.visible { display: block; }
+
+  /* ── VERDICT CARD ── */
+  .verdict-card {
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .verdict-card.can-dunk {
+    background: rgba(170,255,0,0.06);
+    border-color: rgba(170,255,0,0.3);
+  }
+
+  .verdict-card.cannot-dunk {
+    background: var(--surface);
+  }
+
+  .verdict-emoji {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .verdict-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .verdict-sub {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .progress-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .progress-track {
+    height: 12px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    position: relative;
+  }
+
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .gap-display {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    text-align: center;
+  }
+
+  .gap-display strong {
+    color: var(--accent);
+    font-size: 1.3rem;
+  }
+
+  /* ── TIMELINE CARD ── */
+  .timeline-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+  .timeline-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.5;
+    width: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .timeline-content { flex: 1; }
+
+  .timeline-label {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* ── INFO CARD ── */
+  .info-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+  .info-text strong { color: var(--accent); }
+
+  /* ── ARTICLE SECTION ── */
+  .article-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .article-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  .article-section p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .article-section p strong { color: var(--text); }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 1.75rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead { background: var(--surface2); }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+  .data-table .highlight td { background: rgba(170,255,0,0.07); }
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .d1 { animation-delay: 0.05s; }
+  .d2 { animation-delay: 0.15s; }
+  .d3 { animation-delay: 0.25s; }
+  .d4 { animation-delay: 0.35s; }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<header>
+<p class="eyebrow">Free Basketball Performance Tool</p>
+<h1>Can I<span>Dunk?</span></h1>
+<p class="hero-sub">Enter your height and vertical jump to find out instantly — and if not, exactly how close you are and what it will take.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="https://athletecalculator.com/vertical-jump-percentile">
+      ↑ <strong>Vertical Jump</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="https://athletecalculator.com/squat-strength-calculator">
+      ↑ <strong>Squat Strength</strong> Predictor
+    </a>
+</div>
+<!-- INPUT CARD -->
+<div class="card">
+<p class="card-label">Your Measurements</p>
+<div class="form-grid">
+<div class="field">
+<label for="height-ft">Height</label>
+<div style="display:flex;gap:0.5rem">
+<input id="height-ft" max="8" min="4" placeholder="Ft" step="1" style="flex:1" type="number"/>
+<input id="height-in" max="11" min="0" placeholder="In" step="1" style="flex:1" type="number"/>
+</div>
+</div>
+<div class="field">
+<label>Units</label>
+<div class="unit-toggle">
+<button class="unit-btn active" onclick="setUnit('imperial', this)">FT / IN</button>
+<button class="unit-btn" onclick="setUnit('metric', this)">CM</button>
+</div>
+</div>
+<div class="field full" id="input-imperial">
+<label for="vertical-in">Vertical Jump (inches) — leave blank if unknown</label>
+<input id="vertical-in" max="60" min="0" placeholder="e.g. 24" step="0.5" type="number"/>
+</div>
+<div class="field full" id="input-metric" style="display:none">
+<label for="height-cm">Height (cm)</label>
+<input id="height-cm" max="250" min="120" placeholder="e.g. 183" step="1" type="number"/>
+<label for="vertical-cm" style="margin-top:0.75rem">Vertical Jump (cm) — leave blank if unknown</label>
+<input id="vertical-cm" max="150" min="0" placeholder="e.g. 61" step="1" style="margin-top:0.4rem" type="number"/>
+</div>
+<div class="field">
+<label for="wingspan">Wingspan Relative to Height</label>
+<select id="wingspan">
+<option value="short">Short arms (wingspan &lt; height)</option>
+<option selected="" value="average">Average (wingspan ≈ height)</option>
+<option value="long">Long arms (wingspan &gt; height by 2"+)</option>
+<option value="very-long">Very long (wingspan &gt; height by 4"+)</option>
+</select>
+</div>
+<div class="field">
+<label for="takeoff">Preferred Takeoff</label>
+<select id="takeoff">
+<option selected="" value="two">Two feet (standing / power dunk)</option>
+<option value="one">One foot (running / approach dunk)</option>
+</select>
+</div>
+</div>
+<button class="calc-btn" onclick="calculate()">Can I Dunk? →</button>
+</div>
+<!-- RESULTS -->
+<div id="results">
+<!-- VERDICT -->
+<div class="verdict-card anim d1" id="verdict-card">
+<span class="verdict-emoji" id="verdict-emoji">🏀</span>
+<div class="verdict-headline" id="verdict-headline">—</div>
+<p class="verdict-sub" id="verdict-sub">—</p>
+</div>
+<!-- EMAIL OPT-IN -->
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        Close the gap. The exact strength, plyometric, and recovery sequence to add inches to your vertical — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<!-- STATS -->
+<div class="stats-row anim d2">
+<div class="stat-card">
+<div class="stat-val" id="stat-reach">—</div>
+<div class="stat-label">Standing Reach</div>
+</div>
+<div class="stat-card">
+<div class="stat-val" id="stat-needed">—</div>
+<div class="stat-label">Vertical Needed</div>
+</div>
+<div class="stat-card">
+<div class="stat-val" id="stat-gap">—</div>
+<div class="stat-label" id="stat-gap-label">Gap to Dunk</div>
+</div>
+</div>
+<!-- PROGRESS -->
+<div class="progress-card anim d2" id="progress-section">
+<div class="progress-title">How Close Are You?</div>
+<div class="progress-track">
+<div class="progress-fill" id="progress-fill" style="width:0%"></div>
+</div>
+<div class="progress-labels">
+<span>Can't touch rim</span>
+<span>Can touch rim</span>
+<span>Can dunk</span>
+</div>
+<div class="gap-display" id="gap-display">—</div>
+</div>
+<!-- TIMELINE -->
+<div class="timeline-card anim d3" id="timeline-section">
+<div class="timeline-title" id="timeline-title">Your Path to Dunking</div>
+<div id="timeline-items"></div>
+</div>
+<!-- TIP -->
+<div class="info-card anim d4">
+<div class="info-icon">🏋️</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<!-- ARTICLE CONTENT -->
+<div class="article-section">
+<h2>How High Do You Need to Jump to Dunk?</h2>
+<p>Dunking requires getting your hand high enough above the 10-foot rim to push the ball through. Most players need their dunking hand at least 6 inches above the rim — meaning your fingertips need to reach approximately <strong>10 feet 6 inches</strong>.</p>
+<p>Your standing reach — the height of your fingertips with your arm fully extended — is the starting point. The difference between 10'6" and your standing reach is how high you need to jump.</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Height</th>
+<th>Est. Standing Reach</th>
+<th>Vertical Needed to Dunk</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>5'7"</td><td>7'3"</td><td>~39–43"</td><td>Extremely rare</td></tr>
+<tr><td>5'9"</td><td>7'6"</td><td>~36–40"</td><td>Very hard</td></tr>
+<tr><td>5'11"</td><td>7'8"</td><td>~32–36"</td><td>Hard</td></tr>
+<tr class="highlight"><td>6'0"</td><td>7'10"</td><td>~28–32"</td><td>Challenging but achievable</td></tr>
+<tr class="highlight"><td>6'2"</td><td>8'0"</td><td>~24–28"</td><td>Realistic with training</td></tr>
+<tr><td>6'4"</td><td>8'3"</td><td>~20–24"</td><td>Achievable for most athletes</td></tr>
+<tr><td>6'6"+</td><td>8'6"+</td><td>~16–20"</td><td>Accessible</td></tr>
+</tbody>
+</table>
+<h2>The Role of Arm Length</h2>
+<p>Arm length is the hidden variable most people ignore. Two players who are both exactly 6 feet tall can have wildly different standing reaches depending on their wingspan. A player with unusually long arms may have a standing reach of 8'2" while a player with short arms of the same height may only reach 7'9".</p>
+<p><strong>Every extra inch of standing reach is one fewer inch you need on your vertical jump.</strong> Athletes with long wingspans have a massive natural advantage when it comes to dunking.</p>
+<h3>Famous Short Dunkers</h3>
+<p><strong>Spud Webb (5'7")</strong> won the 1986 NBA Slam Dunk Contest with a reported 46-inch vertical. <strong>Nate Robinson (5'9")</strong> won three NBA Dunk Contests. <strong>Isaiah Thomas (5'9")</strong> has dunked in NBA games. All three had exceptionally long wingspans relative to their height and trained explosiveness obsessively.</p>
+<h2>One-Foot vs. Two-Foot Takeoff</h2>
+<p>Your takeoff style affects how you should train and how achievable dunking is for your body type.</p>
+<p><strong>Two-foot takeoff (power dunk):</strong> You jump from both feet simultaneously, usually from a slow approach or standing start. This requires more raw vertical jump height but is more consistent. Most strength training directly improves two-foot jumping.</p>
+<p><strong>One-foot takeoff (approach dunk):</strong> You jump off one foot after a running approach, using the elastic energy of your stride. This allows many athletes to jump 2–5 inches higher than their standing vertical because momentum converts into upward force. Most people who dunk for the first time do it off one foot.</p>
+<div class="info-card">
+<div class="info-icon">💡</div>
+<div class="info-text"><strong>Pro tip:</strong> If you're close to dunking, practice one-foot approach jumping before anything else. Many athletes discover they can dunk off an approach when their standing vertical says they shouldn't be able to. The running start adds significant height for most people.</div>
+</div>
+<h2>How to Add Inches to Your Vertical Fast</h2>
+<h3>Phase 1 — Quick Wins (Weeks 1–4)</h3>
+<p>Before training a single extra day, two things can immediately improve your effective jump height: <strong>approach mechanics</strong> and <strong>arm swing</strong>. A well-timed two-step approach with an explosive arm swing can add 3–5 inches of effective height over a flat-footed jump. Practice your approach at the rim every day.</p>
+<h3>Phase 2 — Build Explosive Strength (Weeks 1–12)</h3>
+<p>Heavy squats are the foundation. Get your squat to 1.5× bodyweight and you'll see your vertical jump follow. Add depth jumps — step off a 12-inch box, land, and immediately explode upward — twice per week to train the reactive strength that converts into dunking power.</p>
+<h3>Phase 3 — Sprint Training (Weeks 4–12)</h3>
+<p>Sprinting and jumping use overlapping muscle recruitment. Athletes who sprint regularly jump higher. Add two sprint sessions per week — 6 × 30-yard dashes at full effort — and your vertical will respond.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Can a 5'9" person dunk?</div>
+<div class="faq-a">Yes, but it requires an exceptional vertical of approximately 35–40 inches. At 5'9" with average arm length, your standing reach is around 7'6", meaning you need to clear 10'6" — a gap of 3 feet. This requires years of dedicated training and the right genetics. Nate Robinson (5'9") won three NBA Dunk Contests, so it's absolutely possible — just very hard.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Can a 6 foot person dunk?</div>
+<div class="faq-a">Yes — a 6-foot person with average arm length needs roughly a 28–32 inch vertical to dunk. That's above average but achievable for a dedicated athlete. At 6 feet, dunking is a realistic 6–12 month training goal for most people who start with at least a 20-inch vertical.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How long does it take to learn to dunk?</div>
+<div class="faq-a">It depends how close you are. If you're within 4 inches, expect 2–3 months of focused training. If you're 6–10 inches away, expect 4–8 months. If you're more than 12 inches away, expect 9–18 months of consistent squat and plyometric training. The closer you are, the faster you'll get there.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does losing weight help you dunk?</div>
+<div class="faq-a">Significantly. Losing fat while maintaining strength improves your power-to-weight ratio, which directly increases your vertical jump. Losing 10 pounds of fat while keeping the same squat strength can add 2–4 inches to your vertical. For many athletes close to dunking, leaning out is the fastest path to their first dunk.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the shortest person to ever dunk?</div>
+<div class="faq-a">The most famous short dunker is Spud Webb at 5'7", who won the 1986 NBA Slam Dunk Contest. Webb reportedly had a 46-inch vertical. More recently, players as short as 5'5" have claimed to dunk, though these aren't formally verified. Webb's win remains one of the most iconic moments in basketball history.</div>
+</div>
+</div>
+</div><script>
+let currentUnit = 'imperial';
+
+function setUnit(u, btn) {
+  currentUnit = u;
+  document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('input-imperial').style.display = u === 'imperial' ? 'block' : 'none';
+  document.getElementById('input-metric').style.display   = u === 'metric'   ? 'block' : 'none';
+}
+
+// Standing reach estimate from height (inches)
+function standingReach(heightIn, wingspan) {
+  const base = heightIn * 1.335; // average ratio
+  const adj = { short: -3, average: 0, long: 3, 'very-long': 6 };
+  return base + (adj[wingspan] || 0);
+}
+
+// Rim clearance needed in inches (hand needs to be 6" above rim = 10'6" = 126")
+const RIM_HEIGHT = 120; // 10 feet in inches
+const DUNK_HEIGHT = 126; // 10'6" needed
+
+function getColor(gap) {
+  if (gap <= 0)  return '#aaff00';
+  if (gap <= 4)  return '#ffd600';
+  if (gap <= 8)  return '#ff9000';
+  return '#ff4d4d';
+}
+
+function inchesToFtIn(inches) {
+  const ft = Math.floor(inches / 12);
+  const inch = Math.round(inches % 12);
+  return `${ft}'${inch}"`;
+}
+
+function calculate() {
+  let heightIn, vertIn;
+  const wingspan = document.getElementById('wingspan').value;
+  const takeoff  = document.getElementById('takeoff').value;
+
+  if (currentUnit === 'imperial') {
+    const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+    const inc = parseFloat(document.getElementById('height-in').value) || 0;
+    heightIn = ft * 12 + inc;
+    vertIn   = parseFloat(document.getElementById('vertical-in').value) || null;
+  } else {
+    const cm = parseFloat(document.getElementById('height-cm').value) || 0;
+    const vcm = parseFloat(document.getElementById('vertical-cm').value) || null;
+    heightIn = cm / 2.54;
+    vertIn   = vcm ? vcm / 2.54 : null;
+  }
+
+  if (!heightIn || heightIn < 48) {
+    document.getElementById('height-ft').style.borderColor = 'var(--red)';
+    setTimeout(() => document.getElementById('height-ft').style.borderColor = '', 1500);
+    return;
+  }
+
+  // One-foot takeoff adds ~3 inches on average
+  const takeoffBonus = takeoff === 'one' ? 3 : 0;
+
+  const reach   = standingReach(heightIn, wingspan);
+  const needed  = DUNK_HEIGHT - reach;
+  const neededAdj = Math.max(0, needed - takeoffBonus);
+
+  // If no vertical provided, just show what's needed
+  const hasVert = vertIn !== null && !isNaN(vertIn);
+  const gap     = hasVert ? neededAdj - vertIn : null;
+  const canDunk = hasVert && gap <= 0;
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => {
+    el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  });
+
+  // ── VERDICT ──
+  const verdictCard = document.getElementById('verdict-card');
+  verdictCard.className = 'verdict-card anim d1 ' + (canDunk ? 'can-dunk' : 'cannot-dunk');
+
+  const emoji     = document.getElementById('verdict-emoji');
+  const headline  = document.getElementById('verdict-headline');
+  const subEl     = document.getElementById('verdict-sub');
+
+  if (!hasVert) {
+    emoji.textContent     = '📏';
+    headline.textContent  = 'Here\'s What You Need';
+    headline.style.color  = 'var(--accent)';
+    subEl.textContent     = `Based on your height, you need to jump approximately ${neededAdj.toFixed(1)}" to dunk${takeoff === 'one' ? ' off a one-foot approach' : ''}. Enter your vertical jump above to see exactly where you stand.`;
+  } else if (canDunk) {
+    emoji.textContent     = '🏀';
+    headline.textContent  = 'Yes, You Can Dunk!';
+    headline.style.color  = 'var(--accent)';
+    const margin = Math.abs(gap).toFixed(1);
+    subEl.textContent     = `Your vertical clears the dunk threshold by ${margin} inches. ${takeoff === 'one' ? 'Your one-foot approach gives you extra margin.' : 'Now practice your approach mechanics to make it consistent.'}`;
+  } else {
+    emoji.textContent = gap <= 4 ? '🔥' : gap <= 8 ? '💪' : '📈';
+    headline.style.color = getColor(gap);
+    if (gap <= 2) {
+      headline.textContent = 'So Close!';
+      subEl.textContent = `You're only ${gap.toFixed(1)}" away. With approach mechanics and 4–6 weeks of focused training, you could have your first dunk very soon.`;
+    } else if (gap <= 6) {
+      headline.textContent = 'Almost There';
+      subEl.textContent = `You're ${gap.toFixed(1)}" away from dunking. A focused 8–12 week training block combining squats and plyometrics should get you there.`;
+    } else if (gap <= 12) {
+      headline.textContent = 'Keep Training';
+      subEl.textContent = `You're ${gap.toFixed(1)}" away. This is a realistic goal — most athletes close this gap in 4–8 months of consistent training.`;
+    } else {
+      headline.textContent = 'Long-Term Goal';
+      subEl.textContent = `You're ${gap.toFixed(1)}" away. Dunking is achievable but will require 12–18 months of serious training. Start building your squat strength today.`;
+    }
+  }
+
+  // ── STATS ──
+  document.getElementById('stat-reach').textContent  = inchesToFtIn(reach);
+  document.getElementById('stat-needed').textContent = neededAdj.toFixed(1) + '"';
+
+  const gapEl    = document.getElementById('stat-gap');
+  const gapLabel = document.getElementById('stat-gap-label');
+
+  if (!hasVert) {
+    gapEl.textContent   = '?';
+    gapLabel.textContent = 'Enter Your Vertical';
+  } else if (canDunk) {
+    gapEl.textContent    = '+' + Math.abs(gap).toFixed(1) + '"';
+    gapEl.style.color    = 'var(--accent)';
+    gapLabel.textContent = 'Above Threshold';
+  } else {
+    gapEl.textContent    = gap.toFixed(1) + '"';
+    gapEl.style.color    = getColor(gap);
+    gapLabel.textContent = 'Gap to Dunk';
+  }
+
+  // ── PROGRESS ──
+  const progressSection = document.getElementById('progress-section');
+  const progressFill    = document.getElementById('progress-fill');
+  const gapDisplay      = document.getElementById('gap-display');
+
+  if (hasVert) {
+    const progressPct = Math.min(100, Math.max(0, (vertIn / (neededAdj * 1.1)) * 100));
+    const color = getColor(gap);
+    setTimeout(() => {
+      progressFill.style.width      = progressPct + '%';
+      progressFill.style.background = color;
+    }, 100);
+
+    if (canDunk) {
+      gapDisplay.innerHTML = `Your vertical of <strong>${vertIn}"</strong> clears the ${neededAdj.toFixed(1)}" threshold ✓`;
+    } else {
+      gapDisplay.innerHTML = `Your vertical: <strong>${vertIn}"</strong> · You need: <strong>${neededAdj.toFixed(1)}"</strong> · Gap: <strong>${gap.toFixed(1)}"</strong>`;
+    }
+  } else {
+    progressSection.style.display = 'none';
+  }
+
+  // ── TIMELINE ──
+  const timelineTitle = document.getElementById('timeline-title');
+  const timelineItems = document.getElementById('timeline-items');
+  timelineItems.innerHTML = '';
+
+  if (canDunk) {
+    timelineTitle.textContent = 'Now That You Can Dunk';
+    const steps = [
+      { label: 'Master your approach', desc: 'Practice a two-step or one-step approach at the rim every day. Footwork and timing add 2–4 inches of effective height.' },
+      { label: 'Build consistency', desc: 'First dunks are often fluky. Aim to dunk 8 out of 10 attempts before calling it locked in.' },
+      { label: 'Try different styles', desc: 'One-hand, two-hand, off one foot or two — each requires slightly different timing. Explore what works best for your body.' },
+    ];
+    steps.forEach((s, i) => {
+      timelineItems.innerHTML += `<div class="timeline-item"><div class="timeline-num">${i+1}</div><div class="timeline-content"><div class="timeline-label">${s.label}</div><div class="timeline-desc">${s.desc}</div></div></div>`;
+    });
+  } else if (!hasVert || gap <= 4) {
+    timelineTitle.textContent = 'Your 6-Week Plan';
+    const steps = [
+      { label: 'Week 1–2: Fix your approach', desc: 'Practice approach jumps daily at the rim. A good two-step approach can add 3–5 inches immediately without any fitness change.' },
+      { label: 'Week 3–4: Depth jumps', desc: 'Step off a 12-inch box, land, and immediately explode upward. 3 sets of 6 reps twice a week trains the reactive power that puts you over the rim.' },
+      { label: 'Week 5–6: Heavy squats + plyos', desc: 'Squat heavy 2× per week and do box jumps on alternate days. This combination produces the fastest vertical jump gains of any training approach.' },
+    ];
+    steps.forEach((s, i) => {
+      timelineItems.innerHTML += `<div class="timeline-item"><div class="timeline-num">${i+1}</div><div class="timeline-content"><div class="timeline-label">${s.label}</div><div class="timeline-desc">${s.desc}</div></div></div>`;
+    });
+  } else if (gap <= 10) {
+    timelineTitle.textContent = 'Your 12-Week Plan';
+    const steps = [
+      { label: 'Month 1: Build your squat', desc: 'Get your squat to 1.5× bodyweight if you\'re not there yet. This is the foundation. Squat heavy 3× per week with progressive overload.' },
+      { label: 'Month 2: Add plyometrics', desc: 'Introduce depth jumps, box jumps, and single-leg bounds twice per week. These train the explosive power that converts strength into jump height.' },
+      { label: 'Month 3: Approach work + peak', desc: 'Practice approach mechanics daily. Reduce squat volume to keep your legs fresh. This is when you test your dunk at the end of the month.' },
+    ];
+    steps.forEach((s, i) => {
+      timelineItems.innerHTML += `<div class="timeline-item"><div class="timeline-num">${i+1}</div><div class="timeline-content"><div class="timeline-label">${s.label}</div><div class="timeline-desc">${s.desc}</div></div></div>`;
+    });
+  } else {
+    timelineTitle.textContent = 'Your Long-Term Plan';
+    const steps = [
+      { label: 'Phase 1 (Months 1–4): Strength foundation', desc: 'Build your squat to 1.5× bodyweight. This alone will add 4–6 inches to your vertical jump when combined with basic plyometrics.' },
+      { label: 'Phase 2 (Months 5–8): Power development', desc: 'Contrast training, Olympic lift variations, and reactive plyometrics convert your strength gains into explosive power.' },
+      { label: 'Phase 3 (Months 9–12): Skill refinement', desc: 'Approach mechanics, arm swing timing, and daily rim touches. The last few inches often come from skill, not fitness.' },
+    ];
+    steps.forEach((s, i) => {
+      timelineItems.innerHTML += `<div class="timeline-item"><div class="timeline-num">${i+1}</div><div class="timeline-content"><div class="timeline-label">${s.label}</div><div class="timeline-desc">${s.desc}</div></div></div>`;
+    });
+  }
+
+  // ── TIP ──
+  const tips = [
+    { cond: canDunk,       text: `<strong>You're already dunking</strong> — now build consistency and try your first in-game dunk. Use our <a href="https://athletecalculator.com/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Calculator</a> to see how your jump ranks against other athletes.` },
+    { cond: !hasVert,      text: `<strong>Measure your vertical jump</strong> and come back to get your full dunk analysis. Our <a href="https://athletecalculator.com/vertical-jump-percentile" style="color:var(--accent)">Vertical Jump Percentile Calculator</a> also shows where you rank against athletes at every level.` },
+    { cond: gap <= 4,      text: `<strong>You're this close</strong> — the fastest gains right now come from approach mechanics, not fitness. Practice your run-up at the rim every single day. Many athletes dunk for the first time within days of figuring out their approach.` },
+    { cond: gap <= 10,     text: `<strong>Your squat strength</strong> is the most direct lever. Use our <a href="https://athletecalculator.com/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to see exactly what squat target will get your vertical to dunk height.` },
+    { cond: true,          text: `<strong>Start with your squat.</strong> Use our <a href="https://athletecalculator.com/squat-strength-calculator" style="color:var(--accent)">Squat Strength Predictor</a> to find your squat target for dunking, and our <a href="https://athletecalculator.com/how-much-to-squat-to-dunk" style="color:var(--accent)">full dunking guide</a> for the complete training plan.` },
+  ];
+
+  const tip = tips.find(t => t.cond);
+  document.getElementById('tip-text').innerHTML = tip.text;
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { 'calculator_name': 'can_i_dunk' });
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>

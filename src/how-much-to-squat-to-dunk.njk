@@ -1,0 +1,741 @@
+---
+layout: base.njk
+title: "How Much Do You Need to Squat to Dunk? | Athlete Calculator"
+description: "Find out exactly how strong your squat needs to be to dunk a basketball. Includes squat-to-vertical jump tables by height, training plan, and a free calculator."
+canonicalPath: "/how-much-to-squat-to-dunk"
+mailerlite: false
+navContextUrl: "https://athletecalculator.com"
+navContextLabel: "AthleteCalc"
+disclaimer:
+  - "Content based on published sports science research. Individual results will vary based on genetics, training history, and technique."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Much Do You Need to Squat to Dunk a Basketball?",
+    "description": "Find out exactly how strong your squat needs to be to dunk a basketball based on your height, standing reach, and current vertical jump.",
+    "url": "https://athletecalculator.com/how-much-to-squat-to-dunk",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/how-much-to-squat-to-dunk"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much do you need to squat to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most athletes who can dunk squat between 1.5 and 2.0 times their bodyweight. A 185 lb athlete who can dunk typically squats between 275 and 370 lbs. However, squat strength alone does not determine dunking ability — standing reach, technique, and plyometric training all play major roles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you dunk if you squat 225 lbs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your bodyweight and height. If you weigh 185 lbs and squat 225, your strength-to-bodyweight ratio is about 1.2x — below the threshold most dunkers reach. Getting to 275 lbs or more on the squat while staying lean will significantly improve your chances of dunking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How high do you need to jump to dunk at 6 feet tall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 6-foot tall male with average proportions has a standing reach of approximately 7 feet 10 inches. To dunk on a 10-foot rim, they need to get their hand about 6 inches above the rim, requiring a vertical jump of roughly 28 to 30 inches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to go from not dunking to dunking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most athletes who are within 6 inches of dunking can achieve their first dunk within 3 to 6 months of focused training combining heavy squats and plyometrics. Athletes who need to add 10 or more inches to their vertical typically need 6 to 12 months of consistent training."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How Much Do You Need to Squat to Dunk?",
+        "item": "https://athletecalculator.com/how-much-to-squat-to-dunk"
+      }
+    ]
+  }
+  </script>
+permalink: "how-much-to-squat-to-dunk/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 em { color: var(--accent); font-style: normal; }
+
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .hero-meta-item {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero-intro {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 640px;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  /* ── ARTICLE ── */
+  .article-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .article-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* ── CONTENT ── */
+  .content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  .content p {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .content p strong { color: var(--text); }
+
+  .content ul, .content ol {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .content li {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+
+  .content li strong { color: var(--text); }
+
+  /* ── DATA TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead {
+    background: var(--surface2);
+  }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+
+  .data-table .highlight td {
+    background: var(--accent-dim);
+  }
+
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+  .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+  .callout-text strong { color: var(--accent); }
+
+  /* ── CALCULATOR CTA ── */
+  .calc-cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .calc-cta-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .calc-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .calc-cta p {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+  }
+
+  .calc-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+  }
+
+  .calc-cta-btn:hover { opacity: 0.85; }
+
+  /* ── FAQ ── */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+  .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+
+  .toc-link {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+ NAV  HERO <div class="hero">
+<div class="breadcrumb">
+<a href="https://athletecalculator.com">Home</a>
+<span>→</span>
+<a href="https://athletecalculator.com/articles">Articles</a>
+<span>→</span>
+    How Much to Squat to Dunk
+  </div>
+<h1>How Much Do You Need to <em>Squat</em> to Dunk?</h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 8 min read</span>
+<span class="hero-meta-item">🏋️ Strength Training</span>
+<span class="hero-meta-item">🏀 Basketball</span>
+</div>
+<p class="hero-intro">
+    The short answer: most people who can dunk squat between 1.5 and 2.0 times their bodyweight. But your height and standing reach matter just as much as your squat. Here's exactly what the numbers look like — and how to get there.
+  </p>
+</div> ARTICLE + SIDEBAR <div class="article-wrap">
+<div class="content">
+<!-- SECTION 1 -->
+<h2>The Squat–Vertical Jump Connection</h2>
+<p>Your ability to dunk comes down to one thing: <strong>how high you can get your hand above the rim</strong>. That depends on your standing reach plus your vertical jump. Your squat strength is one of the most reliable predictors of vertical jump height — but it's not the only factor.</p>
+<p>Research published in the <em>Journal of Strength and Conditioning Research</em> found that relative squat strength — your squat max divided by your bodyweight — correlates strongly with vertical jump performance. Athletes who squat <strong>2.0× their bodyweight</strong> consistently produce significantly higher vertical jumps than those squatting 1.0× bodyweight.</p>
+<p>Here's the key insight most people miss: <strong>it's your squat-to-bodyweight ratio that matters, not the raw number.</strong> A 160 lb athlete squatting 280 lbs (1.75×) has more explosive potential than a 220 lb athlete squatting 330 lbs (1.5×), even though the heavier athlete lifts more weight.</p>
+<div class="callout">
+<div class="callout-icon">💡</div>
+<div class="callout-text"><strong>Key principle:</strong> Every 0.25× increase in your squat-to-bodyweight ratio typically adds 2–4 inches to your vertical jump, depending on your training history and muscle fiber composition.</div>
+</div>
+<!-- SECTION 2 -->
+<h2>How High Do You Need to Jump to Dunk?</h2>
+<p>Before calculating your squat target, you need to know your personal dunk threshold. This depends entirely on your height and arm length.</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Your Height</th>
+<th>Est. Standing Reach</th>
+<th>Vertical Needed to Dunk</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5'7"</td>
+<td>7'4"</td>
+<td>~38–42 inches</td>
+<td>Extremely hard</td>
+</tr>
+<tr>
+<td>5'9"</td>
+<td>7'6"</td>
+<td>~34–38 inches</td>
+<td>Very hard</td>
+</tr>
+<tr>
+<td>5'11"</td>
+<td>7'8"</td>
+<td>~30–34 inches</td>
+<td>Hard</td>
+</tr>
+<tr class="highlight">
+<td>6'0"</td>
+<td>7'10"</td>
+<td>~28–32 inches</td>
+<td>Challenging but achievable</td>
+</tr>
+<tr class="highlight">
+<td>6'2"</td>
+<td>8'0"</td>
+<td>~24–28 inches</td>
+<td>Realistic with training</td>
+</tr>
+<tr>
+<td>6'4"</td>
+<td>8'3"</td>
+<td>~21–24 inches</td>
+<td>Achievable for most athletes</td>
+</tr>
+<tr>
+<td>6'6"+</td>
+<td>8'6"+</td>
+<td>~16–20 inches</td>
+<td>Relatively accessible</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Standing reach varies based on arm length and wingspan relative to height. These are estimates based on average proportions. If you have unusually long arms, your required vertical will be lower than listed above.</p>
+<!-- CALCULATOR CTA 1 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Check Your Vertical Percentile</h3>
+<p>See how your current vertical jump ranks against the general population, high school athletes, college players, and pros.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com">Use the Vertical Jump Calculator →</a>
+</div>
+<!-- SECTION 3 -->
+<h2>How Much Should You Squat to Dunk?</h2>
+<p>Now we can connect your squat strength to your vertical jump to your dunking ability. The table below shows the estimated vertical jump produced by different squat-to-bodyweight ratios, and what that means for dunking at different heights.</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Squat Ratio</th>
+<th>Example (185 lb athlete)</th>
+<th>Est. Vertical Jump</th>
+<th>Can Dunk at...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0× BW</td>
+<td>185 lbs</td>
+<td>~18–20 inches</td>
+<td>Unlikely for most</td>
+</tr>
+<tr>
+<td>1.25× BW</td>
+<td>231 lbs</td>
+<td>~21–24 inches</td>
+<td>6'4"+ with good form</td>
+</tr>
+<tr>
+<td>1.5× BW</td>
+<td>278 lbs</td>
+<td>~25–28 inches</td>
+<td>6'2"+ realistically</td>
+</tr>
+<tr class="highlight">
+<td>1.75× BW</td>
+<td>324 lbs</td>
+<td>~29–33 inches</td>
+<td>6'0"+ with training</td>
+</tr>
+<tr class="highlight">
+<td>2.0× BW</td>
+<td>370 lbs</td>
+<td>~33–37 inches</td>
+<td>5'10"+ is realistic</td>
+</tr>
+<tr>
+<td>2.25× BW</td>
+<td>416 lbs</td>
+<td>~37–42 inches</td>
+<td>5'7"+ becomes possible</td>
+</tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="callout-icon">⚠️</div>
+<div class="callout-text"><strong>Important caveat:</strong> These predictions assume you're also doing plyometric training. Squat strength alone builds the engine — plyometrics teach your body to use it explosively. An athlete who only squats heavy without any jump training will underperform these estimates significantly.</div>
+</div>
+<!-- SECTION 4 -->
+<h2>Your Personal Squat Target to Dunk</h2>
+<p>To find your specific squat target, work backwards from what you need:</p>
+<ol>
+<li><strong>Figure out how high you need to jump.</strong> Use the height table above to find your vertical jump target.</li>
+<li><strong>Find the squat ratio that produces that vertical.</strong> Use the table above to identify your target ratio.</li>
+<li><strong>Multiply your bodyweight by that ratio.</strong> That's your squat target.</li>
+</ol>
+<p><strong>Example:</strong> You're 6'0" and weigh 185 lbs. You need roughly a 30-inch vertical to dunk. That corresponds to a squat ratio of about 1.75×. Your target squat is 185 × 1.75 = <strong>324 lbs</strong>.</p>
+<!-- CALCULATOR CTA 2 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Squat Strength Predictor</h3>
+<p>Enter your current squat max and bodyweight to see your predicted vertical jump, 40-yard dash time, and what gains you'll see at each strength milestone.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/squat-strength-calculator">Use the Squat Strength Calculator →</a>
+</div>
+<!-- SECTION 5 -->
+<h2>The Training Plan: Squat Your Way to a Dunk</h2>
+<p>Getting your squat up while maximizing explosive power requires combining strength work with plyometrics. Here's a proven framework:</p>
+<h3>Phase 1 — Build the Foundation (Weeks 1–6)</h3>
+<p>If you're below 1.5× bodyweight, your priority is raw strength. Keep it simple:</p>
+<ul>
+<li><strong>Squat 3× per week</strong> — 5 sets of 5 reps at 80–85% of your max, adding weight each session</li>
+<li><strong>Romanian deadlifts</strong> — 3 sets of 8 after squatting, builds posterior chain power</li>
+<li><strong>Box jumps</strong> — 3 sets of 5 max-effort jumps on non-squat days, focusing on height not volume</li>
+<li><strong>Rest and eat enough</strong> — strength gains require a small calorie surplus</li>
+</ul>
+<h3>Phase 2 — Develop Power (Weeks 7–12)</h3>
+<p>Once you're above 1.5×, start training for rate of force development:</p>
+<ul>
+<li><strong>Contrast sets</strong> — Heavy squat set (3 reps at 85%) immediately followed by 3 max-effort vertical jumps. Rest 3 minutes and repeat for 4 sets.</li>
+<li><strong>Depth jumps</strong> — Step off a 12-inch box, land, and immediately explode upward. 4 sets of 5 reps twice per week.</li>
+<li><strong>Single-leg work</strong> — Bulgarian split squats build the unilateral strength critical for a one-foot takeoff dunk.</li>
+</ul>
+<h3>Phase 3 — Sharpen the Skill (Weeks 13–16)</h3>
+<p>Dunking is a skill as much as a strength feat. In this phase:</p>
+<ul>
+<li><strong>Practice the approach</strong> — Work on your two-step or one-step approach repeatedly. Footwork and timing can add 2–4 inches of effective height.</li>
+<li><strong>Rim touches daily</strong> — Jump to touch the highest point you can reach every day. This trains the neuromuscular pattern for maximum effort.</li>
+<li><strong>Reduce squat volume</strong> — 2× per week maintenance. Your nervous system needs to be fresh to express full power.</li>
+</ul>
+<!-- SECTION 6 -->
+<h2>Common Mistakes That Keep People From Dunking</h2>
+<p><strong>Only squatting, never jumping.</strong> Strength is the engine but plyometrics are the transmission. Without jump training, your muscles can't express their strength fast enough to dunk.</p>
+<p><strong>Squatting heavy while staying heavy.</strong> Gaining 20 lbs of muscle while gaining 15 lbs of fat nets you almost nothing — the extra bodyweight cancels out the strength gains. Your ratio is what matters, not the raw number.</p>
+<p><strong>Neglecting single-leg strength.</strong> Most dunks happen off a one-foot takeoff. If you only train bilateral squats, you're training the wrong movement pattern. Add single-leg work.</p>
+<p><strong>Not working on approach mechanics.</strong> A well-timed two-step approach with good arm swing can add 3–5 inches of effective jump height over a flat-footed vertical. Many people are closer to dunking than they think — they just haven't optimized their approach.</p>
+<!-- SECTION 7 -->
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Can you dunk if you squat 225 lbs?</div>
+<div class="faq-a">It depends on your bodyweight. If you weigh 150 lbs, that's a 1.5× ratio and gives you a solid shot at dunking if you're 6'2" or taller. If you weigh 225 lbs, that's only a 1.0× ratio — probably not enough. The ratio is everything.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How long does it take to squat enough to dunk?</div>
+<div class="faq-a">If you're currently squatting around 1.0× bodyweight, reaching 1.75× typically takes 6–12 months of consistent training. Athletes who start near 1.5× can often add enough in 3–6 months. Beginners make strength gains faster than advanced athletes.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is front squat or back squat better for dunking?</div>
+<div class="faq-a">Both work. The back squat builds more overall quad and glute mass and allows heavier loads. The front squat develops a more upright torso position that transfers well to jump mechanics. Ideally, do both — but if you only choose one, the back squat produces larger strength gains.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Can a 5'9" person ever dunk?</div>
+<div class="faq-a">Yes, but it requires an exceptional vertical — around 36–40 inches. That means squatting well over 2.0× bodyweight and having excellent plyometric training and approach mechanics. It's rare but documented. At 5'9", dunking is a serious long-term athletic goal, not a beginner milestone.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does losing weight help you dunk?</div>
+<div class="faq-a">Yes — if you maintain your squat strength while losing fat, your strength-to-bodyweight ratio improves and your vertical jump goes up. Losing 10 lbs of fat while keeping the same squat max is essentially the same as significantly increasing your squat. Many athletes find this is the fastest route to their first dunk.</div>
+</div>
+<!-- FINAL CTA -->
+<div class="calc-cta">
+<div class="calc-cta-label">Start Here</div>
+<h3>Find Out Where You Stand</h3>
+<p>Use our free calculators to see your vertical jump percentile, sprint speed rank, squat strength prediction, and broad jump speed predictor.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com">Go to Athlete Calculator →</a>
+</div>
+</div><!-- end .content -->
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="https://athletecalculator.com">
+<strong>Vertical Jump Percentile</strong>
+        Where does your vertical rank?
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        What does your squat predict?
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        How fast are you?
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#the-squat-vertical-jump-connection">The Squat–Vertical Connection</a>
+<a class="toc-link" href="#how-high-do-you-need-to-jump">How High to Jump to Dunk</a>
+<a class="toc-link" href="#how-much-should-you-squat">How Much to Squat to Dunk</a>
+<a class="toc-link" href="#your-personal-squat-target">Your Personal Squat Target</a>
+<a class="toc-link" href="#the-training-plan">The Training Plan</a>
+<a class="toc-link" href="#common-mistakes">Common Mistakes</a>
+<a class="toc-link" href="#frequently-asked-questions">FAQ</a>
+</div>
+</aside>
+</div> end .article-wrap 

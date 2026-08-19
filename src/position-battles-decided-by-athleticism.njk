@@ -1,0 +1,242 @@
+---
+layout: base.njk
+title: "5 NFL Position Battles Decided by Pure Athleticism (2026) | Athlete Calculator"
+description: "Some training camp battles come down to scheme fit. These five are different — they're decided by speed, burst, and explosiveness. Here's who has the athletic edge and why."
+canonicalPath: "/position-battles-decided-by-athleticism"
+mailerlite: false
+navContextUrl: "https://athletecalculator.com"
+navContextLabel: "AthleteCalc"
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "5 NFL Position Battles Decided by Pure Athleticism",
+    "description": "Some training camp battles come down to scheme fit. These five are different — they're decided by speed, burst, and explosiveness. Here's who has the athletic edge and why.",
+    "url": "https://athletecalculator.com/position-battles-decided-by-athleticism"
+  }
+  </script>
+permalink: "position-battles-decided-by-athleticism/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+    --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+    --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+
+  nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+  .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+  .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+  h1 em { color: var(--accent); font-style: normal; }
+  .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+
+  .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+  h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+  h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+  p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+  strong { color: var(--text); }
+  a.inline { color: var(--accent); text-decoration: none; }
+  a.inline:hover { text-decoration: underline; }
+  ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+  li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+  th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+  th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+  td { color: var(--text-mid); }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 1.75rem 0;
+  }
+  .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+  .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+  .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+  .stat-num { }
+  .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.1rem 1.3rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+  .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+
+  .tool-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.25);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 1.75rem 0;
+  }
+  .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+  .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+  .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+  .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+  .tool-cta:hover { text-decoration: underline; }
+
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+  .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+  .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+  .toc a:hover { color: var(--accent); }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+  .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+
+  .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+  .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+  .related-card:hover { border-color: var(--accent); }
+  .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+  .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+
+  .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+
+  .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+  .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+  .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+  .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+  .calc-pill:hover { border-color: var(--accent); }
+  .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+  .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+
+  footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<div class="wrap">
+<div class="breadcrumb">
+<a href="https://athletecalculator.com">Home</a>
+<span>→</span>
+<a href="https://athletecalculator.com/articles">Articles</a>
+<span>→</span>
+    5 Position Battles Decided by Pure Athleticism
+  </div>
+<h1>5 Position Battles Decided by <em>Pure Athleticism</em></h1>
+<div class="meta-row">
+<span>📖 8 min read</span>
+<span>🏈 Football</span>
+<span>📊 Training Camp 2026</span>
+</div>
+<p class="dek">Most camp battles come down to scheme fit, chemistry, and coach preference. These five are different — they're built around speed, burst, and explosiveness, and the most athletic player is likely to win the job. Here's who has the edge and why.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#giants">Giants Outside Cornerback</a>
+<a href="#falcons">Falcons Wide Receiver Room</a>
+<a href="#ravens-wr">Ravens Receiver Depth</a>
+<a href="#ravens-rb">Ravens Backfield</a>
+<a href="#hunter">Travis Hunter's Return</a>
+<a href="#why">Why Athleticism Decides These Battles</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="giants">1. Giants Outside Cornerback: Newsome vs. Hood vs. Banks</h2>
+<p>Paulson Adebo has one outside corner spot locked down in New York, but the other is a genuine three-way competition between Greg Newsome II, Colton Hood, and incumbent Deonte Banks. Newsome enters camp as the early favorite largely on the strength of his closing speed and recovery ability in man coverage, but Hood's fit in defensive coordinator Dennard Wilson's scheme makes him a real threat to win reps. This is a battle where the player who tests best in press-man drills — not just who has the better resume — is likely to come out on top.</p>
+<h2 id="falcons">2. Falcons Wide Receiver Room: Branch's Speed vs. the Depth Chart</h2>
+<p>Atlanta added legitimate speed to its receiver room this offseason, and third-round rookie Zachariah Branch is the headline. Branch has drawn praise for elite straight-line speed and playmaker instincts, and with Drake London entrenched as WR1, the question is how quickly Branch's athleticism forces him into the rotation ahead of veteran additions Jahan Dotson and Olamide Zaccheaus. When a rookie's calling card is speed, camp practices — not draft position — determine how fast the leash gets extended.</p>
+<h2 id="ravens-wr">3. Ravens Receiver Depth: Separation Over Size</h2>
+<p>Baltimore's receiver competition behind the top of the depth chart is explicitly about who can separate against NFL coverage. Reports out of camp frame it as a contrast in traits: one prospect's size and catch radius against another's quickness and return burst, with a third player's after-the-catch explosiveness making him a candidate for designed touches. In a room this competitive, testable athletic traits — short-area quickness, top-end speed — are set to matter more than polish this early in camp.</p>
+<h2 id="ravens-rb">4. Ravens Backfield: Ali's Burst for the Complementary Role</h2>
+<p>With Derrick Henry entrenched as the workload back, Baltimore's real camp battle is for the complementary role behind him. Justice Hill and Rasheen Ali are competing directly, and Ali's vision and burst have been specifically called out as giving him an edge for early touches. It's a textbook case of a "third-down" or change-of-pace role going to the more explosive athlete rather than the more experienced one.</p>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">Test Your Own Burst</div>
+<div class="tool-desc">Explosiveness at the RB and WR positions usually comes down to acceleration and change of direction, not just top speed. See where you stack up.</div>
+<a class="tool-cta" href="https://athletecalculator.com/sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+<h2 id="hunter">5. Jaguars: Travis Hunter's Return to Full Speed</h2>
+<p>Jacksonville's most important camp storyline isn't really a competition between two players — it's whether Travis Hunter can return to the explosive form that made him a two-way sensation as a rookie before a torn LCL cut his season short. Hunter is fully cleared for camp and will work primarily at cornerback while still factoring into the receiver rotation. With the Jaguars deeper at receiver than cornerback, how close Hunter's practice-field speed and change of direction are to his pre-injury level will shape how the coaching staff builds the defensive backfield around him.</p>
+<h2 id="why">Why Athleticism Decides These Battles</h2>
+<p>Most camp competitions are close calls on tape — two players who look similar on paper, decided by chemistry, scheme familiarity, or a coach's gut feel. The battles above are different because the deciding factor is measurable: closing speed, burst out of a cut, straight-line recovery. Those are exactly the traits that show up in testing numbers long before a single preseason snap is played, which is why the combine and pro day numbers on these players are worth revisiting as camp reports roll in over the next few weeks.</p>
+<table>
+<tr><th>Battle</th><th>Team</th><th>Deciding Trait</th></tr>
+<tr><td>Outside Cornerback</td><td>Giants</td><td>Closing speed, press-man recovery</td></tr>
+<tr><td>WR Rotation</td><td>Falcons</td><td>Straight-line speed</td></tr>
+<tr><td>WR Depth</td><td>Ravens</td><td>Short-area quickness</td></tr>
+<tr><td>RB2 / Change-of-Pace</td><td>Ravens</td><td>Vision and burst</td></tr>
+<tr><td>CB / WR Snaps</td><td>Jaguars</td><td>Return to pre-injury explosiveness</td></tr>
+</table>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What makes a camp battle "athleticism-decided" versus scheme-decided?</div>
+<div class="faq-a">A scheme-decided battle usually comes down to which player's skill set fits what the coordinator wants to run. An athleticism-decided battle is one where the players are relatively similar schematically, and the tiebreaker is a measurable trait — speed, burst, or explosiveness — that shows up directly in practice reps.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How much do preseason snaps actually predict regular season roles?</div>
+<div class="faq-a">Preseason usage is a meaningful signal but not a guarantee. Coaches often use August reps to evaluate depth pieces broadly, so a strong camp doesn't always translate directly into Week 1 playing time — but a player who's clearly winning 1-on-1 reps in camp is very likely to see an expanded role once the season starts.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="https://athletecalculator.com/combine-numbers-vs-training-camp-reality">
+<div class="related-title">Combine Numbers vs. Training Camp Reality</div>
+<div class="related-desc">How this year's fastest testers are translating</div>
+</a>
+<a class="related-card" href="https://athletecalculator.com/nfl-acl-achilles-comeback-athletic-benchmarks">
+<div class="related-title">The Athletic Benchmarks Behind Every Comeback</div>
+<div class="related-desc">What teams test before clearing an injured player</div>
+</a>
+<a class="related-card" href="https://athletecalculator.com/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available training camp reporting. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="https://athletecalculator.com/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="https://athletecalculator.com/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="https://athletecalculator.com/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="https://athletecalculator.com/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="https://athletecalculator.com/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>

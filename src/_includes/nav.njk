@@ -1,0 +1,10 @@
+<nav>
+  <a class="nav-brand" href="https://athletecalculator.com">Athlete<span>Calc</span></a>
+  <div class="nav-links">
+    <a href="https://athletecalculator.com">Home</a>
+    <a href="https://athletecalculator.com/articles"{% if navActive == 'articles' %} class="active"{% endif %}>Articles</a>
+    <a href="https://athletecalculator.com/vertical-jump-percentile">Vertical Jump</a>
+    <a href="https://athletecalculator.com/sprint-speed-calculator">Sprint Speed</a>
+    {% if navContextUrl %}<a href="{{ navContextUrl }}">{{ navContextLabel }}</a>{% else %}<a href="https://athletecalculator.com/squat-strength-calculator">Squat Strength</a>{% endif %}
+  </div>
+</nav>

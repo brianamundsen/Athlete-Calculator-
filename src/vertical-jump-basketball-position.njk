@@ -1,0 +1,866 @@
+---
+layout: base.njk
+title: "Average Vertical Jump for Basketball by Position and Level | Athlete Calculator"
+description: "Average vertical jump for basketball players at every position and level — from recreational to NBA. What is good for your position, and how you compare. Free calculator."
+canonicalPath: "/vertical-jump-basketball-position"
+mailerlite: false
+navContextUrl: "https://athletecalculator.com/average-nba-vertical-jump"
+navContextLabel: "NBA Verticals"
+disclaimer:
+  - "Data based on publicly available NBA draft combine records and sports science research."
+  - "Not affiliated with the NBA, NCAA, or any basketball organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Average Vertical Jump for Basketball by Position and Level",
+    "description": "Complete vertical jump norms for basketball players at every position and level from recreational to NBA, with what is considered good and elite at each tier.",
+    "url": "https://athletecalculator.com/vertical-jump-basketball-position",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/vertical-jump-basketball-position"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good vertical jump for a basketball player?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good vertical jump for a basketball player depends on their level. At the high school level, 24 to 28 inches is considered good for male players. At the college level, 28 to 32 inches is good. At the NBA level, the average is approximately 28 inches standing vertical and 34 to 36 inches max vertical, with elite players exceeding 40 inches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average vertical jump for an NBA point guard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average max vertical jump for an NBA point guard is approximately 34 to 36 inches. Elite point guards known for their leaping ability, such as those who regularly finish above the rim, often test above 38 to 40 inches. Point guards tend to have slightly lower average verticals than shooting guards and small forwards who are selected more heavily for athleticism."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What vertical jump do you need to play college basketball?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To play Division 1 college basketball, most male players average 28 to 32 inches vertical jump, with elite recruits averaging 32 to 36 inches. Division 2 and Division 3 players average 24 to 29 inches. There is no minimum vertical requirement to play college basketball, but players with higher verticals are more heavily recruited, particularly at guard and wing positions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do centers need a good vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, though centers tend to have lower average verticals than guards and wings because they are selected more for size and skill than raw athleticism. NBA centers average approximately 27 to 29 inches max vertical compared to 35 to 37 inches for wings and guards. A center with a 34-inch-plus vertical is considered exceptionally athletic for their position and has a significant advantage in shot blocking and rebounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does vertical jump affect basketball performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vertical jump affects basketball performance through rim finishing, shot blocking, rebounding, and the ability to make plays above the defense. Higher verticals allow players to finish through contact, contest shots at a higher point, and win jump balls. However, basketball success is determined by many factors beyond vertical jump, including shooting, vision, decision-making, and defensive skill."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Vertical Jump for Basketball by Position",
+        "item": "https://athletecalculator.com/vertical-jump-basketball-position"
+      }
+    ]
+  }
+  </script>
+permalink: "vertical-jump-basketball-position/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .hero { max-width: 780px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+
+  .breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+  h1 em { color: var(--accent); font-style: normal; }
+
+  .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .hero-meta-item {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 640px;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .article-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .article-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  .content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  .content p {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+  }
+  .content p strong { color: var(--text); }
+  .content a { color: var(--accent); text-decoration: none; }
+  .content a:hover { text-decoration: underline; }
+  .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+  .content li {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+  .content li strong { color: var(--text); }
+
+  /* ── POSITION BAR CHART ── */
+  .pos-chart {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .pos-chart-title {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .pos-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .pos-label { font-size: 0.78rem; color: var(--text-mid); width: 130px; flex-shrink: 0; }
+  .pos-label strong { display: block; color: var(--text); font-size: 0.82rem; }
+
+  .pos-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .pos-fill { height: 100%; border-radius: 100px; }
+
+  .pos-val {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-mid);
+    width: 42px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .data-table thead { background: var(--surface2); }
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+  .data-table .highlight td { background: rgba(170,255,0,0.07); }
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+  .callout-text strong { color: var(--accent); }
+  .callout-text a { color: var(--accent); }
+
+  /* ── LEVEL CARD ── */
+  .level-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 500px) { .level-grid { grid-template-columns: 1fr; } }
+
+  .level-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+
+  .level-card-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .level-card-sub {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .level-card-stats { display: flex; gap: 1rem; }
+
+  .lc-stat { flex: 1; text-align: center; }
+  .lc-val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.15rem;
+  }
+  .lc-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── CALC CTA ── */
+  .calc-cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .calc-cta-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .calc-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+  .calc-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #000 !important;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+  }
+  .calc-cta-btn:hover { opacity: 0.85; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+  .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  .faq-a a { color: var(--accent); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 5rem; }
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .sidebar-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+  .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+
+  .toc-link {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<div class="hero">
+<div class="breadcrumb">
+<a href="https://athletecalculator.com">Home</a>
+<span>→</span>
+<a href="https://athletecalculator.com/articles">Articles</a>
+<span>→</span>
+    Vertical Jump for Basketball by Position
+  </div>
+<h1>Vertical Jump for <em>Basketball</em> by Position and Level</h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 8 min read</span>
+<span class="hero-meta-item">🏀 Basketball</span>
+<span class="hero-meta-item">📊 Position Norms</span>
+</div>
+<p class="hero-intro">
+    A 28-inch vertical means something completely different for a point guard than it does for a center. Here is the full breakdown of average, good, and elite vertical jump for every basketball position — from recreational leagues all the way to the NBA.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<!-- SECTION 1 -->
+<h2>NBA Vertical Jump by Position</h2>
+<p>The NBA is the most data-rich source of basketball vertical jump information. Draft combine testing provides verified measurements for thousands of players over decades. Here are the average max verticals at each position based on available combine data.</p>
+<div class="pos-chart">
+<div class="pos-chart-title">Average Max Vertical Jump by NBA Position — Longer Bar = Higher Jump</div>
+<div class="pos-row">
+<div class="pos-label"><strong>Small Forward</strong>Wings</div>
+<div class="pos-track"><div class="pos-fill" style="width:92%;background:#aaff00"></div></div>
+<div class="pos-val">36"</div>
+</div>
+<div class="pos-row">
+<div class="pos-label"><strong>Shooting Guard</strong>Off guard</div>
+<div class="pos-track"><div class="pos-fill" style="width:89%;background:#aaff00"></div></div>
+<div class="pos-val">35.5"</div>
+</div>
+<div class="pos-row">
+<div class="pos-label"><strong>Point Guard</strong>Lead guard</div>
+<div class="pos-track"><div class="pos-fill" style="width:85%;background:#9dff00"></div></div>
+<div class="pos-val">34.5"</div>
+</div>
+<div class="pos-row">
+<div class="pos-label"><strong>Power Forward</strong>Big wing</div>
+<div class="pos-track"><div class="pos-fill" style="width:80%;background:#ffd600"></div></div>
+<div class="pos-val">33"</div>
+</div>
+<div class="pos-row">
+<div class="pos-label"><strong>Center</strong>Traditional big</div>
+<div class="pos-track"><div class="pos-fill" style="width:68%;background:#ff9000"></div></div>
+<div class="pos-val">29"</div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>Avg Standing Vertical</th>
+<th>Avg Max Vertical</th>
+<th>Elite (Top 15%)</th>
+<th>What Elite Looks Like</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Small Forward</td><td>30"</td><td>36"</td><td>40"+</td><td>Dunks from the free throw line area</td></tr>
+<tr class="highlight"><td>Shooting Guard</td><td>29"</td><td>35.5"</td><td>39"+</td><td>Catches lobs above the backboard</td></tr>
+<tr><td>Point Guard</td><td>28"</td><td>34.5"</td><td>38"+</td><td>Dunks in transition regularly</td></tr>
+<tr><td>Power Forward</td><td>27"</td><td>33"</td><td>37"+</td><td>Strong rebounder, blocks shots from behind</td></tr>
+<tr><td>Center</td><td>23"</td><td>29"</td><td>33"+</td><td>Dunks with authority, rim-level shot blocking</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="callout-icon">💡</div>
+<div class="callout-text"><strong>Standing vs max vertical:</strong> The max vertical allows a short approach and is typically 5 to 8 inches higher than the standing vertical. In-game dunks use the max vertical with full momentum. Draft combine standing verticals are the most consistently reported numbers — always clarify which is being measured when comparing. See our full <a href="https://athletecalculator.com/average-nba-vertical-jump">average NBA vertical jump guide</a> for the complete breakdown.</div>
+</div>
+<!-- CALC CTA 1 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Where Does Your Vertical Rank?</h3>
+<p>See how your vertical jump compares to basketball players at every level — from recreational to NBA — with our free percentile calculator.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/vertical-jump-percentile">Calculate My Vertical →</a>
+</div>
+<!-- SECTION 2 -->
+<h2>Vertical Jump by Level — From Recreational to NBA</h2>
+<p>Understanding how vertical jump expectations scale from recreational play to the professional level helps players set realistic benchmarks at every stage of development.</p>
+<div class="level-grid">
+<div class="level-card">
+<div class="level-card-title">Recreational</div>
+<div class="level-card-sub">Pickup / intramural</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">16–22"</div>
+<div class="lc-label">Male avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">12–17"</div>
+<div class="lc-label">Female avg</div>
+</div>
+</div>
+</div>
+<div class="level-card">
+<div class="level-card-title">High School JV</div>
+<div class="level-card-sub">Freshman / JV</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">20–24"</div>
+<div class="lc-label">Male avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">14–18"</div>
+<div class="lc-label">Female avg</div>
+</div>
+</div>
+</div>
+<div class="level-card">
+<div class="level-card-title">High School Varsity</div>
+<div class="level-card-sub">Varsity level</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">22–28"</div>
+<div class="lc-label">Male avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">16–20"</div>
+<div class="lc-label">Female avg</div>
+</div>
+</div>
+</div>
+<div class="level-card">
+<div class="level-card-title">College D3 / NAIA</div>
+<div class="level-card-sub">Smaller programs</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">24–28"</div>
+<div class="lc-label">Male avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">18–22"</div>
+<div class="lc-label">Female avg</div>
+</div>
+</div>
+</div>
+<div class="level-card">
+<div class="level-card-title">College D1</div>
+<div class="level-card-sub">Major programs</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">28–32"</div>
+<div class="lc-label">Male avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">20–24"</div>
+<div class="lc-label">Female avg</div>
+</div>
+</div>
+</div>
+<div class="level-card">
+<div class="level-card-title">NBA / WNBA</div>
+<div class="level-card-sub">Professional</div>
+<div class="level-card-stats">
+<div class="lc-stat">
+<div class="lc-val">34–36"</div>
+<div class="lc-label">NBA avg</div>
+</div>
+<div class="lc-stat">
+<div class="lc-val">22–25"</div>
+<div class="lc-label">WNBA avg</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3 -->
+<h2>What Is Good for Your Position at Each Level</h2>
+<p>This is the most useful table for players trying to benchmark themselves — comparing your vertical to other players at your specific position and level of play.</p>
+<h3>Male Players</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>HS Varsity Good</th>
+<th>College D1 Good</th>
+<th>NBA Average</th>
+<th>NBA Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Point Guard</td><td>24–28"</td><td>30–34"</td><td>34.5"</td><td>38"+</td></tr>
+<tr class="highlight"><td>Shooting Guard</td><td>25–29"</td><td>31–35"</td><td>35.5"</td><td>39"+</td></tr>
+<tr><td>Small Forward</td><td>25–30"</td><td>32–36"</td><td>36"</td><td>40"+</td></tr>
+<tr><td>Power Forward</td><td>22–27"</td><td>28–32"</td><td>33"</td><td>37"+</td></tr>
+<tr><td>Center</td><td>20–24"</td><td>24–28"</td><td>29"</td><td>33"+</td></tr>
+</tbody>
+</table>
+<h3>Female Players</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>HS Varsity Good</th>
+<th>College D1 Good</th>
+<th>WNBA Average</th>
+<th>WNBA Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Point Guard</td><td>17–21"</td><td>20–24"</td><td>22–24"</td><td>26"+</td></tr>
+<tr class="highlight"><td>Shooting Guard / Wing</td><td>17–21"</td><td>20–24"</td><td>23–25"</td><td>27"+</td></tr>
+<tr><td>Small Forward</td><td>18–22"</td><td>21–25"</td><td>23–25"</td><td>27"+</td></tr>
+<tr><td>Power Forward</td><td>16–20"</td><td>19–23"</td><td>21–23"</td><td>25"+</td></tr>
+<tr><td>Center</td><td>14–18"</td><td>17–21"</td><td>19–22"</td><td>24"+</td></tr>
+</tbody>
+</table>
+<!-- SECTION 4 -->
+<h2>How Vertical Jump Affects Performance at Each Position</h2>
+<p>The impact of vertical jump on basketball performance varies considerably by position. Understanding where it matters most — and where it matters less — helps players prioritize their training correctly.</p>
+<h3>Guards and Wings — Where Vertical Matters Most</h3>
+<p>For point guards, shooting guards, and small forwards, vertical jump directly affects the ability to finish above the rim, contest shots at a high point, and create separation for pull-up jumpers. <strong>Guards with elite verticals get to spots other defenders cannot contest.</strong> A shooting guard who jumps 38 inches can release a pull-up jumper over a 35-inch jumping defender — a genuine mechanical advantage that does not exist for guards with average verticals.</p>
+<p>At the high school and college recruiting level, guards with elite verticals for their position are disproportionately recruited. A 6'2" shooting guard who jumps 34 inches stands out immediately.</p>
+<h3>Big Men — Where Vertical Matters Differently</h3>
+<p>For power forwards and centers, vertical jump matters most for shot blocking and offensive rebounding rather than finishing. A center who jumps 33 inches can block shots that a 28-inch jumper cannot reach even with longer arms. On offense, a high-jumping big who seals position and catches lobs is difficult to guard.</p>
+<p>However, <strong>size, strength, footwork, and positioning matter more for bigs than vertical jump.</strong> Many elite NBA centers have had below-average verticals for their position — their effectiveness came from other skills. A 6'11" center with a 26-inch vertical can still dominate through positioning, strength, and skill. The same is not typically true for guards, where athleticism is more directly predictive of performance.</p>
+<h3>The Underrated Role of Vertical Jump in Defense</h3>
+<p>Shot blocking gets the attention, but vertical jump affects defense at every position. Higher-jumping defenders can recover from pump fakes more effectively, contest mid-range jumpers without fouling, and intercept passes at a higher release point. At elite levels, a half-inch difference in vertical can be the difference between a block and a made basket.</p>
+<!-- SECTION 5 -->
+<h2>Can I Play College Basketball With My Vertical?</h2>
+<p>Vertical jump is one of many factors in college recruitment — but it matters significantly for certain positions. Here is a realistic assessment by position.</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Position</th>
+<th>D1 Viable Vertical Range</th>
+<th>D2 Viable Range</th>
+<th>D3 / NAIA Range</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Point Guard</td><td>28"+ (ideally 32"+)</td><td>24–30"</td><td>20–26"</td></tr>
+<tr><td>Shooting Guard</td><td>30"+ (ideally 33"+)</td><td>25–31"</td><td>21–27"</td></tr>
+<tr><td>Small Forward</td><td>30"+ (ideally 34"+)</td><td>25–31"</td><td>22–27"</td></tr>
+<tr><td>Power Forward</td><td>26"+ (ideally 30"+)</td><td>22–28"</td><td>19–25"</td></tr>
+<tr><td>Center</td><td>22"+ (ideally 26"+)</td><td>18–24"</td><td>16–22"</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="callout-icon">🏀</div>
+<div class="callout-text"><strong>Important context:</strong> These ranges represent the vertical jump component of a recruiting evaluation — they are not guarantees. A point guard with a 26-inch vertical who shoots 45% from three and has elite court vision can absolutely play D1. Vertical jump opens doors at certain positions but does not define a basketball player. Film, production, and skill always matter more than measurables.</div>
+</div>
+<!-- CALC CTA 2 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>How Close Are You to Dunking?</h3>
+<p>Enter your height and vertical jump to see if you can dunk right now — and if not, exactly how close you are and what training will get you there.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/can-i-dunk-calculator">Can I Dunk? →</a>
+</div>
+<!-- SECTION 6 -->
+<h2>How to Improve Your Basketball Vertical Jump</h2>
+<p>The training principles for improving vertical jump are the same regardless of position — but the priorities differ based on your role.</p>
+<p><strong>For guards and wings</strong> — focus on the full combination of strength and plyometrics. Your vertical is a primary athletic indicator for scouts and directly affects your ability to finish and defend. Follow our <a href="https://athletecalculator.com/how-to-increase-vertical-jump">8-week vertical jump program</a> as your starting point, and use our <a href="https://athletecalculator.com/squat-strength-calculator">Squat Strength Predictor</a> to make sure your strength base is high enough to support continued gains.</p>
+<p><strong>For big men</strong> — vertical jump improvement should sit alongside strength development and footwork training rather than dominating your program. Getting your squat to 1.5 times bodyweight and adding two plyometric sessions per week is appropriate. Gains of 4 to 6 inches over a training season are realistic and meaningful for blocking and rebounding without overemphasizing athleticism at the expense of post skill development.</p>
+<p><strong>For all positions</strong> — approach mechanics matter. A well-timed approach jump off one foot adds 3 to 5 inches of effective height over a standing jump. This is the easiest immediate gain for any player — practice your approach at the rim daily as part of regular basketball training.</p>
+<!-- SECTION 7 - FAQ -->
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good vertical jump for a basketball player?</div>
+<div class="faq-a">It depends on level and position. At the high school varsity level, 24 to 28 inches is good for male guards and wings. At the college D1 level, 30 to 34 inches is good. At the NBA level, the position average ranges from 29 inches for centers to 36 inches for small forwards. Use our <a href="https://athletecalculator.com/vertical-jump-percentile">Vertical Jump Calculator</a> to see your exact percentile.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What vertical jump do you need to dunk in a basketball game?</div>
+<div class="faq-a">This depends entirely on your height and arm length. A 6-foot player needs approximately 28 to 30 inches from a standing jump or 24 to 28 inches off a running approach. A 6'4" player needs only about 20 to 24 inches standing. Use our <a href="https://athletecalculator.com/can-i-dunk-calculator">Can I Dunk calculator</a> for your exact personal threshold, or see our complete <a href="https://athletecalculator.com/vertical-jump-needed-to-dunk">vertical jump needed to dunk by height chart</a>.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is vertical jump important for a center?</div>
+<div class="faq-a">Yes, though it matters differently than for guards. Centers use vertical jump primarily for shot blocking, offensive rebounding, and catching lobs. An NBA center who jumps 33 or more inches is considered athletically elite for their position. However, size, strength, positioning, and footwork typically matter more for centers than for perimeter players — many effective NBA centers have below-average verticals for their position.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What vertical jump do college scouts look for?</div>
+<div class="faq-a">College scouts generally want guards and wings above 28 to 30 inches for D1 programs. However, vertical jump is one data point among many — shooting, handling, court vision, and defensive ability weigh heavily. A 26-inch guard with elite shooting gets recruited at the D1 level. A 34-inch guard who cannot shoot gets recruited significantly lower. Vertical jump opens doors but does not guarantee anything.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How do I improve my vertical jump for basketball specifically?</div>
+<div class="faq-a">The most effective approach combines heavy squats, depth jumps, and basketball-specific approach jump practice. Get your squat to 1.5 times bodyweight, do depth jumps twice a week, and practice your one-foot approach at the rim daily. Our <a href="https://athletecalculator.com/how-to-increase-vertical-jump">8-week vertical jump program</a> covers the full protocol. Most players add 3 to 6 inches in one 8-week cycle.</div>
+</div>
+<!-- FINAL CTA -->
+<div class="calc-cta">
+<div class="calc-cta-label">Find Out Now</div>
+<h3>Where Does Your Vertical Rank for Your Position?</h3>
+<p>Use our free vertical jump percentile calculator to see exactly where you stand compared to basketball players at every level — from high school to NBA.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/vertical-jump-percentile">Calculate My Vertical Jump →</a>
+</div>
+</div><!-- end content -->
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="https://athletecalculator.com/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Where does your vertical rank?
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/can-i-dunk-calculator">
+<strong>Can I Dunk?</strong>
+        Find out instantly
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        Predict your vertical from your squat
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">NBA Vertical by Position</a>
+<a class="toc-link" href="#">By Level — Recreational to NBA</a>
+<a class="toc-link" href="#">Good for Your Position</a>
+<a class="toc-link" href="#">How Vertical Affects Performance</a>
+<a class="toc-link" href="#">College Basketball Thresholds</a>
+<a class="toc-link" href="#">How to Improve</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="https://athletecalculator.com/average-nba-vertical-jump">
+<strong>Average NBA Vertical Jump</strong>
+        Full breakdown by position
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/vertical-jump-needed-to-dunk">
+<strong>Vertical Needed to Dunk</strong>
+        By height chart
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/good-vertical-jump-by-age">
+<strong>Good Vertical Jump by Age</strong>
+        All age groups covered
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/how-to-increase-vertical-jump">
+<strong>8-Week Vertical Jump Program</strong>
+        Add 3–6 inches fast
+      </a>
+</div>
+</aside>
+</div>

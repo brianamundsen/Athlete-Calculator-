@@ -1,0 +1,46 @@
+# 301 redirects: .html versions -> extensionless canonical URLs
+# Specific rules first (Netlify processes _redirects top-down)
+/vertical-jump-percentile.html  /vertical-jump-percentile  301!
+/sprint-speed-calculator.html  /sprint-speed-calculator  301!
+/squat-strength-calculator.html  /squat-strength-calculator  301!
+/can-i-dunk-calculator.html  /can-i-dunk-calculator  301!
+/how-to-increase-vertical-jump.html  /how-to-increase-vertical-jump  301!
+/how-much-to-squat-to-dunk.html  /how-much-to-squat-to-dunk  301!
+/average-nba-vertical-jump.html  /average-nba-vertical-jump  301!
+/nfl-combine-scores-explained.html  /nfl-combine-scores-explained  301!
+/good-vertical-jump-by-age.html  /good-vertical-jump-by-age  301!
+/average-40-yard-dash-times.html  /average-40-yard-dash-times  301!
+/squat-strength-sprint-speed.html  /squat-strength-sprint-speed  301!
+/how-to-run-faster-40-yard-dash.html  /how-to-run-faster-40-yard-dash  301!
+/relative-athletic-score-nfl.html  /relative-athletic-score-nfl  301!
+/broad-jump-sprint-speed-calculator.html  /broad-jump-sprint-speed-calculator  301!
+/how-fast-is-the-average-person.html  /how-fast-is-the-average-person  301!
+/vertical-jump-needed-to-dunk.html  /vertical-jump-needed-to-dunk  301!
+/average-vertical-jump-14-year-old.html  /average-vertical-jump-14-year-old  301!
+/vertical-jump-basketball-position.html  /vertical-jump-basketball-position  301!
+/aj-dybantsa-vertical-jump.html  /aj-dybantsa-vertical-jump  301!
+/victor-wembanyama-vertical-jump.html  /victor-wembanyama-vertical-jump  301!
+/shai-gilgeous-alexander-speed.html  /shai-gilgeous-alexander-speed  301!
+/dylan-harper-wingspan.html  /dylan-harper-wingspan  301!
+/lebron-james-vertical-jump.html  /lebron-james-vertical-jump  301!
+/jalen-brunson-height-wingspan.html  /jalen-brunson-height-wingspan  301!
+/nba-finals-2026-athleticism.html  /nba-finals-2026-athleticism  301!
+/knicks-2026-nba-champions-brunson-mvp.html  /knicks-2026-nba-champions-brunson-mvp  301!
+/how-fast-are-world-cup-players.html  /how-fast-are-world-cup-players  301!
+/lionel-messi-world-cup-2026-vertical-jump.html  /lionel-messi-world-cup-2026-vertical-jump  301!
+/vozinha-cape-verde-goalkeeper-height.html  /vozinha-cape-verde-goalkeeper-height  301!
+/usmnt-world-cup-2026-speed-athletic-profile.html  /usmnt-world-cup-2026-speed-athletic-profile  301!
+/lamine-yamal-height-wingspan-athletic-profile.html  /lamine-yamal-height-wingspan-athletic-profile  301!
+/average-vertical-jump-16-year-old.html  /average-vertical-jump-16-year-old  301!
+/articles.html  /articles  301!
+/argentina-cape-verde-world-cup-2026.html  /argentina-cape-verde-world-cup-2026  301!
+/average-40-yard-dash-time-16-year-old.html  /average-40-yard-dash-time-16-year-old  301!
+/average-40-yard-dash-time-17-year-old.html  /average-40-yard-dash-time-17-year-old  301!
+/average-40-yard-dash-time-15-year-old.html  /average-40-yard-dash-time-15-year-old  301!
+/average-vertical-jump-15-year-old.html  /average-vertical-jump-15-year-old  301!
+/average-vertical-jump-17-year-old.html  /average-vertical-jump-17-year-old  301!
+/giannis-antetokounmpo-athletic-profile.html  /giannis-antetokounmpo-athletic-profile  301!
+/kawhi-leonard-athletic-profile.html  /kawhi-leonard-athletic-profile  301!
+
+# Catch-all fallback for any .html page not listed above
+/*.html  /:splat  301!

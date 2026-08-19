@@ -1,0 +1,1046 @@
+---
+layout: base.njk
+title: "Squat Strength Calculator | Predict Your Vertical Jump & Sprint Speed"
+description: "Find out what your squat strength predicts for your vertical jump and sprint speed. Based on sports science research. Free instant calculator for athletes."
+canonicalPath: "/squat-strength-calculator"
+mailerlite: true
+disclaimer:
+  - "Predictions based on published sports science research correlating relative squat strength with jump height and sprint speed."
+  - "Results are estimates. Individual variation in technique, muscle fiber composition, and plyometric ability will affect actual performance."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Squat Strength to Vertical Jump and Sprint Speed Calculator",
+    "description": "Free calculator that predicts your vertical jump height and sprint speed based on your squat strength relative to bodyweight. Based on published sports science research.",
+    "url": "https://athletecalculator.com/squat-strength-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does squat strength improve vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Squat strength is one of the strongest predictors of vertical jump height. Research consistently shows that athletes who squat 1.5 to 2 times their bodyweight have significantly higher vertical jumps than untrained individuals. Increasing your squat max by 20 percent typically correlates with a 2 to 4 inch increase in vertical jump."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I squat to jump higher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To meaningfully improve your vertical jump, aim to squat at least 1.5 times your bodyweight. Athletes who squat 2 times bodyweight or more tend to have elite vertical jumps. The relationship between squat strength and vertical jump is strongest when combined with plyometric training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does squat strength affect sprint speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, especially for acceleration over short distances like the 40-yard dash. Athletes with high relative squat strength apply more force into the ground during each stride. Research shows that athletes who squat 2 times bodyweight are typically 0.2 to 0.4 seconds faster in the 40-yard dash than athletes who squat 1.0 times bodyweight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good squat for an athlete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For athletic performance, a squat of 1.5 times bodyweight is a solid foundation. Squatting 2.0 times bodyweight is considered strong for a male athlete and correlates with elite-level vertical jump and sprint performance. Female athletes at 1.5 times bodyweight are also considered very strong for their sport."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average squat for a high school athlete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average high school male athlete squats approximately 1.0 to 1.3 times their bodyweight. Female high school athletes average around 0.8 to 1.1 times bodyweight. College-level athletes typically squat 1.4 to 1.8 times bodyweight, and elite athletes often exceed 2.0 times bodyweight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I squat or do plyometrics to jump higher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Research shows the best vertical jump gains come from combining heavy squats with plyometric training. Squats build the force production capacity, while plyometrics train the rate of force development and stretch-shortening cycle. Either approach alone produces smaller gains than the two combined."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://athletecalculator.com/calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Squat Strength Calculator",
+        "item": "https://athletecalculator.com/squat-strength-calculator"
+      }
+    ]
+  }
+  </script>
+permalink: "squat-strength-calculator/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --accent-glow: rgba(170,255,0,0.35);
+    --accent2: #ff6b00;
+    --accent2-dim: rgba(255,107,0,0.12);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --red: #ff4d4d;
+    --orange: #ff9000;
+    --yellow: #ffd600;
+    --green: #aaff00;
+    --blue: #00cfff;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 2rem 1.5rem 0;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  h1 span { color: var(--accent); display: block; }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-top: 1rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .site-link {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .site-link:hover { border-color: var(--accent); color: var(--accent); }
+  .site-link strong { color: var(--accent); }
+
+  .links-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .field select,
+  .field input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field select:focus,
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  .full { grid-column: 1 / -1; }
+
+  /* unit toggle for weight/height */
+  .input-with-unit { position: relative; }
+
+  .unit-toggle {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 48px;
+  }
+
+  .unit-btn {
+    flex: 1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    font-family: var(--font-mono);
+  }
+
+  .unit-btn.active { background: var(--accent); color: #000; }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .calc-btn:hover { opacity: 0.88; }
+  .calc-btn:active { transform: scale(0.98); }
+
+  /* ── RATIO DISPLAY ── */
+  .ratio-pill {
+    text-align: center;
+    padding: 1.25rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .ratio-val {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    transition: color 0.5s;
+  }
+
+  .ratio-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+
+  .ratio-desc {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    margin-top: 0.5rem;
+  }
+
+  /* ── RESULTS ── */
+  #results { display: none; }
+  #results.visible { display: block; }
+
+  /* ── DUAL RESULT CARDS ── */
+  .dual-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .dual-results { grid-template-columns: 1fr; } }
+
+  .result-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .result-card.vert::before { background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%); }
+  .result-card.sprint::before { background: radial-gradient(circle, var(--accent2-dim) 0%, transparent 70%); }
+
+  .result-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .result-main {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .result-unit {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .result-range {
+    font-size: 0.75rem;
+    color: var(--text-mid);
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    font-family: var(--font-mono);
+  }
+
+  /* ── GAUGE (ratio meter) ── */
+  .gauge-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 2rem 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gauge-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .gauge-card-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    color: var(--text-mid);
+  }
+
+  .gauge-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .gauge-track { fill: none; stroke: var(--surface2); stroke-width: 18; stroke-linecap: round; }
+
+  .gauge-fill {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s ease;
+  }
+
+  .verdict {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+
+  /* ── STRENGTH SCALE ── */
+  .scale-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .scale-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .scale-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .scale-label { font-size: 0.75rem; color: var(--text-mid); width: 120px; flex-shrink: 0; }
+
+  .scale-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .scale-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scale-you-marker {
+    position: absolute;
+    top: -3px;
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scale-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 52px; text-align: right; flex-shrink: 0; }
+
+  .scale-strip {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-strip div { flex: 1; }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── INFO CARD ── */
+  .info-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+  .info-text strong { color: var(--accent); }
+
+  /* ── NEXT STEPS CARD ── */
+  .next-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .next-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+  }
+
+  .next-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .next-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+  .next-num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    width: 28px;
+    flex-shrink: 0;
+    opacity: 0.4;
+  }
+
+  .next-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+  .next-text strong { color: var(--text); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .anim-d1 { animation-delay: 0.05s; }
+  .anim-d2 { animation-delay: 0.15s; }
+  .anim-d3 { animation-delay: 0.25s; }
+  .anim-d4 { animation-delay: 0.35s; }
+  .anim-d5 { animation-delay: 0.45s; }
+
+  .you-row .scale-fill { background: var(--accent); }
+  .you-row .scale-label { color: var(--accent); font-weight: 600; }
+</style>
+<header>
+<p class="eyebrow">Free Athletic Performance Tool</p>
+<h1>Squat Strength<span>Predictor</span></h1>
+<p class="subtitle">Enter your squat max and bodyweight to predict your vertical jump and sprint speed — and see exactly what strength gains will do for your athleticism.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="https://athletecalculator.com">
+      ↑ <strong>Vertical Jump</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="https://athletecalculator.com/sprint-speed-calculator">
+      ↑ <strong>Sprint Speed</strong> Percentile Calculator
+    </a>
+</div>
+<!-- INPUT CARD -->
+<div class="card">
+<p class="card-label">Your Stats</p>
+<div class="form-grid">
+<div class="field">
+<label for="gender">Gender</label>
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="field">
+<label for="squat-type">Squat Type</label>
+<select id="squat-type">
+<option value="back">Back Squat (1RM)</option>
+<option value="front">Front Squat (1RM)</option>
+<option value="box">Box Squat (1RM)</option>
+</select>
+</div>
+<div class="field">
+<label>Bodyweight</label>
+<input id="bodyweight" max="400" min="50" placeholder="e.g. 185" step="1" type="number"/>
+</div>
+<div class="field">
+<label>Unit</label>
+<div class="unit-toggle">
+<button class="unit-btn active" onclick="setUnit('lbs', this)">LBS</button>
+<button class="unit-btn" onclick="setUnit('kg', this)">KG</button>
+</div>
+</div>
+<div class="field full">
+<label>Squat 1 Rep Max (same unit as bodyweight)</label>
+<input id="squat-max" max="1200" min="50" placeholder="e.g. 275" step="1" type="number"/>
+</div>
+</div>
+<button class="calc-btn" onclick="calculate()">Predict My Performance →</button>
+</div>
+<!-- RESULTS -->
+<div id="results">
+<!-- RATIO GAUGE -->
+<div class="gauge-card anim anim-d1">
+<div class="gauge-card-title">Strength-to-Bodyweight Ratio</div>
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="52" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="100">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1.5" text-anchor="middle" x="130" y="120">× BODYWEIGHT</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="8" id="gauge-sub" letter-spacing="1" text-anchor="middle" x="130" y="132">—</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<!-- EMAIL OPT-IN -->
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        Strength is the foundation. The exact strength, plyometric, and recovery sequence to turn your squat numbers into a higher vertical — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<!-- DUAL PREDICTIONS -->
+<div class="dual-results anim anim-d2">
+<div class="result-card vert">
+<div class="result-card-eyebrow">Predicted Vertical Jump</div>
+<div class="result-main" id="pred-vert" style="color:var(--accent)">—</div>
+<div class="result-unit">inches</div>
+<div class="result-range" id="pred-vert-range">—</div>
+<div id="pred-vert-cm" style="margin-top:0.75rem;font-size:0.72rem;color:var(--text-muted)">—</div>
+</div>
+<div class="result-card sprint">
+<div class="result-card-eyebrow">Predicted 40-Yd Dash</div>
+<div class="result-main" id="pred-sprint" style="color:var(--orange)">—</div>
+<div class="result-unit">seconds</div>
+<div class="result-range" id="pred-sprint-range">—</div>
+<div id="pred-sprint-mph" style="margin-top:0.75rem;font-size:0.72rem;color:var(--text-muted)">—</div>
+</div>
+</div>
+<!-- STRENGTH SCALE COMPARISON -->
+<div class="scale-card anim anim-d3">
+<div class="scale-card-title">How Your Squat Compares</div>
+<div class="scale-strip">
+<div style="background:#ff4d4d"></div>
+<div style="background:#ff7a00"></div>
+<div style="background:#ffd600"></div>
+<div style="background:#7fff00"></div>
+<div style="background:#aaff00"></div>
+</div>
+<div class="scale-labels">
+<span>Untrained</span><span>Beginner</span><span>Intermediate</span><span>Strong</span><span>Elite</span>
+</div>
+<div id="scale-rows"></div>
+</div>
+<!-- WHAT IF TABLE -->
+<div class="scale-card anim anim-d4" id="whatif-card">
+<div class="scale-card-title">What Happens If You Get Stronger?</div>
+<div id="whatif-rows"></div>
+</div>
+<!-- TRAINING TIP -->
+<div class="info-card anim anim-d4">
+<div class="info-icon">🏋️</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+<!-- NEXT STEPS -->
+<div class="next-card anim anim-d5">
+<div class="next-card-title">Your Training Priority</div>
+<div id="next-steps"></div>
+</div>
+</div>
+</div><script>
+let currentUnit = 'lbs';
+
+function setUnit(u, btn) {
+  currentUnit = u;
+  document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('bodyweight').placeholder = u === 'lbs' ? 'e.g. 185' : 'e.g. 84';
+  document.getElementById('squat-max').placeholder  = u === 'lbs' ? 'e.g. 275' : 'e.g. 125';
+}
+
+function toLbs(val) { return currentUnit === 'kg' ? val * 2.20462 : val; }
+
+// Adjust 1RM for squat type (front and box are slightly lower predictive value for vert)
+function adjustedSquat(raw, type) {
+  if (type === 'front') return raw * 1.08; // front squat ~92% of back squat equivalent
+  if (type === 'box')   return raw * 1.05;
+  return raw;
+}
+
+// ─── PREDICTION MODELS ───────────────────────────────────────────────────────
+// Based on Baker & Nance (1999), Wisløff et al. (2004), and NSCA research
+// Vertical jump (inches) from relative squat strength (ratio = squat/BW)
+function predictVert(ratio, gender) {
+  const base = gender === 'male'
+    ? 8 + (ratio * 12.5)   // male: ~0.5x BW → ~14in, 2.0x → ~33in
+    : 6 + (ratio * 10.0);  // female: ~0.5x BW → ~11in, 1.5x → ~21in
+
+  // Diminishing returns above 2.0x BW
+  const adj = ratio > 2.0 ? base + (ratio - 2.0) * 3 : base;
+  return Math.min(gender === 'male' ? 44 : 36, Math.max(6, adj));
+}
+
+// 40-yard dash (seconds) from relative squat strength
+function predictSprint(ratio, gender) {
+  const base = gender === 'male'
+    ? 5.8 - (ratio * 0.72)   // male: ~0.5x → ~5.44s, 2.0x → ~4.36s
+    : 7.0 - (ratio * 0.75);  // female: ~0.5x → ~6.63s, 2.0x → ~5.50s
+
+  return Math.max(gender === 'male' ? 4.2 : 4.6, Math.min(gender === 'male' ? 6.5 : 8.0, base));
+}
+
+function getMph(t40) { return (36.576 / t40) * 2.23694; }
+
+function getColor(ratio) {
+  if (ratio < 0.75) return '#ff4d4d';
+  if (ratio < 1.0)  return '#ff9000';
+  if (ratio < 1.3)  return '#ffd600';
+  if (ratio < 1.6)  return '#9dff00';
+  if (ratio < 2.0)  return '#aaff00';
+  return '#00cfff';
+}
+
+// Ratio to gauge percent (0.5x = 10%, 2.5x+ = 100%)
+function ratioToPct(ratio) {
+  return Math.min(100, Math.max(0, ((ratio - 0.4) / (2.6 - 0.4)) * 100));
+}
+
+const verdicts = [
+  { max: 0.75, label: "Untrained",         sub: "Building your squat is the single highest-leverage thing you can do for your athleticism right now." },
+  { max: 1.0,  label: "Beginner Strength", sub: "You have a foundation. Getting to 1.5x bodyweight will produce noticeable jumps in both your vertical and speed." },
+  { max: 1.3,  label: "Intermediate",      sub: "Solid base. Hitting 1.5–1.6x bodyweight is where most athletes start feeling genuinely explosive." },
+  { max: 1.6,  label: "Solidly Strong",    sub: "You're in the range where strength is translating into real athleticism. Keep pushing to 2.0x." },
+  { max: 2.0,  label: "Very Strong",       sub: "This is elite strength for most sports. Your squat is a real asset. Plyometrics will now multiply your gains." },
+  { max: 99,   label: "Exceptionally Strong", sub: "Top-end strength. At this level, rate of force development and plyometric efficiency are your performance levers." },
+];
+
+function animateNum(el, target, dur, decimals) {
+  decimals = decimals !== undefined ? decimals : 0;
+  const start = performance.now();
+  const from  = parseFloat(el.textContent.replace(/[^\d.-]/g, '')) || 0;
+  function step(now) {
+    const p    = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = (from + (target - from) * ease).toFixed(decimals);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function calculate() {
+  const gender    = document.getElementById('gender').value;
+  const sqType    = document.getElementById('squat-type').value;
+  const bwRaw     = parseFloat(document.getElementById('bodyweight').value);
+  const sqRaw     = parseFloat(document.getElementById('squat-max').value);
+
+  let hasError = false;
+  [['bodyweight', bwRaw], ['squat-max', sqRaw]].forEach(([id, val]) => {
+    if (isNaN(val) || val <= 0) {
+      document.getElementById(id).style.borderColor = 'var(--red)';
+      setTimeout(() => document.getElementById(id).style.borderColor = '', 1500);
+      hasError = true;
+    }
+  });
+  if (hasError) return;
+
+  const bwLbs  = toLbs(bwRaw);
+  const sqLbs  = adjustedSquat(toLbs(sqRaw), sqType);
+  const ratio  = sqLbs / bwLbs;
+  const color  = getColor(ratio);
+  const v      = verdicts.find(x => ratio < x.max) || verdicts[verdicts.length - 1];
+
+  const vert   = predictVert(ratio, gender);
+  const t40    = predictSprint(ratio, gender);
+  const mph    = getMph(t40);
+  const vertCm = vert * 2.54;
+
+  // Show results
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => {
+    el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  });
+
+  // ── GAUGE ──
+  const gaugePath = document.getElementById('gauge-path');
+  const gaugeNum  = document.getElementById('gauge-num');
+  const gaugeSub  = document.getElementById('gauge-sub');
+  const pct       = ratioToPct(ratio);
+  const totalLen  = 345;
+  const offset    = totalLen - (pct / 100) * totalLen;
+
+  gaugePath.style.stroke = color;
+  gaugePath.style.strokeDashoffset = totalLen;
+  setTimeout(() => { gaugePath.style.strokeDashoffset = offset; }, 50);
+
+  gaugeNum.style.fill = color;
+  animateNum(gaugeNum, ratio, 1200, 2);
+
+  const bwKg = currentUnit === 'kg' ? bwRaw : bwRaw / 2.20462;
+  const sqKg = currentUnit === 'kg' ? sqRaw : sqRaw / 2.20462;
+  gaugeSub.textContent = `${sqRaw}${currentUnit} ÷ ${bwRaw}${currentUnit}`;
+
+  document.getElementById('verdict').textContent = v.label;
+  document.getElementById('verdict').style.color = color;
+  document.getElementById('verdict-sub').textContent = v.sub;
+
+  // ── PREDICTED RESULTS ──
+  const vertEl   = document.getElementById('pred-vert');
+  const sprintEl = document.getElementById('pred-sprint');
+
+  vertEl.style.color   = color;
+  sprintEl.style.color = '#ff9000';
+
+  animateNum(vertEl,   vert, 1000, 1);
+  animateNum(sprintEl, t40,  1000, 2);
+
+  // Ranges (±10% variation for individual differences)
+  document.getElementById('pred-vert-range').textContent =
+    `Range: ${(vert * 0.88).toFixed(1)}″ – ${(vert * 1.12).toFixed(1)}″`;
+  document.getElementById('pred-sprint-range').textContent =
+    `Range: ${(t40 * 0.97).toFixed(2)}s – ${(t40 * 1.03).toFixed(2)}s`;
+
+  document.getElementById('pred-vert-cm').textContent   = `≈ ${vertCm.toFixed(1)} cm`;
+  document.getElementById('pred-sprint-mph').textContent = `≈ ${mph.toFixed(1)} mph top speed`;
+
+  // ── STRENGTH SCALE ROWS ──
+  const scaleRows = document.getElementById('scale-rows');
+  scaleRows.innerHTML = '';
+
+  const levels = [
+    { label: 'You',              ratio: ratio, isYou: true },
+    { label: 'Beginner (1.0×)',  ratio: 1.0 },
+    { label: 'Intermediate (1.3×)', ratio: 1.3 },
+    { label: 'Strong (1.6×)',    ratio: 1.6 },
+    { label: 'Elite (2.0×)',     ratio: 2.0 },
+  ];
+
+  const maxRatio = 2.4;
+
+  levels.forEach(d => {
+    const widthPct = Math.min(100, (d.ratio / maxRatio) * 100);
+    const c = d.isYou ? color : '#1e2c3a';
+
+    const row = document.createElement('div');
+    row.className = 'scale-row' + (d.isYou ? ' you-row' : '');
+    row.innerHTML = `
+      <div class="scale-label">${d.label}</div>
+      <div class="scale-track">
+        <div class="scale-fill" style="width:0%;background:${c}" data-w="${widthPct}"></div>
+        ${d.isYou ? `<div class="scale-you-marker" style="left:${widthPct}%"></div>` : ''}
+      </div>
+      <div class="scale-val">${d.ratio.toFixed(2)}×</div>`;
+    scaleRows.appendChild(row);
+  });
+
+  setTimeout(() => {
+    document.querySelectorAll('.scale-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+  }, 100);
+
+  // ── WHAT IF TABLE ──
+  const whatifRows = document.getElementById('whatif-rows');
+  whatifRows.innerHTML = '';
+
+  const targets = [1.25, 1.5, 1.75, 2.0, 2.25].filter(t => t > ratio + 0.1).slice(0, 4);
+
+  if (targets.length === 0) {
+    whatifRows.innerHTML = `<p style="font-size:0.85rem;color:var(--text-mid)">You're already at an elite strength level. Focus on plyometrics and speed-specific training to maximize your power output.</p>`;
+  } else {
+    targets.forEach(target => {
+      const futureVert   = predictVert(target, gender);
+      const futureSprint = predictSprint(target, gender);
+      const vertGain     = futureVert - vert;
+      const sprintGain   = t40 - futureSprint;
+      const newSqLbs     = target * bwLbs;
+      const newSqDisplay = currentUnit === 'lbs'
+        ? `${Math.round(newSqLbs)} lbs`
+        : `${Math.round(newSqLbs / 2.20462)} kg`;
+
+      const row = document.createElement('div');
+      row.className = 'scale-row';
+      row.style.cssText = 'align-items:flex-start;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border);';
+      row.innerHTML = `
+        <div class="scale-label" style="width:90px;padding-top:0.1rem">
+          <span style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:${getColor(target)}">${target.toFixed(2)}×</span><br>
+          <span style="font-size:0.65rem;color:var(--text-muted)">${newSqDisplay} squat</span>
+        </div>
+        <div style="flex:1;padding-left:0.5rem">
+          <div style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:0.2rem">
+            +${vertGain.toFixed(1)}" vertical → ${futureVert.toFixed(1)}"
+          </div>
+          <div style="font-size:0.8rem;color:#ff9000;font-weight:600">
+            −${sprintGain.toFixed(2)}s on 40yd → ${futureSprint.toFixed(2)}s
+          </div>
+        </div>`;
+      whatifRows.appendChild(row);
+    });
+  }
+
+  // ── TRAINING TIP ──
+  const tips = [
+    { max: 0.9,  text: `<strong>Your move:</strong> A beginner linear progression like <strong>5x5 squats</strong> 2–3x per week will move your numbers fast. At your level, adding 5–10 lbs per session is realistic. Focus on depth and bracing before adding load.` },
+    { max: 1.3,  text: `<strong>Next step:</strong> You're past beginner gains. A <strong>3-day per week squat program</strong> with progressive overload — squatting Monday, Wednesday, Friday — is optimal. Prioritize reaching 1.5× bodyweight as your first major athletic milestone.` },
+    { max: 1.6,  text: `<strong>Optimize now:</strong> At your strength level, pairing squats with <strong>plyometric training</strong> multiplies your output. Your muscles can produce force — now train the nervous system to do it faster. Add depth jumps and box jumps on non-squat days.` },
+    { max: 2.0,  text: `<strong>Rate of force development:</strong> You're strong. Your gains now come from how <strong>fast</strong> you can express that strength. Olympic lift variations (hang cleans, jump squats), contrast training, and reactive plyometrics are your next level.` },
+    { max: 99,   text: `<strong>Peak performance:</strong> At elite strength levels, gains come from <strong>specificity and timing</strong>. Maintain strength with lower volume, prioritize reactive ability and top-end speed. Overtraining is a real risk — manage load carefully.` },
+  ];
+  const tip = tips.find(t => ratio < t.max) || tips[tips.length - 1];
+  document.getElementById('tip-text').innerHTML = tip.text;
+
+  // ── NEXT STEPS ──
+  const nextSteps = document.getElementById('next-steps');
+  const steps = ratio < 1.5
+    ? [
+        { title: 'Build your squat', body: `Your primary goal is getting to <strong>1.5× bodyweight</strong>. This single milestone will produce the biggest jump in your vertical and 40 time. Squat heavy 2–3x per week.` },
+        { title: 'Add basic plyometrics', body: `Even while building strength, doing <strong>3 sets of box jumps</strong> twice per week teaches your nervous system to express force explosively. Keep it simple at this stage.` },
+        { title: 'Check your vertical now', body: `Use our <strong><a href="https://athletecalculator.com" style="color:var(--accent)">Vertical Jump Calculator</a></strong> to get your baseline, then retest every 8 weeks to track your progress.` },
+      ]
+    : ratio < 2.0
+    ? [
+        { title: 'Combine strength + plyos', body: `At your level, <strong>contrast training</strong> is highly effective — pair a heavy squat set immediately with a max-effort box jump. Your nervous system learns to apply force faster.` },
+        { title: 'Sprint work twice a week', body: `<strong>Resisted sprint training</strong> (sled pushes, band-resisted sprints) at 10–20% bodyweight resistance 2x per week will translate your squat strength directly into 40 time.` },
+        { title: 'Track your speed', body: `Use our <strong><a href="https://athletecalculator.com/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed Calculator</a></strong> to see your current percentile and benchmark your progress.` },
+      ]
+    : [
+        { title: 'Optimize rate of force development', body: `At elite strength, <strong>how fast</strong> you produce force matters more than how much. Olympic lift variations and reactive plyometrics are your primary tools.` },
+        { title: 'Maintain, don\'t always build', body: `Heavy squatting at this level requires significant recovery. <strong>Strength maintenance</strong> at 2–3 sessions per week lets you prioritize speed and power work without overreaching.` },
+        { title: 'Compare yourself to the best', body: `At your strength level, test yourself against elite benchmarks using our <strong><a href="https://athletecalculator.com" style="color:var(--accent)">Vertical Jump</a></strong> and <strong><a href="https://athletecalculator.com/sprint-speed-calculator" style="color:var(--accent)">Sprint Speed</a></strong> calculators.` },
+      ];
+
+  nextSteps.innerHTML = steps.map((s, i) => `
+    <div class="next-item">
+      <div class="next-num">${i + 1}</div>
+      <div class="next-text"><strong>${s.title}.</strong> ${s.body}</div>
+    </div>`).join('');
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { 'calculator_name': 'squat_strength' });
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>

@@ -1,0 +1,910 @@
+---
+layout: base.njk
+title: "Sprint Speed Percentile Calculator | How Fast Are You?"
+description: "Find out how your sprint speed ranks compared to the general population, high school athletes, college players, and pros. Enter your 40-yard dash, 100m time, or mph. Free instant calculator."
+canonicalPath: "/sprint-speed-calculator"
+mailerlite: true
+disclaimer:
+  - "Percentile data based on published sports science research, NFL combine records, and NCAA testing norms."
+  - "Not affiliated with NFL, NCAA, or any athletic organization. For entertainment and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sprint Speed Percentile Calculator",
+    "description": "Free calculator that shows how your sprint speed ranks compared to the general population, high school athletes, college athletes, and professional players. Supports 40-yard dash, 100m, and mph inputs for male and female across all age groups.",
+    "url": "https://athletecalculator.com/sprint-speed-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good 40 yard dash time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For adult males, a 40-yard dash time of 5.0 to 5.4 seconds is average for the general population. Under 4.7 seconds is considered athletic, and under 4.5 seconds is elite. The NFL combine average is around 4.54 seconds, with elite skill players running 4.3 or faster."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average 40 yard dash time for a high school athlete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average 40-yard dash for a high school male athlete is approximately 4.8 to 5.1 seconds. For female high school athletes, the average is around 5.5 to 5.9 seconds. Skill position players who go on to play college football typically run under 4.7 seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average 100m sprint time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average untrained adult male runs 100m in approximately 13 to 15 seconds. High school male athletes average 11.5 to 12.5 seconds. College-level sprinters average 10.5 to 11.2 seconds. The world record is 9.58 seconds set by Usain Bolt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast do NFL players run in mph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NFL players average about 15 to 17 mph during gameplay. Elite skill position players like wide receivers and cornerbacks can reach top speeds of 21 to 23 mph. The fastest recorded NFL speed is over 23 mph, equivalent to a sub-4.3 second 40-yard dash."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average sprint speed for a person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average untrained adult male can sprint at around 10 to 13 mph, equivalent to a 40-yard dash of 5.0 to 5.5 seconds. The average untrained adult female sprints at around 8 to 11 mph. Trained athletes typically reach 15 to 20 mph at peak speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my sprint speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective ways to improve sprint speed are acceleration drills such as resisted sprints and sled pushes, max velocity work with flying sprints and wicket drills, strength training focused on the posterior chain including deadlifts and hip thrusts, and plyometric training. A focused 8 to 12 week speed program can improve your 40-yard dash by 0.1 to 0.3 seconds."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://athletecalculator.com/calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sprint Speed Percentile Calculator",
+        "item": "https://athletecalculator.com/sprint-speed-calculator"
+      }
+    ]
+  }
+  </script>
+permalink: "sprint-speed-calculator/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --accent-glow: rgba(170,255,0,0.35);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --red: #ff4d4d;
+    --orange: #ff9000;
+    --yellow: #ffd600;
+    --green: #aaff00;
+    --blue: #00cfff;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 2rem 1.5rem 0;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  h1 span { color: var(--accent); display: block; }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-top: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .site-link {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .site-link:hover { border-color: var(--accent); color: var(--accent); }
+  .site-link strong { color: var(--accent); }
+
+  .links-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .format-tabs {
+    display: flex;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .format-tab {
+    flex: 1;
+    padding: 0.55rem 0.5rem;
+    text-align: center;
+    border-radius: 9px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.15s;
+  }
+
+  .format-tab.active { background: var(--accent); color: #000; font-weight: 700; }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .field select,
+  .field input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field select:focus,
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+
+  .full { grid-column: 1 / -1; }
+
+  .calc-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .calc-btn:hover { opacity: 0.88; }
+  .calc-btn:active { transform: scale(0.98); }
+
+  #results { display: none; }
+  #results.visible { display: block; }
+
+  .gauge-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gauge-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Speed conversions strip */
+  .conversions-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .conv-item { text-align: center; }
+
+  .conv-val {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    transition: color 0.5s;
+  }
+
+  .conv-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  .gauge-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .gauge-track {
+    fill: none;
+    stroke: var(--surface2);
+    stroke-width: 18;
+    stroke-linecap: round;
+  }
+
+  .gauge-fill {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s ease;
+  }
+
+  .verdict {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+
+  .compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .compare-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .compare-text { flex: 1; min-width: 0; }
+  .compare-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+  .compare-val { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.1; }
+  .compare-avg { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.15rem; }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+  .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+  .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+
+  .bar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bar-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .bar-label { font-size: 0.75rem; color: var(--text-mid); width: 115px; flex-shrink: 0; }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bar-you-marker {
+    position: absolute;
+    top: -3px;
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bar-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 58px; text-align: right; flex-shrink: 0; }
+
+  .scale-strip {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-strip div { flex: 1; }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .info-card {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+  .info-text strong { color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .anim-d1 { animation-delay: 0.05s; }
+  .anim-d2 { animation-delay: 0.15s; }
+  .anim-d3 { animation-delay: 0.25s; }
+  .anim-d4 { animation-delay: 0.35s; }
+
+  .you-row .bar-fill { background: var(--accent); }
+  .you-row .bar-label { color: var(--accent); font-weight: 600; }
+</style>
+<header>
+<p class="eyebrow">Free Athletic Performance Tool</p>
+<h1>Sprint Speed<span>Percentile</span></h1>
+<p class="subtitle">Enter your sprint time or top speed and find out exactly where you rank — from the general population to elite athletes and pros.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="https://athletecalculator.com">
+      ↑ <strong>Vertical Jump</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="https://athletecalculator.com/squat-strength-calculator">
+      ↑ <strong>Squat Strength</strong> Predictor Calculator
+    </a>
+</div>
+<!-- INPUT CARD -->
+<div class="card">
+<p class="card-label">Your Sprint Data</p>
+<div class="format-tabs">
+<button class="format-tab active" onclick="setFormat('40yd', this)">40-Yd Dash</button>
+<button class="format-tab" onclick="setFormat('100m', this)">100m Time</button>
+<button class="format-tab" onclick="setFormat('mph', this)">Top Speed (mph)</button>
+</div>
+<div class="form-grid">
+<div class="field">
+<label for="gender">Gender</label>
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="field">
+<label for="age">Age Group</label>
+<select id="age">
+<option value="teen">Teen (13–17)</option>
+<option selected="" value="adult">Adult (18–34)</option>
+<option value="master">Master (35–50)</option>
+<option value="senior">Senior (51+)</option>
+</select>
+</div>
+<div class="field full" id="input-40yd">
+<label>40-Yard Dash Time (seconds)</label>
+<input id="val-40yd" max="10" min="3.5" placeholder="e.g. 4.8" step="0.01" type="number"/>
+</div>
+<div class="field full" id="input-100m" style="display:none">
+<label>100m Time (seconds)</label>
+<input id="val-100m" max="22" min="9" placeholder="e.g. 12.5" step="0.01" type="number"/>
+</div>
+<div class="field full" id="input-mph" style="display:none">
+<label>Top Speed (mph)</label>
+<input id="val-mph" max="30" min="5" placeholder="e.g. 15" step="0.1" type="number"/>
+</div>
+</div>
+<button class="calc-btn" onclick="calculate()">Calculate My Speed Rank →</button>
+</div>
+<!-- RESULTS -->
+<div id="results">
+<div class="gauge-card anim anim-d1">
+<div class="conversions-row" id="conversions-row"></div>
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="62" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="108">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2" text-anchor="middle" x="130" y="128">PERCENTILE</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<!-- EMAIL OPT-IN -->
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        Speed starts with power. The exact strength, plyometric, and recovery sequence to build explosive athleticism — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<div class="compare-grid anim anim-d2" id="compare-grid"></div>
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">How You Compare</div>
+<div class="scale-strip">
+<div style="background:#ff4d4d"></div>
+<div style="background:#ff7a00"></div>
+<div style="background:#ffd600"></div>
+<div style="background:#7fff00"></div>
+<div style="background:#aaff00"></div>
+</div>
+<div class="scale-labels">
+<span>Beginner</span><span>Below Avg</span><span>Average</span><span>Athletic</span><span>Elite</span>
+</div>
+<div id="bars-wrap"></div>
+</div>
+<div class="info-card anim anim-d4">
+<div class="info-icon">⚡</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+</div><script>
+let currentFormat = '40yd';
+
+function setFormat(fmt, btn) {
+  currentFormat = fmt;
+  document.querySelectorAll('.format-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['40yd','100m','mph'].forEach(f => {
+    document.getElementById('input-' + f).style.display = f === fmt ? 'block' : 'none';
+  });
+}
+
+// All internal calcs use 40yd seconds as base (lower = faster = better)
+function to40yd(val, fmt) {
+  if (fmt === '40yd') return val;
+  if (fmt === '100m') return val * (36.576 / 91.44);
+  if (fmt === 'mph')  return 36.576 / (val * 0.44704);
+}
+
+function getMph(t40)  { return (36.576 / t40) * 2.23694; }
+function get100m(t40) { return t40 * (91.44 / 36.576); }
+function getMs(t40)   { return 36.576 / t40; }
+
+const pctBreaks = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
+
+// 40yd times at each percentile — index 0 = slowest (5th pct), index 10 = fastest (95th pct)
+const norms = {
+  male: {
+    teen:   [7.2, 6.7, 6.2, 5.9, 5.6, 5.3, 5.0, 4.8, 4.6, 4.45, 4.3],
+    adult:  [6.8, 6.3, 5.8, 5.5, 5.2, 5.0, 4.8, 4.65, 4.5, 4.38, 4.25],
+    master: [7.5, 7.0, 6.5, 6.1, 5.8, 5.5, 5.2, 5.0, 4.8, 4.6, 4.45],
+    senior: [8.5, 7.9, 7.2, 6.8, 6.4, 6.0, 5.7, 5.4, 5.1, 4.85, 4.65],
+  },
+  female: {
+    teen:   [8.5, 8.0, 7.4, 7.0, 6.6, 6.3, 6.0, 5.7, 5.4, 5.1, 4.9],
+    adult:  [8.0, 7.5, 6.9, 6.5, 6.2, 5.9, 5.6, 5.3, 5.1, 4.9, 4.7],
+    master: [8.8, 8.3, 7.7, 7.2, 6.8, 6.5, 6.1, 5.8, 5.5, 5.2, 5.0],
+    senior: [10.0, 9.2, 8.4, 7.9, 7.4, 7.0, 6.6, 6.2, 5.8, 5.5, 5.2],
+  }
+};
+
+const benchmarks = {
+  male: {
+    "General Pop.":     [5.2,  "🧍", "#1a1e24"],
+    "HS Athlete":       [4.88, "🏫", "#111a10"],
+    "College Athlete":  [4.68, "🎓", "#10151a"],
+    "NFL Combine Avg":  [4.54, "🏈", "#1a1510"],
+    "Olympic Sprinter": [4.15, "⚡",  "#1a1020"],
+  },
+  female: {
+    "General Pop.":     [6.2,  "🧍", "#1a1e24"],
+    "HS Athlete":       [5.65, "🏫", "#111a10"],
+    "College Athlete":  [5.3,  "🎓", "#10151a"],
+    "Pro Athlete":      [4.9,  "🏅", "#1a1510"],
+    "Olympic Sprinter": [4.65, "⚡",  "#1a1020"],
+  }
+};
+
+const verdicts = [
+  { max: 10,  label: "Just Starting Out",     color: "#ff4d4d", sub: "Speed is highly trainable. Most people see dramatic gains in the first 8 weeks of focused sprint work." },
+  { max: 25,  label: "Below Average",         color: "#ff9000", sub: "Your acceleration mechanics are your biggest opportunity. Small form improvements pay off fast at this level." },
+  { max: 40,  label: "Around Average",        color: "#ffd600", sub: "You're in the middle of the pack. Targeted speed work can push you above average quickly." },
+  { max: 60,  label: "Above Average",         color: "#9dff00", sub: "You're faster than most adults. You have a real athletic base to build on." },
+  { max: 75,  label: "Athletically Fast",     color: "#aaff00", sub: "Top third of athletes. This is genuine speed that shows up at a combine or tryout." },
+  { max: 90,  label: "Highly Explosive",      color: "#aaff00", sub: "Top 25%. You would turn heads on most tracks, fields, or athletic evaluations." },
+  { max: 97,  label: "Elite Speed",           color: "#00cfff", sub: "Top 10%. This is college combine territory. You're a legitimate speed threat at any level." },
+  { max: 101, label: "Exceptional — Top 3%",  color: "#ffffff", sub: "Professional-level speed. This is genuinely rare and places you among the fastest people alive." },
+];
+
+function getPercentile(t40, gender, age) {
+  const breaks = norms[gender][age];
+  if (t40 >= breaks[0]) return Math.max(1, pctBreaks[0] * (breaks[0] / t40) * 0.75);
+  if (t40 <= breaks[breaks.length - 1]) return Math.min(99.5, 95 + (breaks[breaks.length-1] - t40) * 6);
+  for (let i = 0; i < breaks.length - 1; i++) {
+    if (t40 <= breaks[i] && t40 > breaks[i + 1]) {
+      const t = (breaks[i] - t40) / (breaks[i] - breaks[i + 1]);
+      return pctBreaks[i] + t * (pctBreaks[i + 1] - pctBreaks[i]);
+    }
+  }
+  return 50;
+}
+
+function getColor(pct) {
+  if (pct < 10) return '#ff4d4d';
+  if (pct < 25) return '#ff9000';
+  if (pct < 40) return '#ffd600';
+  if (pct < 60) return '#9dff00';
+  if (pct < 85) return '#aaff00';
+  return '#00cfff';
+}
+
+function animateNumber(el, target, duration) {
+  const start = performance.now();
+  const from = parseFloat(el.textContent) || 0;
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(from + (target - from) * ease);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function calculate() {
+  const gender = document.getElementById('gender').value;
+  const age    = document.getElementById('age').value;
+
+  let inputEl;
+  if (currentFormat === '40yd') inputEl = document.getElementById('val-40yd');
+  else if (currentFormat === '100m') inputEl = document.getElementById('val-100m');
+  else inputEl = document.getElementById('val-mph');
+
+  const rawVal = parseFloat(inputEl.value);
+  if (isNaN(rawVal) || rawVal <= 0) {
+    inputEl.style.borderColor = 'var(--red)';
+    inputEl.focus();
+    setTimeout(() => inputEl.style.borderColor = '', 1500);
+    return;
+  }
+
+  const t40  = to40yd(rawVal, currentFormat);
+  const mph  = getMph(t40);
+  const t100 = get100m(t40);
+  const ms   = getMs(t40);
+
+  const pct   = Math.round(getPercentile(t40, gender, age));
+  const color = getColor(pct);
+  const v     = verdicts.find(x => pct < x.max) || verdicts[verdicts.length - 1];
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => {
+    el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  });
+
+  // ── CONVERSIONS ──
+  document.getElementById('conversions-row').innerHTML = `
+    <div class="conv-item">
+      <div class="conv-val" style="color:${color}">${t40.toFixed(2)}s</div>
+      <div class="conv-label">40-Yard Dash</div>
+    </div>
+    <div class="conv-item">
+      <div class="conv-val" style="color:${color}">${t100.toFixed(2)}s</div>
+      <div class="conv-label">100m Equiv.</div>
+    </div>
+    <div class="conv-item">
+      <div class="conv-val" style="color:${color}">${mph.toFixed(1)}</div>
+      <div class="conv-label">mph Top Speed</div>
+    </div>
+    <div class="conv-item">
+      <div class="conv-val" style="color:${color}">${ms.toFixed(2)}</div>
+      <div class="conv-label">m/s</div>
+    </div>`;
+
+  // ── GAUGE ──
+  const gaugeNum  = document.getElementById('gauge-num');
+  const gaugePath = document.getElementById('gauge-path');
+  const totalLen  = 345;
+  const offset    = totalLen - (pct / 100) * totalLen;
+  gaugePath.style.stroke = color;
+  gaugePath.style.strokeDashoffset = totalLen;
+  setTimeout(() => { gaugePath.style.strokeDashoffset = offset; }, 50);
+  animateNumber(gaugeNum, pct, 1200);
+  gaugeNum.style.fill = color;
+
+  document.getElementById('verdict').textContent = v.label;
+  document.getElementById('verdict').style.color = color;
+  document.getElementById('verdict-sub').textContent = v.sub;
+
+  // ── COMPARE CARDS ──
+  const grid = document.getElementById('compare-grid');
+  grid.innerHTML = '';
+  Object.entries(benchmarks[gender]).forEach(([name, [avgT40, icon, bg]]) => {
+    const diff = avgT40 - t40;
+    const badgeHTML = diff > 0.04
+      ? `<span class="badge badge-above">${diff.toFixed(2)}s faster</span>`
+      : diff < -0.04
+      ? `<span class="badge badge-below">${Math.abs(diff).toFixed(2)}s slower</span>`
+      : `<span class="badge badge-at">At average</span>`;
+
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    card.innerHTML = `
+      <div class="compare-icon" style="background:${bg}">${icon}</div>
+      <div class="compare-text">
+        <div class="compare-title">${name}</div>
+        <div class="compare-val">${badgeHTML}</div>
+        <div class="compare-avg">Avg: ${avgT40.toFixed(2)}s · ${getMph(avgT40).toFixed(1)} mph</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  // ── BARS ──
+  const barsWrap = document.getElementById('bars-wrap');
+  barsWrap.innerHTML = '';
+
+  const barData = [
+    { label: 'You',             t: t40, isYou: true },
+    { label: 'HS Athlete avg',  t: gender === 'male' ? 4.88 : 5.65 },
+    { label: 'College avg',     t: gender === 'male' ? 4.68 : 5.3  },
+    { label: 'Pro avg',         t: gender === 'male' ? 4.54 : 4.9  },
+    { label: 'Elite sprinter',  t: gender === 'male' ? 4.15 : 4.65 },
+  ];
+
+  const maxSpeed = Math.max(...barData.map(d => 1 / d.t));
+
+  barData.forEach(d => {
+    const widthPct = Math.min(100, ((1 / d.t) / maxSpeed) * 100);
+    const c = d.isYou ? color : '#1e2c3a';
+
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (d.isYou ? ' you-row' : '');
+    row.innerHTML = `
+      <div class="bar-label">${d.label}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:0%;background:${c}" data-w="${widthPct}"></div>
+        ${d.isYou ? `<div class="bar-you-marker" style="left:${widthPct}%"></div>` : ''}
+      </div>
+      <div class="bar-val">${d.t.toFixed(2)}s</div>`;
+    barsWrap.appendChild(row);
+  });
+
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+  }, 100);
+
+  // ── TIP ──
+  const tips = [
+    { max: 25,  text: `<strong>Priority:</strong> At your level, <strong>acceleration mechanics</strong> are the biggest lever — forward lean, arm drive, and first-step power. Resisted sled sprints 2x per week can shave <strong>0.2–0.4 seconds</strong> off your 40 in one training block.` },
+    { max: 55,  text: `<strong>Next level:</strong> You have a solid base. <strong>Flying sprints</strong> (10m build-up into 20m full effort) develop top-end velocity, which is likely your current ceiling. Pair with hip flexor strength work for fast gains.` },
+    { max: 80,  text: `<strong>Optimization zone:</strong> At your level, gains come from <strong>ground contact time</strong> and force application angle. Wicket drills and A-skip progressions sharpen mechanics. Your strength-to-weight ratio is the key variable here.` },
+    { max: 101, text: `<strong>Elite territory:</strong> You're already exceptional. Gains now come from managing CNS fatigue, <strong>block start refinement</strong>, and reaction time work. The margins are small but the upside is real at the pro level.` },
+  ];
+  const tip = tips.find(t => pct < t.max) || tips[tips.length - 1];
+  document.getElementById('tip-text').innerHTML = tip.text;
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_use', { 'calculator_name': 'sprint_speed' });
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>

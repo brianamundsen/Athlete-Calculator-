@@ -1,0 +1,852 @@
+---
+layout: base.njk
+title: "How Fast Is the Average Person in MPH? | Athlete Calculator"
+description: "How fast can the average person run in mph? Complete breakdown by age, gender, and fitness level — plus how you compare to athletes and world records. Free speed calculator."
+canonicalPath: "/how-fast-is-the-average-person"
+mailerlite: false
+navContextUrl: "https://athletecalculator.com/nfl-combine-scores-explained"
+navContextLabel: "NFL Combine"
+disclaimer:
+  - "Speed data based on published sports science research, player tracking systems, and athletic testing norms."
+  - "Not affiliated with any sports organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Fast Is the Average Person in MPH?",
+    "description": "A complete breakdown of average human running speed in mph by age, gender, and fitness level — with comparisons to athletes and world records.",
+    "url": "https://athletecalculator.com/how-fast-is-the-average-person",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/how-fast-is-the-average-person"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How fast can the average person run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average untrained adult male can run at approximately 8 to 10 mph at a comfortable jogging pace and reach a top sprint speed of around 10 to 13 mph. The average untrained adult female jogs at around 6 to 8 mph and reaches top sprint speeds of 8 to 11 mph. These numbers vary significantly with age, fitness level, and body composition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast is 10 mph running?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10 mph is a fast jogging pace for most adults — equivalent to a 6-minute mile. It is above average for an untrained adult but comfortable for a regularly active person. At 10 mph you would run a 40-yard dash in approximately 8.2 seconds. Most athletes can sustain 10 mph for short distances, but it requires genuine effort for untrained individuals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can a human run at maximum speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The fastest human ever recorded is Usain Bolt, who reached a top speed of 27.8 mph during his world record 100m sprint in 2009. The average untrained adult peaks at around 10 to 15 mph in a short all-out sprint. Elite NFL and soccer athletes reach 20 to 23 mph during competition. Most people physically cannot exceed 15 mph regardless of effort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 12 mph fast for a human?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, 12 mph is faster than average for an untrained adult. It is equivalent to a 5-minute mile pace and represents genuine athletic speed for someone who does not specifically train for speed. Most people can sustain 12 mph only for very short bursts. Regularly trained athletes can sustain 12 mph for longer periods, but it still represents near-maximum effort for most people."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast do NFL players run in mph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NFL players average about 15 to 17 mph during gameplay. Elite skill position players like wide receivers and cornerbacks reach top speeds of 21 to 23 mph during games. The fastest recorded NFL player speed is over 23 mph. For reference, a 4.4 second 40-yard dash corresponds to approximately 18.8 mph top speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast does the average person walk in mph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average adult walking speed is approximately 3 to 4 mph, with 3.1 mph being the commonly cited average. Brisk walking is typically defined as 3.5 to 4.5 mph. Race walkers and very fit adults can sustain over 5 mph walking pace. Walking speed tends to decrease with age, with adults over 70 averaging closer to 2.5 mph."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How Fast Is the Average Person in MPH?",
+        "item": "https://athletecalculator.com/how-fast-is-the-average-person"
+      }
+    ]
+  }
+  </script>
+permalink: "how-fast-is-the-average-person/index.html"
+---
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0f1419;
+    --surface2: #161c24;
+    --border: #1e2832;
+    --accent: #aaff00;
+    --accent-dim: rgba(170,255,0,0.12);
+    --text: #e8edf2;
+    --text-muted: #5a6470;
+    --text-mid: #8a96a4;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 em { color: var(--accent); font-style: normal; }
+
+  .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+
+  .hero-meta-item {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 640px;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .article-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .article-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  .content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  .content p {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .content p strong { color: var(--text); }
+  .content a { color: var(--accent); text-decoration: none; }
+  .content a:hover { text-decoration: underline; }
+  .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+
+  .content li {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+
+  .content li strong { color: var(--text); }
+
+  /* ── SPEED SCALE ── */
+  .speed-scale {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .speed-scale-title {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .speed-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .speed-label {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    width: 160px;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+
+  .speed-label strong { display: block; color: var(--text); font-size: 0.82rem; }
+
+  .speed-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .speed-fill { height: 100%; border-radius: 100px; }
+
+  .speed-val {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-mid);
+    width: 58px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead { background: var(--surface2); }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    background: var(--surface);
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+  .data-table .highlight td { background: rgba(170,255,0,0.07); }
+  .data-table .highlight td:first-child { color: var(--accent); }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--accent-dim);
+    border: 1px solid rgba(170,255,0,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+  .callout-text strong { color: var(--accent); }
+  .callout-text a { color: var(--accent); }
+
+  /* ── STAT CARDS ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 500px) { .stat-row { grid-template-columns: 1fr 1fr; } }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .stat-card-val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-card-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── CALC CTA ── */
+  .calc-cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .calc-cta-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .calc-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+
+  .calc-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #000 !important;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+  }
+
+  .calc-cta-btn:hover { opacity: 0.85; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  .faq-a a { color: var(--accent); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 5rem; }
+
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+  .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+
+  .toc-link {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+<div class="hero">
+<div class="breadcrumb">
+<a href="https://athletecalculator.com">Home</a>
+<span>→</span>
+<a href="https://athletecalculator.com/articles">Articles</a>
+<span>→</span>
+    How Fast Is the Average Person in MPH?
+  </div>
+<h1>How Fast Is the <em>Average Person</em> in MPH?</h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 7 min read</span>
+<span class="hero-meta-item">⚡ Sprint Speed</span>
+<span class="hero-meta-item">📊 Human Performance</span>
+</div>
+<p class="hero-intro">
+    The average untrained adult can sprint at around 10 to 13 mph at absolute maximum effort. But jogging speed, walking speed, and elite athlete speed tell a much more interesting story. Here's exactly how fast humans run at every level — and where you fit in.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<!-- SECTION 1 -->
+<h2>The Short Answer</h2>
+<p>Human running speed varies enormously depending on whether you're walking, jogging, or sprinting — and whether you're an untrained adult or an elite athlete. Here are the key numbers:</p>
+<div class="stat-row">
+<div class="stat-card">
+<div class="stat-card-val">3.1</div>
+<div class="stat-card-label">mph — average walking speed</div>
+</div>
+<div class="stat-card">
+<div class="stat-card-val">5–6</div>
+<div class="stat-card-label">mph — average jogging pace</div>
+</div>
+<div class="stat-card">
+<div class="stat-card-val">10–13</div>
+<div class="stat-card-label">mph — average top sprint speed</div>
+</div>
+</div>
+<p>Most people significantly overestimate how fast they run. The treadmill at 8 mph feels brutal for a reason — it's genuinely fast for an untrained person. The gap between average human speed and elite athletic speed is far larger than most people realize.</p>
+<!-- SECTION 2 -->
+<h2>The Full Human Speed Scale</h2>
+<div class="speed-scale">
+<div class="speed-scale-title">Human Running Speed — From Walking to World Record</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Average Walk</strong>Adults, normal pace</div>
+<div class="speed-track"><div class="speed-fill" style="width:11%;background:#3a4a5a"></div></div>
+<div class="speed-val">3.1 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Brisk Walk</strong>Fitness walking</div>
+<div class="speed-track"><div class="speed-fill" style="width:15%;background:#4a5a6a"></div></div>
+<div class="speed-val">4.0 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Average Jog</strong>Untrained adults</div>
+<div class="speed-track"><div class="speed-fill" style="width:20%;background:#ff9000"></div></div>
+<div class="speed-val">5–6 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Recreational Runner</strong>Regular training</div>
+<div class="speed-track"><div class="speed-fill" style="width:29%;background:#ffd600"></div></div>
+<div class="speed-val">7–9 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Avg Max Sprint</strong>Untrained adults</div>
+<div class="speed-track"><div class="speed-fill" style="width:40%;background:#9dff00"></div></div>
+<div class="speed-val">10–13 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Trained Athlete</strong>Regular sprint training</div>
+<div class="speed-track"><div class="speed-fill" style="width:58%;background:#aaff00"></div></div>
+<div class="speed-val">15–18 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>NFL / Pro Athlete</strong>Elite skill positions</div>
+<div class="speed-track"><div class="speed-fill" style="width:78%;background:#aaff00"></div></div>
+<div class="speed-val">20–23 mph</div>
+</div>
+<div class="speed-row">
+<div class="speed-label"><strong>Usain Bolt</strong>World record 100m</div>
+<div class="speed-track"><div class="speed-fill" style="width:100%;background:#00cfff"></div></div>
+<div class="speed-val">27.8 mph</div>
+</div>
+</div>
+<div class="callout">
+<div class="callout-icon">💡</div>
+<div class="callout-text"><strong>Reality check:</strong> Most people can only sustain their maximum sprint speed for 1 to 3 seconds. The speeds above represent peak velocity, not sustained pace. Usain Bolt's 27.8 mph was his peak speed during a 9.58 second race — he was not running that fast at the start or end of it. Use our <a href="https://athletecalculator.com/sprint-speed-calculator">Sprint Speed Calculator</a> to see where your speed ranks in percentile terms.</div>
+</div>
+<!-- SECTION 3 -->
+<h2>Average Running Speed by Age and Gender</h2>
+<p>Age and gender both significantly affect running speed. Males are consistently faster than females across all age groups, and speed peaks in the mid-to-late 20s before gradually declining.</p>
+<h3>Top Sprint Speed (Maximum Effort)</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Age Group</th>
+<th>Average Male (mph)</th>
+<th>Average Female (mph)</th>
+<th>Athletic (Top 25%)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>13–15 years</td><td>10–12 mph</td><td>8–10 mph</td><td>14+ mph (M) / 11+ mph (F)</td></tr>
+<tr><td>16–18 years</td><td>12–14 mph</td><td>9–11 mph</td><td>16+ mph (M) / 12+ mph (F)</td></tr>
+<tr class="highlight"><td>19–25 years</td><td>12–14 mph</td><td>9–11 mph</td><td>17+ mph (M) / 13+ mph (F)</td></tr>
+<tr class="highlight"><td>26–35 years</td><td>11–13 mph</td><td>8–10 mph</td><td>16+ mph (M) / 12+ mph (F)</td></tr>
+<tr><td>36–50 years</td><td>9–11 mph</td><td>7–9 mph</td><td>14+ mph (M) / 10+ mph (F)</td></tr>
+<tr><td>51+ years</td><td>7–9 mph</td><td>6–8 mph</td><td>11+ mph (M) / 9+ mph (F)</td></tr>
+</tbody>
+</table>
+<h3>Comfortable Jogging Pace (Sustainable)</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Fitness Level</th>
+<th>Jogging Pace (mph)</th>
+<th>Mile Time Equivalent</th>
+<th>5K Finish Time</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Beginner / Untrained</td><td>4–5 mph</td><td>12–15 min/mile</td><td>37–47 min</td></tr>
+<tr><td>Occasional Runner</td><td>5–6 mph</td><td>10–12 min/mile</td><td>31–37 min</td></tr>
+<tr class="highlight"><td>Regular Runner</td><td>6–8 mph</td><td>7.5–10 min/mile</td><td>23–31 min</td></tr>
+<tr class="highlight"><td>Serious Athlete</td><td>8–10 mph</td><td>6–7.5 min/mile</td><td>19–23 min</td></tr>
+<tr><td>Competitive Runner</td><td>10–12 mph</td><td>5–6 min/mile</td><td>15–19 min</td></tr>
+<tr><td>Elite Distance Runner</td><td>12–14 mph</td><td>4.3–5 min/mile</td><td>Under 14 min</td></tr>
+</tbody>
+</table>
+<!-- CALC CTA 1 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Where Does Your Speed Rank?</h3>
+<p>Enter your 40-yard dash time, 100m time, or top speed in mph to see your exact percentile ranking against the general population and athletes at every level.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+<!-- SECTION 4 -->
+<h2>Speed in MPH vs 40-Yard Dash Conversion</h2>
+<p>The 40-yard dash is the most common sprint test in American sports. Here's how mph top speed translates to 40-yard dash time — and what level of athlete each represents:</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Top Speed (mph)</th>
+<th>40-Yard Dash Equiv.</th>
+<th>100m Equiv.</th>
+<th>Who Runs This</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>8 mph</td><td>~10.2s</td><td>~27.8s</td><td>Sedentary adult, elderly</td></tr>
+<tr><td>10 mph</td><td>~8.2s</td><td>~22.4s</td><td>Average untrained adult</td></tr>
+<tr><td>12 mph</td><td>~6.8s</td><td>~18.6s</td><td>Recreationally active adult</td></tr>
+<tr><td>14 mph</td><td>~5.8s</td><td>~16.0s</td><td>Fit adult, high school athlete</td></tr>
+<tr class="highlight"><td>16 mph</td><td>~5.1s</td><td>~13.9s</td><td>Athletic adult, HS varsity</td></tr>
+<tr class="highlight"><td>18 mph</td><td>~4.5s</td><td>~12.4s</td><td>College athlete, fast HS</td></tr>
+<tr><td>20 mph</td><td>~4.1s</td><td>~11.2s</td><td>Elite college / pro-level</td></tr>
+<tr><td>22 mph</td><td>~3.7s</td><td>~10.2s</td><td>NFL elite, sub-elite sprinter</td></tr>
+<tr><td>27.8 mph</td><td>~2.93s</td><td>~8.05s</td><td>Usain Bolt world record</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="callout-icon">📊</div>
+<div class="callout-text"><strong>Note on methodology:</strong> These conversions assume peak velocity, not average race velocity. A 40-yard dash involves acceleration from a standing start — so a 4.4 second 40 does not mean the runner averaged 18+ mph throughout. Peak top speed is typically reached between yards 20–35. See our <a href="https://athletecalculator.com/average-40-yard-dash-times">average 40-yard dash times guide</a> for position-by-position benchmarks.</div>
+</div>
+<!-- SECTION 5 -->
+<h2>How Fast Do Athletes Run in MPH?</h2>
+<p>Once you understand where the average person sits — 10 to 13 mph at peak — the speed of elite athletes becomes genuinely extraordinary.</p>
+<h3>NFL Players</h3>
+<p>NFL players average <strong>15 to 17 mph</strong> during in-game play. Elite skill positions — wide receivers, cornerbacks, running backs — regularly hit <strong>20 to 23 mph</strong> in games. The fastest recorded NFL player speed in the modern tracking era is over 23 mph. At a 4.4-second 40-yard dash, a player's peak speed is approximately 18.8 mph.</p>
+<h3>Soccer Players</h3>
+<p>Elite soccer players reach top speeds of <strong>20 to 23 mph</strong> during matches. The fastest players — typically wingers and attacking midfielders — have been clocked above 23 mph during sprints. The average outfield player runs 7 to 9 miles per match at a wide range of intensities from walking to full sprint.</p>
+<h3>Basketball Players</h3>
+<p>NBA player tracking data shows most guards and wings reach <strong>17 to 20 mph</strong> during fast breaks and transition play. The very fastest NBA players approach 21 to 22 mph in short bursts. Unlike football or soccer, basketball speed is measured over much shorter distances where acceleration matters more than top-end velocity.</p>
+<h3>Olympic Sprinters</h3>
+<p>Elite 100m sprinters reach top speeds between <strong>23 and 26 mph</strong>. Usain Bolt's world record 9.58 seconds corresponds to an average race speed of 23.4 mph, with a peak speed of 27.8 mph. The women's world record of 10.49 seconds corresponds to an average of 21.4 mph.</p>
+<!-- SECTION 6 -->
+<h2>What Affects How Fast You Can Run?</h2>
+<p><strong>Muscle fiber composition.</strong> Fast-twitch muscle fibers produce more force more quickly than slow-twitch fibers. Athletes with a higher proportion of fast-twitch fibers have a natural speed advantage. This is largely genetic — you can train fast-twitch fibers to perform better, but you cannot fundamentally change your fiber type ratio.</p>
+<p><strong>Leg strength relative to bodyweight.</strong> Stronger legs produce more force per stride. This is why <a href="https://athletecalculator.com/squat-strength-sprint-speed">squat strength correlates strongly with sprint speed</a> — athletes who squat more relative to their bodyweight tend to run faster. This is the most trainable component of sprint speed.</p>
+<p><strong>Stride length and frequency.</strong> Speed equals stride length multiplied by stride frequency. Elite sprinters have longer strides than average — not because of longer legs, but because they produce more propulsive force per step. Stride frequency is harder to change through training than stride length.</p>
+<p><strong>Running mechanics.</strong> Inefficient mechanics — overstriding, excessive vertical oscillation, poor arm drive — waste energy and slow you down without any reduction in effort. This is why technique coaching can produce significant speed improvements without any fitness change.</p>
+<p><strong>Age.</strong> Sprint speed peaks in the mid-to-late 20s and declines approximately 1% per year after 30. The decline is driven by reductions in fast-twitch fiber size, neuromuscular firing rate, and hormonal changes. Regular sprint training slows this decline significantly.</p>
+<!-- SECTION 7 -->
+<h2>How to Increase Your Running Speed</h2>
+<p>If you want to run faster, the most effective approach combines three elements:</p>
+<p><strong>Build relative strength.</strong> Getting your squat to 1.5× bodyweight has a more direct impact on sprint speed than almost any other training intervention. See our <a href="https://athletecalculator.com/squat-strength-calculator">Squat Strength Predictor</a> to see what your current strength predicts for your speed — and what each strength milestone will add.</p>
+<p><strong>Sprint regularly.</strong> You get faster at sprinting by sprinting. 2 sessions of 6 × 30-yard all-out sprints per week with full rest between reps is more effective for speed development than any amount of distance running.</p>
+<p><strong>Fix your mechanics.</strong> Forward lean, arm drive, staying low for the first 5 steps — these technique fixes can add 1 to 2 mph to your top speed without any fitness improvement. Read our <a href="https://athletecalculator.com/how-to-run-faster-40-yard-dash">complete guide on running a faster 40</a> for the full mechanics breakdown.</p>
+<!-- CALC CTA 2 -->
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>What Does Your Squat Predict for Your Speed?</h3>
+<p>Enter your squat max and bodyweight to see your predicted 40-yard dash time and mph top speed — and what each strength milestone will add.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/squat-strength-calculator">Squat Strength Predictor →</a>
+</div>
+<!-- SECTION 8 -->
+<h2>Walking Speed — The Other Half of the Picture</h2>
+<p>Running gets all the attention, but walking speed is a surprisingly meaningful health metric. Research consistently shows that walking speed in older adults is one of the best predictors of longevity and overall health — more predictive than many standard clinical measures.</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>Walking Type</th>
+<th>Typical Speed</th>
+<th>Mile Time</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Slow / leisurely</td><td>2.0–2.5 mph</td><td>24–30 min</td></tr>
+<tr><td>Average adult</td><td>3.0–3.5 mph</td><td>17–20 min</td></tr>
+<tr class="highlight"><td>Brisk walk</td><td>3.5–4.5 mph</td><td>13–17 min</td></tr>
+<tr><td>Power walk</td><td>4.5–5.5 mph</td><td>11–13 min</td></tr>
+<tr><td>Race walk</td><td>8–9 mph</td><td>6.5–7.5 min</td></tr>
+<tr><td>Walking world record</td><td>9.1 mph</td><td>6.6 min</td></tr>
+</tbody>
+</table>
+<!-- FAQ -->
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">How fast can the average person run in mph?</div>
+<div class="faq-a">The average untrained adult male reaches a top sprint speed of around 10 to 13 mph. The average untrained adult female tops out at 8 to 11 mph. At a comfortable jogging pace, most adults run 5 to 6 mph. These numbers vary with age, fitness, and body composition. Use our <a href="https://athletecalculator.com/sprint-speed-calculator">Sprint Speed Calculator</a> to see where your speed ranks as a percentile.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is 15 mph fast for a human?</div>
+<div class="faq-a">Yes — 15 mph is genuinely fast and places an adult in the athletic tier. It is equivalent to roughly a 5.4 second 40-yard dash, which is above average even for high school athletes. Most untrained adults cannot reach 15 mph regardless of effort. Regularly trained athletes and competitive high school athletes can typically hit 15 to 17 mph.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How fast is 10 mph on a treadmill?</div>
+<div class="faq-a">10 mph on a treadmill is a 6-minute mile pace — faster than most people's comfortable running pace and equivalent to a serious workout even for fit adults. It feels significantly harder on a treadmill than overground because of belt mechanics and the absence of wind resistance. Most people can only sustain 10 mph for a minute or less without prior training.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How fast does the average high school athlete run?</div>
+<div class="faq-a">The average high school male athlete reaches top sprint speeds of 14 to 17 mph, equivalent to a 40-yard dash of 4.75 to 5.8 seconds depending on sport and position. Female high school athletes average 11 to 14 mph. High school athletes who go on to play college sports typically hit 16 mph or above. See our <a href="https://athletecalculator.com/average-40-yard-dash-times">average 40-yard dash times by sport</a> for detailed benchmarks.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How fast is Usain Bolt in mph?</div>
+<div class="faq-a">Usain Bolt reached a peak speed of 27.8 mph during his world record 9.58 second 100m sprint in Berlin in 2009. His average speed across the entire race was 23.4 mph. For comparison, the fastest NFL players reach about 23 mph — roughly equivalent to Bolt's average race speed, but Bolt's peak is nearly 5 mph faster than the fastest football players have ever been clocked.</div>
+</div>
+<!-- FINAL CTA -->
+<div class="calc-cta">
+<div class="calc-cta-label">Find Out Now</div>
+<h3>How Does Your Speed Compare?</h3>
+<p>Enter your 40-yard dash, 100m time, or top speed in mph to see your exact percentile ranking against the general population, high school athletes, college athletes, and pros.</p>
+<a class="calc-cta-btn" href="https://athletecalculator.com/sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+</div><!-- end .content -->
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="https://athletecalculator.com/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        Where does your speed rank?
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        Predict your mph from your squat
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/broad-jump-sprint-speed-calculator">
+<strong>Broad Jump Speed Predictor</strong>
+        Predict your 40 from your broad jump
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Where does your vertical rank?
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">The Short Answer</a>
+<a class="toc-link" href="#">Full Human Speed Scale</a>
+<a class="toc-link" href="#">Speed by Age and Gender</a>
+<a class="toc-link" href="#">MPH to 40-Yard Dash</a>
+<a class="toc-link" href="#">How Fast Do Athletes Run?</a>
+<a class="toc-link" href="#">What Affects Speed?</a>
+<a class="toc-link" href="#">How to Get Faster</a>
+<a class="toc-link" href="#">Walking Speed</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="https://athletecalculator.com/average-40-yard-dash-times">
+<strong>Average 40-Yard Dash Times</strong>
+        By sport, position, and level
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/how-to-run-faster-40-yard-dash">
+<strong>How to Run a Faster 40</strong>
+        Complete training guide
+      </a>
+<a class="sidebar-link" href="https://athletecalculator.com/squat-strength-sprint-speed">
+<strong>Squat Strength and Sprint Speed</strong>
+        The science explained
+      </a>
+</div>
+</aside>
+</div>
