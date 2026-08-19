@@ -76,6 +76,8 @@ for f in sorted(files):
     nav_active = ""
     if nav:
         for a in nav.find_all("a"):
+            if "nav-brand" in (a.get("class") or []):
+                continue
             label = a.get_text(strip=True)
             href = a.get("href", "")
             if "articles" in href and out_name != "articles.html":
