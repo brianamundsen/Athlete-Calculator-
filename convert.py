@@ -53,6 +53,9 @@ for f in sorted(files):
     with open(path, encoding="utf-8") as fh:
         raw = fh.read()
     soup = BeautifulSoup(raw, "lxml")
+    from bs4 import Comment
+    for c in soup.find_all(string=lambda t: isinstance(t, Comment)):
+        c.extract()
 
     title = soup.title.string.strip() if soup.title and soup.title.string else ""
     desc_tag = soup.find("meta", attrs={"name": "description"})
