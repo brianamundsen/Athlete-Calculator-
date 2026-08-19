@@ -59,6 +59,17 @@
     letter-spacing: 0.05em;
   }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
 </style>
 {% if pageStyle %}{{ pageStyle | safe }}{% endif %}
 {% if jsonld %}
