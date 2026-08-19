@@ -4,6 +4,166 @@ title: "All Articles — Basketball, Soccer & Training Guides | Athlete Calculat
 description: "Browse all Athlete Calculator articles by sport — NBA Finals, 2026 World Cup, vertical jump guides, NFL combine breakdowns, and training science."
 canonicalPath: "/articles"
 mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    /* ── NAV ── */
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    /* ── HERO ── */
+    .hero { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.75rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-sub { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
+  
+    /* ── FILTER TABS ── */
+    .filter-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+    .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .filter-tab {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; }
+    .filter-count { font-size: 0.6rem; opacity: 0.7; }
+  
+    /* ── ARTICLE GRID ── */
+    .articles-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+    .category-group { margin-bottom: 3rem; }
+    .category-label {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .category-label .cat-icon { font-size: 1.4rem; }
+  
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+  
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .article-card:hover::before { background: var(--accent); }
+  
+    .article-tag {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+    .article-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .article-read {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+  
+    /* hidden when filtered */
+    .article-card[hidden] { display: none; }
+    .category-group[hidden] { display: none; }
+  
+    /* ── CALCULATORS STRIP ── */
+    .calcs-strip { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
 navActive: "articles"
 navContextUrl: "https://athletecalculator.com"
 navContextLabel: "AthleteCalc"
@@ -19,165 +179,6 @@ jsonld: |-
   </script>
 permalink: "articles/index.html"
 ---
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
-    --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
-    --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
-    --font-display: 'Barlow Condensed', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'DM Mono', monospace;
-  }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
-
-  /* ── NAV ── */
-  nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
-  .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
-  .nav-brand span { color: var(--accent); }
-  .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-  /* ── HERO ── */
-  .hero { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
-  .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
-  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span { margin: 0 0.4rem; }
-  h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.75rem; }
-  h1 em { color: var(--accent); font-style: normal; }
-  .hero-sub { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
-
-  /* ── FILTER TABS ── */
-  .filter-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
-  .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
-  .filter-tab {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.55rem 1.1rem;
-    border-radius: 100px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
-  .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; }
-  .filter-count { font-size: 0.6rem; opacity: 0.7; }
-
-  /* ── ARTICLE GRID ── */
-  .articles-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 5rem; }
-  .category-group { margin-bottom: 3rem; }
-  .category-label {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .category-label .cat-icon { font-size: 1.4rem; }
-
-  .articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-  }
-
-  .article-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.5rem;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.2s, transform 0.15s;
-    position: relative;
-    overflow: hidden;
-  }
-  .article-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: transparent;
-    transition: background 0.2s;
-  }
-  .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .article-card:hover::before { background: var(--accent); }
-
-  .article-tag {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.6rem;
-  }
-  .article-title {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--text);
-    line-height: 1.1;
-    margin-bottom: 0.6rem;
-  }
-  .article-desc {
-    font-size: 0.82rem;
-    color: var(--text-mid);
-    line-height: 1.55;
-    flex: 1;
-    margin-bottom: 1rem;
-  }
-  .article-read {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  /* hidden when filtered */
-  .article-card[hidden] { display: none; }
-  .category-group[hidden] { display: none; }
-
-  /* ── CALCULATORS STRIP ── */
-  .calcs-strip { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 3rem; }
-  .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-  .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
-  .calc-pill {
-    background: var(--accent-dim);
-    border: 1px solid rgba(170,255,0,0.2);
-    border-radius: 10px;
-    padding: 1rem;
-    text-decoration: none;
-    transition: border-color 0.2s;
-  }
-  .calc-pill:hover { border-color: var(--accent); }
-  .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
-  .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
-
-  footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
-  footer a { color: var(--text-muted); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
-</style>
 <div class="hero">
 <div class="breadcrumb">
 <a href="https://athletecalculator.com">Home</a>

@@ -121,6 +121,9 @@ for f in sorted(files):
     fm.append(f"description: {yaml_escape(description)}")
     fm.append(f"canonicalPath: {yaml_escape(canonical_path)}")
     fm.append(f"mailerlite: {'true' if mailerlite else 'false'}")
+    fm.append("pageStyle: |-")
+    for line in style_html.splitlines():
+        fm.append("  " + line)
     if nav_active:
         fm.append(f"navActive: {yaml_escape(nav_active)}")
     if nav_context_url:
@@ -141,7 +144,7 @@ for f in sorted(files):
     out_path = os.path.join(OUT, out_name.replace(".html", ".njk"))
     with open(out_path, "w", encoding="utf-8") as out_fh:
         out_fh.write("\n".join(fm) + "\n")
-        out_fh.write(style_html + "\n" + main_content)
+        out_fh.write(main_content)
 
     report.append((out_name, canonical_path, mailerlite, bool(nav_context_url), len(disclaimer_lines)))
 

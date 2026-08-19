@@ -4,6 +4,530 @@ title: "Vertical Jump Percentile Calculator | Where Do You Rank?"
 description: "Find out where your vertical jump ranks compared to the general population, high school athletes, college players, and pros. Free instant calculator."
 canonicalPath: "/vertical-jump-percentile"
 mailerlite: true
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --accent-glow: rgba(170,255,0,0.35);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --red: #ff4d4d;
+      --orange: #ff9000;
+      --yellow: #ffd600;
+      --green: #aaff00;
+      --blue: #00cfff;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+  
+    /* ─── HEADER ─── */
+    header {
+      padding: 2rem 1.5rem 0;
+      text-align: center;
+      position: relative;
+    }
+  
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+  
+    h1 span {
+      color: var(--accent);
+      display: block;
+    }
+  
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-top: 1rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    /* ─── MAIN LAYOUT ─── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+  
+    /* ─── INPUT CARD ─── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+  
+    .field select,
+    .field input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+  
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+  
+    .field select { cursor: pointer; }
+  
+    .jump-input-wrap {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+  
+    .jump-input-wrap .field { flex: 1; }
+  
+    .unit-toggle {
+      display: flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 48px;
+      flex-shrink: 0;
+    }
+  
+    .unit-btn {
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+  
+    .unit-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+  
+    .calc-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+  
+    .calc-btn:hover { opacity: 0.88; }
+    .calc-btn:active { transform: scale(0.98); }
+  
+    /* ─── RESULTS ─── */
+    #results { display: none; }
+    #results.visible { display: block; }
+  
+    /* ─── GAUGE ─── */
+    .gauge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .gauge-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  
+    .gauge-wrap {
+      position: relative;
+      width: 260px;
+      height: 140px;
+      margin: 0 auto 1.5rem;
+    }
+  
+    .gauge-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+  
+    .gauge-track {
+      fill: none;
+      stroke: var(--surface2);
+      stroke-width: 18;
+      stroke-linecap: round;
+    }
+  
+    .gauge-fill {
+      fill: none;
+      stroke-width: 18;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  stroke 0.6s ease;
+    }
+  
+    .gauge-center {
+      position: absolute;
+      bottom: -4px; left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  
+    .percentile-num {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+      transition: color 0.6s;
+    }
+  
+    .percentile-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+  
+    .verdict {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+  
+    .verdict-sub {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+  
+    /* ─── COMPARISON TABLE ─── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 480px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+  
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .compare-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+  
+    .compare-text { flex: 1; min-width: 0; }
+  
+    .compare-title {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+  
+    .compare-val {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+  
+    .compare-avg {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 0.15rem;
+    }
+  
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+  
+    .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+    .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+    .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+  
+    /* ─── BAR CHART ─── */
+    .bar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .bar-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+  
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .bar-label {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      width: 110px;
+      flex-shrink: 0;
+    }
+  
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-val {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-mid);
+      width: 52px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  
+    .bar-you-marker {
+      position: absolute;
+      top: -3px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--accent-glow);
+      transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    /* ─── INFO CARD ─── */
+    .info-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+  
+    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  
+    .info-text {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+  
+    .info-text strong { color: var(--accent); }
+  
+    /* ─── SCALE ─── */
+    .scale-strip {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      margin-bottom: 0.5rem;
+    }
+  
+    .scale-strip div { flex: 1; }
+  
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+    }
+  
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  
+    .anim { animation: fadeUp 0.5s ease both; }
+    .anim-d1 { animation-delay: 0.05s; }
+    .anim-d2 { animation-delay: 0.15s; }
+    .anim-d3 { animation-delay: 0.25s; }
+    .anim-d4 { animation-delay: 0.35s; }
+  
+    .you-row .bar-fill { background: var(--accent); }
+    .you-row .bar-label { color: var(--accent); font-weight: 600; }
+  
+    .site-link {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .site-link:hover { border-color: var(--accent); color: var(--accent); }
+    .site-link strong { color: var(--accent); }
+  
+    .links-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+  
+  </style>
 disclaimer:
   - "Percentile data based on published sports science research and combine testing records."
   - "Not affiliated with NBA, NFL, or any athletic organization. For entertainment and training purposes."
@@ -112,529 +636,6 @@ jsonld: |-
   </script>
 permalink: "vertical-jump-percentile/index.html"
 ---
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #080c10;
-    --surface: #0f1419;
-    --surface2: #161c24;
-    --border: #1e2832;
-    --accent: #aaff00;
-    --accent-dim: rgba(170,255,0,0.12);
-    --accent-glow: rgba(170,255,0,0.35);
-    --text: #e8edf2;
-    --text-muted: #5a6470;
-    --text-mid: #8a96a4;
-    --red: #ff4d4d;
-    --orange: #ff9000;
-    --yellow: #ffd600;
-    --green: #aaff00;
-    --blue: #00cfff;
-    --font-display: 'Barlow Condensed', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'DM Mono', monospace;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    min-height: 100vh;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-
-  /* ─── HEADER ─── */
-  header {
-    padding: 2rem 1.5rem 0;
-    text-align: center;
-    position: relative;
-  }
-
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-
-  h1 span {
-    color: var(--accent);
-    display: block;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-    color: var(--text-mid);
-    margin-top: 1rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ─── MAIN LAYOUT ─── */
-  .container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-
-  /* ─── INPUT CARD ─── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .card-label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  @media (max-width: 520px) {
-    .form-grid { grid-template-columns: 1fr; }
-  }
-
-  .field label {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--text-mid);
-    margin-bottom: 0.4rem;
-    letter-spacing: 0.02em;
-  }
-
-  .field select,
-  .field input {
-    width: 100%;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    appearance: none;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .field select:focus,
-  .field input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-dim);
-  }
-
-  .field select { cursor: pointer; }
-
-  .jump-input-wrap {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-end;
-  }
-
-  .jump-input-wrap .field { flex: 1; }
-
-  .unit-toggle {
-    display: flex;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 48px;
-    flex-shrink: 0;
-  }
-
-  .unit-btn {
-    padding: 0 1rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    transition: all 0.15s;
-  }
-
-  .unit-btn.active {
-    background: var(--accent);
-    color: #000;
-  }
-
-  .calc-btn {
-    width: 100%;
-    margin-top: 1.25rem;
-    padding: 1rem;
-    background: var(--accent);
-    color: #000;
-    border: none;
-    border-radius: 12px;
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: opacity 0.15s, transform 0.1s;
-  }
-
-  .calc-btn:hover { opacity: 0.88; }
-  .calc-btn:active { transform: scale(0.98); }
-
-  /* ─── RESULTS ─── */
-  #results { display: none; }
-  #results.visible { display: block; }
-
-  /* ─── GAUGE ─── */
-  .gauge-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gauge-card::before {
-    content: '';
-    position: absolute;
-    top: -60px; left: 50%;
-    transform: translateX(-50%);
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .gauge-wrap {
-    position: relative;
-    width: 260px;
-    height: 140px;
-    margin: 0 auto 1.5rem;
-  }
-
-  .gauge-svg {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-
-  .gauge-track {
-    fill: none;
-    stroke: var(--surface2);
-    stroke-width: 18;
-    stroke-linecap: round;
-  }
-
-  .gauge-fill {
-    fill: none;
-    stroke-width: 18;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                stroke 0.6s ease;
-  }
-
-  .gauge-center {
-    position: absolute;
-    bottom: -4px; left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  .percentile-num {
-    font-family: var(--font-display);
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--accent);
-    transition: color 0.6s;
-  }
-
-  .percentile-label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 0.1rem;
-  }
-
-  .verdict {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 5vw, 2.4rem);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.4rem;
-  }
-
-  .verdict-sub {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-  }
-
-  /* ─── COMPARISON TABLE ─── */
-  .compare-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    .compare-grid { grid-template-columns: 1fr; }
-  }
-
-  .compare-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .compare-icon {
-    width: 42px; height: 42px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
-
-  .compare-text { flex: 1; min-width: 0; }
-
-  .compare-title {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-bottom: 0.2rem;
-  }
-
-  .compare-val {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 800;
-    line-height: 1.1;
-  }
-
-  .compare-avg {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    margin-top: 0.15rem;
-  }
-
-  .badge {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 100px;
-    font-weight: 500;
-  }
-
-  .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
-  .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
-  .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
-
-  /* ─── BAR CHART ─── */
-  .bar-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.75rem 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .bar-card-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 1.25rem;
-    color: var(--text);
-  }
-
-  .bar-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .bar-label {
-    font-size: 0.75rem;
-    color: var(--text-mid);
-    width: 110px;
-    flex-shrink: 0;
-  }
-
-  .bar-track {
-    flex: 1;
-    height: 8px;
-    background: var(--surface2);
-    border-radius: 100px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .bar-fill {
-    height: 100%;
-    border-radius: 100px;
-    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .bar-val {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--text-mid);
-    width: 52px;
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .bar-you-marker {
-    position: absolute;
-    top: -3px;
-    width: 14px; height: 14px;
-    background: var(--accent);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 8px var(--accent-glow);
-    transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* ─── INFO CARD ─── */
-  .info-card {
-    background: var(--accent-dim);
-    border: 1px solid rgba(170,255,0,0.2);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-  }
-
-  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-
-  .info-text {
-    font-size: 0.85rem;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-
-  .info-text strong { color: var(--accent); }
-
-  /* ─── SCALE ─── */
-  .scale-strip {
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 10px;
-    margin-bottom: 0.5rem;
-  }
-
-  .scale-strip div { flex: 1; }
-
-  .scale-labels {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--text-muted);
-  }
-
-  /* ─── FOOTER ─── */
-  footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-    line-height: 1.8;
-  }
-
-  footer a { color: var(--text-muted); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
-
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .anim { animation: fadeUp 0.5s ease both; }
-  .anim-d1 { animation-delay: 0.05s; }
-  .anim-d2 { animation-delay: 0.15s; }
-  .anim-d3 { animation-delay: 0.25s; }
-  .anim-d4 { animation-delay: 0.35s; }
-
-  .you-row .bar-fill { background: var(--accent); }
-  .you-row .bar-label { color: var(--accent); font-weight: 600; }
-
-  .site-link {
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    color: var(--text-mid);
-    text-decoration: none;
-    font-size: 0.82rem;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .site-link:hover { border-color: var(--accent); color: var(--accent); }
-  .site-link strong { color: var(--accent); }
-
-  .links-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
-
-</style>
 <header>
 <p class="eyebrow">Free Athletic Performance Tool</p>
 <h1>Vertical Jump<span>Percentile</span></h1>
