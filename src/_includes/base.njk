@@ -76,16 +76,15 @@
   [class*="stat"] { min-width: 0; overflow-wrap: break-word; }
 
   /* Fix: comparison-bar rows with fixed-width labels/values had no mobile fallback,
-     causing horizontal overflow on narrow screens (pre-existing gap in original design). */
-  @media (max-width: 480px) {
-    .rank-row { flex-wrap: wrap; row-gap: 0.35rem; }
-    .rank-label { width: auto; }
-    .rank-val { width: auto; margin-left: auto; }
-    .rank-track { flex-basis: 100%; order: 3; }
-
-    .week-header { flex-wrap: wrap; }
-    .week-focus { margin-left: 0; }
-  }
+     causing horizontal overflow on narrow screens (pre-existing gap in original design).
+     Applied unconditionally (not gated to a breakpoint) since flex-wrap and width:auto
+     only take effect when content doesn't fit — harmless on wider screens. */
+  .rank-row { flex-wrap: wrap; row-gap: 0.35rem; }
+  .rank-label { width: auto; min-width: 130px; }
+  .rank-val { width: auto; margin-left: auto; }
+  .rank-track { flex-basis: 200px; flex-grow: 1; order: 3; }
+  .week-header { flex-wrap: wrap; }
+  .week-focus { margin-left: 0; }
 </style>
 {% if pageStyle %}{{ pageStyle | safe }}{% endif %}
 {% if jsonld %}
