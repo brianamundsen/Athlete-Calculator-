@@ -104,6 +104,18 @@
   .callout-text { min-width: 0; flex: 1; }
 </style>
 {% if pageStyle %}{{ pageStyle | safe }}{% endif %}
+<style>
+  /* Fix: several pages hard-code a grid column count that only switches to fewer
+     columns below an exact pixel breakpoint (e.g. 500px). Devices with a viewport
+     just above that number never get the fallback and overflow. Auto-fit sizes
+     columns based on available space instead of a guessed number, so it works
+     correctly at any width without needing another breakpoint. */
+  .player-stats { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+  .stat-callout { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .results-strip { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+  .player-spot-stats { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+  .player-mini-stats { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+</style>
 {% if jsonld %}
 {{ jsonld | safe }}
 {% endif %}
