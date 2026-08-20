@@ -85,6 +85,18 @@
   .rank-track { flex-basis: 200px; flex-grow: 1; order: 3; }
   .week-header { flex-wrap: wrap; }
   .week-focus { margin-left: 0; }
+
+  /* Fix: speed-bar-row is structurally identical to rank-row (same overflow gap) */
+  .speed-bar-row { flex-wrap: wrap; row-gap: 0.35rem; }
+  .speed-bar-label { width: auto; min-width: 130px; }
+  .speed-bar-val { width: auto; margin-left: auto; }
+  .speed-bar-track { flex-basis: 200px; flex-grow: 1; order: 3; }
+
+  /* Fix: data tables had no responsive handling at all — on narrow screens with
+     several columns, content was clipped (not scrollable) due to overflow:hidden
+     on the table itself, used for its rounded corners. Making the table scroll
+     horizontally instead preserves the column layout without cutting anything off. */
+  .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 </style>
 {% if pageStyle %}{{ pageStyle | safe }}{% endif %}
 {% if jsonld %}
