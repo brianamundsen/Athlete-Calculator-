@@ -115,6 +115,19 @@
   .results-strip { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
   .player-spot-stats { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
   .player-mini-stats { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+
+  /* Fix: many pages independently built a "label — bar — value" row component,
+     each with a slightly different class name (rank-label, speed-label, bar-label,
+     pct-label, wing-label, scale-label, ratio-label, pos-label, record-age, etc.)
+     but the same underlying bug: a fixed-width label/value with flex-shrink:0,
+     which cannot shrink below its pixel width and overflows on narrow screens.
+     This catches every "-label"/"-val"/"-age" variant in one rule instead of
+     patching each class name individually as new ones are found. */
+  [class$="-label"], [class$="-val"], [class$="-age"] {
+    flex-shrink: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
 </style>
 {% if jsonld %}
 {{ jsonld | safe }}
