@@ -105,6 +105,8 @@
      on the table itself, used for its rounded corners. Making the table scroll
      horizontally instead preserves the column layout without cutting anything off. */
   .data-table { display: block !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0 2rem; }
+  .table-scroll .data-table { margin: 0; }
 
   /* Fix: callout-text is a flex child with no min-width/flex set, so it doesn't
      shrink to wrap and instead overflows past the container (same root cause as

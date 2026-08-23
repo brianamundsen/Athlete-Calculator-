@@ -119,6 +119,17 @@ for f in sorted(files):
         main_content = "".join(collecting)
     main_content = fix_links(main_content)
     main_content = make_relative(main_content)
+    # Wrap every data-table in a scrollable div — more reliable across mobile
+    # browsers than relying on display:block + overflow-x directly on <table>.
+    _wrap_soup = BeautifulSoup(main_content, "lxml")
+    for _table in _wrap_soup.find_all("table", class_="data-table"):
+        _wrapper = _wrap_soup.new_tag("div", **{"class": "table-scroll"})
+        _table.wrap(_wrapper)
+    _body = _wrap_soup.find("body")
+    if _body:
+        main_content = "".join(str(c) for c in _body.children)
+    else:
+        main_content = str(_wrap_soup)
 
     is_calculator = out_name in CALCULATOR_FILES
     mailerlite = is_calculator
