@@ -1,0 +1,528 @@
+---
+layout: base.njk
+title: "Fernando Mendoza Combine Profile & Preseason Debut — What the Measurements Actually Show | Athlete Calculator"
+description: "Fernando Mendoza skipped every combine drill except measurements. Here's his full athletic profile — 6'4.75\", 236 lbs, Josh Allen comparisons — and how it held up in his first live NFL action."
+canonicalPath: "/fernando-mendoza-combine-profile-preseason"
+mailerlite: false
+navContextUrl: "/nfl-combine-scores-explained"
+navContextLabel: "NFL Combine"
+disclaimer:
+  - "Combine measurements per NFL Scouting Combine and multiple credentialed outlets (Bleacher Report, The Draft Network, NFL Network). Preseason stats per PFF and NFL.com box scores. Not affiliated with the NFL or Las Vegas Raiders."
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      position: sticky; top: 0;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a {
+      font-family: var(--font-mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+  
+    .hero { max-width: 780px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+  
+    .breadcrumb {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.25rem;
+    }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #ff4d4d; background: rgba(255,77,77,0.12);
+      border: 1px solid rgba(255,77,77,0.25);
+      padding: 0.25rem 0.65rem; border-radius: 100px;
+      margin-bottom: 1rem; width: fit-content;
+    }
+    .live-dot {
+      width: 6px; height: 6px; background: #ff4d4d;
+      border-radius: 50%; animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900; line-height: 0.95;
+      text-transform: uppercase; letter-spacing: -0.01em;
+      color: var(--text); margin-bottom: 1.25rem;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-meta-item {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .hero-intro {
+      font-size: 1.05rem; color: var(--text-mid); line-height: 1.7;
+      max-width: 640px; border-left: 3px solid var(--accent); padding-left: 1.25rem;
+    }
+  
+    .article-wrap {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid; grid-template-columns: 1fr 260px;
+      gap: 3rem; align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--text);
+      margin: 2.5rem 0 1rem; padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .content h3 {
+      font-family: var(--font-display); font-size: 1.3rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+    .content p {
+      font-size: 0.97rem; color: var(--text-mid);
+      margin-bottom: 1.1rem; line-height: 1.75;
+    }
+    .content p strong { color: var(--text); }
+    .content a { color: var(--accent); text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+    .content li {
+      font-size: 0.97rem; color: var(--text-mid);
+      margin-bottom: 0.5rem; line-height: 1.65;
+    }
+    .content li strong { color: var(--text); }
+  
+    /* ── PLAYER CARD ── */
+    .player-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      margin: 1.5rem 0; position: relative; overflow: hidden;
+    }
+    .player-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .player-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.02em; color: var(--text);
+      line-height: 1; margin-bottom: 0.25rem;
+    }
+    .player-sub {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .player-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+    }
+    @media (max-width: 500px) { .player-stats { grid-template-columns: 1fr 1fr; } }
+    .player-stat {
+      background: var(--surface2); border-radius: 10px;
+      padding: 0.85rem; text-align: center;
+    }
+    .player-stat-val {
+      font-family: var(--font-display); font-size: 1.4rem;
+      font-weight: 900; color: var(--accent);
+      line-height: 1; margin-bottom: 0.2rem;
+    }
+    .player-stat-label {
+      font-family: var(--font-mono); font-size: 0.55rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .player-stat.below .player-stat-val { color: #ff6b6b; }
+    .player-stat.above .player-stat-val { color: var(--accent); }
+  
+    /* ── RANK BAR ── */
+    .rank-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.75rem; margin: 1.5rem 0;
+    }
+    .rank-title {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.25rem;
+    }
+    .rank-row {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .rank-label { font-size: 0.78rem; color: var(--text-mid); width: 130px; flex-shrink: 0; }
+    .rank-label strong { display: block; color: var(--text); font-size: 0.82rem; }
+    .rank-track {
+      flex: 1; height: 10px; background: var(--surface2);
+      border-radius: 100px; overflow: hidden; position: relative;
+    }
+    .rank-fill { height: 100%; border-radius: 100px; }
+    .rank-val {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--text-mid); width: 100px; text-align: right; flex-shrink: 0;
+    }
+  
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 1.5rem 0 2rem; font-size: 0.85rem;
+      border-radius: 12px; overflow: hidden;
+    }
+    .data-table thead { background: var(--surface2); }
+    .data-table th {
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); padding: 0.75rem 1rem;
+      text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);
+      color: var(--text-mid); background: var(--surface);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 600; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+    .data-table .low td { background: rgba(255,77,77,0.06); }
+    .data-table .low td:first-child { color: #ff6b6b; }
+  
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px; padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0; display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+    .callout-text a { color: var(--accent); }
+  
+    /* ── CALC CTA ── */
+    .calc-cta {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; text-align: center; margin: 2rem 0;
+    }
+    .calc-cta-label {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 0.75rem;
+    }
+    .calc-cta h3 {
+      font-family: var(--font-display); font-size: 1.6rem;
+      font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+    .calc-cta-btn {
+      display: inline-block; background: var(--accent);
+      color: #000 !important; font-family: var(--font-display);
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none !important;
+      padding: 0.85rem 2rem; border-radius: 10px; transition: opacity 0.15s;
+    }
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: var(--font-display); font-size: 1.1rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--text); margin-bottom: 0.6rem;
+    }
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+  
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 5rem; }
+    .sidebar-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem;
+    }
+    .sidebar-title {
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1rem;
+    }
+    .sidebar-link {
+      display: block; padding: 0.65rem 0.75rem; margin-bottom: 0.5rem;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text-mid); text-decoration: none;
+      font-size: 0.8rem; transition: border-color 0.2s, color 0.2s;
+    }
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+    .toc-link {
+      display: block; padding: 0.4rem 0; color: var(--text-muted);
+      text-decoration: none; font-size: 0.8rem;
+      border-left: 2px solid var(--border); padding-left: 0.75rem;
+      margin-bottom: 0.25rem; transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    footer {
+      text-align: center; padding: 2rem 1.5rem;
+      font-size: 0.75rem; color: var(--text-muted);
+      border-top: 1px solid var(--border); line-height: 1.8;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Fernando Mendoza Combine Profile & Preseason Debut",
+    "description": "Fernando Mendoza's NFL combine measurements, Josh Allen comparison, and how they held up in his first live preseason action.",
+    "author": { "@type": "Organization", "name": "Athlete Calculator" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "mainEntityOfPage": "https://athletecalculator.com/fernando-mendoza-combine-profile-preseason"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://athletecalculator.com" },
+      { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://athletecalculator.com/articles" },
+      { "@type": "ListItem", "position": 3, "name": "Fernando Mendoza Combine Profile", "item": "https://athletecalculator.com/fernando-mendoza-combine-profile-preseason" }
+    ]
+  }
+  </script>
+permalink: "fernando-mendoza-combine-profile-preseason/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Fernando Mendoza Combine Profile
+  </div>
+<div class="live-badge"><div class="live-dot"></div>2026 NFL Preseason — QB2 Behind Kirk Cousins</div>
+<h1>Fernando Mendoza <em>Combine Profile</em></h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📅 Updated August 23, 2026</span>
+<span class="hero-meta-item">🏈 Las Vegas Raiders</span>
+<span class="hero-meta-item">📊 Measurements Only — No Drills</span>
+</div>
+<p class="hero-intro">
+    Fernando Mendoza is the first No. 1 overall pick since 2007 to go straight to the Raiders — and one of the rare top picks who never ran a single combine drill. He measured in at 6'4.75" and 236 pounds, drew immediate Josh Allen comparisons, then skipped the 40, the vertical, everything. His pro day was throwing-only. His first real athletic evidence came Week 1 of the preseason. Here's the full measurement profile and how it held up against a live NFL pass rush.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<h2>The Measurements — Combine, Not Drills</h2>
+<div class="player-card">
+<div class="player-name">Fernando Mendoza</div>
+<div class="player-sub">Las Vegas Raiders · Quarterback · No. 1 Overall Pick, 2026</div>
+<div class="player-stats">
+<div class="player-stat above">
+<div class="player-stat-val">6'4.75"</div>
+<div class="player-stat-label">Height — QB1 territory</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">236 lbs</div>
+<div class="player-stat-label">Combine Weight</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">31 7/8"</div>
+<div class="player-stat-label">Arm Length</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">9.5"</div>
+<div class="player-stat-label">Hand Size</div>
+</div>
+</div>
+</div>
+<p>Mendoza checked in at the 2026 NFL Scouting Combine at 6-foot-4¾ and 236 pounds, with a 9½-inch hand and a 31⅞-inch arm — measurements that produced a 76¾-inch wingspan, nearly identical to Josh Allen's 77 inches as a prospect. The comparisons wrote themselves: Allen entered the league at 6'5", 237 pounds, a near carbon copy of Mendoza's frame. Analysts were also quick to note his hands are the same size as or larger than Tom Brady's, Lamar Jackson's, and Sam Darnold's — well within normal range for the position, despite some early social-media chatter calling them small.</p>
+<p>What Mendoza didn't do at the combine is just as notable as what he did. He skipped every on-field drill — no 40-yard dash, no vertical, no broad jump, no throwing session in Indianapolis. His agents made the calculation that a presumptive No. 1 pick has far more to lose than gain from a bad rep or a slow split. He carried that same approach into his pro day on April 1, where he ran no timed drills at all — only a throwing session, completing 53 of 56 attempts, including his first 23 in a row.</p>
+<div class="callout">
+<div class="callout-icon">🏈</div>
+<div class="callout-text"><strong>Why skip the drills entirely:</strong> Mendoza was already the presumptive No. 1 pick heading into combine week off a Heisman-winning, 16-0 national championship season at Indiana. For a prospect in that position, every rep at the combine is pure downside — a bad time doesn't move him up, but a bad one could genuinely cost millions. Standing on measurements alone is an increasingly common strategy for consensus top picks, and Mendoza followed it to the letter.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>See Combine Testing Standards by Position</h3>
+<p>Explore average 40-yard dash times, vertical jumps, and more for every NFL position group — including where quarterbacks typically rank.</p>
+<a class="calc-cta-btn" href="/nfl-combine-scores-explained">NFL Combine Guide →</a>
+</div>
+<h2>How His Frame Compares</h2>
+<div class="rank-card">
+<div class="rank-title">Mendoza's Measurements vs Notable QB Prospects</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Height</strong>6'4.75"</div>
+<div class="rank-track"><div class="rank-fill" style="width:88%;background:#aaff00"></div></div>
+<div class="rank-val">Top tier for QB</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Weight</strong>236 lbs</div>
+<div class="rank-track"><div class="rank-fill" style="width:82%;background:#aaff00"></div></div>
+<div class="rank-val">Matches Josh Allen</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Arm Length</strong>31 7/8"</div>
+<div class="rank-track"><div class="rank-fill" style="width:70%;background:#aaff00"></div></div>
+<div class="rank-val">Above average</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Hand Size</strong>9.5"</div>
+<div class="rank-track"><div class="rank-fill" style="width:62%;background:#00cfff"></div></div>
+<div class="rank-val">Normal range</div>
+</div>
+</div>
+<p>The Josh Allen comparison is the one that matters most for Raiders fans, since Allen's combine profile is one of the clearest recent examples of a big, mobile quarterback whose measurements translated directly into professional durability and off-platform playmaking. Mendoza is an eighth of an inch shorter and a pound lighter than Allen was as a prospect — a difference so small it's effectively the same build. Whether that translates to the same level of NFL production is an entirely separate question the measurements can't answer.</p>
+<h2>The Preseason Debut — First Real Data Point</h2>
+<p>With no combine drills and a throwing-only pro day, Mendoza's first genuine athletic test as a professional came in his preseason debut against the Arizona Cardinals in mid-August. Playing 31 snaps behind veteran Kirk Cousins, who continues to run the starting offense, Mendoza completed 10 of 16 passes for 97 yards and a touchdown, adding two carries for 6 yards on the ground.</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Stat</th>
+<th>Preseason Debut vs Cardinals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Completions</td><td>10-of-16 (62.5%)</td></tr>
+<tr><td>Passing Yards</td><td>97</td></tr>
+<tr><td>Touchdowns</td><td>1 (to Jack Bech)</td></tr>
+<tr><td>Rushing</td><td>2 carries, 6 yards</td></tr>
+<tr><td>PFF Overall Grade</td><td>66.7</td></tr>
+<tr><td>Sacks Taken</td><td>1</td></tr>
+</tbody>
+</table></div>
+<p>His touchdown throw was a tight-window laser to Jack Bech on third-and-goal, and his best individual play of the night came off play-action — a 19-yard strike between three defenders. Head coach Klint Kubiak called him "an ascending player" postgame, noting he ran the huddle and handled play calls the same way he had in practice. It wasn't a flawless outing; Mendoza acknowledged some throws lacked the timing and anticipation Cousins shows consistently, an area he said he still needs to develop.</p>
+<div class="callout">
+<div class="callout-icon">📈</div>
+<div class="callout-text"><strong>What the debut actually tells you:</strong> One preseason game against backups and rotational defenders is a small sample, and PFF's own analysis noted the Raiders didn't dress up the offense with much play-action or screens for him. But it's still the first data point of Mendoza translating his measured size into a live pocket — pressure recognition, footwork under duress, accuracy on the move — none of which a tape measure or a scale can predict.</div>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What are Fernando Mendoza's combine measurements?</div>
+<div class="faq-a">Mendoza measured 6-foot-4¾ (sometimes rounded to 6'5") and 236 pounds at the 2026 NFL Scouting Combine, with a 9½-inch hand size and a 31⅞-inch arm length, producing a wingspan of roughly 76¾ inches.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Did Fernando Mendoza run the 40-yard dash?</div>
+<div class="faq-a">No. Mendoza skipped every on-field drill at the combine, including the 40-yard dash, vertical jump, and broad jump. He also ran no timed drills at his pro day, opting for a throwing-only session instead.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How does Fernando Mendoza compare to Josh Allen?</div>
+<div class="faq-a">Mendoza's combine measurements (6'4.75", 236 lbs) are nearly identical to Josh Allen's as a prospect (6'5", 237 lbs) — a difference of about an eighth of an inch and one pound. The physical comparison is close; how their careers compare is a separate, still-unanswered question.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is Fernando Mendoza starting for the Raiders?</div>
+<div class="faq-a">Not yet. Kirk Cousins is running the starting offense to begin the 2026 season, with the Raiders planning a gradual transition for their rookie No. 1 overall pick rather than starting him immediately.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How did Fernando Mendoza perform in his NFL preseason debut?</div>
+<div class="faq-a">Mendoza completed 10 of 16 passes for 97 yards and a touchdown against the Arizona Cardinals, adding 6 rushing yards on 2 carries. He earned a 66.7 overall grade from PFF and avoided any turnover-worthy plays across his 31 snaps.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Related</div>
+<h3>See More NFL Combine Breakdowns</h3>
+<p>Every combine test explained, position-by-position averages, and how you compare to NFL prospects.</p>
+<a class="calc-cta-btn" href="/nfl-combine-scores-explained">NFL Combine Guide →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        See how your speed compares
+      </a>
+<a class="sidebar-link" href="/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        Estimate your 1-rep max
+      </a>
+<a class="sidebar-link" href="/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Compare to pro athletes
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">The Measurements</a>
+<a class="toc-link" href="#">How His Frame Compares</a>
+<a class="toc-link" href="#">The Preseason Debut</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="/nfl-combine-scores-explained">
+<strong>NFL Combine Guide</strong>
+        Every test explained
+      </a>
+<a class="sidebar-link" href="/relative-athletic-score-nfl">
+<strong>RAS Explained</strong>
+        How combine scores are calculated
+      </a>
+<a class="sidebar-link" href="/fastest-nfl-rookies-2026-training-camp">
+<strong>Fastest NFL Rookies of 2026</strong>
+        Speed rankings heading into camp
+      </a>
+</div>
+</aside>

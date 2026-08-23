@@ -1,0 +1,529 @@
+---
+layout: base.njk
+title: "Nick Chubb Career Athletic Profile — Combine Numbers That Held Up for 8 Seasons | Athlete Calculator"
+description: "Nick Chubb retired after 8 NFL seasons and 7,349 rushing yards. His 2018 combine measurements — run just months after a torn ACL — predicted almost exactly the runner he became."
+canonicalPath: "/nick-chubb-career-athletic-profile"
+mailerlite: false
+navContextUrl: "/nfl-combine-scores-explained"
+navContextLabel: "NFL Combine"
+disclaimer:
+  - "Combine and career statistics per NFL Scouting Combine records, Pro Football Reference, and NFL.com. Not affiliated with the NFL, Cleveland Browns, or Houston Texans."
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      position: sticky; top: 0;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a {
+      font-family: var(--font-mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+  
+    .hero { max-width: 780px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+  
+    .breadcrumb {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.25rem;
+    }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #ff4d4d; background: rgba(255,77,77,0.12);
+      border: 1px solid rgba(255,77,77,0.25);
+      padding: 0.25rem 0.65rem; border-radius: 100px;
+      margin-bottom: 1rem; width: fit-content;
+    }
+    .live-dot {
+      width: 6px; height: 6px; background: #ff4d4d;
+      border-radius: 50%; animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900; line-height: 0.95;
+      text-transform: uppercase; letter-spacing: -0.01em;
+      color: var(--text); margin-bottom: 1.25rem;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-meta-item {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .hero-intro {
+      font-size: 1.05rem; color: var(--text-mid); line-height: 1.7;
+      max-width: 640px; border-left: 3px solid var(--accent); padding-left: 1.25rem;
+    }
+  
+    .article-wrap {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid; grid-template-columns: 1fr 260px;
+      gap: 3rem; align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--text);
+      margin: 2.5rem 0 1rem; padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .content h3 {
+      font-family: var(--font-display); font-size: 1.3rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+    .content p {
+      font-size: 0.97rem; color: var(--text-mid);
+      margin-bottom: 1.1rem; line-height: 1.75;
+    }
+    .content p strong { color: var(--text); }
+    .content a { color: var(--accent); text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+    .content li {
+      font-size: 0.97rem; color: var(--text-mid);
+      margin-bottom: 0.5rem; line-height: 1.65;
+    }
+    .content li strong { color: var(--text); }
+  
+    /* ── PLAYER CARD ── */
+    .player-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      margin: 1.5rem 0; position: relative; overflow: hidden;
+    }
+    .player-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .player-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.02em; color: var(--text);
+      line-height: 1; margin-bottom: 0.25rem;
+    }
+    .player-sub {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .player-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+    }
+    @media (max-width: 500px) { .player-stats { grid-template-columns: 1fr 1fr; } }
+    .player-stat {
+      background: var(--surface2); border-radius: 10px;
+      padding: 0.85rem; text-align: center;
+    }
+    .player-stat-val {
+      font-family: var(--font-display); font-size: 1.4rem;
+      font-weight: 900; color: var(--accent);
+      line-height: 1; margin-bottom: 0.2rem;
+    }
+    .player-stat-label {
+      font-family: var(--font-mono); font-size: 0.55rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .player-stat.below .player-stat-val { color: #ff6b6b; }
+    .player-stat.above .player-stat-val { color: var(--accent); }
+  
+    /* ── RANK BAR ── */
+    .rank-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.75rem; margin: 1.5rem 0;
+    }
+    .rank-title {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.25rem;
+    }
+    .rank-row {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .rank-label { font-size: 0.78rem; color: var(--text-mid); width: 130px; flex-shrink: 0; }
+    .rank-label strong { display: block; color: var(--text); font-size: 0.82rem; }
+    .rank-track {
+      flex: 1; height: 10px; background: var(--surface2);
+      border-radius: 100px; overflow: hidden; position: relative;
+    }
+    .rank-fill { height: 100%; border-radius: 100px; }
+    .rank-val {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--text-mid); width: 100px; text-align: right; flex-shrink: 0;
+    }
+  
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 1.5rem 0 2rem; font-size: 0.85rem;
+      border-radius: 12px; overflow: hidden;
+    }
+    .data-table thead { background: var(--surface2); }
+    .data-table th {
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); padding: 0.75rem 1rem;
+      text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);
+      color: var(--text-mid); background: var(--surface);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 600; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+    .data-table .low td { background: rgba(255,77,77,0.06); }
+    .data-table .low td:first-child { color: #ff6b6b; }
+  
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px; padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0; display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+    .callout-text a { color: var(--accent); }
+  
+    /* ── CALC CTA ── */
+    .calc-cta {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; text-align: center; margin: 2rem 0;
+    }
+    .calc-cta-label {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 0.75rem;
+    }
+    .calc-cta h3 {
+      font-family: var(--font-display); font-size: 1.6rem;
+      font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+    .calc-cta-btn {
+      display: inline-block; background: var(--accent);
+      color: #000 !important; font-family: var(--font-display);
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none !important;
+      padding: 0.85rem 2rem; border-radius: 10px; transition: opacity 0.15s;
+    }
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: var(--font-display); font-size: 1.1rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--text); margin-bottom: 0.6rem;
+    }
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+  
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 5rem; }
+    .sidebar-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem;
+    }
+    .sidebar-title {
+      font-family: var(--font-mono); font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1rem;
+    }
+    .sidebar-link {
+      display: block; padding: 0.65rem 0.75rem; margin-bottom: 0.5rem;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text-mid); text-decoration: none;
+      font-size: 0.8rem; transition: border-color 0.2s, color 0.2s;
+    }
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+    .toc-link {
+      display: block; padding: 0.4rem 0; color: var(--text-muted);
+      text-decoration: none; font-size: 0.8rem;
+      border-left: 2px solid var(--border); padding-left: 0.75rem;
+      margin-bottom: 0.25rem; transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    footer {
+      text-align: center; padding: 2rem 1.5rem;
+      font-size: 0.75rem; color: var(--text-muted);
+      border-top: 1px solid var(--border); line-height: 1.8;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nick Chubb Career Athletic Profile",
+    "description": "Nick Chubb's 2018 combine measurements and how they predicted his 8-season NFL career, ending with 7,349 rushing yards.",
+    "author": { "@type": "Organization", "name": "Athlete Calculator" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "mainEntityOfPage": "https://athletecalculator.com/nick-chubb-career-athletic-profile"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://athletecalculator.com" },
+      { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://athletecalculator.com/articles" },
+      { "@type": "ListItem", "position": 3, "name": "Nick Chubb Career Athletic Profile", "item": "https://athletecalculator.com/nick-chubb-career-athletic-profile" }
+    ]
+  }
+  </script>
+permalink: "nick-chubb-career-athletic-profile/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Nick Chubb Career Athletic Profile
+  </div>
+<div class="live-badge"><div class="live-dot"></div>Retired August 21, 2026 — 8 NFL Seasons</div>
+<h1>Nick Chubb <em>Career Athletic Profile</em></h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📅 Updated August 23, 2026</span>
+<span class="hero-meta-item">🏈 Cleveland Browns · Houston Texans</span>
+<span class="hero-meta-item">📊 2018 Combine Measurements</span>
+</div>
+<p class="hero-intro">
+    Nick Chubb retired on August 21, 2026 with 7,349 rushing yards, 59 total touchdowns, and one of the most efficient careers of his generation — 5.03 yards per carry across 1,462 attempts. His 2018 combine numbers, run just months after tearing knee ligaments at Georgia, are worth revisiting: a 4.52-second 40-yard dash, a 38.5-inch vertical, and 29 reps on the bench press. Eight seasons later, almost every number held up exactly as advertised.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<h2>The 2018 Combine Numbers</h2>
+<div class="player-card">
+<div class="player-name">Nick Chubb</div>
+<div class="player-sub">Georgia · Running Back · 2018 NFL Draft, Round 2, Pick 35</div>
+<div class="player-stats">
+<div class="player-stat above">
+<div class="player-stat-val">4.52s</div>
+<div class="player-stat-label">40-Yard Dash</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">38.5"</div>
+<div class="player-stat-label">Vertical Jump</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">10'8"</div>
+<div class="player-stat-label">Broad Jump</div>
+</div>
+<div class="player-stat above">
+<div class="player-stat-val">29 reps</div>
+<div class="player-stat-label">Bench Press (225 lbs)</div>
+</div>
+</div>
+</div>
+<p>Chubb measured 5-foot-11 and 227 pounds at the 2018 combine, then ran a 4.52-second 40-yard dash with a 1.56-second 10-yard split — the sixth-fastest time among running backs that year. His 38.5-inch vertical and 10-foot-8 broad jump both ranked near the top of his position group, and his 29 reps on the bench press tied Saquon Barkley for the most among all running backs in attendance.</p>
+<p>What made the performance remarkable wasn't just where the numbers ranked — it was the context. Chubb was less than three years removed from a gruesome knee ligament injury at Georgia in 2015, the kind that ends careers before they start. He didn't just recover; he tested as one of the most explosive backs in his draft class doing it.</p>
+<div class="callout">
+<div class="callout-icon">🦵</div>
+<div class="callout-text"><strong>The injury context matters:</strong> Chubb tore multiple ligaments in his knee during a 2015 game against Tennessee — the kind of injury that historically depresses combine testing even years later, if a player tests again at all. Posting a 38.5-inch vertical and a sub-4.6 40 on that knee wasn't just good for a running back; it was a sign his rebuilt knee had fully returned to elite-level function, something teams weighed heavily in a draft class led by Saquon Barkley.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>See How Your Vertical Compares</h3>
+<p>Chubb's 38.5-inch vertical ranked near the top of his combine class. See where your own jump lands by age and level.</p>
+<a class="calc-cta-btn" href="/vertical-jump-percentile">Calculate My Vertical →</a>
+</div>
+<h2>How the Combine Numbers Predicted the Career</h2>
+<div class="rank-card">
+<div class="rank-title">Chubb's Combine Profile vs His 8-Year Career Result</div>
+<div class="rank-row">
+<div class="rank-label"><strong>40-Yard Dash</strong>4.52s</div>
+<div class="rank-track"><div class="rank-fill" style="width:78%;background:#aaff00"></div></div>
+<div class="rank-val">6th among RBs, 2018</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Vertical Jump</strong>38.5"</div>
+<div class="rank-track"><div class="rank-fill" style="width:88%;background:#aaff00"></div></div>
+<div class="rank-val">Top 15% at position</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Bench Press</strong>29 reps</div>
+<div class="rank-track"><div class="rank-fill" style="width:97%;background:#00cfff"></div></div>
+<div class="rank-val">Tied for RB lead</div>
+</div>
+<div class="rank-row">
+<div class="rank-label"><strong>Career YPC</strong>5.03</div>
+<div class="rank-track"><div class="rank-fill" style="width:95%;background:#aaff00"></div></div>
+<div class="rank-val">4th all-time (1,000+ carries)</div>
+</div>
+</div>
+<p>Chubb's combine explosiveness translated almost directly onto the field. He debuted with 5.2 yards per carry as a rookie and stayed above 5.0 in each of his first six NFL seasons — a level of efficiency his combine testing had already hinted was possible. He finishes his career as just the fourth running back in NFL history with both 1,000-plus carries and a 5.0-yard-per-carry average, joining Jim Brown, Joe Perry, and Jamaal Charles — a list that spans nearly seven decades of the sport.</p>
+<h2>The Career, By the Numbers</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Category</th>
+<th>Career Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Rushing Yards</td><td>7,349</td></tr>
+<tr><td>Rushing Attempts</td><td>1,462</td></tr>
+<tr><td>Yards Per Carry</td><td>5.03</td></tr>
+<tr><td>Rushing Touchdowns</td><td>54</td></tr>
+<tr><td>Receptions / Receiving Yards</td><td>141 / 1,109</td></tr>
+<tr><td>Total Touchdowns</td><td>59</td></tr>
+<tr><td>Pro Bowl Selections</td><td>4 (2019–2022)</td></tr>
+<tr><td>Games Played / Started</td><td>100 / 87</td></tr>
+</tbody>
+</table></div>
+<p>Chubb rushed for over 1,000 yards in four consecutive seasons from 2019 through 2022, peaking at a career-high 1,525 yards and 12 touchdowns in 2022, which earned him Second-team All-Pro honors. A knee injury just two games into the 2023 season — his second major knee injury after the one at Georgia — interrupted his prime. He returned partway through 2024 with the Browns before signing with the Houston Texans for a final season in 2025, where he split carries with rookie Woody Marks before announcing his retirement on Instagram at age 30.</p>
+<div class="callout">
+<div class="callout-icon">🏆</div>
+<div class="callout-text"><strong>"There's a life waiting for you after football, too":</strong> In his retirement announcement, Chubb emphasized ending his career healthy after a winning season, rather than pushing through for statistics. His Hall of Fame case is genuinely debated — a brilliant but injury-shortened prime measured against the longer resumes of the position's inner circle — but his per-carry efficiency across 1,462 attempts puts him in company with some of the most productive runners the position has ever seen.</div>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What was Nick Chubb's 40-yard dash time?</div>
+<div class="faq-a">Chubb ran a 4.52-second 40-yard dash at the 2018 NFL Combine, with a 1.56-second 10-yard split — the sixth-fastest time among running backs that year, run less than three years after a serious knee injury at Georgia.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How high did Nick Chubb jump at the combine?</div>
+<div class="faq-a">Chubb posted a 38.5-inch vertical jump and a 10-foot-8 broad jump at the 2018 combine, both ranking near the top of the running back class.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many rushing yards does Nick Chubb have?</div>
+<div class="faq-a">Chubb retired with 7,349 career rushing yards on 1,462 attempts, a 5.03 yards-per-carry average, and 54 rushing touchdowns across 8 NFL seasons with the Cleveland Browns and Houston Texans.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Why did Nick Chubb retire?</div>
+<div class="faq-a">Chubb announced his retirement on Instagram on August 21, 2026, at age 30, citing a desire to end his career healthy and after a winning season. He had dealt with two serious knee injuries during his career, one at Georgia in 2015 and one with the Browns in 2023.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is Nick Chubb a Hall of Fame running back?</div>
+<div class="faq-a">His case is genuinely debated. Chubb's per-carry efficiency (5.03 yards per attempt on 1,462 carries) ranks among the best of any back in NFL history, but injuries shortened his prime compared to the longer statistical resumes of automatic Hall of Fame runners.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Related</div>
+<h3>See More NFL Combine Breakdowns</h3>
+<p>Every combine test explained, position-by-position averages, and how you compare to NFL prospects.</p>
+<a class="calc-cta-btn" href="/nfl-combine-scores-explained">NFL Combine Guide →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Compare to combine averages
+      </a>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        See how your speed compares
+      </a>
+<a class="sidebar-link" href="/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        Estimate your 1-rep max
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">The 2018 Combine Numbers</a>
+<a class="toc-link" href="#">Combine vs Career</a>
+<a class="toc-link" href="#">The Career, By the Numbers</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="/nfl-combine-scores-explained">
+<strong>NFL Combine Guide</strong>
+        Every test explained
+      </a>
+<a class="sidebar-link" href="/relative-athletic-score-nfl">
+<strong>RAS Explained</strong>
+        How combine scores are calculated
+      </a>
+<a class="sidebar-link" href="/fernando-mendoza-combine-profile-preseason">
+<strong>Fernando Mendoza Profile</strong>
+        Combine measurements vs Josh Allen
+      </a>
+</div>
+</aside>
