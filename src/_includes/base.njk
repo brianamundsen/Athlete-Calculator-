@@ -108,6 +108,15 @@
   .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0 2rem; }
   .table-scroll .data-table { margin: 0; }
 
+  /* Global safety net: rather than continuing to find and fix individual
+     overflowing elements one at a time, this guarantees the page itself can
+     never scroll horizontally, no matter what any single element does. Any
+     element that still overflows will simply be clipped at the page edge
+     instead of dragging the entire page (nav, headlines, everything) sideways
+     with it. Placed last so it wins over the 26 pages that already set their
+     own (often conflicting) overflow value on html/body. */
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
+
   /* Fix: callout-text is a flex child with no min-width/flex set, so it doesn't
      shrink to wrap and instead overflows past the container (same root cause as
      the nav-brand/rank-row issues: flex items default to a content-based min-width). */
