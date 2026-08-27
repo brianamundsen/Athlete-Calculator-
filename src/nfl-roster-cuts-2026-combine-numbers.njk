@@ -1,0 +1,279 @@
+---
+layout: base.njk
+title: "NFL Roster Cuts 2026: The Combine Numbers Behind the Bubble | Athlete Calculator"
+description: "Teams cut down to 53 by Aug. 30. Here's what the combine testing numbers say about five notable bubble players — and whether the athletic profile matches the roster risk."
+canonicalPath: "/nfl-roster-cuts-2026-combine-numbers"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; min-width: 0; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; min-width: 0; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    .table-scroll { overflow-x: auto; margin: 1.25rem 0 1.75rem; }
+    table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; white-space: nowrap; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+    .rank-bar-row { margin: 0.9rem 0; }
+    .rank-bar-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 0.35rem; display: flex; justify-content: space-between; }
+    .rank-bar-track { background: var(--surface2); border-radius: 6px; height: 8px; overflow: hidden; }
+    .rank-bar-fill { background: var(--accent); height: 100%; border-radius: 6px; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NFL Roster Cuts 2026: The Combine Numbers Behind the Bubble",
+    "description": "Teams cut down to 53 by Aug. 30. Here's what the combine testing numbers say about five notable bubble players — and whether the athletic profile matches the roster risk.",
+    "url": "https://athletecalculator.com/nfl-roster-cuts-2026-combine-numbers"
+  }
+  </script>
+permalink: "nfl-roster-cuts-2026-combine-numbers/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    NFL Roster Cuts 2026: Combine Numbers
+  </div>
+<h1>NFL Roster Cuts 2026: The <em>Combine Numbers</em> Behind the Bubble</h1>
+<div class="meta-row">
+<span>📖 7 min read</span>
+<span>🏈 Football</span>
+<span>✂️ Roster Cuts 2026</span>
+</div>
+<p class="dek">Every team trims to 53 players by 6 p.m. ET on Sunday, August 30 — a leaguewide purge that will release roughly 1,184 players in a single weekend. Roster spots get decided by scheme fit, contract numbers, and coaching preference, but the testing data measured at the combine still tells part of the story. Here's what the numbers say about five notable names currently on the bubble.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#deadline">The 2026 Cutdown Deadline</a>
+<a href="#johnson">Kaleb Johnson, RB, Steelers</a>
+<a href="#jones">Broderick Jones, OT, Steelers</a>
+<a href="#braswell">Chris Braswell, Edge, Buccaneers</a>
+<a href="#obj">Odell Beckham Jr., WR, Giants</a>
+<a href="#levis">Will Levis, QB, Titans</a>
+<a href="#table">All Five, Side by Side</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="deadline">The 2026 Cutdown Deadline</h2>
+<p>The NFL's 53-man roster limit locks in at 6 p.m. ET on August 30, with waiver claims following the next afternoon and 16-man practice squads filling out shortly after. The final preseason weekend — August 27 through 29 — is the last real audition for anyone whose spot isn't already secure. None of that process runs through the combine. But when two players are otherwise close on tape, teams frequently lean on the measurable stuff — long speed, explosiveness, size relative to position — to break the tie. That's the lens here: not who will get cut, but what the testing numbers say about the traits each of these players brought into the league.</p>
+<div class="callout">
+<strong>Why This Matters</strong>
+A player's combine number doesn't expire. It's a snapshot of the physical tools a team drafted or signed for in the first place — useful context when camp reports start using words like "buried on the depth chart" or "clearly on the bubble."
+</div>
+<h2 id="johnson">Kaleb Johnson, RB, Pittsburgh Steelers</h2>
+<p>Johnson enters his second season behind a crowded Steelers backfield, and his path to a full-time role runs through special teams value and receiving work as much as carries. At the 2025 combine, the former Iowa workhorse measured 6'0", 225 lbs and ran an <strong>official 4.57-second 40-yard dash</strong> with a 1.62 10-yard split — solid, not blazing, for the position. That profile fits the tape: Johnson is a between-the-tackles runner with good contact balance rather than a home-run breakaway threat, and scouting reports flagged his straight-line speed as the one trait that lagged behind the rest of his game.</p>
+<div class="rank-bar-row">
+<div class="rank-bar-label"><span>40-Yard Dash vs. RB Average (~4.52s)</span><span>4.57s</span></div>
+<div class="rank-bar-track"><div class="rank-bar-fill" style="width:68%"></div></div>
+</div>
+<h2 id="jones">Broderick Jones, OT, Pittsburgh Steelers</h2>
+<p>Jones was a 2023 first-round pick who's now fighting to hold his starting left tackle job after spinal fusion surgery, with rookie Max Iheanachor pushing for the same reps. His combine profile is the reason Pittsburgh drafted him 14th overall in the first place: at 6'5", 311 lbs, Jones ran a <strong>4.97-second 40</strong> — the fastest time among offensive tackles at the 2023 combine — with a 30-inch vertical and a 1.74 10-yard split. That's rare timed speed for a player his size, and it's exactly why "struggled in camp" reads differently for Jones than it would for a tackle without that athletic ceiling; the traits are still there even when the technique slips.</p>
+<div class="rank-bar-row">
+<div class="rank-bar-label"><span>40-Yard Dash vs. 2023 OT Field (fastest of the class)</span><span>4.97s</span></div>
+<div class="rank-bar-track"><div class="rank-bar-fill" style="width:97%"></div></div>
+</div>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How Your Speed Compares</div>
+<div class="tool-desc">Jones' 4.97 at 311 lbs is elite for an offensive lineman. Enter your own numbers to see where you'd rank against combine data by position.</div>
+<a class="tool-cta" href="/sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+<h2 id="braswell">Chris Braswell, Edge, Tampa Bay Buccaneers</h2>
+<p>Tampa Bay has stacked its edge room with first-round rookie Rueben Bain Jr., YaYa Diaby, and Anthony Nelson, squeezing Braswell's path to snaps. His combine testing suggests the talent is real even if the depth chart is crowded: at 6'3", 251 lbs, Braswell ran a <strong>4.60-second 40</strong> with an excellent 1.59 10-yard split, a 33.5-inch vertical, and a 9'7" broad jump. He was also clocked at 21.9 mph in-season on Bruce Feldman's "Freaks List" and reportedly squatted 705 pounds — the kind of power-speed combination teams covet at the position, which is why a release would likely draw waiver interest fast.</p>
+<div class="rank-bar-row">
+<div class="rank-bar-label"><span>10-Yard Split vs. Edge Average (~1.65s)</span><span>1.59s</span></div>
+<div class="rank-bar-track"><div class="rank-bar-fill" style="width:88%"></div></div>
+</div>
+<h2 id="obj">Odell Beckham Jr., WR, New York Giants</h2>
+<p>Beckham's path back to his original team is a legacy story as much as a roster one — he's now 33 and coming off a season with 550 receiving yards in six years, fighting for snaps behind Malik Nabers, Darnell Mooney, and a deep receiver room. It's a sharp contrast to his combine résumé: at 5'11", 198 lbs, Beckham ran a <strong>4.43-second 40</strong> with a 38.5-inch vertical and a 10'2" broad jump back in 2014, numbers that helped make him a first-round pick and, briefly, one of the most explosive receivers in the league. The testing profile hasn't changed — the fact that a decade of NFL wear has passed since it was recorded has.</p>
+<div class="rank-bar-row">
+<div class="rank-bar-label"><span>Vertical Jump vs. WR Average (~35.5")</span><span>38.5"</span></div>
+<div class="rank-bar-track"><div class="rank-bar-fill" style="width:91%"></div></div>
+</div>
+<h2 id="levis">Will Levis, QB, Tennessee Titans</h2>
+<p>Levis sits behind the Titans' quarterback plans as a veteran arm rather than a lock, with the roster crunch at the position always a real possibility this time of year. He skipped the 40-yard dash at his 2023 combine, but his explosiveness numbers stood out for the position: at 6'4", 229 lbs, Levis posted a <strong>34-inch vertical jump</strong> and a 10'4" broad jump — the second-best broad jump among quarterbacks that year, behind only Anthony Richardson. His athletic testing score reportedly ranked fifth among the QB class, evidence of a big, mobile frame even without an official sprint time on record.</p>
+<div class="rank-bar-row">
+<div class="rank-bar-label"><span>Broad Jump vs. 2023 QB Field (2nd-best)</span><span>10'4"</span></div>
+<div class="rank-bar-track"><div class="rank-bar-fill" style="width:94%"></div></div>
+</div>
+<h2 id="table">All Five, Side by Side</h2>
+<div class="table-scroll">
+<table>
+<tr><th>Player</th><th>Pos</th><th>Team</th><th>40 Time</th><th>Vertical</th><th>Broad Jump</th></tr>
+<tr><td>Kaleb Johnson</td><td>RB</td><td>Steelers</td><td>4.57s</td><td>—</td><td>—</td></tr>
+<tr><td>Broderick Jones</td><td>OT</td><td>Steelers</td><td>4.97s</td><td>30"</td><td>9'0"</td></tr>
+<tr><td>Chris Braswell</td><td>Edge</td><td>Buccaneers</td><td>4.60s</td><td>33.5"</td><td>9'7"</td></tr>
+<tr><td>Odell Beckham Jr.</td><td>WR</td><td>Giants</td><td>4.43s</td><td>38.5"</td><td>10'2"</td></tr>
+<tr><td>Will Levis</td><td>QB</td><td>Titans</td><td>DNP</td><td>34"</td><td>10'4"</td></tr>
+</table>
+</div>
+<p>Combine numbers are a snapshot, not a guarantee — plenty of players with modest testing numbers carve out long careers on technique and instincts, and plenty of workout warriors never stick. But when a roster decision comes down to a coin flip between two similar players, teams tend to trust the tape they can measure. That's the case for all five names above heading into Sunday's deadline.</p>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">When is the 2026 NFL roster cut deadline?</div>
+<div class="faq-a">Teams must reduce their rosters to 53 players by 6 p.m. ET on Sunday, August 30, 2026. Waiver claims follow at 1 p.m. ET on August 31, with practice squads (16 spots per team) filling out shortly after.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do combine numbers actually predict who gets cut?</div>
+<div class="faq-a">Not directly. Roster decisions weigh scheme fit, special teams value, contract and cap implications, and live game tape far more heavily than testing numbers. Combine data is most useful as a tiebreaker signal — a way to explain why a team still values a player's ceiling even when camp reporting looks negative.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What happens to players who get cut?</div>
+<div class="faq-a">Released players pass through waivers, where any team can claim them in reverse order of the prior season's standings. If unclaimed, they become free agents and can sign with any team, including returning to their original club's practice squad.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/combine-numbers-vs-training-camp-reality">
+<div class="related-title">Combine Numbers vs. Training Camp Reality</div>
+<div class="related-desc">How this year's fastest testers are translating</div>
+</a>
+<a class="related-card" href="/position-battles-decided-by-athleticism">
+<div class="related-title">5 Position Battles Decided by Pure Athleticism</div>
+<div class="related-desc">Camp battles where the fastest player wins the job</div>
+</a>
+<a class="related-card" href="/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Combine and testing data based on publicly available NFL Scouting Combine and pro day results. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>
