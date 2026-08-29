@@ -1,0 +1,639 @@
+---
+layout: base.njk
+title: "Christian McCaffrey's No. 6 Ranking & Combine Profile | Athlete Calculator"
+description: "Christian McCaffrey jumped 67 spots to No. 6 on the NFL Top 100 Players of 2026 after a huge comeback year. See his 2017 combine testing numbers and how they compare to today's backs."
+canonicalPath: "/christian-mccaffrey-top-100-2026-combine-profile"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+  
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+  
+    .nav-brand span { color: var(--accent); }
+  
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+  
+    .nav-links a:hover { color: var(--accent); }
+  
+    .hero {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+  
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+  
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  
+    .hero-meta-item {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+  
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 640px;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+  
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 3rem;
+      align-items: start;
+    }
+  
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+  
+    .content p {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+      line-height: 1.75;
+    }
+  
+    .content p strong { color: var(--text); }
+  
+    .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+  
+    .content li {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+    }
+  
+    .content li strong { color: var(--text); }
+  
+    /* ── TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .fast td { background: rgba(170,255,0,0.06); }
+    .data-table .elite td { background: rgba(170,255,0,0.13); }
+    .data-table .elite td:first-child { color: var(--accent); }
+  
+    /* ── SPEED BAR ── */
+    .speed-bar-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+  
+    .speed-bar-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .speed-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+  
+    .speed-bar-label {
+      font-size: 0.74rem;
+      color: var(--text-mid);
+      width: 130px;
+      flex-shrink: 0;
+    }
+  
+    .speed-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  
+    .speed-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+    }
+  
+    .speed-bar-val {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      width: 42px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+  
+    /* ── CALC CTA ── */
+    .calc-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+  
+    .calc-cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+  
+    .calc-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+  
+    .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+  
+    .calc-cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      transition: opacity 0.15s;
+    }
+  
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 5rem; }
+  
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-link {
+      display: block;
+      padding: 0.65rem 0.75rem;
+      margin-bottom: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+  
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      border-left: 2px solid var(--border);
+      padding-left: 0.75rem;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+  
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+
+disclaimer:
+  - "Data based on NFL Network's Top 100 Players of 2026 series, 2017 NFL Scouting Combine results, and Pro Football Reference."
+  - "Not affiliated with the NFL, NFL Network, or any athletic organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Christian McCaffrey's No. 6 Ranking and the Combine Numbers Behind It",
+    "description": "McCaffrey jumped 67 spots to No. 6 on the NFL Top 100 Players of 2026 after a huge comeback season. Here's how his 2017 combine testing profile stacks up to today's running backs.",
+    "url": "https://athletecalculator.com/christian-mccaffrey-top-100-2026-combine-profile",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/christian-mccaffrey-top-100-2026-combine-profile"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where did Christian McCaffrey rank on the NFL Top 100 Players of 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Christian McCaffrey was ranked No. 6 on the NFL Top 100 Players of 2026, a jump of 67 spots from his No. 73 ranking the previous year, following a 2025 season in which he totaled 2,126 scrimmage yards and 17 touchdowns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was Christian McCaffrey's 40-yard dash time at the NFL Combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Christian McCaffrey ran a 4.48-second 40-yard dash at the 2017 NFL Scouting Combine, along with a 37.5-inch vertical jump, a 10-foot-1-inch broad jump, and the second-fastest three-cone drill among running backs since 2006 at 6.57 seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Christian McCaffrey's Relative Athletic Score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Christian McCaffrey posted a Relative Athletic Score (RAS) of 8.52 out of 10, driven by elite agility numbers, including a 9.97 three-cone score, despite a below-average bench press and weight for the position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does McCaffrey's combine profile compare to current running backs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "McCaffrey's 4.48 40-yard dash and 37.5-inch vertical are good, not elite, by modern running back combine standards, but his agility numbers, especially his three-cone drill, remain among the best ever recorded at the position. His NFL production has consistently outpaced his testing numbers."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Christian McCaffrey's No. 6 Ranking and the Combine Numbers Behind It",
+        "item": "https://athletecalculator.com/christian-mccaffrey-top-100-2026-combine-profile"
+      }
+    ]
+  }
+  </script>
+permalink: "christian-mccaffrey-top-100-2026-combine-profile/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Christian McCaffrey Top 100
+  </div>
+<h1>McCaffrey's No. <em>6</em> Ranking & The Numbers Behind It</h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 7 min read</span>
+<span class="hero-meta-item">🦘 Vertical Jump &amp; RAS</span>
+<span class="hero-meta-item">🏈 NFL Combine Profiles</span>
+</div>
+<p class="hero-intro">
+    Christian McCaffrey climbed 67 spots to No. 6 on the NFL Top 100 Players of 2026, one of the biggest single-year jumps in the countdown's history. Nine years after his combine, the numbers behind that ranking are still worth a second look — and they tell a story about what actually predicts NFL production.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<div class="callout" style="background:var(--surface);border-color:var(--accent);">
+<div class="callout-icon">⚡</div>
+<div class="callout-text"><strong>Quick answer:</strong> McCaffrey jumped from No. 73 to <strong>No. 6</strong> on the NFL Top 100 Players of 2026 after totaling <strong>2,126</strong> scrimmage yards and 17 touchdowns in 2025. At the 2017 combine, he ran a <strong>4.48-second 40</strong>, jumped <strong>37.5 inches</strong> vertically, and posted a <strong>Relative Athletic Score of 8.52</strong> out of 10 — good, not elite, for the position. His agility numbers were the real outlier.</div>
+</div>
+<h2>A 67-Spot Jump, Nine Years After the Combine</h2>
+<p>McCaffrey entered the 2026 NFL Top 100 countdown at No. 73 the year before. He exited it at <strong>No. 6</strong>, the highest of any running back and one of only five players from the entire San Francisco 49ers roster to make the list, joining Trent Williams (No. 40), George Kittle (No. 46), Fred Warner (No. 54), and Brock Purdy (No. 85).</p>
+<p>The jump followed a 2025 season where McCaffrey started all 17 games, carried the ball 311 times for 1,202 yards, and led all NFL running backs in receiving with 102 catches for 924 yards. His <strong>2,126</strong> total scrimmage yards were the second-most in the league, and it was the third time in his career he cleared 2,000 yards from scrimmage in a season. The performance earned him First-Team All-Pro honors and the NFL's 2025 Comeback Player of the Year award, coming off an injury-shortened 2024.</p>
+<p>What makes the ranking interesting from a testing standpoint is that McCaffrey's <strong>2025 rushing efficiency was among the worst of his career</strong> — 3.9 yards per carry, his second-lowest mark in any season he played 10-plus games. His value to the 49ers came almost entirely from volume, receiving work, and durability, not explosiveness. That's a useful reminder that athletic testing captures potential, not the full picture of what makes a player valuable at the NFL level.</p>
+<h2>McCaffrey's 2017 Combine Numbers</h2>
+<p>McCaffrey measured in at 5'11", 202 pounds for the 2017 NFL Scouting Combine — light for the running back position even at the time. His testing day put those size concerns to rest as an athleticism question, if not as a workhorse-durability one:</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Drill</th>
+<th>Result</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr class="fast"><td>40-Yard Dash</td><td>4.48s</td><td>Fastest of the top-4 RB class (Fournette, Cook, Kamara)</td></tr>
+<tr><td>Vertical Jump</td><td>37.5"</td><td>2nd-best among RBs at the 2017 combine</td></tr>
+<tr><td>Broad Jump</td><td>10'1"</td><td>Solid, not elite, for the position</td></tr>
+<tr class="elite"><td>3-Cone Drill</td><td>6.57s</td><td>2nd-fastest by an RB since 2006</td></tr>
+<tr><td>20-Yard Shuttle</td><td>4.22s</td><td>Above-average agility mark</td></tr>
+<tr><td>Bench Press</td><td>10 reps</td><td>2nd-fewest among RBs that year</td></tr>
+</tbody>
+</table></div>
+<p>The bench press was the outlier, and it barely mattered. McCaffrey's <strong>Relative Athletic Score sits at 8.52 out of 10</strong> — strong, but not among the true elite testers at the position, since his weight (a 3.12 score) and bench numbers dragged down an otherwise excellent profile. His agility scores were the standout: a 9.97 for the three-cone and 8.49 for the vertical jump.</p>
+<p>Curious where your own testing numbers stack up? Try our <a href="/vertical-jump-percentile">vertical jump percentile calculator</a> to see how a 37.5-inch jump compares across age, sport, and level.</p>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Where Does Your Vertical Rank?</h3>
+<p>Enter your vertical jump and see your exact percentile — compared to high school, college, and NFL combine standards at every position.</p>
+<a class="calc-cta-btn" href="/vertical-jump-percentile">Calculate My Vertical Percentile →</a>
+</div>
+<h2>Good Testing Numbers, Historic Production</h2>
+<p>McCaffrey's combine profile was never the story — his tape and receiving production were. That gap between "very good athlete" and "generational receiving back" is exactly why teams weight game film more heavily than testing numbers for players who show unique skill sets on tape. A 4.48 40 and a 37.5-inch vertical would get most running backs drafted; they don't explain 7,589 career rushing yards, 5,390 receiving yards, and 98 total touchdowns across nine NFL seasons.</p>
+<p>What his agility numbers <em>did</em> predict accurately: his three-cone and shuttle times, both elite for the position, hinted at the short-area quickness and route-running ability that made him one of the best pass-catching backs of his generation. Straight-line speed and jumping ability are only part of what NFL running back evaluation actually measures.</p>
+<h2>How He Compares to Today's Combine Class</h2>
+<p>Measured against this year's incoming rookies, McCaffrey's numbers read as solidly above-average rather than elite. Arkansas running back Mike Washington Jr. ran a <strong>4.33</strong> at the 2026 combine — 15 hundredths faster than McCaffrey's 4.48 nine years earlier — and posted a 99th-percentile weight-adjusted 40 time for the position. The overall running back testing bar has risen across the league, even as McCaffrey's on-field production has aged remarkably well relative to his athletic scores.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Where did Christian McCaffrey rank on the NFL Top 100 Players of 2026?</div>
+<div class="faq-a">Christian McCaffrey was ranked No. 6 on the NFL Top 100 Players of 2026, a jump of 67 spots from his No. 73 ranking the previous year, following a 2025 season in which he totaled 2,126 scrimmage yards and 17 touchdowns.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What was Christian McCaffrey's 40-yard dash time at the NFL Combine?</div>
+<div class="faq-a">Christian McCaffrey ran a 4.48-second 40-yard dash at the 2017 NFL Scouting Combine, along with a 37.5-inch vertical jump, a 10-foot-1-inch broad jump, and the second-fastest three-cone drill among running backs since 2006 at 6.57 seconds.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is Christian McCaffrey's Relative Athletic Score?</div>
+<div class="faq-a">Christian McCaffrey posted a Relative Athletic Score (RAS) of 8.52 out of 10, driven by elite agility numbers, including a 9.97 three-cone score, despite a below-average bench press and weight for the position.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How does McCaffrey's combine profile compare to current running backs?</div>
+<div class="faq-a">McCaffrey's 4.48 40-yard dash and 37.5-inch vertical are good, not elite, by modern running back combine standards, but his agility numbers, especially his three-cone drill, remain among the best ever recorded at the position. His NFL production has consistently outpaced his testing numbers.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Find Out Now</div>
+<h3>Where Does Your Speed Rank?</h3>
+<p>Enter your 40-yard dash, 100m time, or top speed in mph and see your exact percentile ranking — compared to the general population, high school athletes, college players, and pros.</p>
+<a class="calc-cta-btn" href="/sprint-speed-calculator">Calculate My Speed Percentile →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Where does your vertical rank?
+      </a>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        Where does your speed rank?
+      </a>
+<a class="sidebar-link" href="/relative-athletic-score-nfl">
+<strong>Relative Athletic Score</strong>
+        Score your full combine profile
+      </a>
+<a class="sidebar-link" href="/broad-jump-sprint-speed-calculator">
+<strong>Broad Jump Speed Predictor</strong>
+        Predict your 40 from your broad jump
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">A 67-Spot Jump</a>
+<a class="toc-link" href="#">McCaffrey's 2017 Combine Numbers</a>
+<a class="toc-link" href="#">Good Testing, Historic Production</a>
+<a class="toc-link" href="#">How He Compares Today</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="/ashton-jeanty-mike-washington-raiders-combine-comparison">
+<strong>Jeanty & Washington's Combine Profiles</strong>
+        Raiders' new two-back system
+      </a>
+<a class="sidebar-link" href="/fastest-nfl-rookies-2026-training-camp">
+<strong>Fastest NFL Rookies of 2026</strong>
+        This year's combine speed class
+      </a>
+<a class="sidebar-link" href="/relative-athletic-score-nfl">
+<strong>NFL Combine Scores Explained</strong>
+        What RAS actually measures
+      </a>
+<a class="sidebar-link" href="/nfl-roster-cuts-2026-combine-numbers">
+<strong>NFL Roster Cuts 2026</strong>
+        Combine numbers behind the bubble
+      </a>
+</div>
+</aside>
+</div>

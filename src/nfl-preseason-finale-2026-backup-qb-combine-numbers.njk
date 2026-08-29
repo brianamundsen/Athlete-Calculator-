@@ -1,0 +1,637 @@
+---
+layout: base.njk
+title: "Preseason Finale Backup QBs: The Combine Numbers Behind the Big Nights | Athlete Calculator"
+description: "Kyle McCord threw 4 TDs and Sam Ehlinger had 3 in the 2026 preseason finales. Neither tested well at the combine. Here's the athletic profile behind their roster-bubble performances."
+canonicalPath: "/nfl-preseason-finale-2026-backup-qb-combine-numbers"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+  
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+  
+    .nav-brand span { color: var(--accent); }
+  
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+  
+    .nav-links a:hover { color: var(--accent); }
+  
+    .hero {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+  
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+  
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  
+    .hero-meta-item {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+  
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 640px;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+  
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 3rem;
+      align-items: start;
+    }
+  
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+  
+    .content p {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+      line-height: 1.75;
+    }
+  
+    .content p strong { color: var(--text); }
+  
+    .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+  
+    .content li {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+    }
+  
+    .content li strong { color: var(--text); }
+  
+    /* ── TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .fast td { background: rgba(170,255,0,0.06); }
+    .data-table .elite td { background: rgba(170,255,0,0.13); }
+    .data-table .elite td:first-child { color: var(--accent); }
+  
+    /* ── SPEED BAR ── */
+    .speed-bar-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+  
+    .speed-bar-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .speed-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+  
+    .speed-bar-label {
+      font-size: 0.74rem;
+      color: var(--text-mid);
+      width: 130px;
+      flex-shrink: 0;
+    }
+  
+    .speed-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  
+    .speed-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+    }
+  
+    .speed-bar-val {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      width: 42px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+  
+    /* ── CALC CTA ── */
+    .calc-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+  
+    .calc-cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+  
+    .calc-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+  
+    .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+  
+    .calc-cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      transition: opacity 0.15s;
+    }
+  
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 5rem; }
+  
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-link {
+      display: block;
+      padding: 0.65rem 0.75rem;
+      margin-bottom: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+  
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      border-left: 2px solid var(--border);
+      padding-left: 0.75rem;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+  
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+
+disclaimer:
+  - "Data based on 2025 NFL Scouting Combine and pro day results, NFL.com and AP preseason box scores, and published draft scouting reports."
+  - "Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Combine Numbers Behind the 2026 Preseason Finale's Biggest Backup QB Performances",
+    "description": "Kyle McCord threw 4 TDs and Sam Ehlinger had 3 in the 2026 preseason finales. Neither tested especially well at the combine. Here's the athletic profile behind their roster-bubble performances.",
+    "url": "https://athletecalculator.com/nfl-preseason-finale-2026-backup-qb-combine-numbers",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/nfl-preseason-finale-2026-backup-qb-combine-numbers"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How did Kyle McCord perform in the 2026 preseason finale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kyle McCord threw four touchdown passes, including two to Kisean Johnson in the final 3:30, going 22 of 35 for 226 yards without a turnover as the Packers rallied to beat the Cardinals 42-38 in the 2026 preseason finale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was Kyle McCord's 40-yard dash time at the NFL Combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kyle McCord did not participate in the 40-yard dash at the 2025 NFL Combine. He measured in at 218 pounds, and scouting reports flagged his arm strength and athletic profile as below average for the position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was Sam Ehlinger's 40-yard dash time at the NFL Combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sam Ehlinger ran a 4.93-second 40-yard dash at his combine as a 2021 draft prospect out of Texas, a below-average time that reflected his build as a bigger, more physical pocket passer rather than a mobile threat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do NFL quarterbacks need to test well at the combine to succeed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Kyle McCord skipped the 40-yard dash entirely and was flagged for below-average arm strength, while Sam Ehlinger ran a slow 4.93 40. Both have had standout preseason performances in 2026, showing that quarterback evaluation depends far more on decision-making, accuracy, and processing speed than raw athletic testing."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "The Combine Numbers Behind the 2026 Preseason Finale's Biggest Backup QB Performances",
+        "item": "https://athletecalculator.com/nfl-preseason-finale-2026-backup-qb-combine-numbers"
+      }
+    ]
+  }
+  </script>
+permalink: "nfl-preseason-finale-2026-backup-qb-combine-numbers/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Preseason Finale Backup QBs
+  </div>
+<h1>The Combine Numbers Behind the Backups Who <em>Balled Out</em></h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 6 min read</span>
+<span class="hero-meta-item">💪 Squat &amp; Speed</span>
+<span class="hero-meta-item">🏈 Preseason Finale 2026</span>
+</div>
+<p class="hero-intro">
+    Kyle McCord threw four touchdowns to rally the Packers past the Cardinals, and Sam Ehlinger tossed three in a Broncos blowout — both on the same preseason-finale Friday night, both fighting for roster spots. Neither one is a combine standout. Here's what their testing profiles actually say, and why it barely matters.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<div class="callout" style="background:var(--surface);border-color:var(--accent);">
+<div class="callout-icon">⚡</div>
+<div class="callout-text"><strong>Quick answer:</strong> Kyle McCord went <strong>22-of-35 for 226 yards and 4 TDs</strong> in a 42-38 win over Arizona, and Sam Ehlinger threw multiple touchdowns in a 34-6 rout of Minnesota — but McCord <strong>skipped the 40-yard dash</strong> at his combine and Ehlinger ran a slow <strong>4.93</strong> at his. Neither is an athletic marvel by testing standards. Both delivered when it mattered most for their roster spots.</div>
+</div>
+<h2>A Wild Friday Night for Backup Quarterbacks</h2>
+<p>Preseason finales rarely matter competitively, but they matter enormously for the players fighting to make a 53-man roster. Both the Packers and Cardinals rested their starters, handing Kyle McCord the entire game. The 2025 sixth-round pick, who spent last season on Philadelphia's practice squad, delivered: he went 22 of 35 for 226 yards, threw four touchdowns without a turnover, and rallied Green Bay from an 11-point deficit with two scores to Kisean Johnson in the final 3:30. "It's out of my control at this point," McCord said afterward. "I did everything that I could've to make a case for myself."</p>
+<p>The same night, Broncos QB3 hopeful Sam Ehlinger threw multiple touchdown passes — including one to running back Cody Schrader — in a 34-6 win over Minnesota, making a real push to be Sean Payton's third quarterback behind Bo Nix and Jarrett Stidham. Meanwhile, in Baltimore, the Ravens' kicking competition took a step backward: Tyler Loop missed two field goals and was booed by the home crowd amid growing job-security questions.</p>
+<h2>The Combine Profile Behind McCord's Big Night</h2>
+<p>McCord's testing background is almost the opposite of what you'd expect from a quarterback who just threw four touchdowns under pressure. He measured in at 218 pounds at the 2025 combine but <strong>did not run the 40-yard dash</strong>, and scouting reports consistently flagged his arm strength as below top-tier, noting the ball would hang on throws 25-plus yards downfield. His athletic profile was described as below average for the position overall.</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Kyle McCord</th>
+<th>Sam Ehlinger</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>School</td><td>Syracuse (via Ohio State)</td><td>Texas</td></tr>
+<tr><td>Draft Status</td><td>6th round, 2025</td><td>6th round, 2021 (No. 218)</td></tr>
+<tr><td>Height / Weight</td><td>6'3", 218 lbs</td><td>6'1", 222 lbs</td></tr>
+<tr><td>40-Yard Dash</td><td>Did not test</td><td>4.93s</td></tr>
+<tr><td>Scouted Arm Strength</td><td>Below top-tier</td><td>Physical, not elite</td></tr>
+<tr class="fast"><td>2026 Finale Line</td><td>22/35, 226 yds, 4 TD</td><td>Multiple TDs in blowout win</td></tr>
+</tbody>
+</table></div>
+<p>Ehlinger's testing tells a similar story from a different angle. His 4.93-second 40 back in 2021 was well below average even by quarterback standards — see how that compares in our <a href="/nfl-quarterback-speed-2026-combine">2026 quarterback speed breakdown</a>, where this year's combine class averaged 4.60. Ehlinger was never sold as a speed threat; he's a bigger-bodied, physical passer who has bounced between three organizations trying to stick as a career backup.</p>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>How Does Your Squat Predict Your Speed?</h3>
+<p>Strength and speed are connected, but not the same thing. See how your squat numbers translate to sprint speed potential.</p>
+<a class="calc-cta-btn" href="/squat-strength-sprint-speed">Compare Squat & Speed →</a>
+</div>
+<h2>Why Testing Numbers Miss the Point at Quarterback</h2>
+<p>Of every position on the field, quarterback is the one where combine testing correlates least with NFL outcomes. Arm strength, mobility, and size are all measurable — but none of them capture the two things that actually separate a roster-caliber backup from a cut player: decision-making speed and accuracy under duress. McCord's coach put it plainly: "He definitely has the demeanor, no doubt about it. He's in total control out there, and he's willing to stand in the pocket, deliver in the face of pressure," Packers coach Matt LaFleur said. That's not something a stopwatch or a vertical jump measures.</p>
+<p>Ehlinger's career has followed the same pattern — a physical talent (mobility, toughness, a live arm) whose NFL survival has always hinged more on situational football IQ and locker-room value than raw testing numbers.</p>
+<h2>What It Means for the 53-Man Cutdown</h2>
+<p>Both performances landed at the worst possible time to be ignored — the NFL's roster cutdown deadline lands Sunday, Aug. 30 at 6 p.m. ET, when all 32 teams trim from 90 to 53 players. McCord's four-touchdown night gives Green Bay's front office a real decision to make on a fringe roster spot, and Ehlinger's showing strengthens his case to be kept as Denver's emergency QB3. Neither outcome was predicted by a stopwatch back in college — both were earned on the practice and game field, which is exactly the point.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">How did Kyle McCord perform in the 2026 preseason finale?</div>
+<div class="faq-a">Kyle McCord threw four touchdown passes, including two to Kisean Johnson in the final 3:30, going 22 of 35 for 226 yards without a turnover as the Packers rallied to beat the Cardinals 42-38 in the 2026 preseason finale.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What was Kyle McCord's 40-yard dash time at the NFL Combine?</div>
+<div class="faq-a">Kyle McCord did not participate in the 40-yard dash at the 2025 NFL Combine. He measured in at 218 pounds, and scouting reports flagged his arm strength and athletic profile as below average for the position.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What was Sam Ehlinger's 40-yard dash time at the NFL Combine?</div>
+<div class="faq-a">Sam Ehlinger ran a 4.93-second 40-yard dash at his combine as a 2021 draft prospect out of Texas, a below-average time that reflected his build as a bigger, more physical pocket passer rather than a mobile threat.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do NFL quarterbacks need to test well at the combine to succeed?</div>
+<div class="faq-a">Not necessarily. Kyle McCord skipped the 40-yard dash entirely and was flagged for below-average arm strength, while Sam Ehlinger ran a slow 4.93 40. Both have had standout preseason performances in 2026, showing that quarterback evaluation depends far more on decision-making, accuracy, and processing speed than raw athletic testing.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Find Out Now</div>
+<h3>Where Does Your Squat Rank?</h3>
+<p>Enter your squat max and bodyweight and see your exact strength percentile — compared to youth, high school, college, and pro athletes.</p>
+<a class="calc-cta-btn" href="/squat-strength-calculator">Calculate My Squat Percentile →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        What does your squat predict?
+      </a>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        Where does your speed rank?
+      </a>
+<a class="sidebar-link" href="/squat-strength-sprint-speed">
+<strong>Squat vs. Speed Comparison</strong>
+        How strength predicts speed
+      </a>
+<a class="sidebar-link" href="/relative-athletic-score-nfl">
+<strong>Relative Athletic Score</strong>
+        Score your full combine profile
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">A Wild Friday Night</a>
+<a class="toc-link" href="#">McCord's Combine Profile</a>
+<a class="toc-link" href="#">Why Testing Misses the Point</a>
+<a class="toc-link" href="#">What It Means for Cutdown Day</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">Related Articles</div>
+<a class="sidebar-link" href="/nfl-quarterback-speed-2026-combine">
+<strong>How Fast Are NFL QBs Now?</strong>
+        2026 combine quarterback speed
+      </a>
+<a class="sidebar-link" href="/nfl-roster-cuts-2026-combine-numbers">
+<strong>NFL Roster Cuts 2026</strong>
+        Combine numbers behind the bubble
+      </a>
+<a class="sidebar-link" href="/preseason-week-1-rookie-qb-debuts-combine-numbers">
+<strong>Preseason Week 1 QB Debuts</strong>
+        Rookie QBs vs. their combine numbers
+      </a>
+<a class="sidebar-link" href="/combine-numbers-vs-training-camp-reality">
+<strong>Combine Numbers vs. Camp Reality</strong>
+        How this year's testers are translating
+      </a>
+</div>
+</aside>
+</div>
