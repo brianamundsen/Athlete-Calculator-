@@ -527,6 +527,100 @@ pageStyle: |-
   
     @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
   
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+  
   </style>
 disclaimer:
   - "Percentile data based on published sports science research and combine testing records."
@@ -721,6 +815,61 @@ permalink: "vertical-jump-percentile/index.html"
 <div class="info-card anim anim-d4">
 <div class="info-icon">⚡</div>
 <div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<div class="article-section">
+<h2>How Vertical Jump Percentile Is Calculated</h2>
+<p>This calculator ranks your standing vertical jump against normative data drawn from exercise science literature and NSCA (National Strength and Conditioning Association) testing benchmarks, broken out by <strong>gender</strong> and <strong>age group</strong>. Your percentile tells you what share of people at your demographic profile you outjump — a 70th percentile score means you jump higher than roughly 70% of that population.</p>
+<p>The underlying norms blend general population data with athletic population data, so the same jump height produces a different percentile depending on whether you're being compared to the general public or to trained athletes. That's why the tool also shows direct comparisons against high school, college, and pro benchmarks in the results above — a single percentile number never tells the whole story.</p>
+<h2>Vertical Jump Averages by Level and Age</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Level</th>
+<th>Male Avg</th>
+<th>Female Avg</th>
+<th>Elite at That Level</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>General Population</td><td>16"–19"</td><td>10"–14"</td><td>22"+</td></tr>
+<tr><td>High School Athlete</td><td>22"–26"</td><td>16"–20"</td><td>30"+</td></tr>
+<tr><td>College Athlete</td><td>26"–30"</td><td>19"–23"</td><td>34"+</td></tr>
+<tr class="highlight"><td>NBA Average</td><td>28"</td><td>—</td><td>36"+</td></tr>
+<tr class="highlight"><td>NFL Combine Avg</td><td>33"</td><td>—</td><td>40"+</td></tr>
+<tr><td>WNBA Average</td><td>—</td><td>23"</td><td>28"+</td></tr>
+</tbody>
+</table></div>
+<h2>How to Increase Your Vertical Jump</h2>
+<p>Vertical jump height is driven primarily by lower-body strength and rate of force development — how quickly you can express that strength. The three highest-leverage training methods are:</p>
+<p><strong>Heavy squats</strong> — building a strong strength foundation (targeting 1.5–2x bodyweight on the back squat) raises the ceiling on how much force your legs can produce. Use our <a href="/squat-strength-calculator">Squat Strength Predictor</a> to see where your strength currently stacks up.</p>
+<p><strong>Plyometric training</strong> — depth jumps, box jumps, and bounding drills train your nervous system to convert strength into speed. Two focused plyometric sessions per week, paired with adequate recovery, typically produce the fastest gains.</p>
+<p><strong>Sprint and acceleration work</strong> — short sprints recruit the same fast-twitch fibers used in jumping and reinforce explosive hip extension. Check your <a href="/sprint-speed-calculator">Sprint Speed Percentile</a> alongside your vertical jump to see how the two relate for you.</p>
+<p>A dedicated 8–12 week block combining these three elements can realistically add 4–8 inches to an untrained athlete's vertical, with diminishing but still meaningful returns for already-trained athletes.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good vertical jump?</div>
+<div class="faq-a">For adult males, a vertical jump of 19–21 inches is considered average. Above 26 inches is athletic, and above 32 inches is elite. For adult females, 13–15 inches is average, 20 inches is athletic, and 23+ inches is elite. Enter your numbers above to see your exact percentile against these benchmarks.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average vertical jump for a 16 year old?</div>
+<div class="faq-a">The average vertical jump for a 16-year-old male is approximately 18–20 inches. For females of the same age, the average is around 13–15 inches. Athletes who train regularly typically measure 4–6 inches higher than untrained peers at the same age.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What vertical jump do you need to dunk?</div>
+<div class="faq-a">To dunk a basketball on a 10-foot rim, most players need a minimum vertical jump of 28–35 inches depending on their height and standing reach. A 6-foot tall player typically needs around a 30-inch vertical, while a 6'4" player may only need 24 inches. Try our <a href="/can-i-dunk-calculator">Dunk Calculator</a> for a personalized estimate based on your height and reach.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average NBA vertical jump?</div>
+<div class="faq-a">The average NBA player has a standing vertical jump of approximately 28 inches and a max vertical of around 32–34 inches. Elite jumpers in the NBA can reach 40+ inches on their max vertical.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How can I improve my vertical jump?</div>
+<div class="faq-a">The most effective methods to increase vertical jump are heavy squats to build leg strength, plyometric training (depth jumps, box jumps) to develop explosive power, and sprint training to improve fast-twitch muscle fiber recruitment. A dedicated 8–12 week program can realistically add 4–8 inches to your vertical.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average vertical jump for a high school basketball player?</div>
+<div class="faq-a">The average vertical jump for a high school basketball player is approximately 22–26 inches for males and 16–20 inches for females. Players who go on to play college basketball typically average 26–30 inches.</div>
 </div>
 </div>
 </div><script>

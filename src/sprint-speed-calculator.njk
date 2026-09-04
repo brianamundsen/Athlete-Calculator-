@@ -458,6 +458,100 @@ pageStyle: |-
   
     .you-row .bar-fill { background: var(--accent); }
     .you-row .bar-label { color: var(--accent); font-weight: 600; }
+  
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
   </style>
 disclaimer:
   - "Percentile data based on published sports science research, NFL combine records, and NCAA testing norms."
@@ -659,6 +753,61 @@ permalink: "sprint-speed-calculator/index.html"
 <div class="info-card anim anim-d4">
 <div class="info-icon">⚡</div>
 <div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<div class="article-section">
+<h2>How Sprint Speed Percentile Is Calculated</h2>
+<p>This calculator converts your 40-yard dash, 100m, or top speed into a percentile ranking based on normative data across the <strong>general population</strong>, <strong>high school athletes</strong>, <strong>college athletes</strong>, and <strong>NFL combine</strong> benchmarks. Because sprint times vary meaningfully by age and gender, the tool adjusts its comparison pool based on the inputs you provide.</p>
+<p>Sprint speed is one of the most heavily scouted athletic traits in football, and for good reason — acceleration and top-end speed translate directly to separation from defenders, closing speed on defense, and explosiveness at the line. Small differences in 40 time carry outsized weight in how prospects are evaluated.</p>
+<h2>40-Yard Dash Averages by Level</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Level</th>
+<th>Male Avg</th>
+<th>Female Avg</th>
+<th>Elite at That Level</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>General Population</td><td>5.0–5.4s</td><td>5.8–6.2s</td><td>4.7s+</td></tr>
+<tr><td>High School Athlete</td><td>4.8–5.1s</td><td>5.5–5.9s</td><td>4.6s+</td></tr>
+<tr><td>College Athlete</td><td>4.6–4.9s</td><td>5.3–5.6s</td><td>4.4s+</td></tr>
+<tr class="highlight"><td>NFL Combine Avg</td><td>4.54s</td><td>—</td><td>4.3s+</td></tr>
+<tr class="highlight"><td>NFL Elite (WR/CB)</td><td>4.35s</td><td>—</td><td>4.25s+</td></tr>
+<tr><td>NFL Combine Record</td><td>4.22s (John Ross)</td><td>—</td><td>—</td></tr>
+</tbody>
+</table></div>
+<h2>How to Improve Your Sprint Speed</h2>
+<p>Sprint speed breaks down into two distinct qualities — acceleration and top-end speed — and each responds to different training:</p>
+<p><strong>Acceleration drills</strong> — resisted sprints and sled pushes at 10–20% bodyweight train the horizontal drive mechanics that dominate the first 10–15 yards, which is where most 40-yard dash time is won or lost.</p>
+<p><strong>Max velocity work</strong> — flying sprints (a running start into a timed segment) and wicket drills train stride mechanics at top speed, which matters most for sprinters and skill position players who need to separate over longer distances.</p>
+<p><strong>Posterior chain strength</strong> — deadlifts, hip thrusts, and heavy squats build the strength foundation for both acceleration and top speed. See our <a href="/squat-strength-calculator">Squat Strength Predictor</a> to check your relative strength.</p>
+<p>A focused 8–12 week speed program combining these elements can improve your 40-yard dash by 0.1 to 0.3 seconds — a meaningful jump in percentile terms.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good 40 yard dash time?</div>
+<div class="faq-a">For adult males, a 40-yard dash time of 5.0 to 5.4 seconds is average for the general population. Under 4.7 seconds is considered athletic, and under 4.5 seconds is elite. The NFL combine average is around 4.54 seconds, with elite skill players running 4.3 or faster.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average 40 yard dash time for a high school athlete?</div>
+<div class="faq-a">The average 40-yard dash for a high school male athlete is approximately 4.8 to 5.1 seconds. For female high school athletes, the average is around 5.5 to 5.9 seconds. Skill position players who go on to play college football typically run under 4.7 seconds.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average 100m sprint time?</div>
+<div class="faq-a">The average untrained adult male runs 100m in approximately 13 to 15 seconds. High school male athletes average 11.5 to 12.5 seconds. College-level sprinters average 10.5 to 11.2 seconds. The world record is 9.58 seconds set by Usain Bolt.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How fast do NFL players run in mph?</div>
+<div class="faq-a">NFL players average about 15 to 17 mph during gameplay. Elite skill position players like wide receivers and cornerbacks can reach top speeds of 21 to 23 mph. The fastest recorded NFL speed is over 23 mph, equivalent to a sub-4.3 second 40-yard dash.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average sprint speed for a person?</div>
+<div class="faq-a">The average untrained adult male can sprint at around 10 to 13 mph, equivalent to a 40-yard dash of 5.0 to 5.5 seconds. The average untrained adult female sprints at around 8 to 11 mph. Trained athletes typically reach 15 to 20 mph at peak speed.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How can I improve my sprint speed?</div>
+<div class="faq-a">The most effective ways to improve sprint speed are acceleration drills such as resisted sprints and sled pushes, max velocity work with flying sprints and wicket drills, strength training focused on the posterior chain including deadlifts and hip thrusts, and plyometric training. A focused 8 to 12 week speed program can improve your 40-yard dash by 0.1 to 0.3 seconds.</div>
 </div>
 </div>
 </div><script>

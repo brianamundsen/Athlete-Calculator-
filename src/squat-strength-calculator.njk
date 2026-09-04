@@ -537,6 +537,100 @@ pageStyle: |-
   
     .you-row .scale-fill { background: var(--accent); }
     .you-row .scale-label { color: var(--accent); font-weight: 600; }
+  
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
   </style>
 disclaimer:
   - "Predictions based on published sports science research correlating relative squat strength with jump height and sprint speed."
@@ -759,6 +853,59 @@ permalink: "squat-strength-calculator/index.html"
 <div class="next-card anim anim-d5">
 <div class="next-card-title">Your Training Priority</div>
 <div id="next-steps"></div>
+</div>
+</div>
+<div class="article-section">
+<h2>Why Squat Strength Predicts Athletic Performance</h2>
+<p>The back squat is the single best proxy for <strong>lower-body maximal strength</strong> in athletic testing, which is why it correlates so strongly with vertical jump, sprint speed, and change-of-direction ability. All three qualities depend on how much force your legs can produce against the ground — squat strength tells you the ceiling on that force output.</p>
+<p>Research consistently shows that athletes who squat 1.5 to 2 times their bodyweight jump significantly higher and accelerate faster than untrained individuals at the same bodyweight. Increasing your squat max by roughly 20% typically correlates with a 2 to 4 inch increase in vertical jump and a 0.1 to 0.2 second improvement in the 40-yard dash.</p>
+<h2>Squat Strength Standards by Level</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Level</th>
+<th>Male (x Bodyweight)</th>
+<th>Female (x Bodyweight)</th>
+<th>Elite Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Untrained</td><td>0.5–0.75x</td><td>0.4–0.6x</td><td>1.0x+</td></tr>
+<tr><td>High School Athlete</td><td>1.0–1.3x</td><td>0.8–1.1x</td><td>1.5x+</td></tr>
+<tr><td>College Athlete</td><td>1.4–1.8x</td><td>1.1–1.4x</td><td>2.0x+</td></tr>
+<tr class="highlight"><td>Strong Athlete</td><td>2.0x</td><td>1.5x</td><td>—</td></tr>
+<tr class="highlight"><td>Elite Athlete</td><td>2.5x+</td><td>1.8x+</td><td>—</td></tr>
+</tbody>
+</table></div>
+<h2>How to Build Squat Strength Efficiently</h2>
+<p>Squat strength responds best to a structured progression rather than random heavy days. Three principles matter most:</p>
+<p><strong>Progressive overload</strong> — adding small amounts of weight or reps over time is what actually drives strength gains. A linear progression adding 5–10 lbs per session works well for beginners; intermediate and advanced lifters need periodized programming with planned volume and intensity waves.</p>
+<p><strong>Technique consistency</strong> — squat depth, bar path, and bracing technique all affect how much of your raw strength translates to a tested max. Small technical breakdowns under heavy weight cost real numbers on test day.</p>
+<p><strong>Pairing with explosive work</strong> — strength alone builds the ceiling, but plyometrics and sprint work convert that strength into the speed and power that shows up on the field. Check your <a href="/vertical-jump-percentile">Vertical Jump Percentile</a> and <a href="/sprint-speed-calculator">Sprint Speed Percentile</a> to see how your current strength is translating.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Does squat strength improve vertical jump?</div>
+<div class="faq-a">Yes — squat strength is one of the strongest predictors of vertical jump height. Athletes who squat 1.5 to 2 times their bodyweight have significantly higher vertical jumps than untrained individuals. Increasing your squat max by 20% typically correlates with a 2 to 4 inch increase in vertical jump. Use our <a href="/vertical-jump-percentile">Vertical Jump Calculator</a> to see where you rank.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How much should I squat to jump higher?</div>
+<div class="faq-a">To meaningfully improve your vertical jump, aim to squat at least 1.5 times your bodyweight. Athletes who squat 2 times bodyweight or more tend to have elite vertical jumps. The relationship between squat strength and vertical jump is strongest when combined with plyometric training.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does squat strength affect sprint speed?</div>
+<div class="faq-a">Yes, especially for acceleration over short distances like the 40-yard dash. Athletes with high relative squat strength apply more force into the ground during each stride. Athletes who squat 2 times bodyweight are typically 0.2 to 0.4 seconds faster in the 40-yard dash than athletes who squat 1.0 times bodyweight.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is a good squat for an athlete?</div>
+<div class="faq-a">For athletic performance, a squat of 1.5 times bodyweight is a solid foundation. Squatting 2.0 times bodyweight is considered strong for a male athlete and correlates with elite-level vertical jump and sprint performance. Female athletes at 1.5 times bodyweight are also considered very strong for their sport.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the average squat for a high school athlete?</div>
+<div class="faq-a">The average high school male athlete squats approximately 1.0 to 1.3 times their bodyweight. Female high school athletes average around 0.8 to 1.1 times bodyweight. College-level athletes typically squat 1.4 to 1.8 times bodyweight, and elite athletes often exceed 2.0 times bodyweight.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Should I squat or do plyometrics to jump higher?</div>
+<div class="faq-a">Both. The best vertical jump gains come from combining heavy squats with plyometric training. Squats build the force production capacity, while plyometrics train the rate of force development and stretch-shortening cycle. Either approach alone produces smaller gains than the two combined.</div>
 </div>
 </div>
 </div><script>
