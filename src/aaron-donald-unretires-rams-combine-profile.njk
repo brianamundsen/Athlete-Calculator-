@@ -1,0 +1,253 @@
+---
+layout: base.njk
+title: "Aaron Donald Un-Retires at 35: The 2014 Combine Numbers That Still Hold Up | Athlete Calculator"
+description: "Aaron Donald is coming out of retirement to join Myles Garrett on the Rams' defensive line. His 2014 combine profile — a 4.68-second 40 at 285 pounds — explains why his game has aged so well."
+canonicalPath: "/aaron-donald-unretires-rams-combine-profile"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Aaron Donald Un-Retires at 35: The 2014 Combine Numbers That Still Hold Up",
+    "description": "Aaron Donald is coming out of retirement to join Myles Garrett on the Rams' defensive line. His 2014 combine profile — a 4.68-second 40 at 285 pounds — explains why his game has aged so well.",
+    "url": "https://athletecalculator.com/aaron-donald-unretires-rams-combine-profile"
+  }
+  </script>
+permalink: "aaron-donald-unretires-rams-combine-profile/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Aaron Donald Returns
+  </div>
+<h1>Aaron Donald Un-Retires: <em>The 2014 Combine Profile That Still Holds Up</em></h1>
+<div class="meta-row">
+<span>📖 6 min read</span>
+<span>🏈 Football</span>
+<span>🔥 Breaking · Rams</span>
+</div>
+<p class="dek">Aaron Donald is coming out of retirement at 35 to rejoin the Los Angeles Rams, signing a one-year deal worth up to $30 million to pair with Myles Garrett on a defensive line that now holds five of the last nine Defensive Player of the Year awards between them. His 2014 combine profile — still one of the most efficient testing performances by a defensive tackle on record — is a big part of why 35-year-old Donald is betting he can still dominate.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#return">The Return</a>
+<a href="#combine">The 2014 Combine Profile</a>
+<a href="#aged">Why It's Aged So Well</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="return">The Return</h2>
+<p>Donald announced his comeback on Instagram, more than two years after walking away from football in March 2024 following a decade with the Rams. He's signing a one-year contract worth $20 million guaranteed that can climb to $30 million with incentives — a deal that came together after the Rams traded for reigning Defensive Player of the Year Myles Garrett this summer, which reportedly helped stoke Donald's comeback interest. The Rams spent nearly two months letting Donald test his body at the team facility before finalizing the deal.</p>
+<div class="stat-card">
+<div class="stat-icon">🐏</div>
+<div class="stat-title">Aaron Donald's Return Deal</div>
+<div class="stat-sub">1 Year · Los Angeles Rams · Age 35</div>
+<div class="stat-numbers">
+<div class="stat-num"><div class="num">$20M</div><div class="label">Guaranteed</div></div>
+<div class="stat-num"><div class="num">$30M</div><div class="label">Max Value</div></div>
+<div class="stat-num"><div class="num">3x</div><div class="label">DPOY Awards</div></div>
+</div>
+</div>
+<p>Donald retired with three Defensive Player of the Year awards, 10 Pro Bowl selections, eight All-Pro honors, and a Super Bowl ring, widely regarded as one of the most dominant interior defenders in NFL history. He last played in 2023, recording eight sacks in what turned out to be his final season before stepping away.</p>
+<h2 id="combine">The 2014 Combine Profile</h2>
+<p>Donald measured in undersized for a defensive tackle at 6-foot-1 and 285 pounds at the 2014 combine — the kind of frame that typically raises red flags for an interior lineman. What silenced the doubts was what happened next: a 4.68-second 40-yard dash that stood as the fastest 40 ever run by a defensive tackle at the combine until Calijah Kancey broke it by one hundredth of a second in 2023. Donald backed it up with 35 reps on the 225-pound bench press — second among all defensive linemen that year — plus a 32-inch vertical jump and a 9-foot-8 broad jump that would be strong marks for players 40 pounds lighter.</p>
+<table>
+<tr><th>Measurable</th><th>Aaron Donald (2014)</th></tr>
+<tr><td>Height / Weight</td><td>6'1", 285 lbs</td></tr>
+<tr><td>40-Yard Dash</td><td>4.68s (DT combine record until 2023)</td></tr>
+<tr><td>Bench Press</td><td>35 reps (2nd among DL)</td></tr>
+<tr><td>Vertical Jump</td><td>32"</td></tr>
+<tr><td>Broad Jump</td><td>9'8"</td></tr>
+<tr><td>3-Cone Drill</td><td>7.11s</td></tr>
+</table>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How That 40 Time Compares at 285 Pounds</div>
+<div class="tool-desc">A sub-4.7 forty at 285 pounds is an outlier even by today's combine standards. See how it stacks up against your own numbers.</div>
+<a class="tool-cta" href="/broad-jump-sprint-speed-calculator">Calculate My Sprint Speed →</a>
+</div>
+<h2 id="aged">Why It's Aged So Well</h2>
+<p>What made Donald's testing profile so predictive wasn't any single number — it was the combination. A defensive tackle who is fast, strong, and explosive all at once is rare; most prospects at the position trade one quality for another. Statistical analysis of that combine class ranked Donald's overall performance as the best of any player at any position, more than two standard deviations above expectation in the 40, bench press, and 3-cone drill alike.</p>
+<p>That same first-step quickness — the quality that let a 285-pound man run a 4.68 — is exactly what allows an undersized interior lineman to keep winning reps into his mid-30s, when most defensive tackles have long since lost the athletic edge that made them special as rookies. Explosiveness out of a stance tends to erode more slowly than top-end speed, which is part of why Donald's bet on himself isn't as far-fetched as a two-and-a-half year layoff might suggest.</p>
+<div class="callout">
+<strong>The Athletic Comparison</strong>
+  Donald's 285-pound frame with a sub-4.7 forty is still an outlier a decade later. For comparison, most starting NFL defensive tackles run in the high 4.9s to low 5.0s at a similar weight — Donald was roughly three-tenths of a second faster than the position average, which at the line of scrimmage is the difference between beating a blocker to a gap and getting handled.
+</div>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">How old is Aaron Donald now?</div>
+<div class="faq-a">Donald is 35 years old, coming out of retirement after last playing in the 2023 season. He'll be one of the oldest defensive tackles in the NFL in 2026.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What was Aaron Donald's 40-yard dash time?</div>
+<div class="faq-a">Donald ran a 4.68-second 40-yard dash at the 2014 NFL Combine at 285 pounds, which stood as the fastest 40 by a defensive tackle on record until Calijah Kancey ran a 4.67 in 2023.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Why is Aaron Donald returning to the NFL?</div>
+<div class="faq-a">Donald is joining a Rams team with legitimate Super Bowl expectations after the club traded for reigning Defensive Player of the Year Myles Garrett. He's signing a one-year deal worth up to $30 million with incentives.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/quinnen-williams-cowboys-extension-combine-profile">
+<div class="related-title">Quinnen Williams' $105.9M Extension</div>
+<div class="related-desc">The combine numbers behind a 9.84 RAS</div>
+</a>
+<a class="related-card" href="/relative-athletic-score-nfl">
+<div class="related-title">Relative Athletic Score Explained</div>
+<div class="related-desc">How RAS is calculated and what it means</div>
+</a>
+<a class="related-card" href="/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available NFL Combine records and contract reporting. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>
