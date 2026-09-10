@@ -416,6 +416,65 @@ pageStyle: |-
   
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
+  
+    /* ── PERCENTILE BAR ── */
+    .pct-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .pct-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .pct-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .pct-label { font-size: 0.75rem; color: var(--text-mid); width: 150px; flex-shrink: 0; }
+    .pct-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .pct-fill { height: 100%; border-radius: 100px; }
+    .pct-val {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-mid);
+      width: 60px;
+      text-align: right;
+    }
+  
+    .age-jump-nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .age-jump-nav a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-mid);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.45rem 1rem;
+      text-decoration: none;
+    }
+    .age-jump-nav a:hover { color: var(--accent); border-color: var(--accent); }
   </style>
 disclaimer:
   - "Data based on published NFL combine records, NCAA testing norms, and sports science research."
@@ -736,16 +795,121 @@ permalink: "average-40-yard-dash-times/index.html"
 <tr><td>51+ years</td><td>Over 7.5s</td><td>6.5–7.4s</td><td>6.0–6.4s</td><td>Under 5.8s</td></tr>
 </tbody>
 </table></div>
-<div class="callout">
-<div class="callout-icon">🎯</div>
-<div class="callout-text"><strong>Looking for your exact age?</strong> We have dedicated, detailed breakdowns with male/female percentiles, sport-specific benchmarks, and recruiting context for each high school age: <a href="/average-40-yard-dash-time-15-year-old">40-yard dash for a 15-year-old</a>, <a href="/average-40-yard-dash-time-16-year-old">for a 16-year-old</a>, and <a href="/average-40-yard-dash-time-17-year-old">for a 17-year-old</a>. These are the ages college scouts evaluate most closely.</div>
-</div>
 <div class="calc-cta">
 <div class="calc-cta-label">Free Tool</div>
 <h3>How Does Your Squat Affect Your Speed?</h3>
 <p>Your squat strength is one of the biggest predictors of sprint speed. See exactly what your current squat predicts for your 40-yard dash time.</p>
 <a class="calc-cta-btn" href="/squat-strength-calculator">Use the Squat Strength Predictor →</a>
 </div>
+<h2 id="by-age">Full Percentile Breakdown, Age 15 to 17</h2>
+<p>These are the ages college scouts evaluate most closely. Each age below shows the full male and female percentile spread plus what's competitive by sport.</p>
+<div class="age-jump-nav">
+<a href="#dash-age-15">Age 15</a>
+<a href="#dash-age-16">Age 16</a>
+<a href="#dash-age-17">Age 17</a>
+</div>
+<h3 id="dash-age-15">Age 15</h3>
+<p>The average 40-yard dash for a 15-year-old male is 5.4 to 5.8 seconds; for females it's 6.0 to 6.6 seconds. At 15 — sophomore year — recruiting is still mostly ahead of you, so this is the age to establish a clean baseline and start building.</p>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 15-Year-Old Males</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 6.5s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">5.9–6.4s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">5.4–5.8s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">5.0–5.3s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">4.8–5.0s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 4.8s</div></div>
+</div>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 15-Year-Old Females</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 7.2s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">6.6–7.1s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">6.0–6.5s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">5.5–5.9s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">5.2–5.4s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 5.2s</div></div>
+</div>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Position/Sport (Age 15)</th><th>Avg</th><th>Good</th><th>Elite</th><th>Soccer/BB Only</th></tr></thead>
+<tbody>
+<tr><td>WR / CB (Football)</td><td>5.05–5.25s</td><td>4.80–4.95s</td><td>Under 4.75s</td><td>N/A</td></tr>
+<tr><td>Running Back</td><td>5.10–5.30s</td><td>4.85–5.00s</td><td>Under 4.78s</td><td>N/A</td></tr>
+<tr><td>Safety / Linebacker</td><td>5.15–5.35s</td><td>4.95–5.10s</td><td>Under 4.88s</td><td>N/A</td></tr>
+<tr><td>Quarterback</td><td>5.20–5.40s</td><td>5.00–5.15s</td><td>Under 4.95s</td><td>N/A</td></tr>
+<tr><td>Lineman (Football)</td><td>5.60–6.00s</td><td>5.30–5.55s</td><td>Under 5.25s</td><td>N/A</td></tr>
+<tr><td>Soccer (Field Player)</td><td>5.15–5.35s</td><td>4.95–5.10s</td><td>Under 4.88s</td><td>5.8–6.1s</td></tr>
+<tr><td>Basketball (Guard)</td><td>5.05–5.25s</td><td>4.85–4.98s</td><td>Under 4.80s</td><td>5.6–5.9s</td></tr>
+<tr><td>Track (Sprinter)</td><td>4.88–5.08s</td><td>4.70–4.85s</td><td>Under 4.65s</td><td>5.3–5.6s</td></tr>
+<tr><td>General / Untrained</td><td>5.50–5.90s</td><td>5.10–5.40s</td><td>—</td><td>6.2–6.7s</td></tr>
+</tbody>
+</table></div>
+<h3 id="dash-age-16">Age 16</h3>
+<p>The average 40-yard dash for a 16-year-old male is 5.2 to 5.6 seconds; for females it's 5.8 to 6.4 seconds. Sophomore-to-junior year is when recruiting attention starts to build, and it's one of the highest-leverage training windows for speed development.</p>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 16-Year-Old Males</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 6.1s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">5.7–6.0s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">5.2–5.6s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">4.9–5.1s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">4.7–4.85s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 4.6s</div></div>
+</div>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 16-Year-Old Females</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 7.0s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">6.4–6.9s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">5.8–6.3s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">5.3–5.7s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">5.0–5.2s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 5.0s</div></div>
+</div>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Position/Sport (Age 16)</th><th>Avg</th><th>Good</th><th>Elite</th><th>Soccer/BB Only</th></tr></thead>
+<tbody>
+<tr><td>WR / CB (Football)</td><td>4.70–4.90s</td><td>4.55–4.68s</td><td>Under 4.55s</td><td>N/A</td></tr>
+<tr><td>Running Back</td><td>4.75–4.95s</td><td>4.60–4.72s</td><td>Under 4.58s</td><td>N/A</td></tr>
+<tr><td>Safety / Linebacker</td><td>4.80–5.00s</td><td>4.65–4.78s</td><td>Under 4.65s</td><td>N/A</td></tr>
+<tr><td>Quarterback</td><td>4.88–5.08s</td><td>4.72–4.85s</td><td>Under 4.70s</td><td>N/A</td></tr>
+<tr><td>Lineman (Football)</td><td>5.25–5.65s</td><td>5.05–5.22s</td><td>Under 5.00s</td><td>N/A</td></tr>
+<tr><td>Soccer (Field Player)</td><td>4.88–5.08s</td><td>4.68–4.82s</td><td>Under 4.68s</td><td>5.4–5.7s</td></tr>
+<tr><td>Basketball (Guard)</td><td>4.72–4.92s</td><td>4.60–4.72s</td><td>Under 4.58s</td><td>5.2–5.5s</td></tr>
+<tr><td>Track (Sprinter)</td><td>4.58–4.78s</td><td>4.45–4.58s</td><td>Under 4.42s</td><td>5.0–5.3s</td></tr>
+<tr><td>General / Untrained</td><td>5.20–5.60s</td><td>4.85–5.15s</td><td>—</td><td>5.8–6.4s</td></tr>
+</tbody>
+</table></div>
+<h3 id="dash-age-17">Age 17</h3>
+<p>The average 40-yard dash for a 17-year-old male is 5.0 to 5.4 seconds; for females it's 5.6 to 6.2 seconds. Junior year is the primary recruiting evaluation window for most sports, so a verified time at 17 carries the most weight with college scouts.</p>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 17-Year-Old Males</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 5.9s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">5.5–5.8s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">5.0–5.3s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">4.7–4.9s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">4.5–4.65s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 4.5s</div></div>
+</div>
+<div class="pct-wrap">
+<div class="pct-title">40-Yard Dash Percentiles — 17-Year-Old Females</div>
+<div class="pct-row"><div class="pct-label">10th percentile (slow)</div><div class="pct-track"><div class="pct-fill" style="width:20%;background:#ff4d4d"></div></div><div class="pct-val">Over 6.8s</div></div>
+<div class="pct-row"><div class="pct-label">25th percentile</div><div class="pct-track"><div class="pct-fill" style="width:35%;background:#ff9000"></div></div><div class="pct-val">6.2–6.7s</div></div>
+<div class="pct-row"><div class="pct-label">50th (Average)</div><div class="pct-track"><div class="pct-fill" style="width:50%;background:#ffd600"></div></div><div class="pct-val">5.6–6.1s</div></div>
+<div class="pct-row"><div class="pct-label">75th percentile</div><div class="pct-track"><div class="pct-fill" style="width:68%;background:#9dff00"></div></div><div class="pct-val">5.1–5.5s</div></div>
+<div class="pct-row"><div class="pct-label">90th percentile</div><div class="pct-track"><div class="pct-fill" style="width:82%;background:#aaff00"></div></div><div class="pct-val">4.85–5.0s</div></div>
+<div class="pct-row"><div class="pct-label">95th percentile (elite)</div><div class="pct-track"><div class="pct-fill" style="width:95%;background:#00cfff"></div></div><div class="pct-val">Under 4.85s</div></div>
+</div>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Position/Sport (Age 17)</th><th>Avg</th><th>Good</th><th>Elite</th><th>Soccer/BB Only</th></tr></thead>
+<tbody>
+<tr><td>WR / CB (Football)</td><td>4.60–4.80s</td><td>4.45–4.58s</td><td>Under 4.45s</td><td>N/A</td></tr>
+<tr><td>Running Back</td><td>4.65–4.85s</td><td>4.50–4.62s</td><td>Under 4.48s</td><td>N/A</td></tr>
+<tr><td>Safety / Linebacker</td><td>4.70–4.90s</td><td>4.55–4.68s</td><td>Under 4.55s</td><td>N/A</td></tr>
+<tr><td>Quarterback</td><td>4.78–4.98s</td><td>4.62–4.75s</td><td>Under 4.60s</td><td>N/A</td></tr>
+<tr><td>Lineman (Football)</td><td>5.15–5.55s</td><td>4.95–5.12s</td><td>Under 4.90s</td><td>N/A</td></tr>
+<tr><td>Soccer (Field Player)</td><td>4.78–4.98s</td><td>4.58–4.72s</td><td>Under 4.58s</td><td>5.3–5.6s</td></tr>
+<tr><td>Basketball (Guard)</td><td>4.62–4.82s</td><td>4.50–4.62s</td><td>Under 4.48s</td><td>5.1–5.4s</td></tr>
+<tr><td>Track (Sprinter)</td><td>4.48–4.68s</td><td>4.35–4.48s</td><td>Under 4.32s</td><td>4.9–5.2s</td></tr>
+<tr><td>General / Untrained</td><td>5.10–5.50s</td><td>4.75–5.05s</td><td>—</td><td>5.8–6.3s</td></tr>
+</tbody>
+</table></div>
 <h2>How to Improve Your 40 Yard Dash Time</h2>
 <p>Most athletes who run a 4.7 or slower have significant room to improve through targeted training. The 40-yard dash is primarily an acceleration test — the first 10 yards account for the most variance between fast and slow times.</p>
 <h3>The Fastest Ways to Drop Your 40 Time</h3>
@@ -767,7 +931,7 @@ permalink: "average-40-yard-dash-times/index.html"
 </div>
 <div class="faq-item">
 <div class="faq-q">What is a good 40-yard dash time by age?</div>
-<div class="faq-a">For a 15-year-old male, a good 40 is around 4.9–5.3 seconds; for a 16-year-old, 4.7–5.1 seconds; for a 17-year-old, 4.6–5.0 seconds; and for adults 19–25, under 4.7 seconds is athletic and under 4.5 is elite. Times improve naturally through the teen years as the body develops. We have detailed age-specific breakdowns for <a href="/average-40-yard-dash-time-15-year-old">15-year-olds</a>, <a href="/average-40-yard-dash-time-16-year-old">16-year-olds</a>, and <a href="/average-40-yard-dash-time-17-year-old">17-year-olds</a> with full male and female percentiles.</div>
+<div class="faq-a">For a 15-year-old male, a good 40 is around 4.9–5.3 seconds; for a 16-year-old, 4.7–5.1 seconds; for a 17-year-old, 4.6–5.0 seconds; and for adults 19–25, under 4.7 seconds is athletic and under 4.5 is elite. Times improve naturally through the teen years as the body develops. See the <a href="#by-age">full age-by-age breakdown above</a> for complete male and female percentiles at each age.</div>
 </div>
 <div class="faq-item">
 <div class="faq-q">What is a good 40-yard dash for a 14 year old?</div>
@@ -822,7 +986,7 @@ permalink: "average-40-yard-dash-times/index.html"
 <a class="toc-link" href="#">High School Times by Position</a>
 <a class="toc-link" href="#">College Times by Division</a>
 <a class="toc-link" href="#">Other Sports</a>
-<a class="toc-link" href="#">Times by Age Group</a>
+<a class="toc-link" href="#by-age">Times by Age Group</a>
 <a class="toc-link" href="#">How to Improve Your 40</a>
 <a class="toc-link" href="#">FAQ</a>
 </div>
@@ -832,7 +996,7 @@ permalink: "average-40-yard-dash-times/index.html"
 <strong>Fastest NFL Rookies of 2026</strong>
         Full combine speed rankings
       </a>
-<a class="sidebar-link" href="/average-40-yard-dash-time-16-year-old">
+<a class="sidebar-link" href="#dash-age-16">
 <strong>40-Yard Dash for a 16 Year Old</strong>
         Age-specific norms and recruiting context
       </a>

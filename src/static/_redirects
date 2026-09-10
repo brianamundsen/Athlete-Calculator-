@@ -16,7 +16,7 @@
 /broad-jump-sprint-speed-calculator.html  /broad-jump-sprint-speed-calculator  301!
 /how-fast-is-the-average-person.html  /how-fast-is-the-average-person  301!
 /vertical-jump-needed-to-dunk.html  /vertical-jump-needed-to-dunk  301!
-/average-vertical-jump-14-year-old.html  /average-vertical-jump-14-year-old  301!
+/average-vertical-jump-14-year-old.html  /good-vertical-jump-by-age#age-14  301!
 /vertical-jump-basketball-position.html  /vertical-jump-basketball-position  301!
 /aj-dybantsa-vertical-jump.html  /aj-dybantsa-vertical-jump  301!
 /victor-wembanyama-vertical-jump.html  /victor-wembanyama-vertical-jump  301!
@@ -31,16 +31,25 @@
 /vozinha-cape-verde-goalkeeper-height.html  /vozinha-cape-verde-goalkeeper-height  301!
 /usmnt-world-cup-2026-speed-athletic-profile.html  /usmnt-world-cup-2026-speed-athletic-profile  301!
 /lamine-yamal-height-wingspan-athletic-profile.html  /lamine-yamal-height-wingspan-athletic-profile  301!
-/average-vertical-jump-16-year-old.html  /average-vertical-jump-16-year-old  301!
+/average-vertical-jump-16-year-old.html  /good-vertical-jump-by-age#age-16  301!
 /articles.html  /articles  301!
 /argentina-cape-verde-world-cup-2026.html  /argentina-cape-verde-world-cup-2026  301!
-/average-40-yard-dash-time-16-year-old.html  /average-40-yard-dash-time-16-year-old  301!
-/average-40-yard-dash-time-17-year-old.html  /average-40-yard-dash-time-17-year-old  301!
-/average-40-yard-dash-time-15-year-old.html  /average-40-yard-dash-time-15-year-old  301!
-/average-vertical-jump-15-year-old.html  /average-vertical-jump-15-year-old  301!
-/average-vertical-jump-17-year-old.html  /average-vertical-jump-17-year-old  301!
+/average-40-yard-dash-time-16-year-old.html  /average-40-yard-dash-times#dash-age-16  301!
+/average-40-yard-dash-time-17-year-old.html  /average-40-yard-dash-times#dash-age-17  301!
+/average-40-yard-dash-time-15-year-old.html  /average-40-yard-dash-times#dash-age-15  301!
+/average-vertical-jump-15-year-old.html  /good-vertical-jump-by-age#age-15  301!
+/average-vertical-jump-17-year-old.html  /good-vertical-jump-by-age#age-17  301!
 /giannis-antetokounmpo-athletic-profile.html  /giannis-antetokounmpo-athletic-profile  301!
 /kawhi-leonard-athletic-profile.html  /kawhi-leonard-athletic-profile  301!
+
+# Consolidated thin per-age pages -> hub pages with anchors (Sep 2026)
+/average-vertical-jump-14-year-old  /good-vertical-jump-by-age#age-14  301!
+/average-vertical-jump-15-year-old  /good-vertical-jump-by-age#age-15  301!
+/average-vertical-jump-16-year-old  /good-vertical-jump-by-age#age-16  301!
+/average-vertical-jump-17-year-old  /good-vertical-jump-by-age#age-17  301!
+/average-40-yard-dash-time-15-year-old  /average-40-yard-dash-times#dash-age-15  301!
+/average-40-yard-dash-time-16-year-old  /average-40-yard-dash-times#dash-age-16  301!
+/average-40-yard-dash-time-17-year-old  /average-40-yard-dash-times#dash-age-17  301!
 
 # Catch-all fallback for any .html page not listed above
 /*.html  /:splat  301!
