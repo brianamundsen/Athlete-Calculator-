@@ -1,0 +1,253 @@
+---
+layout: base.njk
+title: "Jaxon Smith-Njigba's Hot Start: The Combine Test He Skipped Explains Everything | Athlete Calculator"
+description: "Jaxon Smith-Njigba has 17 catches, 277 yards, and 4 touchdowns through two games. He skipped the 40-yard dash at his combine — but his historic 3-cone and shuttle times predicted exactly this kind of route-running dominance."
+canonicalPath: "/jaxon-smith-njigba-combine-profile-hot-start"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jaxon Smith-Njigba's Hot Start: The Combine Test He Skipped Explains Everything",
+    "description": "Jaxon Smith-Njigba has 17 catches, 277 yards, and 4 touchdowns through two games. He skipped the 40-yard dash at his combine — but his historic 3-cone and shuttle times predicted exactly this kind of route-running dominance.",
+    "url": "https://athletecalculator.com/jaxon-smith-njigba-combine-profile-hot-start"
+  }
+  </script>
+permalink: "jaxon-smith-njigba-combine-profile-hot-start/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Smith-Njigba Combine Profile
+  </div>
+<h1>Jaxon Smith-Njigba's Hot Start: <em>The Test He Skipped Explains It</em></h1>
+<div class="meta-row">
+<span>📖 5 min read</span>
+<span>🏈 Football</span>
+<span>🔥 Seahawks · Week 3</span>
+</div>
+<p class="dek">Jaxon Smith-Njigba has 17 catches for 277 yards and 4 touchdowns through two games, picking up right where his league-leading, Offensive Player of the Year 2025 season left off. He never ran a 40-yard dash at his own combine — but the test he did run explains exactly why his game has translated so cleanly to the pros.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#start">The Hot Start</a>
+<a href="#combine">The Combine He Skipped</a>
+<a href="#why">Why It Predicted This</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="start">The Hot Start</h2>
+<p>Smith-Njigba opened his 2026 season with an 82-yard touchdown on Seattle's first drive of Week 1, then added three more touchdowns in Week 2 against Arizona — a 7-yard score in the third quarter and a 12-yard score in the fourth. Across two games he's turned 22 targets into 17 catches, 277 yards, and 4 touchdowns, and he'll get a favorable matchup in Week 3 against a Washington secondary that's already given up big plays early this season.</p>
+<div class="stat-card">
+<div class="stat-icon">🎯</div>
+<div class="stat-title">Jaxon Smith-Njigba — Through 2 Games</div>
+<div class="stat-sub">Seattle Seahawks · Reigning NFL Offensive Player of the Year</div>
+<div class="stat-numbers">
+<div class="stat-num"><div class="num">17/22</div><div class="label">Catches / Targets</div></div>
+<div class="stat-num"><div class="num">277</div><div class="label">Receiving Yards</div></div>
+<div class="stat-num"><div class="num">4</div><div class="label">Touchdowns</div></div>
+</div>
+</div>
+<p>This isn't a hot streak out of nowhere. Smith-Njigba led the entire NFL with 1,793 receiving yards in 2025 — the eighth-most in a single season in NFL history — while pacing all receivers in target share, air yards, and yards per route run. He was ranked No. 5 on the league's Top 100 list heading into this season, and he's making an early case to climb higher.</p>
+<h2 id="combine">The Combine Test He Skipped</h2>
+<p>Here's what makes Smith-Njigba's profile unusual: he never ran the 40-yard dash at the 2023 NFL Combine. He was returning from a hamstring injury that limited him to three games as a junior at Ohio State, and rather than risk a setback, he chose to skip the marquee speed test entirely, planning to run it at his Pro Day instead — which he did, clocking a solid but unspectacular 4.52.</p>
+<table>
+<tr><th>Test</th><th>Result</th><th>Field Context</th></tr>
+<tr><td>40-Yard Dash</td><td>4.52 (Pro Day only)</td><td>Solid, not elite</td></tr>
+<tr><td>3-Cone Drill</td><td>6.57s</td><td>Fastest of any WR, ~0.3s clear of 2nd</td></tr>
+<tr><td>20-Yard Shuttle</td><td>3.93s</td><td>Fastest of any WR, ~0.2s clear of 2nd</td></tr>
+<tr><td>Vertical Jump</td><td>35"</td><td>Solid for the position</td></tr>
+<tr><td>Broad Jump</td><td>10'5"</td><td>Solid for the position</td></tr>
+</table>
+<p>What he did run at the combine was more telling than the 40 would have been anyway. His 6.57-second 3-cone drill was nearly three-tenths of a second faster than any other receiver in a stacked 2023 class — a gap that large in change-of-direction testing is rare. His 20-yard shuttle told the same story: 3.93 seconds, again the fastest of any wideout, again by close to two-tenths of a second over the field.</p>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How Your Own Jump Compares</div>
+<div class="tool-desc">Smith-Njigba's 35" vertical and 10'5" broad jump were part of an elite overall testing profile. See where your own numbers rank.</div>
+<a class="tool-cta" href="/vertical-jump-percentile">Calculate My Percentile →</a>
+</div>
+<h2 id="why">Why It Predicted This</h2>
+<p>Straight-line speed and route-running are two different skills, and NFL scouting has historically overweighted the 40-yard dash relative to how much it actually predicts receiver success. The 3-cone and shuttle measure something more directly relevant to what a slot and possession receiver does on every snap: the ability to plant, cut, and accelerate out of a break faster than the defender covering him. That's precisely the tool set that turns a crisp route into consistent, high-value separation — and it's exactly what's shown up on tape as Smith-Njigba has become one of the league's most productive receivers regardless of who's throwing him the ball.</p>
+<p>It's also worth noting how little his production has depended on quarterback continuity. Seattle has cycled through different starters across the past two seasons, and Smith-Njigba has kept producing at an elite level regardless — a mark of a receiver whose game is built on separation ability rather than one specific rapport.</p>
+<div class="callout">
+<strong>The Lesson in the Numbers</strong>
+  A 40 time gets the headlines, but for a route-runner like Smith-Njigba, the 3-cone and shuttle were the tests that actually mattered. Elite change-of-direction speed, not straight-line speed, is what's separating him from press coverage on 82-yard scores and short-area touchdowns alike.
+</div>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Did Jaxon Smith-Njigba run a 40-yard dash at the combine?</div>
+<div class="faq-a">No. Smith-Njigba skipped the 40-yard dash at the 2023 NFL Combine while recovering from a hamstring injury, running a 4.52 at his Pro Day instead. He did compete in the 3-cone drill and 20-yard shuttle at the combine, posting the fastest times among all receivers in both.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many receiving yards did Jaxon Smith-Njigba have in 2025?</div>
+<div class="faq-a">Smith-Njigba led the entire NFL with 1,793 receiving yards in 2025, the eighth-most in a single season in NFL history, and won NFL Offensive Player of the Year.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is Jaxon Smith-Njigba's 3-cone time?</div>
+<div class="faq-a">Smith-Njigba ran a 6.57-second 3-cone drill at the 2023 NFL Combine, the fastest time among all wide receivers that year by nearly three-tenths of a second.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/travis-hunter-two-way-season-athletic-profile">
+<div class="related-title">Travis Hunter's Two-Way Return</div>
+<div class="related-desc">Another receiver who skipped combine testing</div>
+</a>
+<a class="related-card" href="/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+<a class="related-card" href="/relative-athletic-score-nfl">
+<div class="related-title">Relative Athletic Score Explained</div>
+<div class="related-desc">How RAS is calculated and what it means</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available NFL Combine records and reporting. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>

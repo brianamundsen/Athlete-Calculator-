@@ -1,0 +1,244 @@
+---
+layout: base.njk
+title: "Caleb Williams' Hamstring Injury: Why Mobile QBs Carry This Risk | Athlete Calculator"
+description: "Caleb Williams is week-to-week with a hamstring injury after going down against the Vikings. His off-schedule, scrambling playstyle is exactly what makes soft-tissue injuries a recurring risk for mobile quarterbacks — here's the athletic profile behind it."
+canonicalPath: "/caleb-williams-hamstring-injury-mobile-qb-risk"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Caleb Williams' Hamstring Injury: Why Mobile QBs Carry This Risk",
+    "description": "Caleb Williams is week-to-week with a hamstring injury after going down against the Vikings. His off-schedule, scrambling playstyle is exactly what makes soft-tissue injuries a recurring risk for mobile quarterbacks.",
+    "url": "https://athletecalculator.com/caleb-williams-hamstring-injury-mobile-qb-risk"
+  }
+  </script>
+permalink: "caleb-williams-hamstring-injury-mobile-qb-risk/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Caleb Williams Injury
+  </div>
+<h1>Caleb Williams' Hamstring Injury: <em>The Cost of Playing Off-Schedule</em></h1>
+<div class="meta-row">
+<span>📖 5 min read</span>
+<span>🏈 Football</span>
+<span>⚠️ Bears · Week 3</span>
+</div>
+<p class="dek">Caleb Williams left Sunday's 9-3 loss to the Vikings on a cart after a non-contact hamstring injury, and head coach Ben Johnson has labeled him "week-to-week" heading into Monday night's game against the Eagles. Williams hasn't missed a game in three NFL seasons — but the very thing that makes him so hard to defend is also what put him on that cart.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#injury">What Happened</a>
+<a href="#risk">Why Mobile QBs Carry This Risk</a>
+<a href="#outlook">Williams' Outlook</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="injury">What Happened</h2>
+<p>Williams went down in the fourth quarter of Sunday's loss to Minnesota after coming up lame on a scramble — a non-contact injury, the kind that typically points to a soft-tissue strain rather than structural damage. He was emotional while being carted off but was reportedly seen walking with only a slight limp in the locker room afterward. An MRI on Monday confirmed the team's cautious optimism: no major tear, but a hamstring strain that Ben Johnson is calling "week-to-week" rather than putting a firm number of games on it.</p>
+<div class="stat-card">
+<div class="stat-icon">🩹</div>
+<div class="stat-title">Caleb Williams — Injury Snapshot</div>
+<div class="stat-sub">Week 2 vs. Minnesota Vikings · Non-Contact</div>
+<div class="stat-numbers">
+<div class="stat-num"><div class="num">0</div><div class="label">Games Missed, Career</div></div>
+<div class="stat-num"><div class="num">2-0</div><div class="label">Bears Record</div></div>
+<div class="stat-num"><div class="num">Week-to-Week</div><div class="label">Official Status</div></div>
+</div>
+</div>
+<p>Tyson Bagent finished the game in relief and would start in Williams' place if he can't go Monday against Philadelphia. It would be the first missed game of Williams' NFL career — he's played through his first three seasons without an absence, a streak that stands out given how frequently his playing style puts him in position to get hurt.</p>
+<h2 id="risk">Why Mobile QBs Carry This Risk</h2>
+<p>Hamstring strains are an overstriding injury — they happen when the leg reaches for extra ground at high speed, which is exactly the mechanic a scrambling quarterback repeats dozens of times a game. Williams finished last season top-11 among all quarterbacks in both rush attempts and rush yards, extending plays and picking up yardage with his legs in a way pocket passers simply don't. That ability is a huge part of what makes his offense so hard to defend — and it's also repeated exposure to the exact motion that causes hamstring strains.</p>
+<p>This isn't a new pattern in the league. Lamar Jackson dealt with a hamstring injury of his own in 2025 and is frequently cited as a blueprint for how a dual-threat quarterback manages this kind of recovery: conservative early-week rest, a full workload return only once speed and change of direction are back to normal, and a willingness to sit out a game or two rather than re-aggravate it. Soft-tissue injuries that return too early tend to linger and recur — which is likely why the Bears are deliberately avoiding a hard timeline on Williams' return.</p>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How Your Sprint Speed Compares</div>
+<div class="tool-desc">Elite straight-line speed is exactly what puts hamstrings under the most load. See where your own sprint numbers stack up against combine data.</div>
+<a class="tool-cta" href="/sprint-speed-calculator">Calculate My Percentile →</a>
+</div>
+<h2 id="outlook">Williams' Outlook for Week 3</h2>
+<p>The Bears aren't ruling Williams out for Monday night against the Eagles, but he isn't expected to practice this week, and the team plans to lean on updates from its training staff before deciding. Given how fragile hamstring injuries can be — and how much of Williams' game depends on the exact motion that causes them — a cautious approach protects both this week and the rest of the season. If he can't go, Bagent inherits a 2-0 offense but without the scrambling threat that has defined it.</p>
+<div class="callout">
+<strong>The Trade-Off</strong>
+  Williams' rushing ability is a real weapon — but every dual-threat quarterback who leans on his legs as heavily as Williams does takes on more soft-tissue injury risk than a pure pocket passer. It's not a reason to change his game; it's just the cost of the version of quarterback play that makes him so difficult to defend in the first place.
+</div>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What injury did Caleb Williams suffer?</div>
+<div class="faq-a">Williams suffered a non-contact right hamstring strain while scrambling in the fourth quarter of Chicago's Week 2 loss to the Minnesota Vikings. An MRI showed no major tear, and the Bears have labeled him "week-to-week."</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Will Caleb Williams play in Week 3?</div>
+<div class="faq-a">His status for Monday night's game against the Philadelphia Eagles was undecided as of early in the week, with the Bears not planning to have him practice. Check the team's latest injury report for his current status.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Who starts for the Bears if Caleb Williams is out?</div>
+<div class="faq-a">Backup Tyson Bagent would start, as he did to finish the Week 2 loss to Minnesota. It would be the first game of Williams' career that he has missed.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/nfl-acl-achilles-comeback-athletic-benchmarks">
+<div class="related-title">NFL ACL & Achilles Comebacks</div>
+<div class="related-desc">The athletic benchmarks that define a real recovery</div>
+</a>
+<a class="related-card" href="/nfl-quarterback-speed-2026-combine">
+<div class="related-title">NFL Quarterback Speed, 2026 Combine</div>
+<div class="related-desc">How this year's QB class tested in the 40</div>
+</a>
+<a class="related-card" href="/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available NFL reporting and injury updates. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>
