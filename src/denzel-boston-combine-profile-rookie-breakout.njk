@@ -1,0 +1,252 @@
+---
+layout: base.njk
+title: "Denzel Boston's Hot Start: Why He Skipped the 40 Twice | Athlete Calculator"
+description: "Denzel Boston has a touchdown in each of his first two NFL games, breaking out with 95 yards against Tampa Bay. He never ran the 40-yard dash — not at the combine, not at his pro day — but his vertical jump and contested-catch numbers explain why it hasn't mattered."
+canonicalPath: "/denzel-boston-combine-profile-rookie-breakout"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Denzel Boston's Hot Start: Why He Skipped the 40 Twice",
+    "description": "Denzel Boston has a touchdown in each of his first two NFL games, breaking out with 95 yards against Tampa Bay. He never ran the 40-yard dash — not at the combine, not at his pro day — but his vertical jump and contested-catch numbers explain why it hasn't mattered.",
+    "url": "https://athletecalculator.com/denzel-boston-combine-profile-rookie-breakout"
+  }
+  </script>
+permalink: "denzel-boston-combine-profile-rookie-breakout/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Denzel Boston Combine Profile
+  </div>
+<h1>Denzel Boston's Hot Start: <em>Why He Skipped the 40 Twice</em></h1>
+<div class="meta-row">
+<span>📖 5 min read</span>
+<span>🏈 Football</span>
+<span>🔥 Browns · Rookie Season</span>
+</div>
+<p class="dek">Denzel Boston has a touchdown in each of his first two NFL games and broke out against Tampa Bay with five catches for 95 yards and a score. He's the rare prospect who skipped the 40-yard dash not once, but twice — at the combine and again at his own pro day — and it hasn't slowed him down for a single snap.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#start">The Rookie Start</a>
+<a href="#combine">The Test He Skipped, Twice</a>
+<a href="#why">Why It Hasn't Mattered</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="start">The Rookie Start</h2>
+<p>Cleveland's second-round pick has scored a touchdown in each of his first two career games, capped by a five-catch, 95-yard, one-touchdown performance against Tampa Bay in Week 2 — the best game by any rookie receiver so far this season. Boston was Washington's leading receiver in 2025 with 62 catches for 881 yards and 11 touchdowns, built almost entirely on contested catches and size mismatches rather than separation speed, and that profile has translated immediately to the NFL.</p>
+<div class="stat-card">
+<div class="stat-icon">🎯</div>
+<div class="stat-title">Denzel Boston — Through 2 Games</div>
+<div class="stat-sub">Cleveland Browns · Round 2, Pick 39 (2026)</div>
+<div class="stat-numbers">
+<div class="stat-num"><div class="num">2/2</div><div class="label">Games With a TD</div></div>
+<div class="stat-num"><div class="num">95</div><div class="label">Receiving Yards, Wk 2</div></div>
+<div class="stat-num"><div class="num">6'4"</div><div class="label">Height</div></div>
+</div>
+</div>
+<h2 id="combine">The Test He Skipped, Twice</h2>
+<p>Boston never ran the 40-yard dash at the 2026 NFL Combine, and then, on the advice of his agent, skipped it again at Washington's pro day — an unusual decision even by the standards of receivers who sit out one workout or the other. What he did do instead was jump: a 35-inch vertical at the combine, improved to 37.5 inches at his pro day, alongside a 6.80-second 3-cone and a 4.28-second shuttle.</p>
+<table>
+<tr><th>Test</th><th>Result</th></tr>
+<tr><td>Height / Weight</td><td>6'4", 212 lbs</td></tr>
+<tr><td>40-Yard Dash</td><td>Skipped — combine and pro day</td></tr>
+<tr><td>Vertical Jump</td><td>35" (combine) → 37.5" (pro day)</td></tr>
+<tr><td>3-Cone Drill</td><td>6.80s (pro day)</td></tr>
+<tr><td>20-Yard Shuttle</td><td>4.28s (pro day)</td></tr>
+<tr><td>Contested Catch Rate (2025)</td><td>61.1% career, 10-of-13 in 2025</td></tr>
+</table>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How Your Own Vertical Compares</div>
+<div class="tool-desc">Boston bet his draft stock on his jumping ability instead of straight-line speed. See where your own vertical ranks.</div>
+<a class="tool-cta" href="/vertical-jump-percentile">Calculate My Percentile →</a>
+</div>
+<h2 id="why">Why It Hasn't Mattered</h2>
+<p>At 6-foot-4 with a 61.1% career contested-catch rate, Boston's game was never built to be won with a stopwatch. His improved vertical jump between the combine and pro day — an unusual and deliberate uptick that scouts specifically flagged — signaled real explosiveness in exactly the area that matters for a big-bodied X-receiver: winning 50-50 balls above defenders rather than separating from them in the open field. Scouts compared his profile to Michael Pittman Jr., another size-and-catch-radius receiver who was never considered a burner but has built a productive NFL career anyway.</p>
+<p>Two games into his career, that scouting report is playing out almost exactly as written. Boston's touchdowns have come on contested, high-point catches rather than blown coverage — precisely the outcome his vertical jump and catch-radius profile predicted, and precisely the reason a missing 40 time never worried the team that drafted him.</p>
+<div class="callout">
+<strong>Speed Isn't the Only Number That Matters</strong>
+  A receiver's 40 time gets the most attention, but for a contested-catch specialist like Boston, the vertical jump and body control are the numbers that actually predict production. He skipped the marquee test twice and it hasn't cost him a single target.
+</div>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Did Denzel Boston run a 40-yard dash?</div>
+<div class="faq-a">No. Boston skipped the 40-yard dash at both the 2026 NFL Combine and Washington's pro day, choosing instead to showcase his vertical jump, which improved from 35 inches at the combine to 37.5 inches at his pro day.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many catches does Denzel Boston have as a rookie?</div>
+<div class="faq-a">Through two games, Boston has scored a touchdown in each contest, highlighted by a five-catch, 95-yard, one-touchdown performance against Tampa Bay in Week 2 — the best game by any rookie receiver so far this season.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is Denzel Boston's contested catch rate?</div>
+<div class="faq-a">Boston posted a 61.1% career contested-catch rate at Washington, including a 10-of-13 mark in 2025, one of the traits that made him a Day 2 draft pick despite never running a timed 40-yard dash.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/jaxon-smith-njigba-combine-profile-hot-start">
+<div class="related-title">Jaxon Smith-Njigba's Hot Start</div>
+<div class="related-desc">Another receiver whose combine testing wasn't about speed</div>
+</a>
+<a class="related-card" href="/travis-hunter-two-way-season-athletic-profile">
+<div class="related-title">Travis Hunter's Two-Way Return</div>
+<div class="related-desc">Another receiver who skipped combine testing</div>
+</a>
+<a class="related-card" href="/nfl-combine-scores-explained">
+<div class="related-title">NFL Combine Scores Explained</div>
+<div class="related-desc">Every test, what it measures, and position averages</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available NFL Combine records and reporting. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>

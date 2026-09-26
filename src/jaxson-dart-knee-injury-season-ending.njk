@@ -1,0 +1,244 @@
+---
+layout: base.njk
+title: "Jaxson Dart's Season-Ending Knee Injury: A Historic Start Cut Short | Athlete Calculator"
+description: "Jaxson Dart is done for the regular season after tearing his MCL, PCL, and meniscus against the Rams. He never tested athletically at the combine — his college and pro rushing production were always the real evidence of his game."
+canonicalPath: "/jaxson-dart-knee-injury-season-ending"
+mailerlite: false
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 900; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta-row { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .dek { font-size: 1.02rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; }
+  
+    .content { max-width: 780px; margin: 0 auto; padding: 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 2.75rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.15rem; }
+    strong { color: var(--text); }
+    a.inline { color: var(--accent); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+    ol, ul { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+    li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.6rem; }
+  
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem 0.8rem; text-align: left; }
+    th { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); background: var(--surface); }
+    td { color: var(--text-mid); }
+  
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--text); }
+    .stat-sub { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+    .stat-numbers { display: flex; gap: 1.75rem; flex-wrap: wrap; margin: 1rem 0; }
+    .stat-num { }
+    .stat-num .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-num .label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 0.3rem; }
+  
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.3rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .callout strong { color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+  
+    .tool-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .tool-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tool-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .tool-desc { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 1rem; }
+    .tool-cta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .tool-cta:hover { text-decoration: underline; }
+  
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .toc-label { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .toc a { display: block; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; padding: 0.3rem 0; }
+    .toc a:hover { color: var(--accent); }
+  
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+  
+    .related-wrap { max-width: 780px; margin: 3rem auto 0; padding: 0 1.25rem; }
+    .related-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-decoration: none; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+    .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  
+    .disclaimer { max-width: 780px; margin: 2.5rem auto 0; padding: 0 1.25rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+  
+    .calcs-strip { max-width: 960px; margin: 3rem auto 0; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill { background: var(--accent-dim); border: 1px solid rgba(170,255,0,0.2); border-radius: 10px; padding: 1rem; text-decoration: none; transition: border-color 0.2s; }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jaxson Dart's Season-Ending Knee Injury: A Historic Start Cut Short",
+    "description": "Jaxson Dart is done for the regular season after tearing his MCL, PCL, and meniscus against the Rams. He never tested athletically at the combine — his college and pro rushing production were always the real evidence of his game.",
+    "url": "https://athletecalculator.com/jaxson-dart-knee-injury-season-ending"
+  }
+  </script>
+permalink: "jaxson-dart-knee-injury-season-ending/index.html"
+---
+<div class="wrap">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Jaxson Dart Injury
+  </div>
+<h1>Jaxson Dart's Season-Ending Knee Injury: <em>A Historic Start, Cut Short</em></h1>
+<div class="meta-row">
+<span>📖 5 min read</span>
+<span>🏈 Football</span>
+<span>⚠️ Giants · Season-Ending</span>
+</div>
+<p class="dek">Jaxson Dart will have season-ending surgery on his left knee after tearing his MCL and PCL and damaging his meniscus in Week 2's loss to the Rams. His ACL is intact, and the Giants expect a full recovery in time for 2027 — but it ends, for now, one of the most explosive individual stretches to open a season in NFL history.</p>
+</div><div class="content">
+<div class="toc">
+<div class="toc-label">In This Article</div>
+<a href="#injury">What Happened</a>
+<a href="#profile">The Athlete Behind the Numbers</a>
+<a href="#outlook">What's Next for New York</a>
+<a href="#faq">FAQ</a>
+</div>
+<h2 id="injury">What Happened</h2>
+<p>Dart went down on New York's opening drive against the Rams, sandwiched between two defenders as he tried to release a deep throw under pressure, his left leg bending awkwardly underneath him. He walked off under his own power — an early, encouraging sign — but an MRI two days later revealed more extensive damage than the team initially feared: a torn MCL and PCL, plus meniscus damage. His ACL came back intact, which head coach John Harbaugh called a real silver lining, but Dart will still need surgery and is done for the regular season.</p>
+<div class="stat-card">
+<div class="stat-icon">🩹</div>
+<div class="stat-title">Jaxson Dart — Injury Snapshot</div>
+<div class="stat-sub">Week 2 vs. Los Angeles Rams · Left Knee</div>
+<div class="stat-numbers">
+<div class="stat-num"><div class="num">MCL/PCL</div><div class="label">Torn, Meniscus Damaged</div></div>
+<div class="stat-num"><div class="num">ACL</div><div class="label">Intact</div></div>
+<div class="stat-num"><div class="num">2027</div><div class="label">Expected Full Return</div></div>
+</div>
+</div>
+<p>Jameis Winston takes over as New York's starter for the rest of the season, with practice-squad arm Jake Haener promoted to backup. Winston struggled in relief against the Rams, going 11-of-27 for 111 yards with an interception, and the Giants have already signaled they'll explore bringing in more depth at the position.</p>
+<h2 id="profile">The Athlete Behind the Numbers</h2>
+<p>Dart is an unusual case for this kind of profile, because he never tested athletically at the combine at all. He skipped every drill except the throwing session, choosing to let his college tape speak for his arm talent and mobility rather than run a 40 or jump for scouts. What he did instead was simply keep producing: 1,498 rushing yards and 12 rushing touchdowns across his final three seasons at Ole Miss, on top of a school-record passing résumé that broke Eli Manning's career mark.</p>
+<p>That dual-threat quality carried directly into his rookie transition. Before the injury, Dart had become the first quarterback in NFL history to open a season with at least three passing touchdowns, 50 rushing yards, and a 130 passer rating in the same game — a record set in Week 1 of this season. Two games in, he was averaging over 20 fantasy points a start, production driven as much by his legs as his arm.</p>
+<div class="tool-card">
+<div class="tool-label">Free Tool</div>
+<div class="tool-title">See How Explosive Your Own Game Is</div>
+<div class="tool-desc">Dart's game was built on production rather than testing numbers. See where your own vertical and sprint numbers actually rank.</div>
+<a class="tool-cta" href="/vertical-jump-percentile">Calculate My Percentile →</a>
+</div>
+<h2 id="outlook">What's Next for New York</h2>
+<p>The Giants are 1-1 and now hand the offense to Winston for the foreseeable future, with the front office keeping "all options on the table" for added quarterback depth. Harbaugh didn't rule out a Dart return if New York makes a playoff push, but the more realistic timeline points to a full recovery well ahead of the 2027 season, when Dart is expected to resume his job as the franchise's starter.</p>
+<div class="callout">
+<strong>No Testing Numbers, Real Production</strong>
+  Dart is proof that a combine data sheet isn't the only way to measure an athlete. He never ran a 40 or jumped for scouts — his college and rookie rushing numbers were always the evidence, and they were enough to make him a first-round pick and, briefly, a record-setter.
+</div>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What injury did Jaxson Dart suffer?</div>
+<div class="faq-a">Dart tore his left MCL and PCL and damaged his meniscus in Week 2 against the Los Angeles Rams. His ACL was not damaged, but he will require season-ending surgery.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Who is the Giants' starting quarterback now?</div>
+<div class="faq-a">Jameis Winston takes over as New York's starter for the rest of the 2026 season, with Jake Haener promoted from the practice squad as his backup.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Will Jaxson Dart play again this season?</div>
+<div class="faq-a">Dart is expected to miss the rest of the regular season. Head coach John Harbaugh did not rule out a possible return if the Giants make the playoffs, but Dart is more realistically expected back for the 2027 season.</div>
+</div>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/jayden-daniels-elbow-injury-scrambling-risk">
+<div class="related-title">Jayden Daniels' Second Dislocated Elbow</div>
+<div class="related-desc">A pattern, not a fluke</div>
+</a>
+<a class="related-card" href="/caleb-williams-hamstring-injury-mobile-qb-risk">
+<div class="related-title">Caleb Williams' Hamstring Injury</div>
+<div class="related-desc">Why mobile QBs carry this risk</div>
+</a>
+<a class="related-card" href="/nfl-acl-achilles-comeback-athletic-benchmarks">
+<div class="related-title">NFL ACL & Achilles Comebacks</div>
+<div class="related-desc">The athletic benchmarks that define a real recovery</div>
+</a>
+</div>
+</div><div class="disclaimer">
+  Data based on publicly available NFL reporting and injury updates. Not affiliated with the NFL, NCAA, or any athletic organization. For reference and training purposes only.
+</div><div class="calcs-strip">
+<div class="calcs-label">Free Calculators</div>
+<div class="calcs-grid">
+<a class="calc-pill" href="/vertical-jump-percentile">
+<div class="calc-pill-name">Vertical Jump</div>
+<div class="calc-pill-desc">Your percentile vs NBA and general population</div>
+</a>
+<a class="calc-pill" href="/can-i-dunk-calculator">
+<div class="calc-pill-name">Can I Dunk?</div>
+<div class="calc-pill-desc">Find out instantly by height and vertical</div>
+</a>
+<a class="calc-pill" href="/sprint-speed-calculator">
+<div class="calc-pill-name">Sprint Speed</div>
+<div class="calc-pill-desc">Your percentile vs NFL combine data</div>
+</a>
+<a class="calc-pill" href="/squat-strength-calculator">
+<div class="calc-pill-name">Squat Strength</div>
+<div class="calc-pill-desc">Predict your vertical from your squat</div>
+</a>
+<a class="calc-pill" href="/broad-jump-sprint-speed-calculator">
+<div class="calc-pill-name">Broad Jump Speed</div>
+<div class="calc-pill-desc">Estimate your 40 time from your broad jump</div>
+</a>
+</div>
+</div>
