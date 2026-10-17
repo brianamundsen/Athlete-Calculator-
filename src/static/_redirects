@@ -1,5 +1,7 @@
 # 301 redirects: .html versions -> extensionless canonical URLs
 # Specific rules first (Netlify processes _redirects top-down)
+/argentina-cape-verde-world-cup-2026  /vozinha-cape-verde-goalkeeper-height  301!
+/argentina-cape-verde-world-cup-2026.html  /vozinha-cape-verde-goalkeeper-height  301!
 /vertical-jump-percentile.html  /vertical-jump-percentile  301!
 /sprint-speed-calculator.html  /sprint-speed-calculator  301!
 /squat-strength-calculator.html  /squat-strength-calculator  301!
@@ -33,7 +35,6 @@
 /lamine-yamal-height-wingspan-athletic-profile.html  /lamine-yamal-height-wingspan-athletic-profile  301!
 /average-vertical-jump-16-year-old.html  /good-vertical-jump-by-age#age-16  301!
 /articles.html  /articles  301!
-/argentina-cape-verde-world-cup-2026.html  /argentina-cape-verde-world-cup-2026  301!
 /average-40-yard-dash-time-16-year-old.html  /average-40-yard-dash-times#dash-age-16  301!
 /average-40-yard-dash-time-17-year-old.html  /average-40-yard-dash-times#dash-age-17  301!
 /average-40-yard-dash-time-15-year-old.html  /average-40-yard-dash-times#dash-age-15  301!

@@ -14,7 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
-<link rel="canonical" href="https://athletecalculator.com{{ canonicalPath }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">
+{% endif %}<link rel="canonical" href="https://athletecalculator.com{{ canonicalPath }}">
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1673639828321526"
