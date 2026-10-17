@@ -156,6 +156,24 @@
     min-width: 0;
     overflow-wrap: break-word;
   }
+
+  /* Author byline + author box (articles and calculators) */
+  .ac-byline { font-family: var(--font-mono, monospace); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--text-mid, #8a96a4); display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin: 0.25rem 0 1.25rem; }
+  .ac-byline--center { justify-content: center; text-align: center; }
+  .ac-byline a { color: var(--accent, #aaff00); text-decoration: none; }
+  .ac-author { max-width: 780px; margin: 3rem auto 2rem; padding: 0 1.25rem; }
+  .ac-author-inner { border: 1px solid var(--border, #1e2832); background: var(--surface, #0f1419); border-radius: 10px; padding: 1.25rem 1.4rem; }
+  .ac-author-label { font-family: var(--font-mono, monospace); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #aaff00); margin-bottom: 0.5rem; }
+  .ac-author-name { font-family: var(--font-display, sans-serif); font-size: 1.3rem; font-weight: 800; text-transform: uppercase; color: var(--text, #e8edf2); }
+  .ac-author p { font-size: 0.92rem; line-height: 1.65; color: var(--text-mid, #8a96a4); margin-top: 0.4rem; }
+  .ac-author a { color: var(--accent, #aaff00); text-decoration: none; font-size: 0.85rem; }
+  /* Mobile nav: one horizontally swipeable row instead of a 3-row sticky block */
+  @media (max-width: 700px) {
+    nav { padding: 0.85rem 1rem 0.6rem; gap: 0.5rem; }
+    .nav-links { flex-wrap: nowrap; overflow-x: auto; width: 100%; gap: 1.25rem; padding-bottom: 0.35rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { white-space: nowrap; flex-shrink: 0; }
+  }
 </style>
 {% if jsonld %}
 {{ jsonld | safe }}
@@ -174,7 +192,17 @@
 </head>
 <body>
 {% include "nav.njk" %}
+{%- set acSlug = page.fileSlug or "index" -%}
+{%- set acIsCalc = acSlug in site.calculators -%}
+{%- set acIsArticle = (not acIsCalc) and (acSlug not in site.nonArticles) -%}
+{%- if acIsCalc or acIsArticle -%}
+{%- set acUpdated = page | lastUpdated(updated) -%}
+{%- set acByline -%}<div class="ac-byline{% if acIsCalc %} ac-byline--center{% endif %}">{% if acIsCalc %}<span>Benchmarks reviewed by <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% else %}<span>By <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% endif %}{% if acUpdated %}<span>Updated <time datetime="{{ acUpdated | isoDate }}">{{ acUpdated | readableDate }}</time></span>{% endif %}</div>{%- endset -%}
+{{ content | afterH1(acByline) | safe }}
+<aside class="ac-author"><div class="ac-author-inner"><div class="ac-author-label">About the author</div><div class="ac-author-name">{{ site.author.name }}</div><p>{{ site.author.bio }}</p><a href="/about#author">More about Brian →</a></div></aside>
+{%- else -%}
 {{ content | safe }}
+{%- endif %}
 {% include "footer.njk" %}
 </body>
 </html>

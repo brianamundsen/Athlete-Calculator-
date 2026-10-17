@@ -3,10 +3,16 @@ permalink: "sitemap.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in collections.all %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in collections.all %}
+{%- if not p.data.noindex %}
   <url>
-    <loc>https://athletecalculator.com{{ page.data.canonicalPath }}</loc>
+    <loc>https://athletecalculator.com{{ p.data.canonicalPath }}</loc>
+    {%- set lm = p.page | lastUpdated(p.data.updated) %}
+    {%- if lm %}
+    <lastmod>{{ lm | isoDate }}</lastmod>
+    {%- endif %}
   </url>
+{%- endif %}
 {%- endfor %}
 </urlset>
