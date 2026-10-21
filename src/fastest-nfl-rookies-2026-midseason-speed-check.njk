@@ -1,0 +1,746 @@
+---
+layout: base.njk
+title: "Fastest NFL Rookies of 2026: Midseason Check on the Combine's Speed Class | Athlete Calculator"
+description: "The 2026 combine was the fastest ever. Six weeks into the season, here's how Brenen Thompson (4.26), Zavion Thomas, Mike Washington Jr., Jeremiyah Love and Kenyon Sadiq are actually doing."
+canonicalPath: "/fastest-nfl-rookies-2026-midseason-speed-check"
+mailerlite: false
+navContextUrl: "/nfl-combine-scores-explained"
+navContextLabel: "NFL Combine"
+disclaimer:
+  - "40 times per the 2026 NFL Scouting Combine. 2026 statistics and injury status per Yahoo Sports, CBS Sports, NBC Sports/ProFootballTalk, Chicago Bears coverage and Rotowire through Week 6. Not affiliated with the NFL or any team."
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    nav {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+  
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+  
+    .nav-brand span { color: var(--accent); }
+  
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+  
+    .nav-links a:hover { color: var(--accent); }
+  
+    .hero {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+  
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+  
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  
+    .hero-meta-item {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+  
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 640px;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+  
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 3rem;
+      align-items: start;
+    }
+  
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+  
+    .content p {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+      line-height: 1.75;
+    }
+  
+    .content p strong { color: var(--text); }
+  
+    .content ul { padding-left: 1.25rem; margin-bottom: 1.25rem; }
+  
+    .content li {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+    }
+  
+    .content li strong { color: var(--text); }
+  
+    /* ── TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .fast td { background: rgba(170,255,0,0.06); }
+    .data-table .elite td { background: rgba(170,255,0,0.13); }
+    .data-table .elite td:first-child { color: var(--accent); }
+  
+    /* ── SPEED BAR ── */
+    .speed-bar-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+  
+    .speed-bar-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .speed-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+  
+    .speed-bar-label {
+      font-size: 0.74rem;
+      color: var(--text-mid);
+      width: 130px;
+      flex-shrink: 0;
+    }
+  
+    .speed-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  
+    .speed-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+    }
+  
+    .speed-bar-val {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      width: 42px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+  
+    /* ── CALC CTA ── */
+    .calc-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+  
+    .calc-cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+  
+    .calc-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+  
+    .calc-cta p { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.25rem; }
+  
+    .calc-cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      transition: opacity 0.15s;
+    }
+  
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+  
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 5rem; }
+  
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-link {
+      display: block;
+      padding: 0.65rem 0.75rem;
+      margin-bottom: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+  
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      border-left: 2px solid var(--border);
+      padding-left: 0.75rem;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+  
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+      /* ── PLAYER CARD ── */
+      .player-card {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: 16px; padding: 2rem;
+        margin: 1.5rem 0; position: relative; overflow: hidden;
+      }
+      .player-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      }
+      .player-name {
+        font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.8rem);
+        font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em;
+        color: var(--text); line-height: 1; margin-bottom: 0.25rem;
+      }
+      .player-sub {
+        font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em;
+        text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+      }
+      .player-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+      .player-stat { background: var(--surface2); border-radius: 10px; padding: 0.85rem; text-align: center; }
+      .player-stat-val {
+        font-family: var(--font-display); font-size: 1.4rem; font-weight: 900;
+        color: var(--accent); line-height: 1; margin-bottom: 0.2rem;
+      }
+      .player-stat-label {
+        font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.1em;
+        text-transform: uppercase; color: var(--text-muted);
+      }
+      .player-stat.mid .player-stat-val { color: #ffd600; }
+  
+      /* ── RANK BAR ── */
+      .rank-card {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: 14px; padding: 1.75rem; margin: 1.5rem 0;
+      }
+      .rank-title {
+        font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem;
+      }
+      .rank-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+      .rank-label { font-size: 0.78rem; color: var(--text-mid); width: 130px; flex-shrink: 0; }
+      .rank-label strong { display: block; color: var(--text); font-size: 0.82rem; }
+      .rank-track { flex: 1; height: 10px; background: var(--surface2); border-radius: 100px; overflow: hidden; }
+      .rank-fill { height: 100%; border-radius: 100px; }
+      .rank-val { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-mid); width: 110px; text-align: right; flex-shrink: 0; }
+  
+      .data-table .highlight td { background: rgba(170,255,0,0.07); }
+      .data-table .highlight td:first-child { color: var(--accent); }
+      .data-table .low td { background: rgba(255,77,77,0.06); }
+      .data-table .low td:first-child { color: #ff6b6b; }
+  
+      /* ── WEEK BADGE ── */
+      .live-badge {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--accent); background: var(--accent-dim);
+        border: 1px solid rgba(170,255,0,0.25); padding: 0.25rem 0.65rem;
+        border-radius: 100px; margin-bottom: 1rem; width: fit-content;
+      }
+  
+      /* ── RELATED ── */
+      .related-wrap { max-width: 780px; margin: 0 auto 1rem; padding: 0 1.25rem; }
+      .related-label {
+        font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+        letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem;
+        padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
+      }
+      .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+      .related-card {
+        background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+        padding: 1.1rem; text-decoration: none; transition: border-color 0.2s;
+      }
+      .related-card:hover { border-color: var(--accent); }
+      .related-title {
+        font-family: var(--font-display); font-size: 0.95rem; font-weight: 700;
+        text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem;
+      }
+      .related-desc { font-size: 0.78rem; color: var(--text-mid); }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Fastest NFL Rookies of 2026: Midseason Check on the Combine's Speed Class",
+    "description": "A Week 7 status check on the fastest 40-yard dash runners from the record-setting 2026 NFL Combine, comparing their testing speed to their actual NFL production and availability.",
+    "url": "https://athletecalculator.com/fastest-nfl-rookies-2026-midseason-speed-check",
+    "author": {
+      "@type": "Person",
+      "name": "Brian A.",
+      "jobTitle": "Director of Performance",
+      "url": "https://athletecalculator.com/about#author"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "datePublished": "2026-10-21",
+    "dateModified": "2026-10-21",
+    "mainEntityOfPage": "https://athletecalculator.com/fastest-nfl-rookies-2026-midseason-speed-check"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who was the fastest player at the 2026 NFL Combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mississippi State wide receiver Brenen Thompson ran the fastest official 40 at the 2026 combine, 4.26 seconds. The Los Angeles Chargers drafted him in the fourth round. Through Week 6 of his rookie season he has 1 catch for 13 yards after missing time with an injury."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which fast 2026 rookie has been the most productive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Among the sub-4.40 runners profiled here, Raiders running back Mike Washington Jr. (4.33) has the steadiest production, with 168 rushing yards on 34 carries and a touchdown through Week 6. The most productive rookie in this comparison is actually Steelers receiver Germie Bernard, who ran a slower 4.48 but has 24 catches for 227 yards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Jeremiyah Love injured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Cardinals rookie, drafted third overall, has been dealing with a lingering left ankle injury. He was ruled out of Arizona's Week 6 game against the Rams and was averaging 3.7 yards per carry through his first five games."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a fast 40-yard dash predict NFL rookie success?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not on its own. A fast 40 helps a player get drafted and can create big plays, but rookie production depends heavily on role, opportunity and staying healthy. Six weeks into 2026, several of the fastest combine runners have been limited by injuries or small roles, while slower players in bigger roles have produced more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast was the 2026 NFL Combine class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seven position groups posted their fastest average 40 times in combine history in 2026, and 22 players ran under 4.40 seconds. Wide receivers and defensive backs averaged 4.44 seconds and running backs averaged 4.45."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fastest 2026 Rookies: Midseason Check",
+        "item": "https://athletecalculator.com/fastest-nfl-rookies-2026-midseason-speed-check"
+      }
+    ]
+  }
+  </script>
+permalink: "fastest-nfl-rookies-2026-midseason-speed-check/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Fastest 2026 Rookies: Midseason Check
+  </div>
+<div class="live-badge">Entering Week 7 · 2026 Season</div>
+<h1>Fastest 2026 Rookies: <em>Midseason Check</em></h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 7 min read</span>
+<span class="hero-meta-item">⚡ Sprint Speed</span>
+<span class="hero-meta-item">🏈 2026 Rookie Class</span>
+</div>
+<p class="hero-intro">
+    Back in August we ranked the <a href="/fastest-nfl-rookies-2026-training-camp" style="color:var(--accent)">fastest rookies from the 2026 combine</a>, the fastest class ever tested. Six weeks into the season, the results are humbling for the stopwatch. Here's where the headline 40 times stand now, and what it says about how speed actually translates.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<div class="callout" style="background:var(--surface);border-color:var(--accent);">
+<div class="callout-icon">⚡</div>
+<div class="callout-text"><strong>Quick answer:</strong> Most of the fastest 2026 combine runners have had quiet starts. <strong>Brenen Thompson (4.26)</strong> has one catch, <strong>Lorenzo Styles Jr. (4.27)</strong> is on injured reserve, and No. 3 pick <strong>Jeremiyah Love (4.36)</strong> is battling an ankle injury. The steadiest of the group is <strong>Mike Washington Jr. (4.33)</strong>, while a 4.48 receiver, <strong>Germie Bernard</strong>, has outproduced all of them.</div>
+</div>
+<h2>The Scoreboard Through Week 6</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr><th>Player</th><th>40 Time</th><th>Team · Pick</th><th>Through Week 6</th></tr>
+</thead>
+<tbody>
+<tr class="low"><td>Brenen Thompson, WR</td><td>4.26</td><td>Chargers · Rd 4</td><td>1 catch, 13 yds; missed time with injury</td></tr>
+<tr class="low"><td>Lorenzo Styles Jr., S</td><td>4.27</td><td>Saints · No. 172</td><td>Injured reserve (calf) since Sept. 1</td></tr>
+<tr><td>Zavion Thomas, WR</td><td>4.28</td><td>Bears · No. 89</td><td>Return man; 4 KR for 85 yds, 3 catches in Week 6</td></tr>
+<tr class="highlight"><td>Mike Washington Jr., RB</td><td>4.33</td><td>Raiders · No. 122</td><td>34 carries, 168 yds (4.9 avg), 1 TD</td></tr>
+<tr class="low"><td>Jeremiyah Love, RB</td><td>4.36</td><td>Cardinals · No. 3</td><td>3.7 yds per carry; left ankle, missed Week 6</td></tr>
+<tr><td>Kenyon Sadiq, TE</td><td>4.39</td><td>Jets</td><td>7-105 in Week 3; 3 catches in last 3 games</td></tr>
+<tr class="highlight"><td>Germie Bernard, WR</td><td>4.48</td><td>Steelers · No. 47</td><td>24 catches, 227 yds, 1 TD</td></tr>
+</tbody>
+</table></div>
+<p>The pattern is hard to miss. The two fastest players in the class have combined for one catch, while the slowest player on this list has more receptions than every one of them. That's not an argument that speed doesn't matter. It's a reminder of everything a 40 time leaves out.</p>
+<h2>The Speedsters, One by One</h2>
+<h3>Brenen Thompson — 4.26, Chargers</h3>
+<p>The fastest man at the combine fell to the fourth round, a sign teams viewed him as a speed specialist rather than a complete receiver. He has been listed as a punt returner, missed practice time with an injury and was inactive in Week 3. His only catch so far went for 13 yards against the Raiders. The Chargers are 0-6, so opportunities may open up, but the production hasn't arrived yet.</p>
+<h3>Lorenzo Styles Jr. — 4.27, Saints</h3>
+<p>Styles ran the fastest 40 by a safety in at least two decades, then hurt his calf in the second preseason game. New Orleans moved him to injured reserve on September 1, sidelining him for at least the first four games. Raw speed can't show up if a player isn't on the field.</p>
+<h3>Zavion Thomas — 4.28, Bears</h3>
+<p>Thomas showed exactly what elite speed can do in the right moment: a 97-yard touchdown on Chicago's first offensive play of the preseason finale. In the regular season he has been used mostly as a returner and a gadget option. In the Week 6 win at Atlanta he had four kickoff returns for 85 yards and caught all three of his targets for 25 yards on just 10 offensive snaps. Special teams is often where a pure speed rookie earns his first role.</p>
+<h3>Mike Washington Jr. — 4.33, Raiders</h3>
+<p>Washington has been the most consistent of the true speedsters, even as Ashton Jeanty's backup. He has 168 yards on 34 carries, a healthy 4.9 per attempt, and broke a 36-yard touchdown run in a win over the Saints. He led the Raiders in rushing in Week 6 with 43 yards on nine carries. His 4.33 came at 223 pounds, which works out to a speed score near 127, the kind of size-speed profile that tends to translate for running backs. Our <a href="/ashton-jeanty-mike-washington-raiders-combine-comparison">Jeanty vs. Washington comparison</a> breaks down how the two backs tested.</p>
+<h3>Jeremiyah Love — 4.36, Cardinals</h3>
+<p>The highest-drafted player on this list has had the roughest start. Arizona took Love third overall, but after a preseason ankle injury, a left ankle problem has lingered into the regular season. He had his best game in Week 3 against San Francisco with 89 rushing yards, then managed 22 yards on 12 carries against Detroit and was ruled out of Arizona's Week 6 upset of the Rams. He's averaging 3.7 yards per carry. For a running back, an ankle injury directly hits the cutting and acceleration that a 40 time is supposed to represent.</p>
+<h3>Kenyon Sadiq — 4.39, Jets</h3>
+<p>The fastest tight end in combine history had a breakout Week 3 against Detroit with 7 catches for 105 yards. Since then he has 3 catches for 15 yards on 10 targets over three games, including a concussion along the way. Tight end is one of the slowest-developing positions for rookies, because blocking and route timing matter as much as speed.</p>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Where Does Your 40 Rank?</h3>
+<p>Compare your 40 to these rookies and to high school and college standards with our free speed percentile calculator.</p>
+<a class="calc-cta-btn" href="/sprint-speed-calculator">Calculate My Speed Percentile →</a>
+</div>
+<h2>What the 40 Doesn't Measure</h2>
+<p>Six weeks of data line up with what coaches see every year. A 40-yard dash is a straight-line sprint with no pads, no opponent and no decision to make. NFL production depends on several things the drill can't capture:</p>
+<ul>
+<li><strong>Role and opportunity.</strong> A fourth-round receiver behind established starters gets a handful of snaps. A second-round pick thrust into a starting job by injuries, like Bernard, gets 12 targets in a game.</li>
+<li><strong>Availability.</strong> Two of the five fastest players on this list have missed significant time. Top-end speed puts heavy stress on calves, hamstrings and ankles, and a rookie who can't practice can't earn trust.</li>
+<li><strong>Short-area quickness.</strong> Most plays are decided in the first 10 yards and at the break of a route. Three-cone and shuttle times often say more about a slot receiver or a running back's cutting ability than the full 40.</li>
+<li><strong>Mass behind the speed.</strong> The players translating best tend to combine speed with size. Washington's speed score near 127 and Kenneth Walker III's <a href="/kenneth-walker-iii-combine-profile-chiefs-rushing-record">4.38 at 211 pounds</a> are examples of speed that holds up through contact.</li>
+</ul>
+<div class="callout">
+<div class="callout-icon">📈</div>
+<div class="callout-text"><strong>The bigger picture:</strong> Six games is a small sample, and rookie seasons often turn in November. Speed tends to show up more as roles expand and players get healthy. But this class is a good example of why scouts treat the 40 as one data point. For the opposite case, see how a <a href="/germie-bernard-combine-profile-steelers-rookie-record">4.48 receiver broke a Steelers rookie record</a>.</div>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">Who was the fastest player at the 2026 NFL Combine?</div>
+<div class="faq-a">Mississippi State wide receiver Brenen Thompson ran the fastest official 40 at the 2026 combine, 4.26 seconds. The Los Angeles Chargers drafted him in the fourth round. Through Week 6 of his rookie season he has 1 catch for 13 yards after missing time with an injury.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Which fast 2026 rookie has been the most productive?</div>
+<div class="faq-a">Among the sub-4.40 runners profiled here, Raiders running back Mike Washington Jr. (4.33) has the steadiest production, with 168 rushing yards on 34 carries and a touchdown through Week 6. The most productive rookie in this comparison is actually Steelers receiver Germie Bernard, who ran a slower 4.48 but has 24 catches for 227 yards.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is Jeremiyah Love injured?</div>
+<div class="faq-a">Yes. The Cardinals rookie, drafted third overall, has been dealing with a lingering left ankle injury. He was ruled out of Arizona's Week 6 game against the Rams and was averaging 3.7 yards per carry through his first five games.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does a fast 40-yard dash predict NFL rookie success?</div>
+<div class="faq-a">Not on its own. A fast 40 helps a player get drafted and can create big plays, but rookie production depends heavily on role, opportunity and staying healthy. Six weeks into 2026, several of the fastest combine runners have been limited by injuries or small roles, while slower players in bigger roles have produced more.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How fast was the 2026 NFL Combine class?</div>
+<div class="faq-a">Seven position groups posted their fastest average 40 times in combine history in 2026, and 22 players ran under 4.40 seconds. Wide receivers and defensive backs averaged 4.44 seconds and running backs averaged 4.45.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Find Out Now</div>
+<h3>How Fast Are You, Really?</h3>
+<p>Enter your 40-yard dash, 100m time or top speed and see your percentile against the general population, high school, college and NFL athletes.</p>
+<a class="calc-cta-btn" href="/sprint-speed-calculator">Calculate My Speed Percentile →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        Where does your 40 rank?
+      </a>
+<a class="sidebar-link" href="/broad-jump-sprint-speed-calculator">
+<strong>Broad Jump Speed Predictor</strong>
+        Predict your 40 from your broad jump
+      </a>
+<a class="sidebar-link" href="/vertical-jump-percentile">
+<strong>Vertical Jump Percentile</strong>
+        Compare to NFL prospects
+      </a>
+<a class="sidebar-link" href="/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        What does your squat predict?
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#">The Scoreboard</a>
+<a class="toc-link" href="#">The Speedsters, One by One</a>
+<a class="toc-link" href="#">What the 40 Doesn't Measure</a>
+<a class="toc-link" href="#">FAQ</a>
+</div>
+</aside>
+</div><div class="related-wrap">
+<div class="related-label">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="/fastest-nfl-rookies-2026-training-camp">
+<div class="related-title">Fastest Rookies Heading Into Camp</div>
+<div class="related-desc">The full top-10 40 times from the 2026 combine</div>
+</a>
+<a class="related-card" href="/nfl-combine-2026-position-group-speed-records">
+<div class="related-title">Every Position Set a Speed Record</div>
+<div class="related-desc">Position-by-position averages from the 2026 combine</div>
+</a>
+<a class="related-card" href="/average-40-yard-dash-times">
+<div class="related-title">Average 40-Yard Dash Times</div>
+<div class="related-desc">By sport, position, age and level</div>
+</a>
+</div>
+</div>
