@@ -21,8 +21,39 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1673639828321526"
      crossorigin="anonymous"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+{%- set ogImg = ogImage or "/og-default.png" %}
+<meta property="og:type" content="{% if page.fileSlug and page.fileSlug not in site.nonArticles and page.fileSlug not in site.calculators %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="Athlete Calculator">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="https://athletecalculator.com{{ canonicalPath }}">
+<meta property="og:image" content="https://athletecalculator.com{{ ogImg }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="https://athletecalculator.com{{ ogImg }}">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#080c10">
+
+<!-- Self-hosted fonts: latin subset, only the weights the site uses -->
+<link rel="preload" href="/fonts/barlow-condensed-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/barlow-condensed-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/barlow-condensed-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/barlow-condensed-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 900; font-display: swap; src: url(/fonts/barlow-condensed-latin-900-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/dm-sans-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/dm-sans-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/dm-sans-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/dm-mono-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/dm-mono-latin-500-normal.woff2) format('woff2'); }
+</style>
 
 <!-- Shared nav styling: fallback for pages whose own <style> block never defined nav rules (the 5 calculator pages had no <nav> in the original site) -->
 <style>
@@ -168,6 +199,16 @@
   .ac-author-name { font-family: var(--font-display, sans-serif); font-size: 1.3rem; font-weight: 800; text-transform: uppercase; color: var(--text, #e8edf2); }
   .ac-author p { font-size: 0.92rem; line-height: 1.65; color: var(--text-mid, #8a96a4); margin-top: 0.4rem; }
   .ac-author a { color: var(--accent, #aaff00); text-decoration: none; font-size: 0.85rem; }
+  /* "Compare yourself to the pros" link block on calculator pages */
+  .ac-pros { max-width: 780px; margin: 2.5rem auto 1rem; padding: 0 1.25rem; }
+  .ac-pros-label { font-family: var(--font-mono, monospace); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #aaff00); margin-bottom: 0.35rem; }
+  .ac-pros-h { font-family: var(--font-display, sans-serif); font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--text, #e8edf2); margin: 0 0 1rem; line-height: 1.1; }
+  .ac-pros-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .ac-pros-grid a { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; background: var(--surface, #0f1419); border: 1px solid var(--border, #1e2832); border-radius: 10px; text-decoration: none; color: var(--text, #e8edf2); transition: border-color 0.15s; min-width: 0; }
+  .ac-pros-grid a:hover { border-color: var(--accent, #aaff00); }
+  .ac-pros-tag { flex-shrink: 0; min-width: 5.6rem; text-align: center; font-family: var(--font-mono, monospace); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent, #aaff00); border: 1px solid rgba(170,255,0,0.3); border-radius: 4px; padding: 0.15rem 0.4rem; }
+  .ac-pros-text { flex: 1; font-size: 0.9rem; line-height: 1.35; min-width: 0; }
+  .ac-pros-arrow { color: var(--text-muted, #5a6470); }
   /* Mobile nav: one horizontally swipeable row instead of a 3-row sticky block */
   @media (max-width: 700px) {
     nav { padding: 0.85rem 1rem 0.6rem; gap: 0.5rem; }
@@ -199,7 +240,9 @@
 {%- if acIsCalc or acIsArticle -%}
 {%- set acUpdated = page | lastUpdated(updated) -%}
 {%- set acByline -%}<div class="ac-byline{% if acIsCalc %} ac-byline--center{% endif %}">{% if acIsCalc %}<span>Benchmarks reviewed by <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% else %}<span>By <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% endif %}{% if acUpdated %}<span>Updated <time datetime="{{ acUpdated | isoDate }}">{{ acUpdated | readableDate }}</time></span>{% endif %}</div>{%- endset -%}
-{{ content | afterH1(acByline) | safe }}
+{%- set acPro = site.proLinks[acSlug] if acIsCalc else null -%}
+{%- set acProBlock -%}{% if acPro %}<section class="ac-pros" aria-labelledby="ac-pros-h"><div class="ac-pros-label">Keep going</div><h2 id="ac-pros-h" class="ac-pros-h">{{ acPro.heading }}</h2><ul class="ac-pros-grid">{% for l in acPro.links %}<li><a href="{{ l.url }}"><span class="ac-pros-tag">{{ l.tag }}</span><span class="ac-pros-text">{{ l.label }}</span><span class="ac-pros-arrow" aria-hidden="true">→</span></a></li>{% endfor %}</ul></section>{% endif %}{%- endset -%}
+{{ content | afterH1(acByline) | beforeMarker('<div class="article-section">', acProBlock) | safe }}
 <aside class="ac-author"><div class="ac-author-inner"><div class="ac-author-label">About the author</div><div class="ac-author-name">{{ site.author.name }}</div><p>{{ site.author.bio }}</p><a href="/about#author">More about Brian →</a></div></aside>
 {%- else -%}
 {{ content | safe }}

@@ -1,0 +1,995 @@
+---
+layout: base.njk
+title: "40 Yard Dash Calculator: Rate Your Time by Position"
+description: "Free 40-yard dash calculator. See your percentile vs high school and NFL combine players at your position, convert hand times to electronic, and get mph and Speed Score."
+canonicalPath: "/40-yard-dash-calculator"
+mailerlite: true
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --accent-glow: rgba(170,255,0,0.35);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --red: #ff4d4d;
+      --orange: #ff9000;
+      --yellow: #ffd600;
+      --green: #aaff00;
+      --blue: #00cfff;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+  
+    header {
+      padding: 2rem 1.5rem 0;
+      text-align: center;
+    }
+  
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+  
+    h1 span { color: var(--accent); display: block; }
+  
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-top: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+  
+    .site-link {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .site-link:hover { border-color: var(--accent); color: var(--accent); }
+    .site-link strong { color: var(--accent); }
+  
+    .links-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+  
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tabs {
+      display: flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tab {
+      flex: 1;
+      padding: 0.55rem 0.5rem;
+      text-align: center;
+      border-radius: 9px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.15s;
+    }
+  
+    .format-tab.active { background: var(--accent); color: #000; font-weight: 700; }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  
+    @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+  
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+  
+    .field select,
+    .field input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+  
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+  
+    .full { grid-column: 1 / -1; }
+  
+    .calc-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+  
+    .calc-btn:hover { opacity: 0.88; }
+    .calc-btn:active { transform: scale(0.98); }
+  
+    #results { display: none; }
+    #results.visible { display: block; }
+  
+    .gauge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .gauge-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  
+    /* Speed conversions strip */
+    .conversions-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .conv-item { text-align: center; }
+  
+    .conv-val {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent);
+      transition: color 0.5s;
+    }
+  
+    .conv-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+  
+    .gauge-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+  
+    .gauge-track {
+      fill: none;
+      stroke: var(--surface2);
+      stroke-width: 18;
+      stroke-linecap: round;
+    }
+  
+    .gauge-fill {
+      fill: none;
+      stroke-width: 18;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s ease;
+    }
+  
+    .verdict {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+  
+    .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+  
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+  
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .compare-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+  
+    .compare-text { flex: 1; min-width: 0; }
+    .compare-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+    .compare-val { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.1; }
+    .compare-avg { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.15rem; }
+  
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+  
+    .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+    .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+    .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+  
+    .bar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .bar-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+  
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .bar-label { font-size: 0.75rem; color: var(--text-mid); width: 115px; flex-shrink: 0; }
+  
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-you-marker {
+      position: absolute;
+      top: -3px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--accent-glow);
+      transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 58px; text-align: right; flex-shrink: 0; }
+  
+    .scale-strip {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      margin-bottom: 0.5rem;
+    }
+  
+    .scale-strip div { flex: 1; }
+  
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .info-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+  
+    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .info-text strong { color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  
+    .anim { animation: fadeUp 0.5s ease both; }
+    .anim-d1 { animation-delay: 0.05s; }
+    .anim-d2 { animation-delay: 0.15s; }
+    .anim-d3 { animation-delay: 0.25s; }
+    .anim-d4 { animation-delay: 0.35s; }
+  
+    .you-row .bar-fill { background: var(--accent); }
+    .you-row .bar-label { color: var(--accent); font-weight: 600; }
+  
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+    .format-tab { cursor: pointer; }
+  </style>
+disclaimer:
+  - "Percentiles are estimates based on published NFL combine averages and high school testing norms."
+  - "Not affiliated with the NFL, NCAA, or any athletic organization. For entertainment and training purposes only."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "40-Yard Dash Calculator",
+    "description": "Free 40-yard dash calculator that rates your time by football position against high school varsity players and NFL combine prospects, converts hand times to electronic, and calculates mph and Speed Score.",
+    "url": "https://athletecalculator.com/40-yard-dash-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good 40-yard dash time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers, tight ends and quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you convert a hand-timed 40 to electronic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add about 0.24 seconds. Hand-timed 40s are typically 0.2 to 0.3 seconds faster than electronic times because of human reaction time at the start and finish. A hand-timed 4.50 is roughly a 4.74 electronic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you convert a 40-yard dash time to mph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divide 40 yards (36.58 meters) by your time to get meters per second, then multiply by 2.237. A 4.50 second 40 averages about 18.2 mph. Top speed during the run is higher than the average because the first 10 yards are spent accelerating."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Speed Score in football?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Speed Score combines 40 time and bodyweight using the formula (weight × 200) ÷ (40 time to the fourth power). It rewards bigger players who run fast. A score near 100 is typical for an NFL running back prospect and 110 or higher is excellent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the fastest 40-yard dash at the NFL combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official combine record is 4.21 seconds, run by Xavier Worthy in 2024, which broke John Ross's 4.22 from 2017. Times under 4.30 are rare even among NFL cornerbacks and receivers."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "40-Yard Dash Calculator",
+        "item": "https://athletecalculator.com/40-yard-dash-calculator"
+      }
+    ]
+  }
+  </script>
+---
+<header>
+<p class="eyebrow">Free Football Speed Tool</p>
+<h1>40-Yard Dash<span>Calculator</span></h1>
+<p class="subtitle">Enter your 40 time and position to see your percentile against high school players and NFL combine prospects, your hand-time conversion, mph and Speed Score.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="/sprint-speed-calculator">
+      ↑ <strong>Sprint Speed</strong> Percentile Calculator
+    </a>
+<a class="site-link" href="/broad-jump-sprint-speed-calculator">
+      ↑ <strong>Broad Jump</strong> to 40 Time Calculator
+    </a>
+</div>
+<div class="card">
+<p class="card-label">Your 40-Yard Dash</p>
+<div class="format-tabs">
+<button class="format-tab active" type="button" onclick="setTiming('laser', this)">Electronic / Laser</button>
+<button class="format-tab" type="button" onclick="setTiming('hand', this)">Hand-Timed</button>
+</div>
+<div class="form-grid">
+<div class="field full">
+<label for="t40">40-Yard Dash Time (seconds)</label>
+<input id="t40" max="8" min="3.8" placeholder="e.g. 4.65" step="0.01" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="pos">Position</label>
+<select id="pos">
+<option value="ALL">Any position</option>
+<option value="WR">Wide Receiver</option>
+<option value="CB">Cornerback</option>
+<option value="RB">Running Back</option>
+<option value="S">Safety</option>
+<option value="LB">Linebacker</option>
+<option value="QB">Quarterback</option>
+<option value="TE">Tight End</option>
+<option value="DE">Defensive End / Edge</option>
+<option value="DT">Defensive Tackle</option>
+<option value="OL">Offensive Guard / Tackle</option>
+<option value="C">Center</option>
+</select>
+</div>
+<div class="field">
+<label for="level">Compare Against</label>
+<select id="level">
+<option value="hs">High School Varsity</option>
+<option value="nfl" selected="">NFL Combine</option>
+</select>
+</div>
+<div class="field full">
+<label for="wt">Bodyweight in lbs (optional, for Speed Score)</label>
+<input id="wt" max="400" min="90" placeholder="e.g. 205" step="1" type="number" inputmode="numeric"/>
+</div>
+</div>
+<button class="calc-btn" type="button" onclick="calculate()">Rate My 40 Time →</button>
+</div>
+<div id="results">
+<div class="gauge-card anim anim-d1">
+<div class="conversions-row" id="conversions-row"></div>
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="62" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="108">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2" text-anchor="middle" x="130" y="128">PERCENTILE</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<div style="max-width: 500px; margin: 2rem auto; padding: 1.75rem; background: #0d1218; border: 1px solid var(--accent); border-radius: 12px; text-align: center; box-shadow: 0 0 24px var(--accent-glow);">
+<div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.6rem;">FREE 5-DAY COURSE</div>
+<h3 style="color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; margin: 0 0 0.6rem;">
+        Get Your Free 5-Day Vertical Jump Plan
+      </h3>
+<p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.25rem;">
+        Speed starts with power. The exact strength, plyometric, and recovery sequence to build explosive athleticism — delivered straight to your inbox.
+      </p>
+<div class="ml-embedded" data-form="XBngsi"></div>
+</div>
+<div class="compare-grid anim anim-d2" id="compare-grid"></div>
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">Your 40 vs. NFL Combine Averages by Position</div>
+<div id="bars-wrap"></div>
+</div>
+<div class="info-card anim anim-d4">
+<div class="info-icon">⚡</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<div class="article-section">
+<h2>How This 40-Yard Dash Calculator Works</h2>
+<p>Enter your time, pick your position and choose who to compare against. The calculator converts hand times to an electronic equivalent, then estimates your <strong>percentile</strong> using the average and elite (top 10%) times for your position at that level. It also shows your average speed in mph, which NFL positions your time would match, and your <strong>Speed Score</strong> if you add bodyweight.</p>
+<p>Benchmarks come from the same data used in our <a href="/average-40-yard-dash-times">average 40-yard dash times by age, position and level</a> guide. Percentiles are estimates, not official rankings.</p>
+<h2>Hand-Timed vs. Electronic 40 Times</h2>
+<p>Hand-timed 40s usually come out <strong>0.2 to 0.3 seconds faster</strong> than electronic times, because the timer reacts to the start late and stops the watch early. NFL combine times are fully electronic, so this calculator adds <strong>0.24 seconds</strong> to hand times before comparing. A hand-timed 4.45 is really closer to a 4.69 on a laser.</p>
+<h2>NFL Combine 40 Times by Position</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr><th>Position</th><th>Average</th><th>Fast (Top 25%)</th><th>Elite (Top 10%)</th></tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>Cornerback</td><td>4.47s</td><td>4.38s</td><td>4.30s</td></tr>
+<tr class="highlight"><td>Wide Receiver</td><td>4.48s</td><td>4.38s</td><td>4.30s</td></tr>
+<tr><td>Running Back</td><td>4.49s</td><td>4.40s</td><td>4.33s</td></tr>
+<tr><td>Safety</td><td>4.53s</td><td>4.44s</td><td>4.37s</td></tr>
+<tr><td>Linebacker</td><td>4.68s</td><td>4.56s</td><td>4.46s</td></tr>
+<tr><td>Tight End</td><td>4.70s</td><td>4.58s</td><td>4.50s</td></tr>
+<tr><td>Quarterback</td><td>4.71s</td><td>4.58s</td><td>4.48s</td></tr>
+<tr><td>Defensive End</td><td>4.74s</td><td>4.60s</td><td>4.50s</td></tr>
+<tr><td>Defensive Tackle</td><td>4.99s</td><td>4.80s</td><td>4.65s</td></tr>
+<tr><td>Offensive Guard / Tackle</td><td>5.10s</td><td>4.95s</td><td>4.80s</td></tr>
+<tr><td>Center</td><td>5.15s</td><td>5.00s</td><td>4.85s</td></tr>
+</tbody>
+</table></div>
+<h2>High School Varsity 40 Times by Position</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr><th>Position</th><th>Average</th><th>Good (Scholarship Radar)</th><th>Elite</th></tr>
+</thead>
+<tbody>
+<tr><td>Wide Receiver / CB</td><td>4.70–4.85s</td><td>4.55–4.65s</td><td>Under 4.50s</td></tr>
+<tr><td>Running Back</td><td>4.75–4.90s</td><td>4.60–4.70s</td><td>Under 4.55s</td></tr>
+<tr><td>Safety / Linebacker</td><td>4.80–5.00s</td><td>4.65–4.75s</td><td>Under 4.60s</td></tr>
+<tr><td>Quarterback</td><td>4.85–5.05s</td><td>4.70–4.80s</td><td>Under 4.65s</td></tr>
+<tr><td>Tight End</td><td>4.85–5.05s</td><td>4.70–4.82s</td><td>Under 4.68s</td></tr>
+<tr><td>Defensive End</td><td>4.85–5.10s</td><td>4.72–4.85s</td><td>Under 4.70s</td></tr>
+<tr><td>Defensive Tackle</td><td>5.10–5.40s</td><td>5.00–5.10s</td><td>Under 4.95s</td></tr>
+<tr><td>Offensive Lineman</td><td>5.20–5.60s</td><td>5.05–5.20s</td><td>Under 5.00s</td></tr>
+</tbody>
+</table></div>
+<h2>What Is Speed Score?</h2>
+<p>Speed Score adjusts a 40 time for bodyweight, so a 230-pound back running 4.50 gets more credit than a 190-pound back running the same time. The formula is <strong>(weight × 200) ÷ (40 time⁴)</strong>. A score around <strong>100</strong> is typical for an NFL running back prospect, and <strong>110 or higher</strong> is excellent. It's most useful for running backs, tight ends and edge rushers, where size and speed both matter.</p>
+<h2>How to Lower Your 40 Time</h2>
+<p>Most of a 40 is won in the first 10 yards. Focus on <strong>start mechanics</strong> (stance, first two steps, shin angles), <strong>acceleration work</strong> like sled pushes and resisted sprints, and <strong>lower-body strength</strong> through squats, trap bar deadlifts and hip thrusts. Our <a href="/how-to-run-faster-40-yard-dash">complete guide to running a faster 40</a> lays out the full program. A focused 8–12 week block typically takes 0.1 to 0.3 seconds off.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good 40-yard dash time?</div>
+<div class="faq-a">It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers, tight ends and quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How do you convert a hand-timed 40 to electronic?</div>
+<div class="faq-a">Add about 0.24 seconds. Hand-timed 40s are typically 0.2 to 0.3 seconds faster than electronic times because of human reaction time at the start and finish. A hand-timed 4.50 is roughly a 4.74 electronic.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How do you convert a 40-yard dash time to mph?</div>
+<div class="faq-a">Divide 40 yards (36.58 meters) by your time to get meters per second, then multiply by 2.237. A 4.50 second 40 averages about 18.2 mph. Top speed during the run is higher than the average because the first 10 yards are spent accelerating.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is Speed Score in football?</div>
+<div class="faq-a">Speed Score combines 40 time and bodyweight using the formula (weight × 200) ÷ (40 time to the fourth power). It rewards bigger players who run fast. A score near 100 is typical for an NFL running back prospect and 110 or higher is excellent.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the fastest 40-yard dash at the NFL combine?</div>
+<div class="faq-a">The official combine record is 4.21 seconds, run by Xavier Worthy in 2024, which broke John Ross's 4.22 from 2017. Times under 4.30 are rare even among NFL cornerbacks and receivers.</div>
+</div>
+</div>
+</div><script>
+let timing = 'laser';
+const HAND_ADJ = 0.24;
+
+function setTiming(t, btn) {
+  timing = t;
+  document.querySelectorAll('.format-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Position benchmarks in electronic seconds: [average (50th pct), elite (top 10%)]
+// NFL: combine averages by position. HS: midpoint of varsity average range + elite cutoff.
+const POS = {
+  ALL: { name: 'All positions',          nfl: [4.54, 4.30], hs: [4.88, 4.60] },
+  WR:  { name: 'Wide Receiver',          nfl: [4.48, 4.30], hs: [4.775, 4.50] },
+  CB:  { name: 'Cornerback',             nfl: [4.47, 4.30], hs: [4.775, 4.50] },
+  RB:  { name: 'Running Back',           nfl: [4.49, 4.33], hs: [4.825, 4.55] },
+  S:   { name: 'Safety',                 nfl: [4.53, 4.37], hs: [4.90, 4.60] },
+  LB:  { name: 'Linebacker',             nfl: [4.68, 4.46], hs: [4.90, 4.60] },
+  QB:  { name: 'Quarterback',            nfl: [4.71, 4.48], hs: [4.95, 4.65] },
+  TE:  { name: 'Tight End',              nfl: [4.70, 4.50], hs: [4.95, 4.68] },
+  DE:  { name: 'Defensive End',          nfl: [4.74, 4.50], hs: [4.975, 4.70] },
+  DT:  { name: 'Defensive Tackle',       nfl: [4.99, 4.65], hs: [5.25, 4.95] },
+  OL:  { name: 'Offensive Guard/Tackle', nfl: [5.10, 4.80], hs: [5.40, 5.00] },
+  C:   { name: 'Center',                 nfl: [5.15, 4.85], hs: [5.40, 5.00] },
+};
+const LEVEL_NAME = { nfl: 'NFL combine', hs: 'high school varsity' };
+
+// Standard normal CDF (Abramowitz-Stegun approximation)
+function phi(z) {
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989423 * Math.exp(-z * z / 2);
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+  return z > 0 ? 1 - p : p;
+}
+
+function percentile(t, avg, elite) {
+  const sd = (avg - elite) / 1.2816;      // elite = top 10% => z = 1.2816
+  const pct = phi((avg - t) / sd) * 100;  // faster (lower) time => higher percentile
+  return Math.max(1, Math.min(99, pct));
+}
+
+function mph(t) { return (36.576 / t) * 2.23694; }
+
+function getColor(pct) {
+  if (pct < 10) return '#ff4d4d';
+  if (pct < 25) return '#ff9000';
+  if (pct < 40) return '#ffd600';
+  if (pct < 60) return '#9dff00';
+  if (pct < 85) return '#aaff00';
+  return '#00cfff';
+}
+
+const verdicts = [
+  { max: 10,  label: 'Well Below Average' },
+  { max: 25,  label: 'Below Average' },
+  { max: 40,  label: 'Slightly Below Average' },
+  { max: 60,  label: 'Right Around Average' },
+  { max: 75,  label: 'Above Average' },
+  { max: 90,  label: 'Fast' },
+  { max: 97,  label: 'Elite Speed' },
+  { max: 101, label: 'Exceptional — Top 3%' },
+];
+
+function animateNumber(el, target, duration) {
+  const start = performance.now();
+  const from = parseFloat(el.textContent) || 0;
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(from + (target - from) * ease);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function calculate() {
+  const inputEl = document.getElementById('t40');
+  const raw = parseFloat(inputEl.value);
+  if (isNaN(raw) || raw < 3.8 || raw > 8) {
+    inputEl.style.borderColor = 'var(--red)';
+    inputEl.focus();
+    setTimeout(() => inputEl.style.borderColor = '', 1500);
+    return;
+  }
+  const posKey = document.getElementById('pos').value;
+  const level  = document.getElementById('level').value;
+  const wt     = parseFloat(document.getElementById('wt').value);
+  const pos    = POS[posKey];
+
+  const t = timing === 'hand' ? raw + HAND_ADJ : raw;
+  const [avg, elite] = pos[level];
+  const pct   = Math.round(percentile(t, avg, elite));
+  const color = getColor(pct);
+  const v     = verdicts.find(x => pct < x.max) || verdicts[verdicts.length - 1];
+  const speedScore = !isNaN(wt) && wt > 0 ? (wt * 200) / Math.pow(t, 4) : null;
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => { el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; });
+
+  // Conversions
+  const conv = [
+    [t.toFixed(2) + 's', timing === 'hand' ? 'Electronic Equiv.' : 'Electronic 40'],
+    [mph(t).toFixed(1), 'Avg mph'],
+    [(t * 2.5).toFixed(1) + 's', '100m Equiv.'],
+  ];
+  if (speedScore) conv.push([speedScore.toFixed(1), 'Speed Score']);
+  document.getElementById('conversions-row').innerHTML = conv.map(([val, label]) =>
+    `<div class="conv-item"><div class="conv-val" style="color:${color}">${val}</div><div class="conv-label">${label}</div></div>`).join('');
+
+  // Gauge
+  const gaugeNum = document.getElementById('gauge-num');
+  const gaugePath = document.getElementById('gauge-path');
+  const totalLen = 345;
+  gaugePath.style.stroke = color;
+  gaugePath.style.strokeDashoffset = totalLen;
+  setTimeout(() => { gaugePath.style.strokeDashoffset = totalLen - (pct / 100) * totalLen; }, 50);
+  animateNumber(gaugeNum, pct, 1200);
+  gaugeNum.style.fill = color;
+
+  const posLabel = posKey === 'ALL' ? 'players' : pos.name.toLowerCase() + 's';
+  document.getElementById('verdict').textContent = v.label;
+  document.getElementById('verdict').style.color = color;
+  const diff = avg - t;
+  document.getElementById('verdict-sub').textContent =
+    `Faster than about ${pct}% of ${LEVEL_NAME[level]} ${posLabel}. ` +
+    (Math.abs(diff) < 0.02 ? `You're right at the ${avg.toFixed(2)}s average.`
+      : diff > 0 ? `That's ${diff.toFixed(2)}s faster than the ${avg.toFixed(2)}s average.`
+      : `That's ${Math.abs(diff).toFixed(2)}s slower than the ${avg.toFixed(2)}s average.`);
+
+  // Compare cards: HS avg, NFL avg, NFL elite for the chosen position, + speed score
+  const cards = [
+    ['High School Avg', pos.hs[0], '🏫', '#111a10'],
+    ['NFL Combine Avg', pos.nfl[0], '🏈', '#1a1510'],
+    ['NFL Elite (Top 10%)', pos.nfl[1], '⚡', '#1a1020'],
+  ];
+  const grid = document.getElementById('compare-grid');
+  grid.innerHTML = '';
+  cards.forEach(([name, ref, icon, bg]) => {
+    const d = ref - t;
+    const badge = d > 0.02 ? `<span class="badge badge-above">${d.toFixed(2)}s faster</span>`
+      : d < -0.02 ? `<span class="badge badge-below">${Math.abs(d).toFixed(2)}s slower</span>`
+      : `<span class="badge badge-at">Even</span>`;
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    card.innerHTML = `<div class="compare-icon" style="background:${bg}">${icon}</div>
+      <div class="compare-text"><div class="compare-title">${name}</div><div class="compare-val">${badge}</div>
+      <div class="compare-avg">${posKey === 'ALL' ? 'All positions' : pos.name}: ${ref.toFixed(2)}s · ${mph(ref).toFixed(1)} mph</div></div>`;
+    grid.appendChild(card);
+  });
+
+  // Bars: you vs every NFL position average, fastest first
+  const rows = Object.entries(POS).filter(([k]) => k !== 'ALL')
+    .map(([k, p]) => ({ label: p.name, t: p.nfl[0] }))
+    .concat([{ label: 'You', t, isYou: true }])
+    .sort((a, b) => a.t - b.t);
+  const fastest = Math.min(...rows.map(r => r.t));
+  const slowest = Math.max(...rows.map(r => r.t));
+  const barsWrap = document.getElementById('bars-wrap');
+  barsWrap.innerHTML = '';
+  rows.forEach(d => {
+    const w = slowest === fastest ? 100 : 25 + 75 * (slowest - d.t) / (slowest - fastest);
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (d.isYou ? ' you-row' : '');
+    row.innerHTML = `<div class="bar-label">${d.label}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:0%;background:${d.isYou ? color : '#1e2c3a'}" data-w="${w}"></div></div>
+      <div class="bar-val">${d.t.toFixed(2)}s</div>`;
+    barsWrap.appendChild(row);
+  });
+  setTimeout(() => { document.querySelectorAll('.bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; }); }, 100);
+
+  // Tip
+  const matched = Object.values(POS).filter(p => p.name !== 'All positions' && t <= p.nfl[0]).map(p => p.name.toLowerCase());
+  let tip = matched.length
+    ? `<strong>NFL comparison:</strong> Your ${t.toFixed(2)} is as fast as or faster than the average NFL combine ${matched.slice(0, 3).join(', ')}${matched.length > 3 ? ` and ${matched.length - 3} more position group${matched.length - 3 > 1 ? 's' : ''}` : ''}. `
+    : `<strong>NFL comparison:</strong> Your ${t.toFixed(2)} is ${(t - 5.15).toFixed(2)}s off the slowest NFL position average (centers, 5.15s). `;
+  if (speedScore) {
+    tip += `Your Speed Score of <strong>${speedScore.toFixed(1)}</strong> is ${speedScore >= 110 ? 'excellent' : speedScore >= 100 ? 'above the ~100 typical of an NFL running back prospect' : speedScore >= 90 ? 'a bit under the ~100 typical of an NFL running back prospect' : 'well under the ~100 typical of an NFL running back prospect'}. `;
+  }
+  tip += pct < 50
+    ? `Biggest lever: your <strong>start and first 10 yards</strong>. Work stance, first-step angles and sled pushes 2x a week.`
+    : `To keep dropping time, train <strong>max velocity</strong> with flying 20s and keep building lower-body strength.`;
+  if (timing === 'hand') tip += ` (We added ${HAND_ADJ}s to your hand time to match electronic combine timing.)`;
+  document.getElementById('tip-text').innerHTML = tip;
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  if (typeof gtag === 'function') gtag('event', 'calculator_use', { calculator_name: 'forty_yard_dash' });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
