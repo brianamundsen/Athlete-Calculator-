@@ -243,6 +243,10 @@ pageStyle: |-
     @media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 500px) { .calc-grid { grid-template-columns: 1fr; } }
   
+    .topic-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 1.5rem; }
+    .topic-row-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-right: 0.25rem; }
+    .topic-row a { font-size: 0.85rem; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 0.4rem 0.9rem; }
+    .topic-row a:hover { border-color: var(--accent); color: var(--accent); }
     .calc-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -700,6 +704,12 @@ jsonld: |-
         "position": 4,
         "name": "40-Yard Dash Calculator",
         "url": "https://athletecalculator.com/40-yard-dash-calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "RAS Calculator",
+        "url": "https://athletecalculator.com/ras-calculator"
       }
     ]
   }
@@ -816,6 +826,26 @@ permalink: "index.html"
 </ul>
 <a class="calc-card-btn" href="/broad-jump-sprint-speed-calculator">Predict My Speed →</a>
 </div>
+<div class="calc-card">
+<div class="calc-card-icon">📊</div>
+<div class="calc-card-tag">New Calculator</div>
+<div class="calc-card-title">RAS Calculator</div>
+<p class="calc-card-desc">Enter your combine numbers and position to estimate your Relative Athletic Score on the 0–10 scale used by NFL draft analysts.</p>
+<ul class="calc-card-features">
+<li>11 football positions</li>
+<li>Up to 9 combine measurements</li>
+<li>Grades for size, speed, explosion, agility, strength</li>
+<li>Shows your biggest area to improve</li>
+</ul>
+<a class="calc-card-btn" href="/ras-calculator">Calculate My RAS →</a>
+</div>
+</div>
+<div class="topic-row">
+<span class="topic-row-label">Browse by topic:</span>
+<a href="/vertical-jump">Vertical Jump</a>
+<a href="/speed-40-yard-dash">Speed &amp; 40-Yard Dash</a>
+<a href="/strength-power">Strength &amp; Power</a>
+<a href="/nfl-combine">NFL Combine</a>
 </div>
 </section><hr class="divider"/><section class="section" id="articles">
 <div class="section-header">

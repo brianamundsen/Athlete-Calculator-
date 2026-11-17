@@ -1,0 +1,547 @@
+---
+layout: base.njk
+title: "Vertical Jump: Calculators, Benchmarks & Training"
+description: "Everything on vertical jump in one place: percentile and dunk calculators, average vertical by age and position, NBA verticals, and an 8-week program to jump higher."
+canonicalPath: "/vertical-jump"
+mailerlite: false
+navActive: "vertical-jump"
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    /* ── NAV ── */
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    /* ── HERO ── */
+    .hero { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.75rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-sub { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
+  
+    /* ── FILTER TABS ── */
+    .filter-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+    .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .filter-tab {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; }
+    .filter-count { font-size: 0.6rem; opacity: 0.7; }
+  
+    /* ── ARTICLE GRID ── */
+    .articles-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+    .category-group { margin-bottom: 3rem; }
+    .category-label {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .category-label .cat-icon { font-size: 1.4rem; }
+  
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+  
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .article-card:hover::before { background: var(--accent); }
+  
+    .article-tag {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+    .article-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .article-read {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+  
+    /* hidden when filtered */
+    .article-card[hidden] { display: none; }
+    .category-group[hidden] { display: none; }
+  
+    /* ── CALCULATORS STRIP ── */
+    .calcs-strip { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    .hub-intro { max-width: 780px; margin: 0 auto; padding: 0 1.25rem 0.5rem; }
+    .hub-intro p { color: var(--text-mid); font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+    .hub-section { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 0.5rem; }
+    .hub-h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin-bottom: 1rem; }
+    .hub-calcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; }
+    .hub-calc { display: block; padding: 1.25rem; background: var(--surface); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; box-shadow: 0 0 18px var(--accent-dim); transition: transform 0.15s; }
+    .hub-calc:hover { transform: translateY(-2px); }
+    .hub-calc-tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+    .hub-calc-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin: 0.25rem 0 0.35rem; }
+    .hub-calc-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.5; }
+    .hub-calc-go { display: inline-block; margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); }
+    .hub-table-wrap { max-width: 780px; margin: 0 auto; padding: 1.5rem 1.25rem 0; }
+    .hub-table-scroll { overflow-x: auto; }
+    .hub-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .hub-table th { text-align: left; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .hub-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+    .hub-table td:first-child { color: var(--text); font-weight: 500; }
+    .hub-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; }
+    .hub-note a, .hub-intro a, .hub-faq a { color: var(--accent); }
+    .hub-faq { max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 1rem; }
+    .hub-faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    .hub-faq-q { font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .hub-faq-a { color: var(--text-mid); line-height: 1.7; font-size: 0.95rem; }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Vertical Jump: Calculators, Benchmarks & Training",
+    "description": "Everything on vertical jump in one place: percentile and dunk calculators, average vertical by age and position, NBA verticals, and an 8-week program to jump higher.",
+    "url": "https://athletecalculator.com/vertical-jump",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Vertical Jump Percentile",
+          "url": "https://athletecalculator.com/vertical-jump-percentile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Can I Dunk?",
+          "url": "https://athletecalculator.com/can-i-dunk-calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Squat Strength",
+          "url": "https://athletecalculator.com/squat-strength-calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Good Vertical Jump by Age: Full Chart for Ages 10 to 50+",
+          "url": "https://athletecalculator.com/good-vertical-jump-by-age"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Average Vertical Jump in Basketball by Position & Level",
+          "url": "https://athletecalculator.com/vertical-jump-basketball-position"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Average NBA Vertical Jump: 28\" Standing, 34-36\" Max",
+          "url": "https://athletecalculator.com/average-nba-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Vertical Jump to Dunk by Height — See Your Number (2026)",
+          "url": "https://athletecalculator.com/vertical-jump-needed-to-dunk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "How Much Do You Need to Squat to Dunk? | Athlete Calculator",
+          "url": "https://athletecalculator.com/how-much-to-squat-to-dunk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "How to Increase Your Vertical Jump in 8 Weeks",
+          "url": "https://athletecalculator.com/how-to-increase-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Does Squat Strength Improve Sprint Speed? The Science",
+          "url": "https://athletecalculator.com/squat-strength-sprint-speed"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "LeBron James Vertical Jump: 44 Inches Explained",
+          "url": "https://athletecalculator.com/lebron-james-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Victor Wembanyama Vertical Jump: 32 Inches Explained",
+          "url": "https://athletecalculator.com/victor-wembanyama-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "AJ Dybantsa Vertical Jump: 42 Inches at the 2026 Combine",
+          "url": "https://athletecalculator.com/aj-dybantsa-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "SGA Height, Wingspan & Vertical: Shai's Athletic Profile",
+          "url": "https://athletecalculator.com/shai-gilgeous-alexander-speed"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Giannis Height, Wingspan & Vertical: 6'11\" With a 7'4\" Span",
+          "url": "https://athletecalculator.com/giannis-antetokounmpo-athletic-profile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Kenyon Sadiq Combine: The Fastest TE 40 Time Ever",
+          "url": "https://athletecalculator.com/kenyon-sadiq-eli-stowers-combine-vertical-jump"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Dylan Harper Wingspan: 6'10.5\" on a 6'4.5\" Frame",
+          "url": "https://athletecalculator.com/dylan-harper-wingspan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Kawhi Leonard Hand Size & Wingspan: 9.75\" Hands, 7'3\" Span",
+          "url": "https://athletecalculator.com/kawhi-leonard-athletic-profile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Jalen Brunson Height & Wingspan: 6'1\" With a 6'4\" Wingspan",
+          "url": "https://athletecalculator.com/jalen-brunson-height-wingspan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "2026 NBA Finals Athleticism: Every Key Player Measured",
+          "url": "https://athletecalculator.com/nba-finals-2026-athleticism"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For adult men, 22 to 27 inches is good and 28 inches or more is elite. For high school athletes aged 17 to 18, 21 to 25 inches is good. NBA players average about 28 inches standing and about 34 inches with a running approach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much vertical do you need to dunk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your height and standing reach. An average-armed 6-foot player needs roughly a 26 to 28 inch vertical to dunk, a 5-foot-10 player about 30 to 32 inches, and a 6-foot-4 player only about 20 inches. The Can I Dunk calculator works it out for your exact reach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you increase your vertical jump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most athletes add 3 to 6 inches in an 8-week program that combines heavy squats with plyometrics. Beginners with no jump training often gain 4 to 8 inches."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vertical Jump",
+        "item": "https://athletecalculator.com/vertical-jump"
+      }
+    ]
+  }
+  </script>
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+    Vertical Jump
+  </div>
+<h1>Vertical <em>Jump</em></h1>
+<p class="hero-sub">How high you jump, how it compares, and how to add inches. Start with a calculator, check the benchmarks for your age, then pick a training guide.</p>
+</div>
+<div class="hub-section">
+<h2 class="hub-h2">Calculators</h2>
+<div class="hub-calcs">
+<a class="hub-calc" href="/vertical-jump-percentile"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">Vertical Jump Percentile</div><p class="hub-calc-desc">Rank your vertical by age, sex and sport, with NBA and NFL comparisons.</p><span class="hub-calc-go">Open calculator →</span></a>
+<a class="hub-calc" href="/can-i-dunk-calculator"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">Can I Dunk?</div><p class="hub-calc-desc">Height, reach and vertical in; how close you are to the rim out.</p><span class="hub-calc-go">Open calculator →</span></a>
+<a class="hub-calc" href="/squat-strength-calculator"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">Squat Strength</div><p class="hub-calc-desc">See what your squat-to-bodyweight ratio predicts for jumping and speed.</p><span class="hub-calc-go">Open calculator →</span></a>
+</div>
+</div>
+<div class="hub-intro" style="padding-top:2rem"><p>A vertical jump is the clearest single test of lower-body power. Coaches use it to track explosiveness, scouts use it to compare prospects, and players use it to answer one question: can I dunk?</p><p>Most untrained adults jump 16 to 20 inches. High school athletes who train usually reach the low to mid 20s, college athletes the high 20s to mid 30s, and NBA players average about 28 inches standing and about 34 with a running approach. Where you fall depends heavily on age, sex, sport and training history, which is why a percentile against the right group tells you more than a raw number.</p></div>
+<div class="hub-table-wrap">
+<h2 class="hub-h2">Good Vertical Jump by Age (Males)</h2>
+<div class="hub-table-scroll"><table class="hub-table"><thead><tr><th>Age</th><th>Average</th><th>Good</th><th>Elite</th></tr></thead><tbody><tr><td>13–14</td><td>12–16&quot;</td><td>17–21&quot;</td><td>22&quot;+</td></tr><tr><td>15–16</td><td>14–18&quot;</td><td>19–23&quot;</td><td>24&quot;+</td></tr><tr><td>17–18</td><td>16–20&quot;</td><td>21–25&quot;</td><td>26&quot;+</td></tr><tr><td>19–25</td><td>17–21&quot;</td><td>22–27&quot;</td><td>28&quot;+</td></tr><tr><td>26–35</td><td>16–20&quot;</td><td>21–26&quot;</td><td>27&quot;+</td></tr><tr><td>36–50</td><td>13–17&quot;</td><td>18–22&quot;</td><td>23&quot;+</td></tr></tbody></table></div>
+<p class="hub-note">Full chart with female norms and sport breakdowns: <a href="/good-vertical-jump-by-age">good vertical jump by age</a>.</p>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">🏀</span> Benchmarks &amp; Guides</div>
+<div class="articles-grid">
+<a class="article-card" href="/good-vertical-jump-by-age">
+<div class="article-tag">🏀 Benchmarks &amp; Guides</div>
+<div class="article-title">Good Vertical Jump by Age: Full Chart for Ages 10 to 50+</div>
+<p class="article-desc">What&#x27;s a good vertical jump for your age? Full breakdown by age 10 through 50+, with detailed male/female percentiles and sport benchmarks for ages 14 through 17. Free percentile calculator included.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/vertical-jump-basketball-position">
+<div class="article-tag">🏀 Benchmarks &amp; Guides</div>
+<div class="article-title">Average Vertical Jump in Basketball by Position &amp; Level</div>
+<p class="article-desc">Average vertical jump for basketball players at every position and level — from recreational to NBA. What is good for your position, and how you compare. Free calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/average-nba-vertical-jump">
+<div class="article-tag">🏀 Benchmarks &amp; Guides</div>
+<div class="article-title">Average NBA Vertical Jump: 28&quot; Standing, 34-36&quot; Max</div>
+<p class="article-desc">The average NBA vertical jump is 28 inches standing, 34 to 36 inches max. See how it breaks down by position, plus real player numbers.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/vertical-jump-needed-to-dunk">
+<div class="article-tag">🏀 Benchmarks &amp; Guides</div>
+<div class="article-title">Vertical Jump to Dunk by Height — See Your Number (2026)</div>
+<p class="article-desc">Find the exact vertical jump needed to dunk based on your height, from 5&#x27;6&quot; to 6&#x27;8&quot;. Most players need just 14–20 inches — see where you stand.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/how-much-to-squat-to-dunk">
+<div class="article-tag">🏀 Benchmarks &amp; Guides</div>
+<div class="article-title">How Much Do You Need to Squat to Dunk? | Athlete Calculator</div>
+<p class="article-desc">Find out exactly how strong your squat needs to be to dunk a basketball. Includes squat-to-vertical jump tables by height, training plan, and a free calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">🏀</span> Training</div>
+<div class="articles-grid">
+<a class="article-card" href="/how-to-increase-vertical-jump">
+<div class="article-tag">🏀 Training</div>
+<div class="article-title">How to Increase Your Vertical Jump in 8 Weeks</div>
+<p class="article-desc">A complete 8-week vertical jump training program backed by sports science. Week-by-week workouts, exercises, sets, reps, and a free calculator to track your progress.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/squat-strength-sprint-speed">
+<div class="article-tag">🏀 Training</div>
+<div class="article-title">Does Squat Strength Improve Sprint Speed? The Science</div>
+<p class="article-desc">The science behind squat strength and sprint speed. Learn how relative strength affects your 40-yard dash, what the research says, and how to train for both.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">🏀</span> Pro Athlete Verticals</div>
+<div class="articles-grid">
+<a class="article-card" href="/lebron-james-vertical-jump">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">LeBron James Vertical Jump: 44 Inches Explained</div>
+<p class="article-desc">LeBron James has a 44-inch max vertical jump — one of the highest ever recorded for his size. See his standing reach, wingspan, and how his numbers compare to Wembanyama and the rest of the NBA.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/victor-wembanyama-vertical-jump">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">Victor Wembanyama Vertical Jump: 32 Inches Explained</div>
+<p class="article-desc">Victor Wembanyama&#x27;s official vertical jump is 32 inches. See how it compares to NBA wings and centers, and why his 8&#x27;0&quot; reach makes it a non-issue.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/aj-dybantsa-vertical-jump">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">AJ Dybantsa Vertical Jump: 42 Inches at the 2026 Combine</div>
+<p class="article-desc">AJ Dybantsa recorded a 42-inch max vertical at the 2026 NBA Draft Combine. Full results for every top prospect — and how these numbers compare to NBA combine history.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/shai-gilgeous-alexander-speed">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">SGA Height, Wingspan &amp; Vertical: Shai&#x27;s Athletic Profile</div>
+<p class="article-desc">Shai Gilgeous-Alexander is 6&#x27;4.5, with a 6&#x27;11.5 wingspan and 36-inch vertical. Full breakdown of the 2026 MVP&#x27;s height, wingspan, speed in mph, and why his measurements are so unusual for a point guard.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/giannis-antetokounmpo-athletic-profile">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">Giannis Height, Wingspan &amp; Vertical: 6&#x27;11&quot; With a 7&#x27;4&quot; Span</div>
+<p class="article-desc">Giannis Antetokounmpo stands 6-foot-11 with a 7-foot-4 wingspan and a 12-foot-2 max vertical reach. After his blockbuster trade to the Miami Heat, here&#x27;s the full breakdown of the measurements behind the Greek Freak.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/kenyon-sadiq-eli-stowers-combine-vertical-jump">
+<div class="article-tag">🏀 Pro Athlete Verticals</div>
+<div class="article-title">Kenyon Sadiq Combine: The Fastest TE 40 Time Ever</div>
+<p class="article-desc">Kenyon Sadiq ran a 4.39 40-yard dash — the fastest ever by a tight end at the NFL Combine. Teammate Eli Stowers posted a 45.5-inch vertical, the best by any TE since 2003. Full breakdown plus a free vertical jump calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">🏀</span> NBA Height, Wingspan &amp; Reach</div>
+<div class="articles-grid">
+<a class="article-card" href="/dylan-harper-wingspan">
+<div class="article-tag">🏀 NBA Height, Wingspan &amp; Reach</div>
+<div class="article-title">Dylan Harper Wingspan: 6&#x27;10.5&quot; on a 6&#x27;4.5&quot; Frame</div>
+<p class="article-desc">Dylan Harper&#x27;s height, wingspan, and full athletic profile. How the Spurs rookie&#x27;s 6&#x27;10.5 wingspan compares to SGA and why his physical tools are redefining what a modern guard looks like.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/kawhi-leonard-athletic-profile">
+<div class="article-tag">🏀 NBA Height, Wingspan &amp; Reach</div>
+<div class="article-title">Kawhi Leonard Hand Size &amp; Wingspan: 9.75&quot; Hands, 7&#x27;3&quot; Span</div>
+<p class="article-desc">Kawhi Leonard&#x27;s hands measure 9.75 inches long and 11.25 inches wide — among the largest ever recorded at the NBA Draft Combine. His trade back to Toronto is on hold pending an NBA investigation. Full measurements and trade breakdown.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/jalen-brunson-height-wingspan">
+<div class="article-tag">🏀 NBA Height, Wingspan &amp; Reach</div>
+<div class="article-title">Jalen Brunson Height &amp; Wingspan: 6&#x27;1&quot; With a 6&#x27;4&quot; Wingspan</div>
+<p class="article-desc">Jalen Brunson is 6&#x27;1&quot; with a 6&#x27;4&quot; wingspan, ranked 1,679th of 1,812 NBA prospects ever tested. He won the 2026 title and Finals MVP anyway. Here is what the numbers mean.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/nba-finals-2026-athleticism">
+<div class="article-tag">🏀 NBA Height, Wingspan &amp; Reach</div>
+<div class="article-title">2026 NBA Finals Athleticism: Every Key Player Measured</div>
+<p class="article-desc">Complete athletic measurements for every key 2026 NBA Finals player. Brunson&#x27;s 1,679th-ranked wingspan vs Wembanyama&#x27;s 10-foot standing reach. The most extreme physical contrast in Finals history.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="hub-faq">
+<h2 class="hub-h2">Frequently Asked Questions</h2>
+<div class="hub-faq-item">
+<div class="hub-faq-q">What is a good vertical jump?</div>
+<div class="hub-faq-a">For adult men, 22 to 27 inches is good and 28 inches or more is elite. For high school athletes aged 17 to 18, 21 to 25 inches is good. NBA players average about 28 inches standing and about 34 inches with a running approach.</div>
+</div>
+<div class="hub-faq-item">
+<div class="hub-faq-q">How much vertical do you need to dunk?</div>
+<div class="hub-faq-a">It depends on your height and standing reach. An average-armed 6-foot player needs roughly a 26 to 28 inch vertical to dunk, a 5-foot-10 player about 30 to 32 inches, and a 6-foot-4 player only about 20 inches. The Can I Dunk calculator works it out for your exact reach.</div>
+</div>
+<div class="hub-faq-item">
+<div class="hub-faq-q">How fast can you increase your vertical jump?</div>
+<div class="hub-faq-a">Most athletes add 3 to 6 inches in an 8-week program that combines heavy squats with plyometrics. Beginners with no jump training often gain 4 to 8 inches.</div>
+</div>
+</div>

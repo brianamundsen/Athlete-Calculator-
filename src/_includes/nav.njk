@@ -3,12 +3,10 @@
   <div class="nav-links">
     <a href="/">Home</a>
     <a href="/articles"{% if navActive == 'articles' %} class="active"{% endif %}>Articles</a>
-    <a href="/vertical-jump-percentile">Vertical Jump</a>
-    <a href="/40-yard-dash-calculator">40-Yard Dash</a>
-    <a href="/sprint-speed-calculator">Sprint Speed</a>
-    <a href="/squat-strength-calculator">Squat Strength</a>
-    <a href="/can-i-dunk-calculator">Can I Dunk?</a>
-    <a href="/broad-jump-sprint-speed-calculator">Broad Jump</a>
+    <a href="/vertical-jump"{% if navActive == 'vertical-jump' %} class="active"{% endif %}>Vertical Jump</a>
+    <a href="/speed-40-yard-dash"{% if navActive == 'speed-40-yard-dash' %} class="active"{% endif %}>Speed &amp; 40</a>
+    <a href="/strength-power"{% if navActive == 'strength-power' %} class="active"{% endif %}>Strength</a>
+    <a href="/nfl-combine"{% if navActive == 'nfl-combine' %} class="active"{% endif %}>NFL Combine</a>
     <a href="/about">About</a>
   </div>
 </nav>

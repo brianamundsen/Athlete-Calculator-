@@ -1,0 +1,492 @@
+---
+layout: base.njk
+title: "Speed & 40-Yard Dash: Calculators, Times & Training"
+description: "All of our speed content in one place: 40-yard dash and sprint calculators, average 40 times by age and position, NFL combine speed records, and how to run faster."
+canonicalPath: "/speed-40-yard-dash"
+mailerlite: false
+navActive: "speed-40-yard-dash"
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --surface: #0f1419; --surface2: #161c24;
+      --border: #1e2832; --accent: #aaff00; --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2; --text-muted: #5a6470; --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+  
+    /* ── NAV ── */
+    nav { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: sticky; top: 0; background: rgba(8,12,16,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+    /* ── HERO ── */
+    .hero { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+    .breadcrumb { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.75rem; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-sub { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
+  
+    /* ── FILTER TABS ── */
+    .filter-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+    .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .filter-tab {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; }
+    .filter-count { font-size: 0.6rem; opacity: 0.7; }
+  
+    /* ── ARTICLE GRID ── */
+    .articles-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+    .category-group { margin-bottom: 3rem; }
+    .category-label {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .category-label .cat-icon { font-size: 1.4rem; }
+  
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+  
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .article-card:hover::before { background: var(--accent); }
+  
+    .article-tag {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+    .article-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .article-read {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+  
+    /* hidden when filtered */
+    .article-card[hidden] { display: none; }
+    .category-group[hidden] { display: none; }
+  
+    /* ── CALCULATORS STRIP ── */
+    .calcs-strip { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .calcs-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .calcs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+    .calc-pill {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .calc-pill:hover { border-color: var(--accent); }
+    .calc-pill-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .calc-pill-desc { font-size: 0.75rem; color: var(--text-mid); line-height: 1.4; }
+  
+    footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); line-height: 1.8; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    .hub-intro { max-width: 780px; margin: 0 auto; padding: 0 1.25rem 0.5rem; }
+    .hub-intro p { color: var(--text-mid); font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+    .hub-section { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 0.5rem; }
+    .hub-h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin-bottom: 1rem; }
+    .hub-calcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; }
+    .hub-calc { display: block; padding: 1.25rem; background: var(--surface); border: 1px solid var(--accent); border-radius: 12px; text-decoration: none; box-shadow: 0 0 18px var(--accent-dim); transition: transform 0.15s; }
+    .hub-calc:hover { transform: translateY(-2px); }
+    .hub-calc-tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+    .hub-calc-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin: 0.25rem 0 0.35rem; }
+    .hub-calc-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.5; }
+    .hub-calc-go { display: inline-block; margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); }
+    .hub-table-wrap { max-width: 780px; margin: 0 auto; padding: 1.5rem 1.25rem 0; }
+    .hub-table-scroll { overflow-x: auto; }
+    .hub-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .hub-table th { text-align: left; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .hub-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+    .hub-table td:first-child { color: var(--text); font-weight: 500; }
+    .hub-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; }
+    .hub-note a, .hub-intro a, .hub-faq a { color: var(--accent); }
+    .hub-faq { max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 1rem; }
+    .hub-faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    .hub-faq-q { font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .hub-faq-a { color: var(--text-mid); line-height: 1.7; font-size: 0.95rem; }
+  </style>
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Speed & 40-Yard Dash: Calculators, Times & Training",
+    "description": "All of our speed content in one place: 40-yard dash and sprint calculators, average 40 times by age and position, NFL combine speed records, and how to run faster.",
+    "url": "https://athletecalculator.com/speed-40-yard-dash",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "40-Yard Dash",
+          "url": "https://athletecalculator.com/40-yard-dash-calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sprint Speed",
+          "url": "https://athletecalculator.com/sprint-speed-calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Broad Jump to 40",
+          "url": "https://athletecalculator.com/broad-jump-sprint-speed-calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Average 40 Yard Dash Times by Age, Position & Level (2026)",
+          "url": "https://athletecalculator.com/average-40-yard-dash-times"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How Fast Is the Average Person in MPH? | Athlete Calculator",
+          "url": "https://athletecalculator.com/how-fast-is-the-average-person"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Every NFL Combine Position Group Set a Speed Record in 2026",
+          "url": "https://athletecalculator.com/nfl-combine-2026-position-group-speed-records"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "How Fast Are NFL Quarterbacks Now? 2026 Combine Speed",
+          "url": "https://athletecalculator.com/nfl-quarterback-speed-2026-combine"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "How Fast Are World Cup Players? Top Speeds in MPH (2026)",
+          "url": "https://athletecalculator.com/how-fast-are-world-cup-players"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "How to Run a Faster 40 Yard Dash: Complete Training Guide",
+          "url": "https://athletecalculator.com/how-to-run-faster-40-yard-dash"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Does Squat Strength Improve Sprint Speed? The Science",
+          "url": "https://athletecalculator.com/squat-strength-sprint-speed"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Fastest NFL Rookies 2026: Midseason Speed Check",
+          "url": "https://athletecalculator.com/fastest-nfl-rookies-2026-midseason-speed-check"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Fastest NFL Rookies 2026: Combine 40 Times Ranked",
+          "url": "https://athletecalculator.com/fastest-nfl-rookies-2026-training-camp"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Kenneth Walker III Combine: The 4.38 Speed Behind His Record",
+          "url": "https://athletecalculator.com/kenneth-walker-iii-combine-profile-chiefs-rushing-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Germie Bernard: 4.48 WR Sets a Steelers Rookie Record",
+          "url": "https://athletecalculator.com/germie-bernard-combine-profile-steelers-rookie-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "USMNT 2026 World Cup Speed: How Fast Are Pulisic & Balogun?",
+          "url": "https://athletecalculator.com/usmnt-world-cup-2026-speed-athletic-profile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Lamine Yamal Height, Speed & Athletic Profile (2026)",
+          "url": "https://athletecalculator.com/lamine-yamal-height-wingspan-athletic-profile"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good 40-yard dash time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For high school varsity skill players, 4.70 to 4.85 seconds is average and under 4.50 is elite. At the NFL combine, about 4.47 to 4.53 is average for cornerbacks, receivers, running backs and safeties, and 5.0 to 5.15 for linemen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the fastest 40-yard dash ever at the NFL combine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Xavier Worthy ran 4.21 seconds at the 2024 combine, breaking John Ross's 4.22 from 2017."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much faster is a hand-timed 40?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hand-timed 40s are usually 0.2 to 0.3 seconds faster than electronic times because of the timer's reaction at the start and finish. Add about 0.24 seconds to compare a hand time with combine results."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Speed & 40-Yard Dash",
+        "item": "https://athletecalculator.com/speed-40-yard-dash"
+      }
+    ]
+  }
+  </script>
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+    Speed &amp; 40-Yard Dash
+  </div>
+<h1>Speed &amp; <em>40-Yard Dash</em></h1>
+<p class="hero-sub">How fast you are, how that stacks up at your position, and how to get faster. Rate your time, compare it to the averages, then train the weak spot.</p>
+</div>
+<div class="hub-section">
+<h2 class="hub-h2">Calculators</h2>
+<div class="hub-calcs">
+<a class="hub-calc" href="/40-yard-dash-calculator"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">40-Yard Dash</div><p class="hub-calc-desc">Rate your 40 by position against high school and NFL combine players.</p><span class="hub-calc-go">Open calculator →</span></a>
+<a class="hub-calc" href="/sprint-speed-calculator"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">Sprint Speed</div><p class="hub-calc-desc">Turn a 40, 100m or mph into a percentile against athletes at every level.</p><span class="hub-calc-go">Open calculator →</span></a>
+<a class="hub-calc" href="/broad-jump-sprint-speed-calculator"><div class="hub-calc-tag">Free Calculator</div><div class="hub-calc-name">Broad Jump to 40</div><p class="hub-calc-desc">Predict your sprint speed from your standing broad jump.</p><span class="hub-calc-go">Open calculator →</span></a>
+</div>
+</div>
+<div class="hub-intro" style="padding-top:2rem"><p>The 40-yard dash is football&#x27;s universal speed test, and it&#x27;s run everywhere from middle school camps to the NFL combine. It measures acceleration over the first 10 yards and near top speed over the last 20.</p><p>At the NFL combine, cornerbacks, receivers and running backs average about 4.47 to 4.49 seconds, and linemen average 5.0 to 5.15. High school varsity skill players usually run 4.70 to 4.85. Hand-timed 40s run 0.2 to 0.3 seconds faster than electronic ones, so always check how a time was measured before comparing.</p></div>
+<div class="hub-table-wrap">
+<h2 class="hub-h2">NFL Combine 40 Times by Position</h2>
+<div class="hub-table-scroll"><table class="hub-table"><thead><tr><th>Position</th><th>Average</th><th>Elite (Top 10%)</th></tr></thead><tbody><tr><td>Cornerback</td><td>4.47s</td><td>4.30s</td></tr><tr><td>Wide Receiver</td><td>4.48s</td><td>4.30s</td></tr><tr><td>Running Back</td><td>4.49s</td><td>4.33s</td></tr><tr><td>Safety</td><td>4.53s</td><td>4.37s</td></tr><tr><td>Linebacker</td><td>4.68s</td><td>4.46s</td></tr><tr><td>Tight End</td><td>4.70s</td><td>4.50s</td></tr><tr><td>Defensive Tackle</td><td>4.99s</td><td>4.65s</td></tr><tr><td>Offensive Line</td><td>5.10s</td><td>4.80s</td></tr></tbody></table></div>
+<p class="hub-note">High school and age-by-age times: <a href="/average-40-yard-dash-times">average 40-yard dash times by age, position and level</a>.</p>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">⚡</span> Benchmarks &amp; Guides</div>
+<div class="articles-grid">
+<a class="article-card" href="/average-40-yard-dash-times">
+<div class="article-tag">⚡ Benchmarks &amp; Guides</div>
+<div class="article-title">Average 40 Yard Dash Times by Age, Position &amp; Level (2026)</div>
+<p class="article-desc">Average 40 yard dash times by sport, position, age, and level — from youth and high school to college and the NFL combine. What&#x27;s a good 40 time? Full breakdown with a free percentile calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/how-fast-is-the-average-person">
+<div class="article-tag">⚡ Benchmarks &amp; Guides</div>
+<div class="article-title">How Fast Is the Average Person in MPH? | Athlete Calculator</div>
+<p class="article-desc">How fast can the average person run in mph? Complete breakdown by age, gender, and fitness level — plus how you compare to athletes and world records. Free speed calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/nfl-combine-2026-position-group-speed-records">
+<div class="article-tag">⚡ Benchmarks &amp; Guides</div>
+<div class="article-title">Every NFL Combine Position Group Set a Speed Record in 2026</div>
+<p class="article-desc">Seven position groups posted their fastest average 40-yard dash in NFL Combine history at the 2026 combine. See the full breakdown by position, from wide receivers to offensive line.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/nfl-quarterback-speed-2026-combine">
+<div class="article-tag">⚡ Benchmarks &amp; Guides</div>
+<div class="article-title">How Fast Are NFL Quarterbacks Now? 2026 Combine Speed</div>
+<p class="article-desc">NFL quarterbacks averaged 4.60 seconds in the 40-yard dash at the 2026 combine, the second-fastest ever for the position. Here&#x27;s why QB speed keeps climbing.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/how-fast-are-world-cup-players">
+<div class="article-tag">⚡ Benchmarks &amp; Guides</div>
+<div class="article-title">How Fast Are World Cup Players? Top Speeds in MPH (2026)</div>
+<p class="article-desc">Mbappé runs 23.6 mph. Haaland hits 22.5 mph at 6&#x27;4. Van de Ven is the fastest defender ever recorded. Here&#x27;s how 2026 World Cup speeds translate to mph — and how you compare.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">⚡</span> Training</div>
+<div class="articles-grid">
+<a class="article-card" href="/how-to-run-faster-40-yard-dash">
+<div class="article-tag">⚡ Training</div>
+<div class="article-title">How to Run a Faster 40 Yard Dash: Complete Training Guide</div>
+<p class="article-desc">A complete guide to running a faster 40-yard dash. Stance, first step, acceleration mechanics, strength training, and a 8-week program to drop your time.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/squat-strength-sprint-speed">
+<div class="article-tag">⚡ Training</div>
+<div class="article-title">Does Squat Strength Improve Sprint Speed? The Science</div>
+<p class="article-desc">The science behind squat strength and sprint speed. Learn how relative strength affects your 40-yard dash, what the research says, and how to train for both.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="articles-wrap">
+<div class="category-group">
+<div class="category-label"><span class="cat-icon">⚡</span> Fastest Athletes</div>
+<div class="articles-grid">
+<a class="article-card" href="/fastest-nfl-rookies-2026-midseason-speed-check">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">Fastest NFL Rookies 2026: Midseason Speed Check</div>
+<p class="article-desc">The 2026 combine was the fastest ever. Six weeks into the season, here&#x27;s how Brenen Thompson (4.26), Zavion Thomas, Mike Washington Jr., Jeremiyah Love and Kenyon Sadiq are actually doing.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/fastest-nfl-rookies-2026-training-camp">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">Fastest NFL Rookies 2026: Combine 40 Times Ranked</div>
+<p class="article-desc">The 2026 NFL Combine produced one of the fastest draft classes ever — 22 players under 4.40 in the 40. See the fastest rookies by position heading into training camp, plus a free speed percentile calculator.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/kenneth-walker-iii-combine-profile-chiefs-rushing-record">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">Kenneth Walker III Combine: The 4.38 Speed Behind His Record</div>
+<p class="article-desc">Kenneth Walker III ran a 4.38 40 at 211 lbs. Now he has 665 rushing yards through five games, the most ever in a player&#x27;s first five with a new team. Here&#x27;s the athletic profile behind it.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/germie-bernard-combine-profile-steelers-rookie-record">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">Germie Bernard: 4.48 WR Sets a Steelers Rookie Record</div>
+<p class="article-desc">Germie Bernard ran a 4.48 40 and scouts doubted his top-end speed. He just set the Steelers&#x27; rookie record with 11 catches in a game. Here&#x27;s his full athletic profile and why the slot role fits.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/usmnt-world-cup-2026-speed-athletic-profile">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">USMNT 2026 World Cup Speed: How Fast Are Pulisic &amp; Balogun?</div>
+<p class="article-desc">Balogun scored vs Bosnia then was sent off and is suspended for USA vs Belgium. Pulisic carries the attack Monday July 6. Full USMNT athletic breakdown.</p>
+<span class="article-read">Read Article →</span>
+</a>
+<a class="article-card" href="/lamine-yamal-height-wingspan-athletic-profile">
+<div class="article-tag">⚡ Fastest Athletes</div>
+<div class="article-title">Lamine Yamal Height, Speed &amp; Athletic Profile (2026)</div>
+<p class="article-desc">Lamine Yamal is 18 years old, 5&#x27;10, and already one of the best players in the world. He turns 19 on the eve of the World Cup semifinals. Here is the full athletic breakdown of soccer&#x27;s biggest young talent.</p>
+<span class="article-read">Read Article →</span>
+</a>
+</div>
+</div>
+</div>
+<div class="hub-faq">
+<h2 class="hub-h2">Frequently Asked Questions</h2>
+<div class="hub-faq-item">
+<div class="hub-faq-q">What is a good 40-yard dash time?</div>
+<div class="hub-faq-a">For high school varsity skill players, 4.70 to 4.85 seconds is average and under 4.50 is elite. At the NFL combine, about 4.47 to 4.53 is average for cornerbacks, receivers, running backs and safeties, and 5.0 to 5.15 for linemen.</div>
+</div>
+<div class="hub-faq-item">
+<div class="hub-faq-q">What is the fastest 40-yard dash ever at the NFL combine?</div>
+<div class="hub-faq-a">Xavier Worthy ran 4.21 seconds at the 2024 combine, breaking John Ross&#x27;s 4.22 from 2017.</div>
+</div>
+<div class="hub-faq-item">
+<div class="hub-faq-q">How much faster is a hand-timed 40?</div>
+<div class="hub-faq-a">Hand-timed 40s are usually 0.2 to 0.3 seconds faster than electronic times because of the timer&#x27;s reaction at the start and finish. Add about 0.24 seconds to compare a hand time with combine results.</div>
+</div>
+</div>

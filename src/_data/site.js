@@ -7,7 +7,7 @@ module.exports = {
     url: "https://athletecalculator.com/about#author",
     bio: "Brian A. is Director of Performance at a top-tier speed school, with decades of coaching and performance work. He reviews the benchmarks behind every calculator on this site and writes its training guidance.",
   },
-  calculators: ["vertical-jump-percentile", "40-yard-dash-calculator", "sprint-speed-calculator", "squat-strength-calculator", "can-i-dunk-calculator", "broad-jump-sprint-speed-calculator"],
+  calculators: ["vertical-jump-percentile", "40-yard-dash-calculator", "ras-calculator", "sprint-speed-calculator", "squat-strength-calculator", "can-i-dunk-calculator", "broad-jump-sprint-speed-calculator"],
   nonArticles: ["index", "articles", "about", "contact", "privacy-policy", "sitemap"],
 
   // "Compare yourself to the pros" link block shown on each calculator,
@@ -34,6 +34,17 @@ module.exports = {
         { url: "/kenneth-walker-iii-combine-profile-chiefs-rushing-record", label: "Kenneth Walker III's 4.38 profile", tag: "NFL" },
         { url: "/travis-kelce-height-wingspan-40-time-vertical-jump", label: "Travis Kelce's 4.61 40 time", tag: "NFL" },
         { url: "/how-to-run-faster-40-yard-dash", label: "How to run a faster 40", tag: "Training" },
+      ],
+    },
+    "ras-calculator": {
+      heading: "See how NFL players tested",
+      links: [
+        { url: "/relative-athletic-score-nfl", label: "RAS explained: what scores mean by position", tag: "Guide" },
+        { url: "/nfl-combine-scores-explained", label: "Every combine test, with good and elite marks", tag: "Benchmark" },
+        { url: "/kenyon-sadiq-eli-stowers-combine-vertical-jump", label: "Kenyon Sadiq's record-setting TE combine", tag: "NFL" },
+        { url: "/travis-hunter-two-way-season-athletic-profile", label: "Travis Hunter's two-way athletic profile", tag: "NFL" },
+        { url: "/jeffery-simmons-bears-trade-athletic-profile", label: "Jeffery Simmons: 305 lbs, 28 bench reps", tag: "NFL" },
+        { url: "/nfl-combine", label: "Everything NFL combine in one place", tag: "Hub" },
       ],
     },
     "sprint-speed-calculator": {
@@ -74,7 +85,7 @@ module.exports = {
       links: [
         { url: "/40-yard-dash-calculator", label: "40-yard dash calculator by NFL position", tag: "Calculator" },
         { url: "/nfl-combine-scores-explained", label: "NFL combine tests explained", tag: "NFL" },
-        { url: "/relative-athletic-score-nfl", label: "Relative Athletic Score (RAS) by position", tag: "NFL" },
+        { url: "/ras-calculator", label: "Estimate your RAS from your combine numbers", tag: "Calculator" },
         { url: "/kenyon-sadiq-eli-stowers-combine-vertical-jump", label: "Kenyon Sadiq's record-setting TE combine", tag: "NFL" },
         { url: "/germie-bernard-combine-profile-steelers-rookie-record", label: "Germie Bernard's 4.48 combine profile", tag: "NFL" },
         { url: "/nfl-combine-2026-position-group-speed-records", label: "2026 combine speed records by position", tag: "NFL" },

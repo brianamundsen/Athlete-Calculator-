@@ -199,6 +199,10 @@
   .ac-author-name { font-family: var(--font-display, sans-serif); font-size: 1.3rem; font-weight: 800; text-transform: uppercase; color: var(--text, #e8edf2); }
   .ac-author p { font-size: 0.92rem; line-height: 1.65; color: var(--text-mid, #8a96a4); margin-top: 0.4rem; }
   .ac-author a { color: var(--accent, #aaff00); text-decoration: none; font-size: 0.85rem; }
+  /* Data chart at the top of article content */
+  .ac-chart { margin: 0 0 2rem; }
+  .ac-chart img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border, #1e2832); }
+  .ac-chart figcaption { font-family: var(--font-mono, monospace); font-size: 0.68rem; letter-spacing: 0.04em; color: var(--text-muted, #5a6470); margin-top: 0.5rem; }
   /* "Compare yourself to the pros" link block on calculator pages */
   .ac-pros { max-width: 780px; margin: 2.5rem auto 1rem; padding: 0 1.25rem; }
   .ac-pros-label { font-family: var(--font-mono, monospace); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #aaff00); margin-bottom: 0.35rem; }
@@ -242,7 +246,8 @@
 {%- set acByline -%}<div class="ac-byline{% if acIsCalc %} ac-byline--center{% endif %}">{% if acIsCalc %}<span>Benchmarks reviewed by <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% else %}<span>By <a href="/about#author">{{ site.author.name }}</a>, {{ site.author.role }}</span>{% endif %}{% if acUpdated %}<span>Updated <time datetime="{{ acUpdated | isoDate }}">{{ acUpdated | readableDate }}</time></span>{% endif %}</div>{%- endset -%}
 {%- set acPro = site.proLinks[acSlug] if acIsCalc else null -%}
 {%- set acProBlock -%}{% if acPro %}<section class="ac-pros" aria-labelledby="ac-pros-h"><div class="ac-pros-label">Keep going</div><h2 id="ac-pros-h" class="ac-pros-h">{{ acPro.heading }}</h2><ul class="ac-pros-grid">{% for l in acPro.links %}<li><a href="{{ l.url }}"><span class="ac-pros-tag">{{ l.tag }}</span><span class="ac-pros-text">{{ l.label }}</span><span class="ac-pros-arrow" aria-hidden="true">→</span></a></li>{% endfor %}</ul></section>{% endif %}{%- endset -%}
-{{ content | afterH1(acByline) | beforeMarker('<div class="article-section">', acProBlock) | safe }}
+{%- set acChart -%}{% if chart %}<figure class="ac-chart"><img src="{{ chart.src }}" alt="{{ chart.alt }}" width="1200" height="630" decoding="async" fetchpriority="high"><figcaption>{{ chart.caption }} · Data from the tables in this article</figcaption></figure>{% endif %}{%- endset -%}
+{{ content | afterH1(acByline) | beforeMarker('<div class="article-section">', acProBlock) | afterMarker('<div class="content">', acChart) | safe }}
 <aside class="ac-author"><div class="ac-author-inner"><div class="ac-author-label">About the author</div><div class="ac-author-name">{{ site.author.name }}</div><p>{{ site.author.bio }}</p><a href="/about#author">More about Brian →</a></div></aside>
 {%- else -%}
 {{ content | safe }}

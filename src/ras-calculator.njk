@@ -1,0 +1,945 @@
+---
+layout: base.njk
+title: "RAS Calculator: Estimate Your Relative Athletic Score"
+description: "Free RAS calculator. Enter your combine numbers and position to estimate your Relative Athletic Score from 0 to 10, with grades for size, speed, explosion, agility and strength."
+canonicalPath: "/ras-calculator"
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --accent-glow: rgba(170,255,0,0.35);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --red: #ff4d4d;
+      --orange: #ff9000;
+      --yellow: #ffd600;
+      --green: #aaff00;
+      --blue: #00cfff;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+  
+    header {
+      padding: 2rem 1.5rem 0;
+      text-align: center;
+    }
+  
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+  
+    h1 span { color: var(--accent); display: block; }
+  
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-top: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+  
+    .site-link {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .site-link:hover { border-color: var(--accent); color: var(--accent); }
+    .site-link strong { color: var(--accent); }
+  
+    .links-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+  
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tabs {
+      display: flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tab {
+      flex: 1;
+      padding: 0.55rem 0.5rem;
+      text-align: center;
+      border-radius: 9px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.15s;
+    }
+  
+    .format-tab.active { background: var(--accent); color: #000; font-weight: 700; }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  
+    @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+  
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+  
+    .field select,
+    .field input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+  
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+  
+    .full { grid-column: 1 / -1; }
+  
+    .calc-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+  
+    .calc-btn:hover { opacity: 0.88; }
+    .calc-btn:active { transform: scale(0.98); }
+  
+    #results { display: none; }
+    #results.visible { display: block; }
+  
+    .gauge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .gauge-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  
+    /* Speed conversions strip */
+    .conversions-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .conv-item { text-align: center; }
+  
+    .conv-val {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent);
+      transition: color 0.5s;
+    }
+  
+    .conv-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+  
+    .gauge-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+  
+    .gauge-track {
+      fill: none;
+      stroke: var(--surface2);
+      stroke-width: 18;
+      stroke-linecap: round;
+    }
+  
+    .gauge-fill {
+      fill: none;
+      stroke-width: 18;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s ease;
+    }
+  
+    .verdict {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+  
+    .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+  
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+  
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .compare-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+  
+    .compare-text { flex: 1; min-width: 0; }
+    .compare-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+    .compare-val { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.1; }
+    .compare-avg { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.15rem; }
+  
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+  
+    .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+    .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+    .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+  
+    .bar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .bar-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+  
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .bar-label { font-size: 0.75rem; color: var(--text-mid); width: 115px; flex-shrink: 0; }
+  
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-you-marker {
+      position: absolute;
+      top: -3px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--accent-glow);
+      transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 58px; text-align: right; flex-shrink: 0; }
+  
+    .scale-strip {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      margin-bottom: 0.5rem;
+    }
+  
+    .scale-strip div { flex: 1; }
+  
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .info-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+  
+    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .info-text strong { color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  
+    .anim { animation: fadeUp 0.5s ease both; }
+    .anim-d1 { animation-delay: 0.05s; }
+    .anim-d2 { animation-delay: 0.15s; }
+    .anim-d3 { animation-delay: 0.25s; }
+    .anim-d4 { animation-delay: 0.35s; }
+  
+    .you-row .bar-fill { background: var(--accent); }
+    .you-row .bar-label { color: var(--accent); font-weight: 600; }
+  
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+    .format-tab { cursor: pointer; }
+    .ht-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .form-note { font-size: 0.8rem; color: var(--text-muted); margin: 1rem 0 0; }
+    .form-error { font-size: 0.85rem; color: var(--red); margin: 0.5rem 0 0; min-height: 1em; }
+    .bar-sub { display: block; font-family: var(--font-mono, monospace); font-size: 0.7rem; color: var(--text-muted); }
+    #cat-wrap .bar-label, #bars-wrap .bar-label { line-height: 1.25; }
+  </style>
+disclaimer:
+  - "Estimated score only. Relative Athletic Score (RAS) was created by Kent Lee Platte; official scores use his full historical database."
+  - "Position norms are approximate NFL combine averages. Not affiliated with the NFL or any athletic organization."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "RAS Calculator",
+    "description": "Free calculator that estimates a Relative Athletic Score (RAS) on the 0–10 scale from NFL combine measurements, with category grades for size, speed, explosion, agility and strength.",
+    "url": "https://athletecalculator.com/ras-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good RAS score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A RAS of 8.0 or higher is considered elite, and 9.0 or higher is exceptional. Most NFL draft prospects score between 4.0 and 7.0. A score around 5.0 is about average for a prospect at that position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Relative Athletic Score calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each combine measurement is converted to a 0 to 10 score based on where it ranks among players at the same position, then the scores are combined into one composite. Size, speed, explosion, agility and strength tests all count, and missing tests are left out rather than scored as zero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many tests do you need for a RAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAS needs at least six measurements to produce a composite score, and height and weight each count as one. More tests give a more reliable score. This calculator follows the same six-measurement minimum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this the official RAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. RAS was created by Kent Lee Platte, and official scores are based on his full historical database of combine and pro day results. This calculator estimates a RAS-style score from approximate position averages, so it can differ from an official score by a point or more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RAS predict NFL success?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only partly. Higher RAS players are drafted earlier and get more chances, and at speed-dependent positions like cornerback and edge rusher a high score is a useful signal. But many great players tested poorly, including Tom Brady and Jerry Rice, so RAS works best alongside film and production."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RAS Calculator",
+        "item": "https://athletecalculator.com/ras-calculator"
+      }
+    ]
+  }
+  </script>
+---
+<header>
+<p class="eyebrow">Free NFL Draft Tool</p>
+<h1>RAS<span>Calculator</span></h1>
+<p class="subtitle">Enter your combine numbers and position to estimate your Relative Athletic Score on the 0–10 scale, with a grade for size, speed, explosion, agility and strength.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="/relative-athletic-score-nfl">
+      ↑ <strong>What Is RAS?</strong> Full Explainer by Position
+    </a>
+<a class="site-link" href="/40-yard-dash-calculator">
+      ↑ <strong>40-Yard Dash</strong> Calculator by Position
+    </a>
+</div>
+<div class="card">
+<p class="card-label">Your Combine Numbers</p>
+<div class="form-grid">
+<div class="field full">
+<label for="pos">Position</label>
+<select id="pos">
+<option value="WR">Wide Receiver</option>
+<option value="CB">Cornerback</option>
+<option value="RB">Running Back</option>
+<option value="S">Safety</option>
+<option value="LB">Linebacker</option>
+<option value="QB">Quarterback</option>
+<option value="TE">Tight End</option>
+<option value="DE">Defensive End / Edge</option>
+<option value="DT">Defensive Tackle</option>
+<option value="OL">Offensive Tackle / Guard</option>
+<option value="C">Center</option>
+</select>
+</div>
+<div class="field">
+<label for="htft">Height</label>
+<div class="ht-row">
+<input id="htft" max="7" min="5" placeholder="ft" step="1" type="number" inputmode="numeric" aria-label="Height feet"/>
+<input id="htin" max="11.875" min="0" placeholder="in" step="0.125" type="number" inputmode="decimal" aria-label="Height inches"/>
+</div>
+</div>
+<div class="field">
+<label for="wt">Weight (lbs)</label>
+<input id="wt" max="400" min="140" placeholder="e.g. 205" step="1" type="number" inputmode="numeric"/>
+</div>
+<div class="field">
+<label for="t40">40-Yard Dash (s)</label>
+<input id="t40" max="6.5" min="4.1" placeholder="e.g. 4.52" step="0.01" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="t10">10-Yard Split (s)</label>
+<input id="t10" max="2.3" min="1.35" placeholder="optional" step="0.01" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="vert">Vertical Jump (in)</label>
+<input id="vert" max="48" min="15" placeholder="e.g. 35.5" step="0.5" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="broad">Broad Jump (in)</label>
+<input id="broad" max="150" min="70" placeholder="e.g. 122" step="1" type="number" inputmode="numeric"/>
+</div>
+<div class="field">
+<label for="cone">3-Cone Drill (s)</label>
+<input id="cone" max="9.5" min="6.2" placeholder="optional" step="0.01" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="shuttle">20-Yard Shuttle (s)</label>
+<input id="shuttle" max="6" min="3.7" placeholder="optional" step="0.01" type="number" inputmode="decimal"/>
+</div>
+<div class="field full">
+<label for="bench">225 lb Bench Reps</label>
+<input id="bench" max="50" min="0" placeholder="optional" step="1" type="number" inputmode="numeric"/>
+</div>
+</div>
+<p class="form-note">Enter at least 6 measurements. Height and weight each count as one.</p>
+<p class="form-error" id="form-error" role="alert"></p>
+<button class="calc-btn" type="button" onclick="calculate()">Calculate My RAS →</button>
+</div>
+<div id="results">
+<div class="gauge-card anim anim-d1">
+<svg class="gauge-svg" style="display:block;margin:0 auto 1.5rem;width:260px;height:140px;" viewbox="0 0 260 140">
+<path class="gauge-track" d="M 20 130 A 110 110 0 0 1 240 130"></path>
+<path class="gauge-fill" d="M 20 130 A 110 110 0 0 1 240 130" id="gauge-path" stroke="var(--accent)" stroke-dasharray="345" stroke-dashoffset="345"></path>
+<text fill="var(--accent)" font-family="'Barlow Condensed', sans-serif" font-size="62" font-weight="900" id="gauge-num" text-anchor="middle" x="130" y="108">—</text>
+<text fill="var(--text-muted)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2" text-anchor="middle" x="130" y="128">ESTIMATED RAS</text>
+</svg>
+<div class="verdict" id="verdict">—</div>
+<div class="verdict-sub" id="verdict-sub">—</div>
+</div>
+<div class="bar-card anim anim-d2">
+<div class="bar-card-title">Category Grades (0–10)</div>
+<div id="cat-wrap"></div>
+</div>
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">Every Measurement Scored</div>
+<div id="bars-wrap"></div>
+</div>
+<div class="info-card anim anim-d4">
+<div class="info-icon">🏈</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<div class="article-section">
+<h2>How This RAS Calculator Works</h2>
+<p>Relative Athletic Score puts every combine measurement on a <strong>0 to 10 scale</strong> against players at the same position, then combines them into one number. A 5.0 is roughly average for an NFL draft prospect at that position. A 9.0 means you tested better than about 90% of them.</p>
+<p>This calculator scores each test you enter against approximate position averages and spreads drawn from NFL combine results, then averages the scores. Faster times score higher. For height, weight, jumps and bench reps, bigger numbers score higher.</p>
+<p><strong>This is an estimate, not an official RAS.</strong> RAS was created by Kent Lee Platte, whose official scores use a full historical database of every combine and pro day result. Your number here should land in the same neighborhood, but it can differ by a point or more, especially for unusual body types. For the full background, see our <a href="/relative-athletic-score-nfl">Relative Athletic Score explainer</a>.</p>
+<h2>RAS Score Tiers</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr><th>Score</th><th>Tier</th><th>What It Means</th></tr>
+</thead>
+<tbody>
+<tr class="highlight"><td>9.0–10.0</td><td>Exceptional</td><td>Rare athlete for the position; top 10%</td></tr>
+<tr class="highlight"><td>8.0–8.9</td><td>Elite</td><td>Clearly above NFL draft standard</td></tr>
+<tr><td>7.0–7.9</td><td>Above Average</td><td>Good athlete for the position</td></tr>
+<tr><td>5.5–6.9</td><td>Solid</td><td>Average to slightly above for a draft prospect</td></tr>
+<tr><td>4.0–5.4</td><td>Below Average</td><td>Needs skill or production to make up the gap</td></tr>
+<tr><td>0.0–3.9</td><td>Poor</td><td>Well below the position's testing norms</td></tr>
+</tbody>
+</table></div>
+<h2>What Goes Into the Score</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr><th>Category</th><th>Tests</th><th>What It Captures</th></tr>
+</thead>
+<tbody>
+<tr><td>Size</td><td>Height, weight</td><td>Frame relative to the position</td></tr>
+<tr><td>Speed</td><td>40-yard dash, 10-yard split</td><td>Acceleration and straight-line speed</td></tr>
+<tr><td>Explosion</td><td>Vertical jump, broad jump</td><td>Lower-body power</td></tr>
+<tr><td>Agility</td><td>3-cone drill, 20-yard shuttle</td><td>Change of direction</td></tr>
+<tr><td>Strength</td><td>225 lb bench press</td><td>Upper-body strength endurance</td></tr>
+</tbody>
+</table></div>
+<h2>Using RAS as a High School or College Athlete</h2>
+<p>RAS compares you to <strong>NFL draft prospects</strong>, who are already the top fraction of a percent of football players. A high school junior scoring a 3 or 4 is not slow; it means there is a gap between today's numbers and NFL testing standards. Use it to see which categories are furthest behind. To compare against your own level, try the <a href="/40-yard-dash-calculator">40-yard dash calculator</a> with the high school setting, or the <a href="/vertical-jump-percentile">vertical jump percentile calculator</a>.</p>
+<h2>How to Raise Your RAS</h2>
+<p>The fastest gains usually come from the categories with the lowest grades. <strong>Explosion</strong> responds well to 8–12 weeks of jump training and heavy lower-body strength work, as laid out in our <a href="/how-to-increase-vertical-jump">vertical jump program</a>. <strong>Speed</strong> improves most through start mechanics and acceleration work, covered in our <a href="/how-to-run-faster-40-yard-dash">guide to running a faster 40</a>. <strong>Agility</strong> drills are highly technical, so practicing the exact 3-cone and shuttle patterns often takes off a tenth or more on its own.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">What is a good RAS score?</div>
+<div class="faq-a">A RAS of 8.0 or higher is considered elite, and 9.0 or higher is exceptional. Most NFL draft prospects score between 4.0 and 7.0. A score around 5.0 is about average for a prospect at that position.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How is Relative Athletic Score calculated?</div>
+<div class="faq-a">Each combine measurement is converted to a 0 to 10 score based on where it ranks among players at the same position, then the scores are combined into one composite. Size, speed, explosion, agility and strength tests all count, and missing tests are left out rather than scored as zero.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many tests do you need for a RAS?</div>
+<div class="faq-a">RAS needs at least six measurements to produce a composite score, and height and weight each count as one. More tests give a more reliable score. This calculator follows the same six-measurement minimum.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is this the official RAS?</div>
+<div class="faq-a">No. RAS was created by Kent Lee Platte, and official scores are based on his full historical database of combine and pro day results. This calculator estimates a RAS-style score from approximate position averages, so it can differ from an official score by a point or more.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does RAS predict NFL success?</div>
+<div class="faq-a">Only partly. Higher RAS players are drafted earlier and get more chances, and at speed-dependent positions like cornerback and edge rusher a high score is a useful signal. But many great players tested poorly, including Tom Brady and Jerry Rice, so RAS works best alongside film and production.</div>
+</div>
+</div>
+</div><script>
+// Approximate NFL combine norms by position: [mean, sd]. Times: lower is better.
+// Height in inches, weight in lbs, jumps in inches, bench in reps.
+const NORMS = {
+  WR: { name: 'Wide Receiver',    ht: [72.6, 2.4], wt: [201, 14], t40: [4.48, 0.09], t10: [1.56, 0.05], vert: [36.5, 3.0], broad: [122, 6.0], cone: [6.95, 0.18], shuttle: [4.25, 0.13], bench: [14, 4.0] },
+  CB: { name: 'Cornerback',       ht: [71.2, 1.6], wt: [193, 9],  t40: [4.47, 0.08], t10: [1.55, 0.05], vert: [36.0, 2.9], broad: [122, 5.5], cone: [6.95, 0.17], shuttle: [4.20, 0.12], bench: [14, 4.0] },
+  RB: { name: 'Running Back',     ht: [70.3, 1.8], wt: [214, 12], t40: [4.49, 0.09], t10: [1.56, 0.05], vert: [35.0, 3.0], broad: [121, 5.5], cone: [7.05, 0.18], shuttle: [4.27, 0.13], bench: [19, 4.5] },
+  S:  { name: 'Safety',           ht: [72.0, 1.6], wt: [205, 9],  t40: [4.53, 0.09], t10: [1.57, 0.05], vert: [35.0, 3.0], broad: [119, 5.5], cone: [6.98, 0.17], shuttle: [4.22, 0.12], bench: [16, 4.0] },
+  LB: { name: 'Linebacker',       ht: [73.6, 1.4], wt: [238, 10], t40: [4.68, 0.11], t10: [1.62, 0.05], vert: [33.0, 3.0], broad: [116, 5.5], cone: [7.08, 0.18], shuttle: [4.27, 0.13], bench: [22, 4.0] },
+  QB: { name: 'Quarterback',      ht: [74.6, 1.6], wt: [222, 11], t40: [4.71, 0.14], t10: [1.63, 0.06], vert: [31.0, 3.2], broad: [112, 6.0], cone: [7.10, 0.20], shuttle: [4.30, 0.15], bench: [18, 4.5] },
+  TE: { name: 'Tight End',        ht: [76.3, 1.2], wt: [252, 8],  t40: [4.70, 0.11], t10: [1.63, 0.05], vert: [32.0, 3.2], broad: [115, 6.0], cone: [7.15, 0.20], shuttle: [4.37, 0.14], bench: [20, 4.0] },
+  DE: { name: 'Defensive End',    ht: [75.8, 1.3], wt: [263, 12], t40: [4.74, 0.11], t10: [1.65, 0.05], vert: [31.0, 3.0], broad: [113, 6.0], cone: [7.25, 0.20], shuttle: [4.42, 0.15], bench: [24, 4.5] },
+  DT: { name: 'Defensive Tackle', ht: [75.2, 1.3], wt: [305, 14], t40: [4.99, 0.12], t10: [1.73, 0.06], vert: [28.0, 3.0], broad: [107, 6.0], cone: [7.60, 0.20], shuttle: [4.62, 0.15], bench: [28, 5.0] },
+  OL: { name: 'Offensive Tackle / Guard', ht: [77.0, 1.3], wt: [312, 11], t40: [5.10, 0.14], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.75, 0.20], shuttle: [4.70, 0.15], bench: [25, 4.5] },
+  C:  { name: 'Center',           ht: [75.3, 1.0], wt: [302, 9],  t40: [5.15, 0.13], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.65, 0.20], shuttle: [4.62, 0.15], bench: [26, 4.5] },
+};
+const METRICS = [
+  { key: 'ht',      label: 'Height',        cat: 'Size',      lower: false, fmt: v => `${Math.floor(v / 12)}'${(v % 12).toFixed(v % 1 ? 2 : 0).replace(/\.?0+$/, '')}"` },
+  { key: 'wt',      label: 'Weight',        cat: 'Size',      lower: false, fmt: v => `${v} lb` },
+  { key: 't40',     label: '40-Yard Dash',  cat: 'Speed',     lower: true,  fmt: v => `${v.toFixed(2)}s` },
+  { key: 't10',     label: '10-Yard Split', cat: 'Speed',     lower: true,  fmt: v => `${v.toFixed(2)}s` },
+  { key: 'vert',    label: 'Vertical',      cat: 'Explosion', lower: false, fmt: v => `${v}"` },
+  { key: 'broad',   label: 'Broad Jump',    cat: 'Explosion', lower: false, fmt: v => `${Math.floor(v / 12)}'${Math.round(v % 12)}"` },
+  { key: 'cone',    label: '3-Cone',        cat: 'Agility',   lower: true,  fmt: v => `${v.toFixed(2)}s` },
+  { key: 'shuttle', label: 'Shuttle',       cat: 'Agility',   lower: true,  fmt: v => `${v.toFixed(2)}s` },
+  { key: 'bench',   label: 'Bench Reps',    cat: 'Strength',  lower: false, fmt: v => `${v}` },
+];
+const CATS = ['Size', 'Speed', 'Explosion', 'Agility', 'Strength'];
+const TIERS = [
+  { min: 9.0, label: 'Exceptional' },
+  { min: 8.0, label: 'Elite' },
+  { min: 7.0, label: 'Above Average' },
+  { min: 5.5, label: 'Solid' },
+  { min: 4.0, label: 'Below Average' },
+  { min: 0,   label: 'Poor' },
+];
+
+// Standard normal CDF (Abramowitz-Stegun approximation)
+function phi(z) {
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989423 * Math.exp(-z * z / 2);
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+  return z > 0 ? 1 - p : p;
+}
+function score(v, [mean, sd], lower) {
+  const z = lower ? (mean - v) / sd : (v - mean) / sd;
+  return Math.max(0, Math.min(10, phi(z) * 10));
+}
+function color(s) {
+  if (s >= 9) return '#00cfff';
+  if (s >= 8) return '#aaff00';
+  if (s >= 7) return '#9dff00';
+  if (s >= 5.5) return '#ffd600';
+  if (s >= 4) return '#ff9000';
+  return '#ff4d4d';
+}
+function num(id) { const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? null : v; }
+
+function calculate() {
+  const err = document.getElementById('form-error');
+  err.textContent = '';
+  const posKey = document.getElementById('pos').value;
+  const norms = NORMS[posKey];
+  const ft = num('htft'), inch = num('htin');
+  const vals = {
+    ht: ft !== null ? ft * 12 + (inch || 0) : null,
+    wt: num('wt'), t40: num('t40'), t10: num('t10'), vert: num('vert'),
+    broad: num('broad'), cone: num('cone'), shuttle: num('shuttle'), bench: num('bench'),
+  };
+  const scored = METRICS.filter(m => vals[m.key] !== null && (vals[m.key] > 0 || m.key === 'bench'))
+    .map(m => ({ ...m, v: vals[m.key], s: score(vals[m.key], norms[m.key], m.lower) }));
+  if (scored.length < 6) {
+    err.textContent = `Enter at least 6 measurements. You have ${scored.length}.`;
+    return;
+  }
+
+  // Category grades = mean of that category's scores; composite = mean of category grades
+  const cats = CATS.map(c => {
+    const list = scored.filter(m => m.cat === c);
+    return { cat: c, s: list.length ? list.reduce((a, m) => a + m.s, 0) / list.length : null };
+  });
+  const have = cats.filter(c => c.s !== null);
+  const ras = have.reduce((a, c) => a + c.s, 0) / have.length;
+  const tier = TIERS.find(t => ras >= t.min);
+  const col = color(ras);
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => { el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; });
+
+  const gaugeNum = document.getElementById('gauge-num');
+  const gaugePath = document.getElementById('gauge-path');
+  gaugePath.style.stroke = col;
+  gaugePath.style.strokeDashoffset = 345;
+  setTimeout(() => { gaugePath.style.strokeDashoffset = 345 - (ras / 10) * 345; }, 50);
+  gaugeNum.textContent = ras.toFixed(2);
+  gaugeNum.style.fill = col;
+
+  document.getElementById('verdict').textContent = tier.label;
+  document.getElementById('verdict').style.color = col;
+  document.getElementById('verdict-sub').textContent =
+    `Estimated RAS of ${ras.toFixed(2)} for a ${norms.name.toLowerCase()}, from ${scored.length} measurements. That tests better than about ${Math.round(ras * 10)}% of NFL draft prospects at the position.`;
+
+  const row = (label, s, valText, highlight) => `<div class="bar-row${highlight ? ' you-row' : ''}">
+      <div class="bar-label">${label}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:0%;background:${color(s)}" data-w="${Math.max(3, s * 10)}"></div></div>
+      <div class="bar-val">${valText}</div></div>`;
+  document.getElementById('cat-wrap').innerHTML = cats.map(c =>
+    c.s === null ? `<div class="bar-row"><div class="bar-label">${c.cat}</div><div class="bar-track"></div><div class="bar-val">—</div></div>`
+      : row(c.cat, c.s, c.s.toFixed(1), false)).join('');
+  document.getElementById('bars-wrap').innerHTML = scored.map(m =>
+    row(`${m.label} <span class="bar-sub">${m.fmt(m.v)}</span>`, m.s, m.s.toFixed(1), false)).join('');
+  setTimeout(() => { document.querySelectorAll('#results .bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; }); }, 100);
+
+  const best = have.reduce((a, c) => c.s > a.s ? c : a);
+  const worst = have.reduce((a, c) => c.s < a.s ? c : a);
+  const missing = METRICS.filter(m => !scored.find(x => x.key === m.key)).map(m => m.label.toLowerCase());
+  let tip = `<strong>Best category:</strong> ${best.cat} (${best.s.toFixed(1)}). <strong>Biggest opportunity:</strong> ${worst.cat} (${worst.s.toFixed(1)}). `;
+  const advice = {
+    Speed: 'Start mechanics and resisted sprints are the quickest way to lower your 10-yard split and 40.',
+    Explosion: 'An 8–12 week block of heavy squats plus jump training usually adds inches to both jumps.',
+    Agility: 'Rehearse the exact 3-cone and shuttle patterns; technique alone often cuts a tenth.',
+    Strength: 'A dedicated bench block with sets of 15–25 reps at 225 builds rep endurance fast.',
+    Size: 'Size is mostly frame. Adding lean mass helps only if your speed and jumps hold up.',
+  };
+  tip += advice[worst.cat];
+  if (missing.length) tip += ` Adding your ${missing.slice(0, 3).join(', ')} would make the estimate more reliable.`;
+  document.getElementById('tip-text').innerHTML = tip;
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  if (typeof gtag === 'function') gtag('event', 'calculator_use', { calculator_name: 'ras' });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>

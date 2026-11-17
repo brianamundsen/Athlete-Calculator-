@@ -34,6 +34,15 @@ module.exports = function (eleventyConfig) {
     return content.slice(0, i + 5) + snippet + content.slice(i + 5);
   });
 
+  // Insert an HTML snippet right after the first occurrence of `marker`
+  // (leaves content unchanged if the marker is missing).
+  eleventyConfig.addFilter("afterMarker", (content, marker, snippet) => {
+    if (!snippet || typeof content !== "string") return content;
+    const i = content.indexOf(marker);
+    if (i === -1) return content;
+    return content.slice(0, i + marker.length) + snippet + content.slice(i + marker.length);
+  });
+
   // Insert an HTML snippet right before the first occurrence of `marker`
   // (falls back to appending at the end if the marker is missing).
   eleventyConfig.addFilter("beforeMarker", (content, marker, snippet) => {
