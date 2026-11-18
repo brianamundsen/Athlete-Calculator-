@@ -1,0 +1,899 @@
+---
+layout: base.njk
+title: "1 Rep Max Calculator: Estimate Your 1RM for Any Lift"
+description: "Free 1 rep max calculator for squat, bench, deadlift and power clean. Get your estimated 1RM, a training percentage chart and your strength level for your bodyweight."
+canonicalPath: "/one-rep-max-calculator"
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --accent-glow: rgba(170,255,0,0.35);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --red: #ff4d4d;
+      --orange: #ff9000;
+      --yellow: #ffd600;
+      --green: #aaff00;
+      --blue: #00cfff;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+  
+    header {
+      padding: 2rem 1.5rem 0;
+      text-align: center;
+    }
+  
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+  
+    h1 span { color: var(--accent); display: block; }
+  
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-top: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+  
+    .site-link {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .site-link:hover { border-color: var(--accent); color: var(--accent); }
+    .site-link strong { color: var(--accent); }
+  
+    .links-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 500px) { .links-row { grid-template-columns: 1fr; } }
+  
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tabs {
+      display: flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 1.25rem;
+    }
+  
+    .format-tab {
+      flex: 1;
+      padding: 0.55rem 0.5rem;
+      text-align: center;
+      border-radius: 9px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.15s;
+    }
+  
+    .format-tab.active { background: var(--accent); color: #000; font-weight: 700; }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  
+    @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+  
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+  
+    .field select,
+    .field input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      appearance: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+  
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+  
+    .full { grid-column: 1 / -1; }
+  
+    .calc-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+  
+    .calc-btn:hover { opacity: 0.88; }
+    .calc-btn:active { transform: scale(0.98); }
+  
+    #results { display: none; }
+    #results.visible { display: block; }
+  
+    .gauge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .gauge-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  
+    /* Speed conversions strip */
+    .conversions-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .conv-item { text-align: center; }
+  
+    .conv-val {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent);
+      transition: color 0.5s;
+    }
+  
+    .conv-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+  
+    .gauge-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+  
+    .gauge-track {
+      fill: none;
+      stroke: var(--surface2);
+      stroke-width: 18;
+      stroke-linecap: round;
+    }
+  
+    .gauge-fill {
+      fill: none;
+      stroke-width: 18;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s ease;
+    }
+  
+    .verdict {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+  
+    .verdict-sub { font-size: 0.9rem; color: var(--text-mid); }
+  
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    @media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+  
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .compare-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+  
+    .compare-text { flex: 1; min-width: 0; }
+    .compare-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.2rem; }
+    .compare-val { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.1; }
+    .compare-avg { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.15rem; }
+  
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+  
+    .badge-above { background: rgba(170,255,0,0.15); color: var(--accent); }
+    .badge-at    { background: rgba(255,214,0,0.15); color: var(--yellow); }
+    .badge-below { background: rgba(255,77,77,0.12); color: var(--red); }
+  
+    .bar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .bar-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+  
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+  
+    .bar-label { font-size: 0.75rem; color: var(--text-mid); width: 115px; flex-shrink: 0; }
+  
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--surface2);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-you-marker {
+      position: absolute;
+      top: -3px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--accent-glow);
+      transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .bar-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-mid); width: 58px; text-align: right; flex-shrink: 0; }
+  
+    .scale-strip {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      margin-bottom: 0.5rem;
+    }
+  
+    .scale-strip div { flex: 1; }
+  
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .info-card {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+  
+    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .info-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .info-text strong { color: var(--accent); }
+  
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  
+    .anim { animation: fadeUp 0.5s ease both; }
+    .anim-d1 { animation-delay: 0.05s; }
+    .anim-d2 { animation-delay: 0.15s; }
+    .anim-d3 { animation-delay: 0.25s; }
+    .anim-d4 { animation-delay: 0.35s; }
+  
+    .you-row .bar-fill { background: var(--accent); }
+    .you-row .bar-label { color: var(--accent); font-weight: 600; }
+  
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .article-section h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .article-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+  
+    .article-section p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .article-section p strong { color: var(--text); }
+    .article-section a { color: var(--accent); text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+  
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead { background: var(--surface2); }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+    .data-table .highlight td { background: rgba(170,255,0,0.07); }
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a a { color: var(--accent); }
+    .format-tab { cursor: pointer; }
+    .form-error { font-size: 0.85rem; color: var(--red); margin: 0.75rem 0 0; min-height: 1em; }
+    .orm-label { font-family: var(--font-mono, monospace); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); text-align: center; margin: 0 0 0.25rem; }
+    .orm-big { font-family: var(--font-display, sans-serif); font-weight: 900; font-size: 4.5rem; line-height: 1; color: var(--accent); text-align: center; margin-bottom: 1.25rem; }
+    .pct-table td:nth-child(2) { color: var(--text); font-weight: 600; }
+    .pct-table th, .pct-table td { white-space: nowrap; }
+    @media (max-width: 560px) { .pct-table th:nth-child(4), .pct-table td:nth-child(4) { display: none; } }
+    #level-card .bar-label { min-width: 7.5rem; }
+    #level-card .bar-val { white-space: nowrap; min-width: 5.5rem; text-align: right; }
+  </style>
+disclaimer:
+  - "Estimates only. Strength levels are approximate targets for athletes, not competition standards."
+  - "Max testing should be supervised, with a spotter or safety bars. Not medical advice."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "1 Rep Max Calculator",
+    "description": "Free one-rep max calculator for squat, bench press, deadlift and power clean. Averages the Epley, Brzycki and Lombardi formulas, gives a training percentage chart and a strength level by bodyweight.",
+    "url": "https://athletecalculator.com/one-rep-max-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Athlete Calculator"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate your one rep max?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lift a weight you can handle for 2 to 10 good reps, then plug the weight and reps into a formula. The Epley formula is weight × (1 + reps ÷ 30), so 225 pounds for 5 reps estimates a 1RM of about 263 pounds. This calculator averages the Epley, Brzycki and Lombardi formulas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are 1RM calculators?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From a hard set of 10 reps or fewer, estimates usually land within about 5% of a true max. Accuracy drops at higher reps because muscular endurance varies a lot between people. The closer your set is to 1 to 5 reps, the better the estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good bench press for my bodyweight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For male athletes, benching about 1.0 times bodyweight is a solid college-athlete level, and 1.4 times bodyweight is strong. For female athletes, about 0.65 times bodyweight is a solid college-athlete level and 0.9 times is strong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage of my 1RM should I train at?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For maximal strength, work at 85 to 95 percent for 1 to 5 reps. For building muscle, 70 to 85 percent for 6 to 12 reps. For speed and power, 30 to 60 percent moved as fast as possible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should you test your 1 rep max?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most athletes test or re-estimate every 6 to 12 weeks, usually at the end of a training block. Re-estimating from a heavy set of 3 to 5 reps works just as well for updating training percentages."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Strength & Power",
+        "item": "https://athletecalculator.com/strength-power"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "1 Rep Max Calculator",
+        "item": "https://athletecalculator.com/one-rep-max-calculator"
+      }
+    ]
+  }
+  </script>
+---
+<header>
+<p class="eyebrow">Free Strength Tool</p>
+<h1>1 Rep Max<span>Calculator</span></h1>
+<p class="subtitle">Enter a weight and how many reps you did to estimate your one-rep max. You'll also get a training percentage chart and your strength level relative to bodyweight.</p>
+</header><div class="container">
+<div class="links-row">
+<a class="site-link" href="/squat-strength-calculator">
+      ↑ <strong>Squat Strength</strong> to Vertical &amp; Speed
+    </a>
+<a class="site-link" href="/strength-power">
+      ↑ <strong>Strength &amp; Power</strong> Hub
+    </a>
+</div>
+<div class="card">
+<p class="card-label">Your Set</p>
+<div class="format-tabs" role="group" aria-label="Units">
+<button class="format-tab active" type="button" onclick="setUnit('lb', this)">Pounds (lb)</button>
+<button class="format-tab" type="button" onclick="setUnit('kg', this)">Kilograms (kg)</button>
+</div>
+<div class="form-grid">
+<div class="field">
+<label for="lift">Lift</label>
+<select id="lift">
+<option value="squat">Back Squat</option>
+<option value="bench">Bench Press</option>
+<option value="deadlift">Deadlift</option>
+<option value="clean">Power Clean</option>
+</select>
+</div>
+<div class="field">
+<label for="sex">Sex</label>
+<select id="sex">
+<option value="m">Male</option>
+<option value="f">Female</option>
+</select>
+</div>
+<div class="field">
+<label for="w">Weight Lifted (<span class="unit-lbl">lb</span>)</label>
+<input id="w" max="1500" min="1" placeholder="e.g. 225" step="0.5" type="number" inputmode="decimal"/>
+</div>
+<div class="field">
+<label for="reps">Reps Completed</label>
+<input id="reps" max="15" min="1" placeholder="1–15" step="1" type="number" inputmode="numeric"/>
+</div>
+<div class="field full">
+<label for="bw">Bodyweight (<span class="unit-lbl">lb</span>, optional, for strength level)</label>
+<input id="bw" max="500" min="60" placeholder="e.g. 185" step="0.5" type="number" inputmode="decimal"/>
+</div>
+</div>
+<p class="form-error" id="form-error" role="alert"></p>
+<button class="calc-btn" type="button" onclick="calculate()">Estimate My 1RM →</button>
+</div>
+<div id="results">
+<div class="gauge-card anim anim-d1">
+<p class="orm-label">Estimated 1 Rep Max</p>
+<div class="orm-big" id="orm-big">—</div>
+<div class="conversions-row" id="formula-row"></div>
+<div class="verdict" id="verdict"></div>
+<div class="verdict-sub" id="verdict-sub"></div>
+</div>
+<div class="bar-card anim anim-d2" id="level-card">
+<div class="bar-card-title">Strength Level (× Bodyweight)</div>
+<div id="level-wrap"></div>
+</div>
+<div class="bar-card anim anim-d3">
+<div class="bar-card-title">Training Percentage Chart</div>
+<div class="table-scroll"><table class="data-table pct-table">
+<thead><tr><th>% of 1RM</th><th>Weight</th><th>Reps (approx.)</th><th>Use For</th></tr></thead>
+<tbody id="pct-body"></tbody>
+</table></div>
+</div>
+<div class="info-card anim anim-d4">
+<div class="info-icon">🏋️</div>
+<div class="info-text" id="tip-text">—</div>
+</div>
+</div>
+<div class="article-section">
+<h2>How This 1 Rep Max Calculator Works</h2>
+<p>Your one-rep max (1RM) is the most weight you can lift for a single rep with good form. Testing it directly is tiring and carries more injury risk, so most coaches estimate it from a heavy set of 2 to 10 reps instead.</p>
+<p>This calculator averages three of the most widely used formulas, <strong>Epley</strong>, <strong>Brzycki</strong> and <strong>Lombardi</strong>, and shows each one so you can see how close they agree. Estimates are most accurate from sets of <strong>10 reps or fewer</strong>, taken close to failure. Past 10 reps the formulas drift apart, so the calculator flags those results as rough.</p>
+<h2>1RM Formulas</h2>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Formula</th><th>Equation</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Epley</td><td>weight × (1 + reps ÷ 30)</td><td>Most common; reads slightly high at low reps</td></tr>
+<tr><td>Brzycki</td><td>weight × 36 ÷ (37 − reps)</td><td>Accurate up to about 10 reps</td></tr>
+<tr><td>Lombardi</td><td>weight × reps<sup>0.10</sup></td><td>Conservative at higher reps</td></tr>
+</tbody>
+</table></div>
+<h2>Strength Standards for Athletes</h2>
+<p>These levels compare your estimated 1RM with your bodyweight. They are approximate targets for athletes, not powerlifting competition standards. The squat levels match the ones used on our <a href="/squat-strength-calculator">squat strength calculator</a>.</p>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Lift (Male)</th><th>HS Athlete</th><th>College Athlete</th><th>Strong</th><th>Elite</th></tr></thead>
+<tbody>
+<tr><td>Back Squat</td><td>1.0×</td><td>1.4×</td><td>2.0×</td><td>2.5×</td></tr>
+<tr><td>Bench Press</td><td>0.75×</td><td>1.0×</td><td>1.4×</td><td>1.75×</td></tr>
+<tr><td>Deadlift</td><td>1.25×</td><td>1.75×</td><td>2.25×</td><td>2.75×</td></tr>
+<tr><td>Power Clean</td><td>0.75×</td><td>1.0×</td><td>1.3×</td><td>1.5×</td></tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Lift (Female)</th><th>HS Athlete</th><th>College Athlete</th><th>Strong</th><th>Elite</th></tr></thead>
+<tbody>
+<tr><td>Back Squat</td><td>0.8×</td><td>1.1×</td><td>1.5×</td><td>1.8×</td></tr>
+<tr><td>Bench Press</td><td>0.5×</td><td>0.65×</td><td>0.9×</td><td>1.1×</td></tr>
+<tr><td>Deadlift</td><td>1.0×</td><td>1.3×</td><td>1.75×</td><td>2.2×</td></tr>
+<tr><td>Power Clean</td><td>0.5×</td><td>0.7×</td><td>0.9×</td><td>1.1×</td></tr>
+</tbody>
+</table></div>
+<h2>Using Percentages to Program Your Training</h2>
+<p>Once you know your 1RM, percentages make it easy to pick the right load. Heavy work at <strong>85–95%</strong> builds maximal strength. The <strong>70–85%</strong> range for sets of 5 to 10 builds muscle and work capacity. Speed and power work, like jump squats and fast cleans, usually sits at <strong>30–60%</strong>, moved as fast as possible. For athletes, strength is the base and speed is the goal; see how strength carries over in <a href="/squat-strength-sprint-speed">does squat strength make you faster</a>.</p>
+<h2>Should Young Athletes Test a True 1RM?</h2>
+<p>For most high school athletes, an estimated max from a set of 3 to 5 reps is the better choice. It gives coaches a reliable number for programming without the fatigue and technical breakdown of a true max attempt. Any max testing should be supervised, with a spotter or safety bars, and only after the athlete has solid technique on the lift.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">How do you calculate your one rep max?</div>
+<div class="faq-a">Lift a weight you can handle for 2 to 10 good reps, then plug the weight and reps into a formula. The Epley formula is weight × (1 + reps ÷ 30), so 225 pounds for 5 reps estimates a 1RM of about 263 pounds. This calculator averages the Epley, Brzycki and Lombardi formulas.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How accurate are 1RM calculators?</div>
+<div class="faq-a">From a hard set of 10 reps or fewer, estimates usually land within about 5% of a true max. Accuracy drops at higher reps because muscular endurance varies a lot between people. The closer your set is to 1 to 5 reps, the better the estimate.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is a good bench press for my bodyweight?</div>
+<div class="faq-a">For male athletes, benching about 1.0 times bodyweight is a solid college-athlete level, and 1.4 times bodyweight is strong. For female athletes, about 0.65 times bodyweight is a solid college-athlete level and 0.9 times is strong.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What percentage of my 1RM should I train at?</div>
+<div class="faq-a">For maximal strength, work at 85 to 95 percent for 1 to 5 reps. For building muscle, 70 to 85 percent for 6 to 12 reps. For speed and power, 30 to 60 percent moved as fast as possible.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How often should you test your 1 rep max?</div>
+<div class="faq-a">Most athletes test or re-estimate every 6 to 12 weeks, usually at the end of a training block. Re-estimating from a heavy set of 3 to 5 reps works just as well for updating training percentages.</div>
+</div>
+</div>
+</div><script>
+let unit = 'lb';
+function setUnit(u, btn) {
+  unit = u;
+  document.querySelectorAll('.format-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.unit-lbl').forEach(el => el.textContent = u);
+}
+
+// Strength levels as × bodyweight: lower bounds for HS athlete, college athlete, strong, elite
+const STANDARDS = {
+  m: { squat: [1.0, 1.4, 2.0, 2.5], bench: [0.75, 1.0, 1.4, 1.75], deadlift: [1.25, 1.75, 2.25, 2.75], clean: [0.75, 1.0, 1.3, 1.5] },
+  f: { squat: [0.8, 1.1, 1.5, 1.8], bench: [0.5, 0.65, 0.9, 1.1], deadlift: [1.0, 1.3, 1.75, 2.2], clean: [0.5, 0.7, 0.9, 1.1] },
+};
+const LEVELS = ['Untrained', 'HS Athlete', 'College Athlete', 'Strong', 'Elite'];
+const LIFT_NAME = { squat: 'back squat', bench: 'bench press', deadlift: 'deadlift', clean: 'power clean' };
+const PCTS = [
+  [100, '1', 'Max strength'], [95, '2', 'Max strength'], [90, '3–4', 'Max strength'], [85, '5–6', 'Strength'],
+  [80, '7–8', 'Strength / muscle'], [75, '9–10', 'Muscle'], [70, '11–12', 'Muscle / work capacity'],
+  [65, '13–15', 'Technique / volume'], [60, '15+', 'Speed-strength'], [50, '—', 'Power / speed work'],
+];
+
+function round(v) {
+  const step = unit === 'lb' ? 5 : 2.5;
+  return Math.round(v / step) * step;
+}
+function fmt(v) { return `${Math.round(v * 10) / 10} ${unit}`; }
+
+function calculate() {
+  const err = document.getElementById('form-error');
+  err.textContent = '';
+  const w = parseFloat(document.getElementById('w').value);
+  const r = parseInt(document.getElementById('reps').value, 10);
+  const bw = parseFloat(document.getElementById('bw').value);
+  const lift = document.getElementById('lift').value;
+  const sex = document.getElementById('sex').value;
+  if (isNaN(w) || w <= 0) { err.textContent = 'Enter the weight you lifted.'; return; }
+  if (isNaN(r) || r < 1 || r > 15) { err.textContent = 'Enter reps between 1 and 15.'; return; }
+
+  const epley = r === 1 ? w : w * (1 + r / 30);
+  const brzycki = w * 36 / (37 - r);
+  const lombardi = w * Math.pow(r, 0.10);
+  const orm = (epley + brzycki + lombardi) / 3;
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.querySelectorAll('.anim').forEach(el => { el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; });
+
+  document.getElementById('orm-big').textContent = `${Math.round(orm)} ${unit}`;
+  document.getElementById('formula-row').innerHTML = [['Epley', epley], ['Brzycki', brzycki], ['Lombardi', lombardi]]
+    .map(([n, v]) => `<div class="conv-item"><div class="conv-val">${Math.round(v)}</div><div class="conv-label">${n}</div></div>`).join('');
+
+  // Strength level
+  const levelCard = document.getElementById('level-card');
+  let verdict = '', sub = '';
+  if (!isNaN(bw) && bw > 0) {
+    const ratio = orm / bw;
+    const std = STANDARDS[sex][lift];
+    let lvl = 0;
+    std.forEach((t, i) => { if (ratio >= t) lvl = i + 1; });
+    verdict = LEVELS[lvl];
+    const next = lvl < 4 ? std[lvl] : null;
+    sub = `${ratio.toFixed(2)}× bodyweight on the ${LIFT_NAME[lift]}.` +
+      (next ? ` ${LEVELS[lvl + 1]} starts at ${next}× — about ${Math.ceil(next * bw - orm)} ${unit} more.` : ' That is elite for an athlete.');
+    const maxR = std[3] * 1.2;
+    const bounds = [0, ...std, maxR];
+    document.getElementById('level-wrap').innerHTML = LEVELS.map((name, i) => {
+      const lo = bounds[i], hi = bounds[i + 1];
+      const active = i === lvl;
+      const f2 = v => (Math.round(v * 100) / 100).toString();
+      const label = i === 4 ? `${f2(lo)}×+` : `${f2(lo)}–${f2(hi)}×`;
+      return `<div class="bar-row${active ? ' you-row' : ''}"><div class="bar-label">${name}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:${active ? 'var(--accent)' : '#1e2c3a'}" data-w="${Math.max(8, (hi / maxR) * 100)}"></div></div>
+        <div class="bar-val">${label}</div></div>`;
+    }).join('');
+    levelCard.style.display = '';
+    setTimeout(() => { document.querySelectorAll('#level-wrap .bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; }); }, 100);
+  } else {
+    levelCard.style.display = 'none';
+    sub = 'Add your bodyweight to see your strength level.';
+  }
+  document.getElementById('verdict').textContent = verdict;
+  document.getElementById('verdict-sub').textContent = sub;
+
+  document.getElementById('pct-body').innerHTML = PCTS.map(([p, reps, use]) =>
+    `<tr${p === 100 ? ' class="highlight"' : ''}><td>${p}%</td><td>${round(orm * p / 100)} ${unit}</td><td>${reps}</td><td>${use}</td></tr>`).join('');
+
+  let tip = r > 10
+    ? `<strong>Rough estimate:</strong> sets above 10 reps measure endurance as much as strength, so treat this number loosely. A heavy set of 3 to 5 reps will give a sharper estimate. `
+    : `The three formulas agree within ${Math.round(Math.max(epley, brzycki, lombardi) - Math.min(epley, brzycki, lombardi))} ${unit}, so this is a solid estimate. `;
+  tip += lift === 'squat'
+    ? `See what a ${Math.round(orm)} ${unit} squat predicts for your vertical and 40 time with the <a href="/squat-strength-calculator">squat strength calculator</a>.`
+    : lift === 'clean'
+      ? `Power cleans build the hip extension behind jumping and sprinting. Track yours alongside your <a href="/vertical-jump-percentile">vertical jump</a>.`
+      : `For athletes, strength matters most for what it adds to speed and jumping. See how in <a href="/squat-strength-sprint-speed">does squat strength make you faster</a>.`;
+  document.getElementById('tip-text').innerHTML = tip;
+
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  if (typeof gtag === 'function') gtag('event', 'calculator_use', { calculator_name: 'one_rep_max', lift });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>

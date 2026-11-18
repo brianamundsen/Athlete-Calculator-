@@ -7,7 +7,7 @@ module.exports = {
     url: "https://athletecalculator.com/about#author",
     bio: "Brian A. is Director of Performance at a top-tier speed school, with decades of coaching and performance work. He reviews the benchmarks behind every calculator on this site and writes its training guidance.",
   },
-  calculators: ["vertical-jump-percentile", "40-yard-dash-calculator", "ras-calculator", "sprint-speed-calculator", "squat-strength-calculator", "can-i-dunk-calculator", "broad-jump-sprint-speed-calculator"],
+  calculators: ["vertical-jump-percentile", "40-yard-dash-calculator", "ras-calculator", "one-rep-max-calculator", "sprint-speed-calculator", "squat-strength-calculator", "can-i-dunk-calculator", "broad-jump-sprint-speed-calculator"],
   nonArticles: ["index", "articles", "about", "contact", "privacy-policy", "sitemap"],
 
   // "Compare yourself to the pros" link block shown on each calculator,
@@ -47,6 +47,17 @@ module.exports = {
         { url: "/nfl-combine", label: "Everything NFL combine in one place", tag: "Hub" },
       ],
     },
+    "one-rep-max-calculator": {
+      heading: "Put your strength to work",
+      links: [
+        { url: "/squat-strength-calculator", label: "What your squat predicts for your vertical and 40", tag: "Calculator" },
+        { url: "/squat-strength-sprint-speed", label: "Does squat strength make you faster?", tag: "Science" },
+        { url: "/how-much-to-squat-to-dunk", label: "How much do you need to squat to dunk?", tag: "Benchmark" },
+        { url: "/nfl-combine-scores-explained", label: "NFL combine bench press reps by position", tag: "NFL" },
+        { url: "/jeffery-simmons-bears-trade-athletic-profile", label: "Jeffery Simmons: 305 lbs, 28 bench reps", tag: "NFL" },
+        { url: "/strength-power", label: "Everything strength and power in one place", tag: "Hub" },
+      ],
+    },
     "sprint-speed-calculator": {
       heading: "Compare your speed to the pros",
       links: [
@@ -66,7 +77,7 @@ module.exports = {
         { url: "/nfl-combine-scores-explained", label: "NFL combine tests explained", tag: "NFL" },
         { url: "/relative-athletic-score-nfl", label: "Relative Athletic Score (RAS) by position", tag: "NFL" },
         { url: "/jeffery-simmons-bears-trade-athletic-profile", label: "Jeffery Simmons: 305 lbs, 28 bench reps", tag: "NFL" },
-        { url: "/how-to-increase-vertical-jump", label: "8-week vertical jump program", tag: "Training" },
+        { url: "/one-rep-max-calculator", label: "Estimate your 1RM on any lift", tag: "Calculator" },
       ],
     },
     "can-i-dunk-calculator": {
