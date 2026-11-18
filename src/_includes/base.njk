@@ -222,7 +222,7 @@
   }
 </style>
 {% if jsonld %}
-{{ jsonld | safe }}
+{{ jsonld | syncDateModified(page | lastUpdated(updated)) | safe }}
 {% endif %}
 {% if mailerlite %}
 <!-- MailerLite Universal -->

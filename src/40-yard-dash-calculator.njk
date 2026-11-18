@@ -588,7 +588,7 @@ jsonld: |-
         "name": "What is a good 40-yard dash time?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers, tight ends and quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite."
+          "text": "It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers and tight ends, 4.8 for quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite."
         }
       },
       {
@@ -752,8 +752,8 @@ jsonld: |-
 <tr><td>Safety</td><td>4.53s</td><td>4.44s</td><td>4.37s</td></tr>
 <tr><td>Linebacker</td><td>4.68s</td><td>4.56s</td><td>4.46s</td></tr>
 <tr><td>Tight End</td><td>4.70s</td><td>4.58s</td><td>4.50s</td></tr>
-<tr><td>Quarterback</td><td>4.71s</td><td>4.58s</td><td>4.48s</td></tr>
 <tr><td>Defensive End</td><td>4.74s</td><td>4.60s</td><td>4.50s</td></tr>
+<tr><td>Quarterback</td><td>4.83s</td><td>4.70s</td><td>4.60s</td></tr>
 <tr><td>Defensive Tackle</td><td>4.99s</td><td>4.80s</td><td>4.65s</td></tr>
 <tr><td>Offensive Guard / Tackle</td><td>5.10s</td><td>4.95s</td><td>4.80s</td></tr>
 <tr><td>Center</td><td>5.15s</td><td>5.00s</td><td>4.85s</td></tr>
@@ -782,7 +782,7 @@ jsonld: |-
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
 <div class="faq-q">What is a good 40-yard dash time?</div>
-<div class="faq-a">It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers, tight ends and quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite.</div>
+<div class="faq-a">It depends on position and level. At the NFL combine, the average is about 4.47 to 4.53 seconds for cornerbacks, receivers, running backs and safeties, about 4.7 for linebackers and tight ends, 4.8 for quarterbacks, and 5.0 to 5.15 for linemen. For high school varsity skill players, 4.70 to 4.85 is average and under 4.50 is elite.</div>
 </div>
 <div class="faq-item">
 <div class="faq-q">How do you convert a hand-timed 40 to electronic?</div>
@@ -820,7 +820,7 @@ const POS = {
   RB:  { name: 'Running Back',           nfl: [4.49, 4.33], hs: [4.825, 4.55] },
   S:   { name: 'Safety',                 nfl: [4.53, 4.37], hs: [4.90, 4.60] },
   LB:  { name: 'Linebacker',             nfl: [4.68, 4.46], hs: [4.90, 4.60] },
-  QB:  { name: 'Quarterback',            nfl: [4.71, 4.48], hs: [4.95, 4.65] },
+  QB:  { name: 'Quarterback',            nfl: [4.83, 4.60], hs: [4.95, 4.65] },
   TE:  { name: 'Tight End',              nfl: [4.70, 4.50], hs: [4.95, 4.68] },
   DE:  { name: 'Defensive End',          nfl: [4.74, 4.50], hs: [4.975, 4.70] },
   DT:  { name: 'Defensive Tackle',       nfl: [4.99, 4.65], hs: [5.25, 4.95] },

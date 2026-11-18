@@ -24,6 +24,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (d) =>
     d ? d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : ""
   );
+  // Keep JSON-LD dateModified in step with the visible "Updated" date and the sitemap:
+  // all three come from lastUpdated() (front matter > pageDates.json > git).
+  eleventyConfig.addFilter("syncDateModified", (jsonld, d) => {
+    if (!jsonld || !d) return jsonld;
+    const iso = d.toISOString().slice(0, 10);
+    return jsonld.replace(/("dateModified"\s*:\s*")[^"]*(")/g, `$1${iso}$2`);
+  });
+
   eleventyConfig.addFilter("isoDate", (d) => (d ? d.toISOString().slice(0, 10) : ""));
 
   // Insert an HTML snippet right after the page's first </h1>.

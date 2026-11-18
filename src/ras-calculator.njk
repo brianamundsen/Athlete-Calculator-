@@ -813,17 +813,17 @@ jsonld: |-
 // Approximate NFL combine norms by position: [mean, sd]. Times: lower is better.
 // Height in inches, weight in lbs, jumps in inches, bench in reps.
 const NORMS = {
-  WR: { name: 'Wide Receiver',    ht: [72.6, 2.4], wt: [201, 14], t40: [4.48, 0.09], t10: [1.56, 0.05], vert: [36.5, 3.0], broad: [122, 6.0], cone: [6.95, 0.18], shuttle: [4.25, 0.13], bench: [14, 4.0] },
-  CB: { name: 'Cornerback',       ht: [71.2, 1.6], wt: [193, 9],  t40: [4.47, 0.08], t10: [1.55, 0.05], vert: [36.0, 2.9], broad: [122, 5.5], cone: [6.95, 0.17], shuttle: [4.20, 0.12], bench: [14, 4.0] },
-  RB: { name: 'Running Back',     ht: [70.3, 1.8], wt: [214, 12], t40: [4.49, 0.09], t10: [1.56, 0.05], vert: [35.0, 3.0], broad: [121, 5.5], cone: [7.05, 0.18], shuttle: [4.27, 0.13], bench: [19, 4.5] },
-  S:  { name: 'Safety',           ht: [72.0, 1.6], wt: [205, 9],  t40: [4.53, 0.09], t10: [1.57, 0.05], vert: [35.0, 3.0], broad: [119, 5.5], cone: [6.98, 0.17], shuttle: [4.22, 0.12], bench: [16, 4.0] },
-  LB: { name: 'Linebacker',       ht: [73.6, 1.4], wt: [238, 10], t40: [4.68, 0.11], t10: [1.62, 0.05], vert: [33.0, 3.0], broad: [116, 5.5], cone: [7.08, 0.18], shuttle: [4.27, 0.13], bench: [22, 4.0] },
-  QB: { name: 'Quarterback',      ht: [74.6, 1.6], wt: [222, 11], t40: [4.71, 0.14], t10: [1.63, 0.06], vert: [31.0, 3.2], broad: [112, 6.0], cone: [7.10, 0.20], shuttle: [4.30, 0.15], bench: [18, 4.5] },
-  TE: { name: 'Tight End',        ht: [76.3, 1.2], wt: [252, 8],  t40: [4.70, 0.11], t10: [1.63, 0.05], vert: [32.0, 3.2], broad: [115, 6.0], cone: [7.15, 0.20], shuttle: [4.37, 0.14], bench: [20, 4.0] },
-  DE: { name: 'Defensive End',    ht: [75.8, 1.3], wt: [263, 12], t40: [4.74, 0.11], t10: [1.65, 0.05], vert: [31.0, 3.0], broad: [113, 6.0], cone: [7.25, 0.20], shuttle: [4.42, 0.15], bench: [24, 4.5] },
-  DT: { name: 'Defensive Tackle', ht: [75.2, 1.3], wt: [305, 14], t40: [4.99, 0.12], t10: [1.73, 0.06], vert: [28.0, 3.0], broad: [107, 6.0], cone: [7.60, 0.20], shuttle: [4.62, 0.15], bench: [28, 5.0] },
-  OL: { name: 'Offensive Tackle / Guard', ht: [77.0, 1.3], wt: [312, 11], t40: [5.10, 0.14], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.75, 0.20], shuttle: [4.70, 0.15], bench: [25, 4.5] },
-  C:  { name: 'Center',           ht: [75.3, 1.0], wt: [302, 9],  t40: [5.15, 0.13], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.65, 0.20], shuttle: [4.62, 0.15], bench: [26, 4.5] },
+  WR: { name: 'Wide Receiver',    ht: [72.6, 2.4], wt: [201, 14], t40: [4.48, 0.09], t10: [1.56, 0.05], vert: [36.5, 3.0], broad: [122, 6.0], cone: [6.76, 0.2], shuttle: [4.25, 0.13], bench: [13, 4.0] },
+  CB: { name: 'Cornerback',       ht: [71.2, 1.6], wt: [193, 9],  t40: [4.47, 0.08], t10: [1.55, 0.05], vert: [36.0, 2.9], broad: [122, 5.5], cone: [6.68, 0.18], shuttle: [4.20, 0.12], bench: [13, 4.0] },
+  RB: { name: 'Running Back',     ht: [70.3, 1.8], wt: [214, 12], t40: [4.49, 0.09], t10: [1.56, 0.05], vert: [35.0, 3.0], broad: [121, 5.5], cone: [6.91, 0.24], shuttle: [4.27, 0.13], bench: [17, 4.5] },
+  S:  { name: 'Safety',           ht: [72.0, 1.6], wt: [205, 9],  t40: [4.53, 0.09], t10: [1.57, 0.05], vert: [35.0, 3.0], broad: [119, 5.5], cone: [6.89, 0.23], shuttle: [4.22, 0.12], bench: [15, 4.0] },
+  LB: { name: 'Linebacker',       ht: [73.6, 1.4], wt: [238, 10], t40: [4.68, 0.11], t10: [1.62, 0.05], vert: [33.0, 3.0], broad: [116, 5.5], cone: [7.10, 0.25], shuttle: [4.27, 0.13], bench: [22.5, 4.0] },
+  QB: { name: 'Quarterback',      ht: [74.6, 1.6], wt: [222, 11], t40: [4.83, 0.17], t10: [1.66, 0.06], vert: [31.0, 3.2], broad: [112, 6.0], cone: [7.15, 0.23], shuttle: [4.30, 0.15], bench: [13, 4.5] },
+  TE: { name: 'Tight End',        ht: [76.3, 1.2], wt: [252, 8],  t40: [4.70, 0.11], t10: [1.63, 0.05], vert: [32.0, 3.2], broad: [115, 6.0], cone: [7.10, 0.23], shuttle: [4.37, 0.14], bench: [19, 4.0] },
+  DE: { name: 'Defensive End',    ht: [75.8, 1.3], wt: [263, 12], t40: [4.74, 0.11], t10: [1.65, 0.05], vert: [31.0, 3.0], broad: [113, 6.0], cone: [7.22, 0.25], shuttle: [4.42, 0.15], bench: [23, 4.5] },
+  DT: { name: 'Defensive Tackle', ht: [75.2, 1.3], wt: [305, 14], t40: [4.99, 0.12], t10: [1.73, 0.06], vert: [28.0, 3.0], broad: [107, 6.0], cone: [7.72, 0.33], shuttle: [4.62, 0.15], bench: [28.5, 5.0] },
+  OL: { name: 'Offensive Tackle / Guard', ht: [77.0, 1.3], wt: [312, 11], t40: [5.10, 0.14], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.90, 0.35], shuttle: [4.70, 0.15], bench: [27.5, 4.5] },
+  C:  { name: 'Center',           ht: [75.3, 1.0], wt: [302, 9],  t40: [5.15, 0.13], t10: [1.80, 0.06], vert: [27.0, 3.0], broad: [104, 6.0], cone: [7.90, 0.35], shuttle: [4.62, 0.15], bench: [27.5, 4.5] },
 };
 const METRICS = [
   { key: 'ht',      label: 'Height',        cat: 'Size',      lower: false, fmt: v => `${Math.floor(v / 12)}'${(v % 12).toFixed(v % 1 ? 2 : 0).replace(/\.?0+$/, '')}"` },
