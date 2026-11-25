@@ -21,6 +21,80 @@ module.exports = {
     articleSlot: "8512420887",
   },
 
+  // Amazon Associates "Gear" block on calculator pages (base.njk), shown after
+  // the pro-links block. Links are Amazon search results (no fixed ASINs, so
+  // nothing goes stale or shows a wrong price). Renders nothing until `tag`
+  // is set to the Associates tracking ID (e.g. "athletecalc-20").
+  affiliate: {
+    tag: "",
+    picks: {
+      "vertical-jump-percentile": {
+        heading: "Gear for training your vertical",
+        items: [
+          { label: "Soft foam plyo box", q: "soft foam plyometric box", note: "Box jumps without the shin scrapes" },
+          { label: "Loop resistance bands", q: "loop resistance bands set", note: "Hip and glute activation before jumping" },
+          { label: "Weighted jump rope", q: "weighted jump rope", note: "Ankle stiffness and foot speed" },
+        ],
+      },
+      "can-i-dunk-calculator": {
+        heading: "Gear for your dunk program",
+        items: [
+          { label: "Soft foam plyo box", q: "soft foam plyometric box", note: "Box jumps and depth drops" },
+          { label: "Adjustable weighted vest", q: "adjustable weighted vest", note: "Loaded jumps once your landings are solid" },
+          { label: "Loop resistance bands", q: "loop resistance bands set", note: "Warm-ups and hip strength" },
+        ],
+      },
+      "40-yard-dash-calculator": {
+        heading: "Gear for a faster 40",
+        items: [
+          { label: "Sprint resistance sled", q: "sprint resistance sled", note: "Acceleration strength for the first 10 yards" },
+          { label: "Agility ladder", q: "agility ladder", note: "Foot speed and rhythm work" },
+          { label: "Agility cones", q: "agility cones set", note: "Mark out your 10, 20 and 40" },
+        ],
+      },
+      "sprint-speed-calculator": {
+        heading: "Gear for sprint training",
+        items: [
+          { label: "Speed resistance parachute", q: "speed training resistance parachute", note: "Resisted top-speed runs" },
+          { label: "Sprint resistance sled", q: "sprint resistance sled", note: "Acceleration strength" },
+          { label: "Agility ladder", q: "agility ladder", note: "Foot speed and rhythm work" },
+        ],
+      },
+      "broad-jump-sprint-speed-calculator": {
+        heading: "Gear for broad jump and power work",
+        items: [
+          { label: "Soft foam plyo box", q: "soft foam plyometric box", note: "Bounds and box jumps" },
+          { label: "100 ft measuring tape", q: "100 ft measuring tape", note: "Measure jumps and mark sprint distances" },
+          { label: "Loop resistance bands", q: "loop resistance bands set", note: "Hip extension warm-ups" },
+        ],
+      },
+      "squat-strength-calculator": {
+        heading: "Gear for heavier squats",
+        items: [
+          { label: "Lifting belt", q: "weightlifting belt", note: "Bracing support on heavy sets" },
+          { label: "Weightlifting shoes", q: "weightlifting shoes", note: "A raised heel for deeper squats" },
+          { label: "Knee sleeves", q: "knee sleeves 7mm", note: "Warmth and support under load" },
+        ],
+      },
+      "one-rep-max-calculator": {
+        heading: "Gear for max-effort lifting",
+        items: [
+          { label: "Lifting belt", q: "weightlifting belt", note: "Bracing support on heavy singles" },
+          { label: "Wrist wraps", q: "wrist wraps weightlifting", note: "Wrist support for bench and overhead press" },
+          { label: "Lifting chalk", q: "lifting chalk", note: "A secure grip on heavy pulls" },
+        ],
+      },
+      "ras-calculator": {
+        heading: "Gear for testing like the combine",
+        items: [
+          { label: "Agility cones", q: "agility cones set", note: "Set up the 3-cone and shuttle" },
+          { label: "100 ft measuring tape", q: "100 ft measuring tape", note: "Measure the broad jump and 40" },
+          { label: "Sports stopwatch", q: "sports stopwatch", note: "Time your sprints and agility drills" },
+        ],
+      },
+    },
+  },
+
   // "Compare yourself to the pros" link block shown on each calculator,
   // inserted by base.njk just before the calculator's article section.
   // Only link to indexable pages.

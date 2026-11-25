@@ -213,6 +213,11 @@
   .ac-pros-tag { flex-shrink: 0; min-width: 5.6rem; text-align: center; font-family: var(--font-mono, monospace); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent, #aaff00); border: 1px solid rgba(170,255,0,0.3); border-radius: 4px; padding: 0.15rem 0.4rem; }
   .ac-pros-text { flex: 1; font-size: 0.9rem; line-height: 1.35; min-width: 0; }
   .ac-pros-arrow { color: var(--text-muted, #5a6470); }
+  /* Amazon gear picks on calculator pages (reuses .ac-pros layout) */
+  .ac-gear { margin-top: 1.5rem; }
+  .ac-gear .ac-pros-text strong { display: block; font-weight: 700; }
+  .ac-gear-note { display: block; font-size: 0.8rem; color: var(--text-mid, #8a96a4); margin-top: 0.15rem; }
+  .ac-gear-disc { font-size: 0.72rem; color: var(--text-muted, #5a6470); margin-top: 0.6rem; }
   /* Manual AdSense units on calculator pages; min-height reserves space to limit layout shift */
   .ac-ad { max-width: 780px; margin: 2rem auto; padding: 0 1.25rem; min-height: 280px; }
   .ac-ad-label { font-family: var(--font-mono, monospace); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted, #5a6470); text-align: center; margin-bottom: 0.4rem; }
@@ -252,9 +257,11 @@
 {%- set acPro = site.proLinks[acSlug] if acIsCalc else null -%}
 {%- set acProBlock -%}{% if acPro %}<section class="ac-pros" aria-labelledby="ac-pros-h"><div class="ac-pros-label">Keep going</div><h2 id="ac-pros-h" class="ac-pros-h">{{ acPro.heading }}</h2><ul class="ac-pros-grid">{% for l in acPro.links %}<li><a href="{{ l.url }}"><span class="ac-pros-tag">{{ l.tag }}</span><span class="ac-pros-text">{{ l.label }}</span><span class="ac-pros-arrow" aria-hidden="true">→</span></a></li>{% endfor %}</ul></section>{% endif %}{%- endset -%}
 {%- set acChart -%}{% if chart %}<figure class="ac-chart"><img src="{{ chart.src }}" alt="{{ chart.alt }}" width="1200" height="630" decoding="async" fetchpriority="high"><figcaption>{{ chart.caption }} · Data from the tables in this article</figcaption></figure>{% endif %}{%- endset -%}
+{%- set acGear = site.affiliate.picks[acSlug] if (acIsCalc and site.affiliate.tag) else null -%}
+{%- set acGearBlock -%}{% if acGear %}<section class="ac-pros ac-gear" aria-labelledby="ac-gear-h"><div class="ac-pros-label">Coach's gear picks</div><h2 id="ac-gear-h" class="ac-pros-h">{{ acGear.heading }}</h2><ul class="ac-pros-grid">{% for g in acGear.items %}<li><a href="https://www.amazon.com/s?k={{ g.q | urlencode }}&amp;tag={{ site.affiliate.tag }}" rel="sponsored nofollow noopener" target="_blank"><span class="ac-pros-text"><strong>{{ g.label }}</strong><span class="ac-gear-note">{{ g.note }}</span></span><span class="ac-pros-arrow" aria-hidden="true">↗</span></a></li>{% endfor %}</ul><p class="ac-gear-disc">As an Amazon Associate, Athlete Calculator earns from qualifying purchases.</p></section>{% endif %}{%- endset -%}
 {%- set acAd -%}{% if acIsCalc and site.adsense.slot %}<div class="ac-ad" aria-label="Advertisement"><div class="ac-ad-label">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.adsense.client }}" data-ad-slot="{{ site.adsense.slot }}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>{% endif %}{%- endset -%}
 {%- set acArtAd -%}{% if acIsArticle and site.adsense.articleSlot %}<div class="ac-ad ac-ad--article" aria-label="Advertisement"><div class="ac-ad-label">Advertisement</div><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="{{ site.adsense.client }}" data-ad-slot="{{ site.adsense.articleSlot }}"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>{% endif %}{%- endset -%}
-{{ content | afterH1(acByline) | beforeMarker('<div class="article-section">', acProBlock + acAd) | beforeMarker('<h2>Frequently Asked Questions</h2>', acAd) | inArticleAds(acArtAd) | afterMarker('<div class="content">', acChart) | safe }}
+{{ content | afterH1(acByline) | beforeMarker('<div class="article-section">', acProBlock + acGearBlock + acAd) | beforeMarker('<h2>Frequently Asked Questions</h2>', acAd) | inArticleAds(acArtAd) | afterMarker('<div class="content">', acChart) | safe }}
 <aside class="ac-author"><div class="ac-author-inner"><div class="ac-author-label">About the author</div><div class="ac-author-name">{{ site.author.name }}</div><p>{{ site.author.bio }}</p><a href="/about#author">More about Brian →</a></div></aside>
 {%- else -%}
 {{ content | safe }}
