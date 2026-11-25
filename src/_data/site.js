@@ -16,7 +16,7 @@ module.exports = {
   // from AdSense (Ads -> By ad unit -> Display ads).
   adsense: {
     client: "ca-pub-1673639828321526",
-    slot: "",
+    slot: "8089362017",
   },
 
   // "Compare yourself to the pros" link block shown on each calculator,
