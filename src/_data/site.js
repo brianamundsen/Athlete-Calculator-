@@ -26,7 +26,7 @@ module.exports = {
   // nothing goes stale or shows a wrong price). Renders nothing until `tag`
   // is set to the Associates tracking ID (e.g. "athletecalc-20").
   affiliate: {
-    tag: "",
+    tag: "athletecalc-20",
     picks: {
       "vertical-jump-percentile": {
         heading: "Gear for training your vertical",
