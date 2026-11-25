@@ -95,6 +95,49 @@ module.exports = {
     },
   },
 
+  // Contextual Amazon gear boxes inside training articles. Each is inserted
+  // right before `before` (skipped if the marker is missing); those articles
+  // also get an affiliate disclosure under the byline. Uses affiliate.tag.
+  articleGear: {
+    "how-to-increase-vertical-jump": {
+      before: "<h2>The 8-Week Program</h2>",
+      heading: "Equipment for this program",
+      items: [
+        { label: "Soft foam plyo box", q: "soft foam plyometric box", note: "Box jumps and 12–18\" depth jumps" },
+        { label: "Lifting belt", q: "weightlifting belt", note: "Bracing for the 85–90% squat weeks" },
+        { label: "Weightlifting shoes", q: "weightlifting shoes", note: "Stable base and depth on heavy squats" },
+        { label: "Loop resistance bands", q: "loop resistance bands set", note: "Hip and glute warm-up before jumping" },
+      ],
+    },
+    "how-to-run-faster-40-yard-dash": {
+      before: "<h3>The Prescription</h3>",
+      heading: "Equipment for sled training",
+      items: [
+        { label: "Sprint sled with harness", q: "sprint sled with harness", note: "Load it to 10–20% of bodyweight" },
+        { label: "Agility cones", q: "agility cones set", note: "Mark your 10, 20 and 40" },
+        { label: "100 ft measuring tape", q: "100 ft measuring tape", note: "Measure distances exactly" },
+      ],
+    },
+    "how-much-to-squat-to-dunk": {
+      before: "<h3>Phase 3",
+      heading: "Equipment for the dunk plan",
+      items: [
+        { label: "Lifting belt", q: "weightlifting belt", note: "Bracing as your squat climbs past 1.5× bodyweight" },
+        { label: "Soft foam plyo box", q: "soft foam plyometric box", note: "Depth jumps off a 12\" box" },
+        { label: "Knee sleeves", q: "knee sleeves 7mm", note: "Warmth and support under heavy load" },
+      ],
+    },
+    "squat-strength-sprint-speed": {
+      before: "<h2>The Point of Diminishing Returns</h2>",
+      heading: "Equipment for strength-and-speed training",
+      items: [
+        { label: "Lifting belt", q: "weightlifting belt", note: "Bracing on heavy squat days" },
+        { label: "Sprint sled with harness", q: "sprint sled with harness", note: "Resisted acceleration work" },
+        { label: "Weightlifting shoes", q: "weightlifting shoes", note: "Stable base and depth on heavy squats" },
+      ],
+    },
+  },
+
   // "Compare yourself to the pros" link block shown on each calculator,
   // inserted by base.njk just before the calculator's article section.
   // Only link to indexable pages.

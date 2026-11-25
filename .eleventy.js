@@ -75,6 +75,14 @@ module.exports = function (eleventyConfig) {
     return out;
   });
 
+  // Like beforeMarker, but leaves content unchanged if the marker is missing.
+  eleventyConfig.addFilter("beforeMarkerIfFound", (content, marker, snippet) => {
+    if (!snippet || !marker || typeof content !== "string") return content;
+    const i = content.indexOf(marker);
+    if (i === -1) return content;
+    return content.slice(0, i) + snippet + content.slice(i);
+  });
+
   // Insert an HTML snippet right before the first occurrence of `marker`
   // (falls back to appending at the end if the marker is missing).
   eleventyConfig.addFilter("beforeMarker", (content, marker, snippet) => {
