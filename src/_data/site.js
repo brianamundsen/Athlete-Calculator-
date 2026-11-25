@@ -10,6 +10,15 @@ module.exports = {
   calculators: ["vertical-jump-percentile", "40-yard-dash-calculator", "ras-calculator", "one-rep-max-calculator", "sprint-speed-calculator", "squat-strength-calculator", "can-i-dunk-calculator", "broad-jump-sprint-speed-calculator"],
   nonArticles: ["index", "articles", "about", "contact", "privacy-policy", "sitemap"],
 
+  // Manual AdSense display units on calculator pages (base.njk). Placed below
+  // the calculator/results and before the FAQ — never between inputs and results.
+  // Renders nothing until `slot` is set to a responsive display ad unit ID
+  // from AdSense (Ads -> By ad unit -> Display ads).
+  adsense: {
+    client: "ca-pub-1673639828321526",
+    slot: "",
+  },
+
   // "Compare yourself to the pros" link block shown on each calculator,
   // inserted by base.njk just before the calculator's article section.
   // Only link to indexable pages.
