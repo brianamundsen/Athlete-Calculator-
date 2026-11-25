@@ -17,6 +17,8 @@ module.exports = {
   adsense: {
     client: "ca-pub-1673639828321526",
     slot: "8089362017",
+    // In-article (native, fluid) unit used inside article bodies.
+    articleSlot: "8512420887",
   },
 
   // "Compare yourself to the pros" link block shown on each calculator,
