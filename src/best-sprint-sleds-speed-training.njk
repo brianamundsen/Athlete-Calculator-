@@ -1,0 +1,664 @@
+---
+layout: base.njk
+title: "Best Sprint Sleds for Speed Training (2026) | Athlete Calculator"
+description: "A performance coach’s guide to sprint sleds: how much weight to use, drag vs push vs sand-bag sleds, and five picks for a faster 40-yard dash."
+canonicalPath: "/best-sprint-sleds-speed-training"
+mailerlite: false
+affiliateNote: true
+pageStyle: |-
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+    :root {
+      --bg: #080c10;
+      --surface: #0f1419;
+      --surface2: #161c24;
+      --border: #1e2832;
+      --accent: #aaff00;
+      --accent-dim: rgba(170,255,0,0.12);
+      --text: #e8edf2;
+      --text-muted: #5a6470;
+      --text-mid: #8a96a4;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+  
+    html { scroll-behavior: smooth; }
+  
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+  
+    /* ── NAV ── */
+    nav {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+  
+    .nav-brand span { color: var(--accent); }
+  
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+  
+    .nav-links a:hover { color: var(--accent); }
+  
+    /* ── HERO ── */
+    .hero {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+  
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+  
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+  
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+  
+    h1 em { color: var(--accent); font-style: normal; }
+  
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+  
+    .hero-meta-item {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+  
+    .hero-intro {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 640px;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+  
+    /* ── ARTICLE ── */
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 3rem;
+      align-items: start;
+    }
+  
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+  
+    /* ── CONTENT ── */
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+  
+    .content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  
+    .content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+  
+    .content p {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+      line-height: 1.75;
+    }
+  
+    .content p strong { color: var(--text); }
+  
+    .content ul, .content ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+  
+    .content li {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+    }
+  
+    .content li strong { color: var(--text); }
+  
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .data-table thead {
+      background: var(--surface2);
+    }
+  
+    .data-table th {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      background: var(--surface);
+    }
+  
+    .data-table tr:last-child td { border-bottom: none; }
+  
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+  
+    .data-table .highlight td {
+      background: var(--accent-dim);
+    }
+  
+    .data-table .highlight td:first-child { color: var(--accent); }
+  
+    /* ── CALLOUT BOX ── */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(170,255,0,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  
+    .callout-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+    .callout-text strong { color: var(--accent); }
+  
+    /* ── CALCULATOR CTA ── */
+    .calc-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+  
+    .calc-cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+  
+    .calc-cta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+  
+    .calc-cta p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 1.25rem;
+    }
+  
+    .calc-cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      transition: opacity 0.15s;
+    }
+  
+    .calc-cta-btn:hover { opacity: 0.85; }
+  
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+  
+    .faq-item:last-child { border-bottom: none; }
+  
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+  
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+  
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+    }
+  
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar-link {
+      display: block;
+      padding: 0.65rem 0.75rem;
+      margin-bottom: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+  
+    .sidebar-link:hover { border-color: var(--accent); color: var(--accent); }
+    .sidebar-link strong { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 0.1rem; }
+  
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      border-left: 2px solid var(--border);
+      padding-left: 0.75rem;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+  
+    .toc-link:hover { color: var(--accent); border-color: var(--accent); }
+  
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.8;
+    }
+  
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    .pick { border: 1px solid var(--border); background: var(--surface); border-radius: 12px; padding: 1.4rem 1.4rem 1.2rem; margin: 1.5rem 0; }
+    .pick-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg); background: var(--accent); border-radius: 4px; padding: 0.2rem 0.5rem; margin-bottom: 0.6rem; }
+    .pick h3 { font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 0 0 0.6rem; color: var(--text); }
+    .pick-specs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.9rem; padding: 0; list-style: none; }
+    .pick-specs li { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-mid); border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.5rem; }
+    .pick p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.7rem; }
+    .pick p strong { color: var(--text); }
+    .pick-btn { display: inline-block; margin-top: 0.3rem; background: var(--accent); color: var(--bg); font-family: var(--font-display); font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em; text-decoration: none; padding: 0.6rem 1.1rem; border-radius: 8px; }
+    .pick-btn:hover { opacity: 0.9; }
+  </style>
+disclaimer:
+  - "Product picks are based on manufacturer specifications and coaching experience. Listings, prices and weight ratings change, so confirm details on the retailer's page before buying."
+jsonld: |-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Best Sprint Sleds for Speed Training",
+    "description": "A performance coach’s guide to sprint sleds: how much weight to use, drag vs push vs sand-bag sleds, and five picks for a faster 40-yard dash.",
+    "url": "https://athletecalculator.com/best-sprint-sleds-speed-training",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Athlete Calculator",
+      "url": "https://athletecalculator.com"
+    },
+    "mainEntityOfPage": "https://athletecalculator.com/best-sprint-sleds-speed-training",
+    "author": {
+      "@type": "Person",
+      "name": "Brian A.",
+      "jobTitle": "Director of Performance",
+      "url": "https://athletecalculator.com/about#author"
+    },
+    "datePublished": "2026-11-26",
+    "dateModified": "2026-11-26"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much weight should I put on a sprint sled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For sprint speed, load the sled with 10–20% of your bodyweight. At that load you should still run at roughly 80–90% of your top speed with good mechanics. A 185 lb athlete would use about 18–37 lb. Heavier loads build acceleration strength but slow you down a lot, so treat them as strength work, not sprint training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a sled better than a parachute for speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the first 10–20 yards, yes. A sled gives you steady resistance from the first step and keeps you in a forward lean, which is exactly what the drive phase needs. A parachute adds resistance only once you're moving fast, so it's better suited to top-speed work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do sprint sleds work on grass and turf?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but the surface changes the resistance. The same plates feel much heavier on grass than on turf, and a sled on concrete or asphalt will scrape and slide differently. Set your load by how much it slows you down on your surface, not by the number of plates alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need weight plates for a sprint sled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most sleds are plate-loaded, so you need plates that fit the sled's post. Some take both standard 1-inch and Olympic 2-inch plates. If you don't own plates, a sand-filled resistance bag like the SKLZ SpeedSac is the easiest option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I do sled sprints?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Twice a week, with at least 48 hours between sessions, is enough for most athletes. Do 6 × 20 yards with full rest, then follow with a few unloaded sprints so the strength carries over to free running."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://athletecalculator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://athletecalculator.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Best Sprint Sleds for Speed Training",
+        "item": "https://athletecalculator.com/best-sprint-sleds-speed-training"
+      }
+    ]
+  }
+  </script>
+permalink: "best-sprint-sleds-speed-training/index.html"
+---
+<div class="hero">
+<div class="breadcrumb">
+<a href="/">Home</a>
+<span>→</span>
+<a href="/articles">Articles</a>
+<span>→</span>
+    Best Sprint Sleds
+  </div>
+<h1>Best <em>Sprint Sleds</em> for Speed Training</h1>
+<div class="hero-meta">
+<span class="hero-meta-item">📖 7 min read</span><span class="hero-meta-item">📦 Gear Guide</span><span class="hero-meta-item">⚡ Speed</span>
+</div>
+<p class="hero-intro">
+    A sled is the most direct tool for a faster first 10 yards, if you use the right kind at the right weight. Here’s how to pick a sled, how heavy to load it and five sleds worth buying.
+  </p>
+</div><div class="article-wrap">
+<div class="content">
+<div class="callout">
+<div class="callout-icon">⚡</div>
+<div class="callout-text"><strong>Quick answer:</strong> For a faster 40, get a <strong>low-profile drag sled with a harness</strong> and load it with 10–20% of your bodyweight. Get a push-pull sled only if you also want heavy pushes or conditioning work, and a sand-bag sled if you don't own weight plates.</div>
+</div>
+<h2 id="why-sleds">Why Sled Sprints Work</h2>
+<p>The first 10 yards decide most 40 times. A sled forces you to stay in a low, forward lean and push the ground back harder for longer than you would in a normal sprint. That's the drive phase, and it's the part of the sprint that improves most with resisted training. The full method is in our guide to <a href="/how-to-run-faster-40-yard-dash">running a faster 40</a>.</p>
+<p>The key is load. Too heavy and the sled turns into a slow grind that changes your mechanics. Light enough to keep you moving fast, it makes you more powerful without teaching you to run slower.</p>
+<h2 id="how-much-weight">How Much Weight to Use</h2>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Goal</th><th>Sled Load</th><th>How It Should Feel</th></tr></thead>
+<tbody>
+<tr class="highlight"><td>Sprint speed & acceleration</td><td>10–20% bodyweight</td><td>Still close to full speed, clean mechanics</td></tr>
+<tr><td>Acceleration strength</td><td>20–40% bodyweight</td><td>Noticeably slower, strong forward lean</td></tr>
+<tr><td>Heavy pushes & conditioning</td><td>Heavy</td><td>Slow, grinding: strength work, not sprinting</td></tr>
+</tbody>
+</table></div>
+<p>Surface changes everything. The same plates feel much heavier on grass than on turf. Start light, time a few reps, and add weight only while you stay within about 10% of your unloaded sprint speed. Check where your speed stands now with the <a href="/40-yard-dash-calculator">40-yard dash calculator</a>.</p>
+<h2 id="types">Drag vs. Push vs. Sand Bag</h2>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Type</th><th>Best For</th><th>Trade-off</th></tr></thead>
+<tbody>
+<tr class="highlight"><td>Drag sled + harness</td><td>Resisted sprints, the 40, acceleration</td><td>Can't push it</td></tr>
+<tr><td>Push-pull sled</td><td>Football, heavy pushes, conditioning</td><td>Bigger, pricier, needs storage</td></tr>
+<tr><td>Sand-bag sled</td><td>Athletes without plates, field sessions</td><td>Lower max resistance</td></tr>
+</tbody>
+</table></div>
+<h2 id="what-to-look-for">What to Look For</h2>
+<ul>
+<li><strong>Harness included:</strong> Sprinting with your arms free matters. If the sled doesn't include a harness, budget for one.</li>
+<li><strong>Plate compatibility:</strong> Check whether the post fits standard 1-inch plates, Olympic 2-inch plates or both.</li>
+<li><strong>Base shape:</strong> Curved or ski-style bases glide on grass. Flat steel bases are better on turf.</li>
+<li><strong>Strap length:</strong> A longer tow strap smooths out the jerk on each stride and keeps the sled from clipping your heels.</li>
+</ul>
+<h2 id="the-picks">The 5 Best Sprint Sleds</h2>
+<p>These picks are based on build, features and manufacturer specs, matched to how athletes use sleds for speed. Prices and listings change, so check details before you buy.</p>
+<div class="pick">
+<div class="pick-badge">Best overall sprint sled</div>
+<h3>Titan Fitness Power Speed Sled with Harness</h3>
+<ul class="pick-specs"><li>Steel drag sled</li><li>Harness and tow strap included</li><li>Plate-loaded</li></ul>
+<p><strong>Why it's here:</strong> A simple, low-profile drag sled built for exactly what speed training needs: light loads pulled fast. The harness and long tow strap come in the box, so you can start right away with plates you already own.</p><p><strong>Who it's for:</strong> High school and college athletes training acceleration for the 40 or game speed. It's the sled most athletes should start with.</p><p><strong>Watch out for:</strong> It's a pull sled, not a push sled, so you can't do prowler-style pushes with it.</p>
+<a class="pick-btn" href="https://www.amazon.com/s?k=Titan%20Fitness%20power%20speed%20sled%20with%20harness&amp;tag=athletecalc-20" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon ↗</a>
+</div><div class="pick">
+<div class="pick-badge">Best budget sled</div>
+<h3>Kipika Weight Sled</h3>
+<ul class="pick-specs"><li>Arc-bottom design</li><li>1" and 2" plates</li><li>Harness included</li></ul>
+<p><strong>Why it's here:</strong> A lower-cost sled whose curved base glides over grass and turf instead of digging in. It accepts both standard and Olympic plates, which helps if your home weights are a mix.</p><p><strong>Who it's for:</strong> Athletes on a budget, parents buying a first sled and anyone training on grass.</p><p><strong>Watch out for:</strong> It's lighter-duty than steel competition sleds, so heavy pushes aren't what it's built for.</p>
+<a class="pick-btn" href="https://www.amazon.com/s?k=Kipika%20weight%20sled%20harness&amp;tag=athletecalc-20" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon ↗</a>
+</div><div class="pick">
+<div class="pick-badge">Best push + pull sled</div>
+<h3>Titan Fitness High-Low Push-Pull Sled</h3>
+<ul class="pick-specs"><li>Push and pull</li><li>High and low handles</li><li>Heavy-duty frame</li></ul>
+<p><strong>Why it's here:</strong> One sled for both sprint pulls and heavy pushes. The high and low handles let you train the drive-phase lean with a push and do conditioning work, which makes it worth the extra cost for football players.</p><p><strong>Who it's for:</strong> Linemen, athletes who also want sled conditioning and anyone setting up a garage gym.</p><p><strong>Watch out for:</strong> It's bigger and heavier than a drag sled and needs a dedicated spot to store it. If you also want to pull it, add a harness.</p>
+<a class="pick-btn" href="https://www.amazon.com/s?k=Titan%20Fitness%20high%20low%20push%20pull%20sled&amp;tag=athletecalc-20" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon ↗</a>
+</div><div class="pick">
+<div class="pick-badge">Best without weight plates</div>
+<h3>SKLZ SpeedSac Resistance Sled</h3>
+<ul class="pick-specs"><li>Sand-filled bag</li><li>Adjustable resistance</li><li>Portable</li></ul>
+<p><strong>Why it's here:</strong> A weighted sand bag you drag instead of a steel sled, with no plates required. You adjust the resistance by how much sand you add, and it folds down small enough to carry to a field.</p><p><strong>Who it's for:</strong> Younger athletes, anyone without plates and teams that train on a field away from a weight room.</p><p><strong>Watch out for:</strong> Its resistance tops out lower than a plate-loaded sled, which is fine for sprint work at 10–20% bodyweight.</p>
+<a class="pick-btn" href="https://www.amazon.com/s?k=SKLZ%20SpeedSac%20variable%20resistance%20sled&amp;tag=athletecalc-20" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon ↗</a>
+</div><div class="pick">
+<div class="pick-badge">Best harness add-on</div>
+<h3>miR Sled Harness</h3>
+<ul class="pick-specs"><li>Padded harness</li><li>Tow strap included</li><li>Fits most sleds</li></ul>
+<p><strong>Why it's here:</strong> Some sleds, including many push sleds, don't come with a harness. A harness keeps your arms free to drive, which is how resisted sprints should be done.</p><p><strong>Who it's for:</strong> Anyone whose sled didn't include a harness, or who wants a more comfortable one than the stock strap.</p><p><strong>Watch out for:</strong> Check that the strap length and clip fit your sled. A longer strap keeps the sled from tugging on every stride.</p>
+<a class="pick-btn" href="https://www.amazon.com/s?k=miR%20sled%20harness%20pull%20strap&amp;tag=athletecalc-20" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon ↗</a>
+</div>
+<h2 id="workouts">Sled Workouts for Speed</h2>
+<ul>
+<li><strong>Resisted sprints:</strong> 6 × 20 yards at 10–20% bodyweight, with 90 seconds to 2 minutes of rest.</li>
+<li><strong>Contrast sprints:</strong> After your sled reps, do 4 × 20 yards with no sled so your body carries the power into free running.</li>
+<li><strong>Heavy marches:</strong> Slow, powerful steps with a heavy load. This is drive-phase strength work, done early in the week.</li>
+<li><strong>Push sprints:</strong> With a push sled, do 4–6 × 15 yards at a moderate load, holding a 45-degree lean.</li>
+</ul>
+<p>Do sled work twice a week with 48 hours between sessions, and pair it with heavy squats. Our <a href="/squat-strength-sprint-speed">squat strength and sprint speed guide</a> explains why the two work best together. Want explosive power too? See the <a href="/best-plyo-boxes-vertical-jump">best plyo boxes</a> for jump training.</p>
+<h2 id="mistakes">Common Sled Mistakes</h2>
+<p><strong>Too much weight.</strong> If your sprint turns into a march, you're training strength, not speed. Lighten it.</p>
+<p><strong>A strap that's too short.</strong> A short tow strap jerks the sled on every stride and can clip your heels. Give yourself plenty of strap.</p>
+<p><strong>Doing it tired.</strong> Resisted sprints are speed work. Do them fresh, early in the session, with full rest.</p>
+<p><strong>Skipping the unloaded sprints.</strong> The free sprints right after the sled are where the speed carryover happens.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q">How much weight should I put on a sprint sled?</div>
+<div class="faq-a">For sprint speed, load the sled with 10–20% of your bodyweight. At that load you should still run at roughly 80–90% of your top speed with good mechanics. A 185 lb athlete would use about 18–37 lb. Heavier loads build acceleration strength but slow you down a lot, so treat them as strength work, not sprint training.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is a sled better than a parachute for speed?</div>
+<div class="faq-a">For the first 10–20 yards, yes. A sled gives you steady resistance from the first step and keeps you in a forward lean, which is exactly what the drive phase needs. A parachute adds resistance only once you're moving fast, so it's better suited to top-speed work.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do sprint sleds work on grass and turf?</div>
+<div class="faq-a">Yes, but the surface changes the resistance. The same plates feel much heavier on grass than on turf, and a sled on concrete or asphalt will scrape and slide differently. Set your load by how much it slows you down on your surface, not by the number of plates alone.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do I need weight plates for a sprint sled?</div>
+<div class="faq-a">Most sleds are plate-loaded, so you need plates that fit the sled's post. Some take both standard 1-inch and Olympic 2-inch plates. If you don't own plates, a sand-filled resistance bag like the SKLZ SpeedSac is the easiest option.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How often should I do sled sprints?</div>
+<div class="faq-a">Twice a week, with at least 48 hours between sessions, is enough for most athletes. Do 6 × 20 yards with full rest, then follow with a few unloaded sprints so the strength carries over to free running.</div>
+</div>
+<div class="calc-cta">
+<div class="calc-cta-label">Free Tool</div>
+<h3>Time Your 40 Before You Start</h3>
+<p>See how your 40-yard dash compares by position and level, then retest after 8 weeks of sled work.</p>
+<a class="calc-cta-btn" href="/40-yard-dash-calculator">Use the 40-Yard Dash Calculator →</a>
+</div>
+</div>
+<aside class="sidebar">
+<div class="sidebar-card">
+<div class="sidebar-title">Free Calculators</div>
+<a class="sidebar-link" href="/40-yard-dash-calculator">
+<strong>40-Yard Dash Calculator</strong>
+        How does your 40 compare?
+      </a>
+<a class="sidebar-link" href="/sprint-speed-calculator">
+<strong>Sprint Speed Percentile</strong>
+        How fast are you?
+      </a>
+<a class="sidebar-link" href="/squat-strength-calculator">
+<strong>Squat Strength Predictor</strong>
+        What does your squat predict?
+      </a>
+</div>
+<div class="sidebar-card">
+<div class="sidebar-title">In This Article</div>
+<a class="toc-link" href="#why-sleds">Why Sled Sprints Work</a>
+<a class="toc-link" href="#how-much-weight">How Much Weight to Use</a>
+<a class="toc-link" href="#types">Drag vs. Push vs. Sand Bag</a>
+<a class="toc-link" href="#what-to-look-for">What to Look For</a>
+<a class="toc-link" href="#the-picks">The 5 Best Sprint Sleds</a>
+<a class="toc-link" href="#workouts">Sled Workouts for Speed</a>
+<a class="toc-link" href="#mistakes">Common Mistakes</a>
+</div>
+</aside>
+</div>
